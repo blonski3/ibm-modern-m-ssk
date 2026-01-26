@@ -1,0 +1,94 @@
+(footprint "ibm_bs_1u"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -4.5 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "4f0569cf-b1ed-4ebb-80c1-c6ac829c57d6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "ibm_bs_1u"
+		(at 0 9 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "f3ac4bab-c6ad-451f-8940-450b09e3454e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "992a41b5-14f1-4a0f-a4c1-c8f59e95d0d2")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "97dc5113-4bcd-4f0f-b0a1-a2eb375cc2fb")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_circle
+		(center 0 0)
+		(end 5.55625 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "Dwgs.User")
+		(uuid "7c9b24d8-ea42-4c08-a123-5172d5d47faa")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 7 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "67b7509c-ba28-4772-9aab-04ae0b8b702d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd circle
+		(at 0 0)
+		(size 6.35 6.35)
+		(property pad_prop_testpoint)
+		(layers "F.Cu" "F.Mask")
+		(uuid "8c122c36-ac22-49f5-b2e4-ee109f569d54")
+	)
+	(pad "2" smd circle
+		(at 0 0)
+		(size 6.35 6.35)
+		(layers "B.Cu" "B.Mask")
+		(uuid "377653c8-7d76-4442-b648-9e0fca4e02cd")
+	)
+	(embedded_fonts no)
+)

@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "ibm_bs")(type "KiCad")(uri "${KIPRJMOD}/ibm_bs.pretty")(options "")(descr ""))
+)
