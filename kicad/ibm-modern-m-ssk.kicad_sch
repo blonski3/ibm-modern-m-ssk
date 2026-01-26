@@ -2,9 +2,51 @@
 	(version 20250114)
 	(generator "eeschema")
 	(generator_version "9.0")
-	(uuid 17f6a4a5-fbff-4e30-a1cc-9481373e4968)
+	(uuid "17f6a4a5-fbff-4e30-a1cc-9481373e4968")
 	(paper "A4")
 	(lib_symbols)
+	(sheet
+		(at 241.3 38.1)
+		(size 12.7 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "fcf2cb73-a256-4101-99b1-d123c9be8ab2")
+		(property "Sheetname" "matrix"
+			(at 241.3 37.3884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "matrix.kicad_sch"
+			(at 241.3 51.3846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968"
+					(page "2")
+				)
+			)
+		)
+	)
 	(sheet_instances
 		(path "/"
 			(page "1")

@@ -1,0 +1,7920 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "3a9954dd-703c-41c6-821c-7c164acce3b5")
+	(paper "A4")
+	(lib_symbols
+		(symbol "Switch:SW_Push"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW"
+				(at 1.27 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "SW_Push"
+				(at 0 -1.524 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Push button switch, generic, two pins"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "switch normally-open pushbutton push-button"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SW_Push_0_1"
+				(circle
+					(center -2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 0 3.048)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.27) (xy -2.54 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(junction
+		(at 62.23 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "06de0047-8537-4e89-b74c-7e92554647f0")
+	)
+	(junction
+		(at 74.93 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1221a472-2c89-4f7e-a930-9d6fa36272e8")
+	)
+	(junction
+		(at 214.63 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "139980f1-cbeb-4de8-9d1a-82cce38fc152")
+	)
+	(junction
+		(at 87.63 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "13d7e35e-7db8-4fa0-af3d-84f2df08da9a")
+	)
+	(junction
+		(at 74.93 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1b8b72d3-c291-4388-b950-9e02d8a3f366")
+	)
+	(junction
+		(at 151.13 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1bd723f6-2b1e-4080-aef4-7c16cf4c34d8")
+	)
+	(junction
+		(at 113.03 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "23466d31-6347-4353-98cc-adbb5caa5505")
+	)
+	(junction
+		(at 201.93 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "291e4e6e-0379-44e7-a937-5ed55e0064a5")
+	)
+	(junction
+		(at 87.63 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "298aa469-74ba-47c7-b9a8-1bf5f5dce4e0")
+	)
+	(junction
+		(at 125.73 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "33128b91-c77e-45c9-9366-e000386f6f78")
+	)
+	(junction
+		(at 252.73 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "34c6fd4c-bc69-4298-bf4c-e752fc160b66")
+	)
+	(junction
+		(at 62.23 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3b265cab-45c1-4a70-b637-dcfc4b2d5fc1")
+	)
+	(junction
+		(at 189.23 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3cfded76-9c4c-4b5a-8eab-6df6e3b11585")
+	)
+	(junction
+		(at 138.43 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3df4bfef-8af0-4342-b565-6f8cf55b5a31")
+	)
+	(junction
+		(at 189.23 101.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4162f95c-77f3-44e2-93c6-5cbed133afbe")
+	)
+	(junction
+		(at 214.63 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "43326d34-d27c-4c2a-8e0b-085fc1a7aa75")
+	)
+	(junction
+		(at 252.73 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "46d03625-e500-4931-a706-24bc193f582c")
+	)
+	(junction
+		(at 138.43 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "47815bec-2ea8-4223-ace6-c75e41032136")
+	)
+	(junction
+		(at 113.03 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4e204cc2-e531-452b-a1e1-fab797517e62")
+	)
+	(junction
+		(at 151.13 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4e50428a-e94c-41b6-acc3-bca95dbd006c")
+	)
+	(junction
+		(at 49.53 101.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "52498eff-5ad3-4749-bb7f-5b7610e71c8e")
+	)
+	(junction
+		(at 189.23 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5456da18-3307-4d75-b056-b8283d43a41c")
+	)
+	(junction
+		(at 265.43 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "569a4235-1e38-49b6-9a2d-fded0c8c1ce7")
+	)
+	(junction
+		(at 151.13 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "56e9df29-ceac-44d7-9057-a0d35caed1cb")
+	)
+	(junction
+		(at 176.53 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "57649eca-4c34-43cf-aff0-e15bdb42ad06")
+	)
+	(junction
+		(at 189.23 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5bfdaf7c-bce8-4a24-89bf-69b7c6a54092")
+	)
+	(junction
+		(at 240.03 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5ffb265b-88d8-4d8c-9e6f-02522d299437")
+	)
+	(junction
+		(at 214.63 101.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "62745320-9f4b-40d7-b1d5-45238de2efce")
+	)
+	(junction
+		(at 49.53 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "63d39965-12fb-4a21-80e4-de7fc7762bee")
+	)
+	(junction
+		(at 138.43 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "656e43f3-3432-4ad6-9d8c-352fbae76395")
+	)
+	(junction
+		(at 62.23 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "65d7e56f-de3a-459b-a82a-e0bb8ecd795a")
+	)
+	(junction
+		(at 176.53 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "666bd0aa-b929-4789-9b23-e3e0b44d7072")
+	)
+	(junction
+		(at 62.23 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "67756c3c-2522-497e-b5b2-2efe4f6e6132")
+	)
+	(junction
+		(at 74.93 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "706b1380-5455-4bb3-8377-508bdf774057")
+	)
+	(junction
+		(at 176.53 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "71085a10-4fa6-4c50-9849-24e87c1ce77d")
+	)
+	(junction
+		(at 265.43 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7b747f2c-c445-421e-9437-2fcbded63c94")
+	)
+	(junction
+		(at 87.63 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7bd70437-c3c6-4262-934f-dd9edfacbfdb")
+	)
+	(junction
+		(at 214.63 54.61)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7cafc450-83af-4b86-bcd2-4f46b8a7468b")
+	)
+	(junction
+		(at 163.83 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7f6a50aa-d5ec-4eaa-9ea2-76998f9cfaca")
+	)
+	(junction
+		(at 201.93 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8221059e-d7be-4edc-9683-2a96b7eafeec")
+	)
+	(junction
+		(at 125.73 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "83356998-51cb-4a49-b7c9-d3db3181f07d")
+	)
+	(junction
+		(at 252.73 101.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "85d8ecf0-46e3-4487-8d7c-e9a9929616bc")
+	)
+	(junction
+		(at 125.73 101.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8dd3d7cc-d3bc-43d0-8e1b-2e202ab47167")
+	)
+	(junction
+		(at 100.33 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9a079023-4c88-410a-b9c6-b27c9cfbc154")
+	)
+	(junction
+		(at 100.33 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a2571151-4b40-48c5-b24b-8ac67c58a559")
+	)
+	(junction
+		(at 265.43 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a2645e10-1073-4d70-9f5f-28bee23d7345")
+	)
+	(junction
+		(at 151.13 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a2e78148-1967-47d1-8bdb-fbff0cf6c686")
+	)
+	(junction
+		(at 240.03 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ad363736-e362-48b4-a4e4-65d5ba764d3c")
+	)
+	(junction
+		(at 49.53 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ad4f1488-c492-4f1d-9ebc-51a77feddfc6")
+	)
+	(junction
+		(at 74.93 101.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b1f84b59-4c19-4d5d-a050-c34a65f2f106")
+	)
+	(junction
+		(at 74.93 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b37d4954-d522-4f47-abd9-a7437b9c9349")
+	)
+	(junction
+		(at 113.03 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bbc07cbf-5e99-4fe3-9850-ff7d37566776")
+	)
+	(junction
+		(at 214.63 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c2c0b606-6d55-4fda-81ca-6e7fe5a597e1")
+	)
+	(junction
+		(at 100.33 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c586b666-8842-4c5b-9789-89aea856bdde")
+	)
+	(junction
+		(at 100.33 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c7283ddd-4017-442a-a290-0f20452ba633")
+	)
+	(junction
+		(at 125.73 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c80189cb-0c76-42f1-a2e8-5946eb81de1b")
+	)
+	(junction
+		(at 252.73 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cc6f5332-6aaa-49ff-9716-ca5500a3cbdd")
+	)
+	(junction
+		(at 240.03 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cfa1ee83-a639-47d3-a8f8-4e554dc849f5")
+	)
+	(junction
+		(at 87.63 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d3fa1d65-a64c-4c4e-bbf0-c4382a932195")
+	)
+	(junction
+		(at 49.53 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d451d93d-b586-4c84-987c-98ea13a60e6a")
+	)
+	(junction
+		(at 163.83 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d57dff80-0c1e-405c-88b6-95648375d35a")
+	)
+	(junction
+		(at 176.53 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d8691536-093f-4a1f-8a57-9d012963c6ec")
+	)
+	(junction
+		(at 189.23 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d9ec3cfa-7685-4889-a76a-f7cc704b8ef6")
+	)
+	(junction
+		(at 113.03 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e0ead680-6bf8-4563-8357-419e0c08d1bd")
+	)
+	(junction
+		(at 163.83 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e413eac8-2e5a-44d0-8fba-53c8c7c2910f")
+	)
+	(junction
+		(at 201.93 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e705c7b1-c150-4818-8838-4ff3bdb8fb23")
+	)
+	(junction
+		(at 138.43 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e94fbd3e-2100-48c6-9288-18add6b4d128")
+	)
+	(junction
+		(at 49.53 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f4e41b06-b8c3-4957-aa5f-deca464be7ee")
+	)
+	(junction
+		(at 125.73 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f635d04e-b0e3-49f1-8d36-ff298b46bc60")
+	)
+	(junction
+		(at 214.63 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fca22b0f-a5f2-4b15-b2ec-1134670aee82")
+	)
+	(junction
+		(at 201.93 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fdd6e415-8884-44ce-8e19-d3a4e5702620")
+	)
+	(wire
+		(pts
+			(xy 49.53 76.2) (xy 49.53 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0650a014-9d1b-4025-b217-992c5ff4dff6")
+	)
+	(wire
+		(pts
+			(xy 265.43 63.5) (xy 265.43 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "067d34fa-1c2b-4910-adab-52eea33d1135")
+	)
+	(wire
+		(pts
+			(xy 138.43 88.9) (xy 138.43 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0c36b237-42f7-4a79-b290-fc7d3b672e4c")
+	)
+	(wire
+		(pts
+			(xy 125.73 101.6) (xy 125.73 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0dcc17a6-a402-49c0-a1f9-554046c46451")
+	)
+	(wire
+		(pts
+			(xy 201.93 25.4) (xy 201.93 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0fbbcc18-fa51-452c-b738-3d86af7c0a20")
+	)
+	(wire
+		(pts
+			(xy 62.23 63.5) (xy 62.23 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "11b98c6b-76ce-46a1-ab31-1d4757accd60")
+	)
+	(wire
+		(pts
+			(xy 125.73 38.1) (xy 125.73 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "134a894f-a6e4-401c-a1d7-b768ed7192f6")
+	)
+	(wire
+		(pts
+			(xy 176.53 76.2) (xy 176.53 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "19306f5b-1b4f-489b-9c32-8ef7f122154d")
+	)
+	(wire
+		(pts
+			(xy 113.03 25.4) (xy 113.03 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a9a085d-8353-4937-b967-b0ffb94f34a3")
+	)
+	(wire
+		(pts
+			(xy 151.13 88.9) (xy 151.13 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b114442-e78c-4d9f-b19a-4f3426eb3b75")
+	)
+	(wire
+		(pts
+			(xy 189.23 101.6) (xy 189.23 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1dd5aa0e-66f6-42cc-94e8-d107e7bbfd42")
+	)
+	(wire
+		(pts
+			(xy 189.23 25.4) (xy 189.23 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1ffc46c4-d8f8-44ca-8779-de4526a11171")
+	)
+	(wire
+		(pts
+			(xy 252.73 38.1) (xy 252.73 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "23f17b27-1d6a-4ce9-bd4e-c565843ce2e2")
+	)
+	(wire
+		(pts
+			(xy 214.63 76.2) (xy 214.63 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2732156d-9a43-4456-b7bf-7b4c391ce082")
+	)
+	(wire
+		(pts
+			(xy 62.23 38.1) (xy 62.23 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "291d5bde-fa6e-4f35-b0ad-ef8821a01119")
+	)
+	(wire
+		(pts
+			(xy 125.73 76.2) (xy 125.73 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "295e75cb-9e68-4f2f-8ed6-f2950e116482")
+	)
+	(wire
+		(pts
+			(xy 138.43 25.4) (xy 138.43 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2bd24b01-6b49-45af-8589-248af505cbf6")
+	)
+	(wire
+		(pts
+			(xy 240.03 38.1) (xy 240.03 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2d7492ab-1efd-4e6d-9d44-caa9fc927da2")
+	)
+	(wire
+		(pts
+			(xy 113.03 76.2) (xy 113.03 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e40e474-293b-427f-aacf-0eea442f37e1")
+	)
+	(wire
+		(pts
+			(xy 176.53 25.4) (xy 176.53 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2f5333dc-85b8-438c-9789-2b4f73d5fc0d")
+	)
+	(wire
+		(pts
+			(xy 151.13 76.2) (xy 151.13 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31177696-bf78-4084-8cd9-d8e5aff144a1")
+	)
+	(wire
+		(pts
+			(xy 49.53 63.5) (xy 49.53 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "334ec0a2-b75d-492d-8448-b4b0b2f8a4f1")
+	)
+	(wire
+		(pts
+			(xy 176.53 88.9) (xy 176.53 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33b163bf-31ee-48df-81f2-2195836046b0")
+	)
+	(wire
+		(pts
+			(xy 240.03 76.2) (xy 240.03 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "353b2d35-bd4c-48fe-a987-6e51a564031b")
+	)
+	(wire
+		(pts
+			(xy 265.43 76.2) (xy 265.43 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37377fbf-080a-408a-b17f-98e6bce78bf7")
+	)
+	(wire
+		(pts
+			(xy 201.93 76.2) (xy 201.93 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "38a0cbde-8e85-43b1-b681-da1ff4ba8f57")
+	)
+	(wire
+		(pts
+			(xy 74.93 76.2) (xy 74.93 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3afd8aca-c6cb-43f3-bf1b-532d491a7742")
+	)
+	(wire
+		(pts
+			(xy 189.23 38.1) (xy 189.23 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "421a26d5-7dcb-49cb-952e-951132f527b2")
+	)
+	(wire
+		(pts
+			(xy 87.63 25.4) (xy 87.63 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "474913b7-6e56-44bf-99ae-9fb6577de04d")
+	)
+	(wire
+		(pts
+			(xy 252.73 101.6) (xy 252.73 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "49b6a407-e5c2-45cd-81e2-1297367b8f5b")
+	)
+	(wire
+		(pts
+			(xy 189.23 88.9) (xy 189.23 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "51b40c8c-14e8-4d93-ace3-5aafe9a7e5f3")
+	)
+	(wire
+		(pts
+			(xy 176.53 38.1) (xy 176.53 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "58f2c275-01ba-4709-87f0-7b28e7e7287c")
+	)
+	(wire
+		(pts
+			(xy 214.63 54.61) (xy 214.63 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "59776702-9516-4c36-b085-8f1ae371c43b")
+	)
+	(wire
+		(pts
+			(xy 201.93 38.1) (xy 201.93 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5b3503e2-01c9-4fe1-8757-77336e87b97b")
+	)
+	(wire
+		(pts
+			(xy 240.03 63.5) (xy 240.03 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5e52fe4d-82bc-4097-952b-e86ae434c3d4")
+	)
+	(wire
+		(pts
+			(xy 100.33 38.1) (xy 100.33 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "62c4bd26-7651-4a06-b22d-e4097daa1dec")
+	)
+	(wire
+		(pts
+			(xy 100.33 25.4) (xy 100.33 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6bacb80c-c4ed-4e62-9397-d3a376f6da4c")
+	)
+	(wire
+		(pts
+			(xy 252.73 25.4) (xy 252.73 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6c97cf21-25ad-433b-a0dd-3f3d5a71f0c9")
+	)
+	(wire
+		(pts
+			(xy 113.03 63.5) (xy 113.03 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6dd4363b-a53a-41fd-ac86-3a93b35c1d58")
+	)
+	(wire
+		(pts
+			(xy 163.83 63.5) (xy 163.83 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6de87128-c5a4-4ad0-ab22-a162b5b7d767")
+	)
+	(wire
+		(pts
+			(xy 163.83 88.9) (xy 163.83 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6e1f22ed-a144-4d31-8a89-f243f70edd44")
+	)
+	(wire
+		(pts
+			(xy 138.43 38.1) (xy 138.43 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "71d7d191-2cbc-432a-bd04-506e8eb21642")
+	)
+	(wire
+		(pts
+			(xy 265.43 38.1) (xy 265.43 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "728df25c-f214-41b0-8f2c-01112f216234")
+	)
+	(wire
+		(pts
+			(xy 125.73 88.9) (xy 125.73 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a390648-5f8c-40f1-885d-41fe9a438050")
+	)
+	(wire
+		(pts
+			(xy 100.33 88.9) (xy 100.33 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b2f34f5-c662-4ca4-8d87-3b1db57f182f")
+	)
+	(wire
+		(pts
+			(xy 151.13 63.5) (xy 151.13 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7bddf66f-49d0-4503-ba92-379fb05ac1c5")
+	)
+	(wire
+		(pts
+			(xy 62.23 76.2) (xy 62.23 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7de3b09b-d9d9-401f-bc14-00614f6488a2")
+	)
+	(wire
+		(pts
+			(xy 125.73 25.4) (xy 125.73 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7eccc68d-a81e-4f43-8f68-23f89261b88b")
+	)
+	(wire
+		(pts
+			(xy 100.33 76.2) (xy 100.33 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8084388c-2278-4b96-9334-6f2884bf0293")
+	)
+	(wire
+		(pts
+			(xy 240.03 25.4) (xy 240.03 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8377e2c9-99a8-47be-b866-860107fa74ee")
+	)
+	(wire
+		(pts
+			(xy 49.53 101.6) (xy 49.53 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8462d68f-6798-4c30-9f87-677c1a374a54")
+	)
+	(wire
+		(pts
+			(xy 151.13 25.4) (xy 151.13 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8c632936-8b3f-4991-b73d-107d8db34b16")
+	)
+	(wire
+		(pts
+			(xy 74.93 25.4) (xy 74.93 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e355c78-6eee-4403-b90c-7c6895c47a28")
+	)
+	(wire
+		(pts
+			(xy 201.93 63.5) (xy 201.93 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9198167e-6268-4964-852f-c0182b6cbc60")
+	)
+	(wire
+		(pts
+			(xy 87.63 63.5) (xy 87.63 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "95c85584-f035-4fe9-8abb-22553c2c6c89")
+	)
+	(wire
+		(pts
+			(xy 49.53 38.1) (xy 49.53 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "96f46249-ca88-4354-8de7-18b7103c2c05")
+	)
+	(wire
+		(pts
+			(xy 87.63 38.1) (xy 87.63 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9728ea13-9696-47af-8fbe-a050066f1e6f")
+	)
+	(wire
+		(pts
+			(xy 74.93 101.6) (xy 74.93 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "982113a7-c4a1-47be-84da-d6573f329b1e")
+	)
+	(wire
+		(pts
+			(xy 74.93 63.5) (xy 74.93 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "99303d55-01b3-41f9-9229-1087c6f2f48d")
+	)
+	(wire
+		(pts
+			(xy 113.03 88.9) (xy 113.03 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a8f6e77-1a3a-48a0-bbb0-657758991647")
+	)
+	(wire
+		(pts
+			(xy 201.93 88.9) (xy 201.93 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9ceec45c-f1fb-46e8-99a6-863d10ad9c59")
+	)
+	(wire
+		(pts
+			(xy 49.53 88.9) (xy 49.53 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e96a814-9072-48e8-8ded-1e117e0eac5e")
+	)
+	(wire
+		(pts
+			(xy 138.43 76.2) (xy 138.43 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9fad9f4d-4f8e-41f8-a5b8-53ebe3da954d")
+	)
+	(wire
+		(pts
+			(xy 74.93 38.1) (xy 74.93 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a0ee981c-7b51-47c4-ab96-9f1a7d87653f")
+	)
+	(wire
+		(pts
+			(xy 252.73 63.5) (xy 252.73 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a13bc248-82e3-4482-8905-2756951cf3fb")
+	)
+	(wire
+		(pts
+			(xy 87.63 76.2) (xy 87.63 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a4709530-0f7f-44c3-9158-c447f7e324fc")
+	)
+	(wire
+		(pts
+			(xy 214.63 63.5) (xy 214.63 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab227cbc-e969-4be4-a46c-e174e101bccb")
+	)
+	(wire
+		(pts
+			(xy 163.83 76.2) (xy 163.83 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae242cb9-af8d-43fb-8b32-32088dbf14d8")
+	)
+	(wire
+		(pts
+			(xy 265.43 25.4) (xy 265.43 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b2494cf7-a6a4-456e-a127-3c2e46cdf1b0")
+	)
+	(wire
+		(pts
+			(xy 214.63 101.6) (xy 214.63 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b250cd57-0c77-43ab-97e1-00146d67359e")
+	)
+	(wire
+		(pts
+			(xy 151.13 38.1) (xy 151.13 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b406c0c4-1d8c-40e0-8216-f99e620898d3")
+	)
+	(wire
+		(pts
+			(xy 74.93 88.9) (xy 74.93 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b458a41f-6cec-492d-bc13-d3ae9bf87ccf")
+	)
+	(wire
+		(pts
+			(xy 252.73 76.2) (xy 252.73 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bd60bce7-d8f7-4a1f-988b-d205e5dd299e")
+	)
+	(wire
+		(pts
+			(xy 138.43 63.5) (xy 138.43 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bdb72d92-1032-42ad-b73f-d997568ea7d1")
+	)
+	(wire
+		(pts
+			(xy 113.03 38.1) (xy 113.03 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c3ec0130-0709-4e88-b6d6-d1e0d6045140")
+	)
+	(wire
+		(pts
+			(xy 163.83 25.4) (xy 163.83 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cceefd02-b304-4bc0-8562-05d88a109899")
+	)
+	(wire
+		(pts
+			(xy 125.73 63.5) (xy 125.73 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cd8b5570-8d61-4971-84ec-97ac3bb54411")
+	)
+	(wire
+		(pts
+			(xy 87.63 88.9) (xy 87.63 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d2cdbb50-d79f-49d9-b34a-7e724ebf4fe5")
+	)
+	(wire
+		(pts
+			(xy 176.53 63.5) (xy 176.53 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d44a1389-8c38-478f-b4ad-1e59f9861190")
+	)
+	(wire
+		(pts
+			(xy 189.23 76.2) (xy 189.23 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d6ae7fc2-c009-410f-a0d5-7808278379cc")
+	)
+	(wire
+		(pts
+			(xy 62.23 25.4) (xy 62.23 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d6c32af5-0886-41a8-a9c7-2fb1d20399de")
+	)
+	(wire
+		(pts
+			(xy 204.47 54.61) (xy 204.47 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d7ceae33-3667-4d6a-8217-32f64c2ce5a3")
+	)
+	(wire
+		(pts
+			(xy 214.63 25.4) (xy 214.63 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dea75a0c-60b4-48cb-b843-4541b6b1a2cf")
+	)
+	(wire
+		(pts
+			(xy 214.63 38.1) (xy 214.63 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e228a5c0-e70b-43f5-8dd4-d07ea4144345")
+	)
+	(wire
+		(pts
+			(xy 100.33 63.5) (xy 100.33 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e43facc9-1d07-40bc-bc98-56cff20a2833")
+	)
+	(wire
+		(pts
+			(xy 49.53 25.4) (xy 49.53 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f588f929-7d45-41e3-8bc6-be9b99e859fd")
+	)
+	(wire
+		(pts
+			(xy 214.63 88.9) (xy 214.63 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fc171970-27c4-4014-bb6b-bfb73e9c3273")
+	)
+	(wire
+		(pts
+			(xy 189.23 63.5) (xy 189.23 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fc4c247e-8790-4bd3-8f25-9101f200382a")
+	)
+	(wire
+		(pts
+			(xy 62.23 88.9) (xy 62.23 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe38a8da-af4f-4c0f-b96d-31b9eb28b799")
+	)
+	(global_label "COL1"
+		(shape input)
+		(at 62.23 25.4 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "197000bc-22ac-4e0b-ab0e-8489d518cb7b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 62.23 17.5767 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COL5"
+		(shape input)
+		(at 113.03 25.4 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2a298ae8-e90b-4fb1-a66b-5f10a8b99a32")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 113.03 17.5767 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COL7"
+		(shape input)
+		(at 138.43 25.4 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2f8370a8-0be0-415f-838a-6374cf2896a8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 138.43 17.5767 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COL15"
+		(shape input)
+		(at 252.73 25.4 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "46b2f90c-7995-400b-a48c-45e3972fa549")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 252.73 16.3672 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COL8"
+		(shape input)
+		(at 151.13 25.4 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "49d9719e-f8cd-4d82-81fe-5a60305d5d9b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 151.13 17.5767 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COL0"
+		(shape input)
+		(at 49.53 25.4 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "511665ae-85f9-4c0f-9f52-8fef3ec1913b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 49.53 17.5767 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COL2"
+		(shape input)
+		(at 74.93 25.4 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5bdf4401-3f9a-4b51-b153-2dc12d9e6286")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 74.93 17.5767 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COL4"
+		(shape input)
+		(at 100.33 25.4 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5db6edde-8ab6-4598-98d5-2a75d7812456")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 100.33 17.5767 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COL10"
+		(shape input)
+		(at 176.53 25.4 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6ac9c1c1-5ffa-4d49-a71c-0d0669a9e719")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 176.53 16.3672 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COL12"
+		(shape input)
+		(at 201.93 25.4 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "83fd8f0b-f561-4db7-8422-fcdd3995c2b7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 201.93 16.3672 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COL11"
+		(shape input)
+		(at 189.23 25.4 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "afec161a-468f-4e10-a94c-14d6eb9b696b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 189.23 16.3672 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COL14"
+		(shape input)
+		(at 240.03 25.4 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c6aade70-67fe-4139-bc0b-eeb71b0a645a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 240.03 16.3672 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COL13"
+		(shape input)
+		(at 214.63 25.4 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e5e97b63-fd28-4bef-b3ff-e6d5bb56cfbe")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 214.63 16.3672 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COL3"
+		(shape input)
+		(at 87.63 25.4 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f3847ee6-8e73-40d8-b942-9fde55c8cdb9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 87.63 17.5767 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COL16"
+		(shape input)
+		(at 265.43 25.4 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "fbd38ca4-58b3-4e0d-ba79-67708860c137")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 265.43 16.3672 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COL9"
+		(shape input)
+		(at 163.83 25.4 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "fde3d5f6-b3d7-4b59-a99e-25a066c5df7f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 163.83 17.5767 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "COL6"
+		(shape input)
+		(at 125.73 25.4 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "fe578607-d5c0-4454-aa87-0bb446975c5b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 125.73 17.5767 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 234.95 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "01904cb2-d9d2-4dc5-b170-02513acb1804")
+		(property "Reference" "SW99"
+			(at 234.95 106.68 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "Left"
+			(at 234.95 109.22 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 234.95 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 234.95 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 234.95 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8f909c7c-265a-4a7b-9f42-0d99ee97413e")
+		)
+		(pin "2"
+			(uuid "338f8537-dce2-46a5-bcbd-87ec58df1008")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW99")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 234.95 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "01c72f21-9196-4777-ae10-7c7be56ec270")
+		(property "Reference" "SW14"
+			(at 234.95 30.48 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "PrintScreen"
+			(at 234.95 33.02 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 234.95 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 234.95 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 234.95 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b836484e-9bb6-4e1c-be95-f5573b38b539")
+		)
+		(pin "2"
+			(uuid "ecc7b41a-d9a6-470e-962b-6d8a16bd2847")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 260.35 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "05a07a96-9e29-4b7a-bd83-cc49b5cabb08")
+		(property "Reference" "SW16"
+			(at 260.35 30.48 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "PauseBreak"
+			(at 260.35 33.02 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 260.35 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 260.35 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 260.35 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ac3a99a5-8c31-4fb7-8655-95d239462264")
+		)
+		(pin "2"
+			(uuid "bf91c4c4-6059-44f6-967f-ae6cb04bda96")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 44.45 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "078f2ae4-ac2a-40c6-816e-f9d3cf2e3cc3")
+		(property "Reference" "SW84"
+			(at 44.45 106.68 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "LCtrl"
+			(at 44.45 109.22 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 44.45 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 44.45 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 44.45 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6882cee1-45b8-4b42-9c1e-a6e76c92cf5a")
+		)
+		(pin "2"
+			(uuid "67796440-9d3f-4041-ba32-ab71d43d7e59")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW84")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 69.85 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0b4e86f2-f836-4a6b-bd90-a0c3a724bcaf")
+		(property "Reference" "SW55"
+			(at 69.85 81.28 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "S"
+			(at 69.85 83.82 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 69.85 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 69.85 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 69.85 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fde0e651-8991-46db-8fc5-6258747fe14b")
+		)
+		(pin "2"
+			(uuid "5748ff97-e1a2-4199-a3a5-6a6fe177a4b8")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW55")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 133.35 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0c43e686-68f8-4255-a9c3-2f97598e5789")
+		(property "Reference" "SW24"
+			(at 133.35 55.88 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "7"
+			(at 133.35 58.42 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 133.35 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 133.35 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 133.35 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "95a8b7b2-985e-4baa-9795-54556a397693")
+		)
+		(pin "2"
+			(uuid "f4d7be67-2005-4028-a0b8-3b3b4b526512")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 82.55 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0f72ea34-f7e8-4cf0-a12c-91488b65d57a")
+		(property "Reference" "SW20"
+			(at 82.55 55.88 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "3"
+			(at 82.55 58.42 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 82.55 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 82.55 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 82.55 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3ada39b0-4a37-450b-b01f-52f45f6c1dcb")
+		)
+		(pin "2"
+			(uuid "ef0e5100-c0fd-461a-9762-8b35b9090f0b")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 247.65 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "16f32fee-3fb1-43ce-94ac-003a5341d2e3")
+		(property "Reference" "SW15"
+			(at 247.65 30.48 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "ScrollLock"
+			(at 247.65 33.02 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 247.65 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 247.65 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 247.65 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "387331dc-6a1d-44dc-a68b-da0d572f8522")
+		)
+		(pin "2"
+			(uuid "7b4e0c9f-de73-4234-ad40-9b2ff4aceed1")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 171.45 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1947de44-793d-43f3-9847-1692adafdf18")
+		(property "Reference" "SW45"
+			(at 171.45 68.58 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "P"
+			(at 171.45 71.12 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 171.45 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 171.45 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 171.45 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fc2d5487-5d2a-48d1-8d4c-3b1e6e385329")
+		)
+		(pin "2"
+			(uuid "79e84d48-7208-4589-9849-c5a6e052f84d")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW45")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 146.05 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1ccacb00-91c8-4193-a2cc-767db007ffcd")
+		(property "Reference" "SW43"
+			(at 146.05 68.58 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "I"
+			(at 146.05 71.12 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 146.05 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 146.05 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 146.05 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3c12977e-9ccc-4f5b-a9bb-52e21db0334f")
+		)
+		(pin "2"
+			(uuid "56911830-0cab-4609-bb75-1ac5d3e84251")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW43")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 82.55 101.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1d734434-6157-40ed-a735-157e9ac8451e")
+		(property "Reference" "SW71"
+			(at 82.55 93.98 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "X"
+			(at 82.55 96.52 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 82.55 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 82.55 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 82.55 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b3128925-26e0-4298-803b-4c11ecfd1b80")
+		)
+		(pin "2"
+			(uuid "dceb5406-496f-4827-9804-19bb16622847")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW71")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 69.85 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "267dcfde-4537-4d82-b9e9-b6b1bc3723ae")
+		(property "Reference" "SW86"
+			(at 69.85 106.68 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "LAlt"
+			(at 69.85 109.22 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 69.85 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 69.85 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 69.85 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "56746cac-e8a2-4242-9d8b-68c2f60061b0")
+		)
+		(pin "2"
+			(uuid "f512c2db-7655-4b7d-bd82-60c6c9d09ed3")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW86")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 107.95 101.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "34a3f42c-cc6f-46bd-a623-8401b065b7e6")
+		(property "Reference" "SW73"
+			(at 107.95 93.98 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "V"
+			(at 107.95 96.52 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 107.95 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 107.95 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 107.95 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b03704b9-a8ba-4ed4-a730-f04ded654a3a")
+		)
+		(pin "2"
+			(uuid "6d7fd491-5f24-4109-843e-719d0fb9505f")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW73")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 44.45 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "36237dc8-4430-4837-9713-0f0f5e6de576")
+		(property "Reference" "SW35"
+			(at 44.45 68.58 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "Tab"
+			(at 44.45 71.12 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 44.45 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 44.45 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 44.45 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "77bf5dd4-a726-41db-8cea-fe029b59b6ac")
+		)
+		(pin "2"
+			(uuid "34165589-bbf7-450a-afec-b43495c71c8b")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW35")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 133.35 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "37c93cf8-34ae-41f1-8cec-f6d926b3109c")
+		(property "Reference" "SW42"
+			(at 133.35 68.58 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "U"
+			(at 133.35 71.12 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 133.35 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 133.35 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 133.35 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8d62afa9-0512-4a19-ab25-0e9a846e1bb3")
+		)
+		(pin "2"
+			(uuid "a5381545-1800-4f9f-9107-1be64208704c")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW42")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 158.75 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "37cf1903-a6e0-4500-854f-48853a9e5893")
+		(property "Reference" "SW44"
+			(at 158.75 68.58 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "O"
+			(at 158.75 71.12 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 158.75 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 158.75 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 158.75 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "194829c9-41a7-45b8-97e1-d9ecffa84380")
+		)
+		(pin "2"
+			(uuid "8563f1c2-e97f-4226-ba94-19c25011f9e4")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW44")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 69.85 101.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3c5acfaf-60bc-465e-9019-d918d8ea02b9")
+		(property "Reference" "SW70"
+			(at 69.85 93.98 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "Z"
+			(at 69.85 96.52 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 69.85 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 69.85 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 69.85 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a7285b3c-e82b-4132-ac41-a3c61a552b6b")
+		)
+		(pin "2"
+			(uuid "4655ac37-a974-4628-a95e-e77e118ee6b2")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW70")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 57.15 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "402463e1-28a1-4b5b-8774-ec6854072217")
+		(property "Reference" "SW54"
+			(at 57.15 81.28 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "A"
+			(at 57.15 83.82 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 57.15 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 57.15 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 57.15 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e459f545-65dc-4d9f-ae9a-a01706c17234")
+		)
+		(pin "2"
+			(uuid "ab741865-6bf5-4fa5-a055-43ef6235f4c2")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW54")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 44.45 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "41c97f40-3bdd-467f-8b8d-bbdc576de9ff")
+		(property "Reference" "SW17"
+			(at 44.45 55.88 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 44.45 58.42 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 44.45 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 44.45 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 44.45 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "22f2d362-31a0-4b0a-9e4f-37b8ee4f6cdc")
+		)
+		(pin "2"
+			(uuid "f5123067-630e-4638-9d1a-8a29c0258ba8")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 184.15 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "427f2e5b-4aa3-40c4-9eca-672ea918c7d1")
+		(property "Reference" "SW46"
+			(at 184.15 68.58 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "["
+			(at 184.15 71.12 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 184.15 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 184.15 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 184.15 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e5476ca5-c979-4ab0-b287-9efd79ee3889")
+		)
+		(pin "2"
+			(uuid "bae79df6-fc3a-4a37-9c34-54a945485aad")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW46")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 209.55 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "464743a0-d88a-477e-83aa-67ce3e3a63f5")
+		(property "Reference" "SW98"
+			(at 209.55 106.68 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "RCtrl"
+			(at 209.55 109.22 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 209.55 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 209.55 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 209.55 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "98c0557b-4760-4fa3-9c48-d76023ec2eeb")
+		)
+		(pin "2"
+			(uuid "ac1fcbe9-8c1c-422d-a719-cf06be5524c0")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW98")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 107.95 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "492f6fa2-f3e0-4385-84af-2de56e85520d")
+		(property "Reference" "SW22"
+			(at 107.95 55.88 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "5"
+			(at 107.95 58.42 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 107.95 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 107.95 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 107.95 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "582988f9-3fb6-4326-a39b-258d2c6ea17d")
+		)
+		(pin "2"
+			(uuid "5620478d-906e-4734-a1a6-acd47846a043")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 133.35 101.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4c7e8f09-4958-4d81-9c3a-0dda8a1bbf50")
+		(property "Reference" "SW75"
+			(at 133.35 93.98 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "N"
+			(at 133.35 96.52 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 133.35 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 133.35 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 133.35 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b02cbea9-21ee-4a78-9714-1361f48ad353")
+		)
+		(pin "2"
+			(uuid "429880dc-3e05-4545-ac42-eb35135dbf32")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW75")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 209.55 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4e927112-c171-4f8d-91c8-9deffed1e3d9")
+		(property "Reference" "SW66"
+			(at 209.55 81.28 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "Enter"
+			(at 209.55 83.82 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 209.55 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 209.55 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 209.55 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "19308b81-e0e2-484e-ae52-829bb37e2f02")
+		)
+		(pin "2"
+			(uuid "b25b366d-71e1-4f02-a4c4-95e97e84f6cc")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW66")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 120.65 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5385847d-f772-47fe-a1fe-d2e36cd36c9e")
+		(property "Reference" "SW90"
+			(at 120.65 106.68 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "Space"
+			(at 120.65 109.22 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 120.65 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 120.65 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 120.65 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d84b6451-b531-49a6-bea5-527ed4364dba")
+		)
+		(pin "2"
+			(uuid "9fefa42b-3e67-4ef3-b1d1-14130123a74e")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW90")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 247.65 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5762fa00-ee9f-4210-856a-8682c4fbbeef")
+		(property "Reference" "SW33"
+			(at 247.65 55.88 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "Home"
+			(at 247.65 58.42 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 247.65 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 247.65 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 247.65 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "99131b33-585d-4907-b3bf-e9bd6158b898")
+		)
+		(pin "2"
+			(uuid "16f04a36-fc40-4bdb-b586-0cbaa9342a9e")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW33")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 171.45 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "580250ec-d2f6-4494-8043-6cb25153fca7")
+		(property "Reference" "SW63"
+			(at 171.45 81.28 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" ";"
+			(at 171.45 83.82 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 171.45 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 171.45 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 171.45 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1896ec47-7a94-4873-a300-0f93b5e9f79d")
+		)
+		(pin "2"
+			(uuid "947c38cb-55ce-46f1-b353-db8597571a3c")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW63")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 247.65 101.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5882d82e-0221-4f3c-bcaa-f97a137cf6dd")
+		(property "Reference" "SW83"
+			(at 247.65 93.98 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "Up"
+			(at 247.65 96.52 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 247.65 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 247.65 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 247.65 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "00fb735a-d004-4150-bac2-0159a8c4640b")
+		)
+		(pin "2"
+			(uuid "15d5537f-8645-4ebb-8afd-0b2b4a521557")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW83")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 120.65 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5c81a678-cfec-4275-9b71-ef375d8e2dce")
+		(property "Reference" "SW59"
+			(at 120.65 81.28 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "H"
+			(at 120.65 83.82 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 120.65 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 120.65 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 120.65 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7ab78e5f-ceab-44e7-b74d-761c83cebc3c")
+		)
+		(pin "2"
+			(uuid "e247a904-5d75-44c7-a25b-ef81bd323321")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW59")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 171.45 101.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "62eaec75-9984-467d-a017-5beb9b8db9a1")
+		(property "Reference" "SW78"
+			(at 171.45 93.98 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "."
+			(at 171.45 96.52 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 171.45 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 171.45 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 171.45 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e1de50d7-d500-4ae0-a2d0-6dd3ca79180b")
+		)
+		(pin "2"
+			(uuid "e92a490d-0a98-4dbe-a4f9-5ba66479ad0b")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW78")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 209.55 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "672cf0a1-3a82-4109-9b1a-913965e68b7e")
+		(property "Reference" "SW13"
+			(at 209.55 30.48 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "F12"
+			(at 209.55 33.02 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 209.55 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 209.55 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 209.55 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9e73abb9-3452-4d21-a859-61ed0bed8d1c")
+		)
+		(pin "2"
+			(uuid "729026d8-775f-4aeb-b396-8dbf8258b39f")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 260.35 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "68b55413-d904-4b31-a60c-36a6331b1301")
+		(property "Reference" "SW34"
+			(at 260.35 55.88 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "PgUp"
+			(at 260.35 58.42 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 260.35 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 260.35 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 260.35 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "720f7ac6-3a64-494c-8ef9-e7a33bed9fd0")
+		)
+		(pin "2"
+			(uuid "c99e40a6-be26-4fc2-ad2b-90502914af18")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW34")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 120.65 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6b783268-d43f-411d-b2ec-7aab1ee14fe9")
+		(property "Reference" "SW23"
+			(at 120.65 55.88 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "6"
+			(at 120.65 58.42 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 120.65 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 120.65 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 120.65 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0dd044b8-d75e-49d0-983c-eefdfaab1cc4")
+		)
+		(pin "2"
+			(uuid "9f2c467f-d6cc-4288-82e6-f1dc3af8d82f")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 82.55 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6d57400c-cfd5-431e-8b11-847cb7311777")
+		(property "Reference" "SW4"
+			(at 82.55 30.48 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "F3"
+			(at 82.55 33.02 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 82.55 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 82.55 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 82.55 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fd3019e7-9e2d-4513-927d-beb36ae3c13d")
+		)
+		(pin "2"
+			(uuid "a1881feb-8e96-4dd1-b408-5ebf68fc355c")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 196.85 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6e8d1738-433a-4c97-90cd-5ec9d63eb64f")
+		(property "Reference" "SW29"
+			(at 196.85 55.88 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "="
+			(at 196.85 58.42 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 196.85 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 196.85 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 196.85 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "28bf95af-8868-4db2-a486-088aa75fea9c")
+		)
+		(pin "2"
+			(uuid "4ed6feef-162c-463f-a906-fff877d6b049")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW29")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 95.25 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6ee9fefd-156a-4d05-a14e-9cf0439a1cf8")
+		(property "Reference" "SW57"
+			(at 95.25 81.28 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "F"
+			(at 95.25 83.82 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 95.25 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 95.25 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 95.25 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e7f9964a-4a65-462c-8056-49e24c66efe5")
+		)
+		(pin "2"
+			(uuid "78dc5e44-a3d7-4912-94e3-9af45a37086a")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW57")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 107.95 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6ffe27ee-8db4-428d-9d4b-68bca49f5891")
+		(property "Reference" "SW40"
+			(at 107.95 68.58 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "T"
+			(at 107.95 71.12 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 107.95 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 107.95 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 107.95 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1b385e37-5d61-4faa-a39d-1bc4fabba436")
+		)
+		(pin "2"
+			(uuid "87ab72ff-4428-4e87-af8e-00593a8e519a")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW40")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 209.55 101.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "74d210e7-9d82-4aa6-bfa4-e54790090440")
+		(property "Reference" "SW81"
+			(at 209.55 93.98 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "Shift"
+			(at 209.55 96.52 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 209.55 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 209.55 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 209.55 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dbdecebe-3880-495b-911a-9ecd519b2d2e")
+		)
+		(pin "2"
+			(uuid "7dceecfe-536c-4916-9da9-b9b9649c3442")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW81")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 69.85 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7a99cbdb-a72e-4a6e-be58-d14a17cb400e")
+		(property "Reference" "SW37"
+			(at 69.85 68.58 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "W"
+			(at 69.85 71.12 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 69.85 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 69.85 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 69.85 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9a3598d5-2485-4103-93ff-c2c25f29abaa")
+		)
+		(pin "2"
+			(uuid "6617bbbe-0b25-4589-959a-7875284e397f")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW37")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 247.65 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7f752c59-93f3-48b7-b5ee-685e06509d20")
+		(property "Reference" "SW51"
+			(at 247.65 68.58 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "End"
+			(at 247.65 71.12 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 247.65 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 247.65 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 247.65 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "654e6e04-6455-4c5b-9dda-f46ae837a13a")
+		)
+		(pin "2"
+			(uuid "80e64a16-1c84-4302-8bf5-8f5bae3c363b")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW51")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 234.95 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8ace88df-c482-42ce-b00b-e4df3e8e9d42")
+		(property "Reference" "SW50"
+			(at 234.95 68.58 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "Delete"
+			(at 234.95 71.12 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 234.95 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 234.95 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 234.95 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4f11c242-e62d-433c-b3fb-23e338a1990e")
+		)
+		(pin "2"
+			(uuid "0f1036a1-e25d-4d6b-8101-e04743926039")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW50")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 234.95 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8b419b9f-3ec0-4c8a-997e-55548f3c0361")
+		(property "Reference" "SW32"
+			(at 234.95 55.88 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "Insert"
+			(at 234.95 58.42 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 234.95 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 234.95 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 234.95 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "74db386b-3a65-4d66-aef2-cb228b66adc7")
+		)
+		(pin "2"
+			(uuid "171d7b7b-79db-48b0-9766-a447767a0a83")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW32")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 69.85 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8e56714f-56dc-45d5-9f10-f423cd49e71f")
+		(property "Reference" "SW3"
+			(at 69.85 30.48 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "F2"
+			(at 69.85 33.02 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 69.85 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 69.85 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 69.85 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2470ce0e-03d8-4575-b7b9-cb125036366e")
+		)
+		(pin "2"
+			(uuid "3dfc9427-82f5-4fc6-8e5d-dd10bc61562b")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 82.55 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8ec259b4-3482-4a97-bb8a-0364332a242e")
+		(property "Reference" "SW56"
+			(at 82.55 81.28 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "D"
+			(at 82.55 83.82 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 82.55 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 82.55 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 82.55 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "53a6c418-f694-452d-be10-f9149414f4e4")
+		)
+		(pin "2"
+			(uuid "faee3dc7-d2ce-4eff-9ecf-5cf6eeddd7ce")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW56")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 146.05 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "90f3d0f3-318b-4f45-bfc0-2a87b2a2dc5a")
+		(property "Reference" "SW9"
+			(at 146.05 30.48 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "F8"
+			(at 146.05 33.02 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 146.05 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 146.05 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 146.05 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a53757bc-d1d0-4fb5-8437-a65a9962ed51")
+		)
+		(pin "2"
+			(uuid "36da7f0a-3bb8-4240-95f5-e40b5d162933")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 133.35 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "93ef5ee8-38fd-402e-9408-daf0353030ef")
+		(property "Reference" "SW8"
+			(at 133.35 30.48 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "F7"
+			(at 133.35 33.02 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 133.35 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 133.35 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 133.35 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0eab227b-ef60-4d51-81f7-f035c0999f53")
+		)
+		(pin "2"
+			(uuid "2b032e71-36af-4f96-874d-e5a2ecdf1c02")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 184.15 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "95e41a7e-ef5b-4a89-88eb-268964cf01ed")
+		(property "Reference" "SW96"
+			(at 184.15 106.68 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "RAlt"
+			(at 184.15 109.22 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 184.15 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 184.15 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 184.15 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2bc97b61-3175-4621-9ff6-c8b7b3dd4588")
+		)
+		(pin "2"
+			(uuid "32d89210-64c8-41e9-b9f4-e76ebe3e666b")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW96")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 196.85 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9e9aa434-79a5-4114-b973-51fcd94a290c")
+		(property "Reference" "SW65"
+			(at 196.85 81.28 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "\\ ISO"
+			(at 196.85 83.82 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 196.85 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 196.85 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 196.85 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5e45a187-7fa2-4fc4-9575-62cf66d645c7")
+		)
+		(pin "2"
+			(uuid "16f5a39f-3ec8-472b-a786-2c816d709626")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW65")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 120.65 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a2280a91-8684-4bb5-a9d0-0d0eb554879a")
+		(property "Reference" "SW7"
+			(at 120.65 30.48 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "F6"
+			(at 120.65 33.02 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 120.65 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 120.65 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 120.65 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fa5fd977-b0fa-4450-b8d6-600a9303d898")
+		)
+		(pin "2"
+			(uuid "963dbb89-6901-4ef2-a024-ab952b0261ab")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 146.05 101.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a7457f50-e150-420f-bdf1-e511b711f93a")
+		(property "Reference" "SW76"
+			(at 146.05 93.98 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "M"
+			(at 146.05 96.52 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 146.05 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 146.05 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 146.05 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c75d0550-6522-4c03-ba5b-270caf60779b")
+		)
+		(pin "2"
+			(uuid "21e15711-2c8c-43f7-9d5a-ddc7d370a80a")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW76")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 120.65 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a7f45869-a103-410f-8862-2dfdef725a93")
+		(property "Reference" "SW41"
+			(at 120.65 68.58 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "Y"
+			(at 120.65 71.12 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 120.65 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 120.65 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 120.65 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d48f9a1e-c7e3-42ae-a276-b4883cfab631")
+		)
+		(pin "2"
+			(uuid "ff2923c1-9795-4ac3-b3fb-3c8b02e7c3cc")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW41")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 44.45 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ad4efdd6-8e6f-4c2b-87cd-fd88713fadb1")
+		(property "Reference" "SW53"
+			(at 44.45 81.28 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "CapsLock"
+			(at 44.45 83.82 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 44.45 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 44.45 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 44.45 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c6e06e86-04ad-4007-b6e1-e54d1f3cbf62")
+		)
+		(pin "2"
+			(uuid "274a349a-c448-4be3-bfa4-27cc9388f607")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW53")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 95.25 101.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b18e37d9-9a69-4f36-9f42-cc79dfe3652c")
+		(property "Reference" "SW72"
+			(at 95.25 93.98 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "C"
+			(at 95.25 96.52 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 95.25 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 95.25 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 95.25 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ed747a40-2715-4e98-a435-0afcd453b467")
+		)
+		(pin "2"
+			(uuid "7dc80be9-d8cd-41c0-abd6-62e5110e4309")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW72")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 146.05 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b2c70718-3df0-4ea3-84e3-b3cce95f79a7")
+		(property "Reference" "SW61"
+			(at 146.05 81.28 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "K"
+			(at 146.05 83.82 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 146.05 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 146.05 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 146.05 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "26f32b9f-bf1a-4041-aa31-a43e45951921")
+		)
+		(pin "2"
+			(uuid "bcfb7257-d7b9-487a-aee1-da3610a660f7")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW61")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 209.55 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b2f9f39a-742e-48f6-a0db-1ca7cef74fa1")
+		(property "Reference" "SW30"
+			(at 209.55 57.15 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "Backspace"
+			(at 209.55 59.182 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 209.55 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 209.55 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 209.55 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4904570c-34fe-427e-a13d-07597a08bdd2")
+		)
+		(pin "2"
+			(uuid "3c522d7a-4b26-4dfe-a839-ec2965bdf9ef")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 196.85 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b4f1b8b6-44e1-4a91-9a07-5af56b71b04d")
+		(property "Reference" "SW12"
+			(at 196.85 30.48 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "F11"
+			(at 196.85 33.02 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 196.85 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 196.85 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 196.85 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1611039c-315d-440d-a911-80dfc86fe485")
+		)
+		(pin "2"
+			(uuid "0fc38240-e01d-4414-a0fb-92e1edf8a861")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 247.65 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b7ce138a-a3f0-4401-9b2a-047a0f98fc15")
+		(property "Reference" "SW100"
+			(at 247.65 106.68 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "Down"
+			(at 247.65 109.22 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 247.65 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 247.65 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 247.65 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "26cdc056-53a7-41b0-95ba-24b5ad0c09ce")
+		)
+		(pin "2"
+			(uuid "89738d2f-2fc0-4377-b5e1-4d6fe2dddf47")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW100")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 57.15 101.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b89024a3-50f5-4719-83e1-783da21b2708")
+		(property "Reference" "SW69"
+			(at 57.15 93.98 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "\\ ISO"
+			(at 57.15 96.52 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 57.15 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 57.15 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 57.15 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9d7ba03b-8a65-4c69-8fa1-a1aaeeda19ea")
+		)
+		(pin "2"
+			(uuid "a62bf6d6-e6d9-4d1d-8bb4-fd36a41d901a")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW69")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 107.95 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b9b32b93-0283-4891-aec7-fdba426ff37a")
+		(property "Reference" "SW58"
+			(at 107.95 81.28 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "G"
+			(at 107.95 83.82 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 107.95 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 107.95 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 107.95 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "53015478-ddbd-4d94-9245-b3cea099ebdd")
+		)
+		(pin "2"
+			(uuid "352f347d-832d-4b3b-be3a-b58efb55c86f")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW58")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 44.45 101.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bc249b28-0aa7-4dbe-811d-59d193736f5a")
+		(property "Reference" "SW68"
+			(at 44.45 93.98 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "Shift"
+			(at 44.45 96.52 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 44.45 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 44.45 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 44.45 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "03cefb91-bc3c-4a8f-accb-91953a9a8b5c")
+		)
+		(pin "2"
+			(uuid "27d3dbe7-3309-44ee-862d-fb584e078494")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW68")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 184.15 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bd4b732b-fc88-428d-8ea0-cf4918c7a2a1")
+		(property "Reference" "SW64"
+			(at 184.15 81.28 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "'"
+			(at 184.15 83.82 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 184.15 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 184.15 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 184.15 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4c5db5e7-53e4-48f9-94ee-17896cd80923")
+		)
+		(pin "2"
+			(uuid "1473258b-fba8-4a54-9286-08ebcbc61f6b")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW64")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 120.65 101.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bdc87607-1b03-4fd9-9696-b3e18ef80448")
+		(property "Reference" "SW74"
+			(at 120.65 93.98 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "B"
+			(at 120.65 96.52 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 120.65 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 120.65 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 120.65 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "504d265b-4cd7-4d45-9cdd-56828ed44612")
+		)
+		(pin "2"
+			(uuid "910b2799-5bfb-4fed-b906-f6b069d6265e")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW74")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 82.55 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bea78fff-4667-4797-a6e1-26d026d7904c")
+		(property "Reference" "SW38"
+			(at 82.55 68.58 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "E"
+			(at 82.55 71.12 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 82.55 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 82.55 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 82.55 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2190a7e3-7232-4edb-aab7-e51876a07f31")
+		)
+		(pin "2"
+			(uuid "ba5e3d68-cea3-49e9-a697-940476ee7238")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW38")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 146.05 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bf929b81-966c-47ee-9eb8-17a8e5996975")
+		(property "Reference" "SW25"
+			(at 146.05 55.88 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "8"
+			(at 146.05 58.42 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 146.05 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 146.05 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 146.05 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "78368196-04ec-4107-800a-50cbad441e85")
+		)
+		(pin "2"
+			(uuid "31180aad-0b2e-44d7-9602-178a9277511c")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 171.45 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c4759dd5-4c78-4029-8174-9b9a802a684e")
+		(property "Reference" "SW27"
+			(at 171.45 55.88 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "0"
+			(at 171.45 58.42 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 171.45 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 171.45 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 171.45 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b969f1a4-9950-43a9-b978-40a24a041779")
+		)
+		(pin "2"
+			(uuid "71d92400-ca3d-48d2-85ab-4fa4fd17a81e")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 57.15 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c4e83db4-bbae-4220-850c-d64e93af2eec")
+		(property "Reference" "SW18"
+			(at 57.15 55.88 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "1"
+			(at 57.15 58.42 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 57.15 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 57.15 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 57.15 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d2a1a980-6f5b-48f3-b46a-c644009acdc9")
+		)
+		(pin "2"
+			(uuid "9cff16e6-d0f7-4051-a7d7-edcfd5461167")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 196.85 101.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c7be61a5-6028-4877-be3f-4dc5ccd3d9bb")
+		(property "Reference" "SW80"
+			(at 196.85 93.98 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "Shift (???)"
+			(at 196.85 96.52 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 196.85 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 196.85 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 196.85 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5b411c23-1cfe-47b5-8371-f35b6616d085")
+		)
+		(pin "2"
+			(uuid "52b3fc9a-bf2d-4f83-a1f2-356b1769ba76")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW80")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 158.75 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c8ab76a0-2e1a-41dc-bc02-62ac7605093a")
+		(property "Reference" "SW26"
+			(at 158.75 55.88 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "9"
+			(at 158.75 58.42 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 158.75 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 158.75 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 158.75 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dc0e98db-fb0c-45e8-9cda-acc5fc9ebd9a")
+		)
+		(pin "2"
+			(uuid "ef6cfd1e-3d03-4a19-88f3-c3997cfae6d0")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 57.15 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ca19128e-6386-4484-b029-001fd24cbf5c")
+		(property "Reference" "SW2"
+			(at 57.15 30.48 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "F1"
+			(at 57.15 33.02 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 57.15 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 57.15 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 57.15 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6a6143c8-ce74-406f-a28b-1eade4abbd3a")
+		)
+		(pin "2"
+			(uuid "004e54fc-4af9-4c99-b8e8-d86abd752deb")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 107.95 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cbc6f3e9-3ffb-47fa-8357-553575485b43")
+		(property "Reference" "SW6"
+			(at 107.95 30.48 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "F5"
+			(at 107.95 33.02 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 107.95 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 107.95 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 107.95 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0b1c2f86-da7a-4b9f-b333-787d47a4aa19")
+		)
+		(pin "2"
+			(uuid "2582b78e-af6b-41ae-b338-0b7f79b4df45")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 95.25 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ccc8763b-4c2d-4aaa-95c6-7c0ad8dbf42d")
+		(property "Reference" "SW21"
+			(at 95.25 55.88 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "4"
+			(at 95.25 58.42 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 95.25 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 95.25 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 95.25 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "806e2480-7d76-4d94-967a-8035ae0dff87")
+		)
+		(pin "2"
+			(uuid "4c4ed4cb-b091-419f-a868-248c031d2de4")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 184.15 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cdc02a37-70f6-4978-b2b7-401e433e4b91")
+		(property "Reference" "SW11"
+			(at 184.15 30.48 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "F10"
+			(at 184.15 33.02 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 184.15 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 184.15 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 184.15 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "770f5577-9c0e-44e4-b762-1f91a1244891")
+		)
+		(pin "2"
+			(uuid "2c8b5bdd-04d4-4ef0-9881-b3019ee29c90")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 57.15 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cf4ffdc1-e6aa-4355-8d9a-f5eff69399b4")
+		(property "Reference" "SW36"
+			(at 57.15 68.58 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "Q"
+			(at 57.15 71.12 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 57.15 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 57.15 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 57.15 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a234379c-95fd-4a45-8192-0f0057c1999d")
+		)
+		(pin "2"
+			(uuid "9406e1ee-6174-495a-bd52-2d75d86e1861")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW36")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 209.55 54.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cfdfbebf-ca8e-4f51-957d-c94d48a298aa")
+		(property "Reference" "SW31"
+			(at 209.55 50.292 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "Backspace"
+			(at 209.55 49.53 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 209.55 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 209.55 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 209.55 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5b2b897e-0dd2-43f6-9773-f5cd31da8464")
+		)
+		(pin "2"
+			(uuid "54197215-eeac-46b6-ba99-8aa2485d4d2f")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 184.15 101.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d295a987-e182-41e5-8b64-e520b0d27c70")
+		(property "Reference" "SW79"
+			(at 184.15 93.98 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "/"
+			(at 184.15 96.52 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 184.15 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 184.15 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 184.15 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "824cd833-5b6d-439a-9eed-9ffb45c3a377")
+		)
+		(pin "2"
+			(uuid "41775eda-2d42-4765-87ae-21a214efb08f")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW79")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 158.75 101.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d5c47daa-ad10-41f0-acad-983db91fdf02")
+		(property "Reference" "SW77"
+			(at 158.75 93.98 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" ","
+			(at 158.75 96.52 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 158.75 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 158.75 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 158.75 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "566279fa-62cd-4cee-92f3-22cf01f5615f")
+		)
+		(pin "2"
+			(uuid "26d4b773-a9f7-47e2-9518-fcd26f586e44")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW77")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 209.55 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d69d5cce-ae70-4963-a864-5d002cead1b6")
+		(property "Reference" "SW48"
+			(at 209.55 68.58 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "\\"
+			(at 209.55 71.12 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 209.55 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 209.55 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 209.55 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7801e5b0-ebec-49fd-aa69-90208d0e34d6")
+		)
+		(pin "2"
+			(uuid "3e6ece61-fcfe-4328-8485-174a1ad319ed")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW48")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 95.25 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d7e56215-95c4-4980-8a85-aac8703d3492")
+		(property "Reference" "SW39"
+			(at 95.25 68.58 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "R"
+			(at 95.25 71.12 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 95.25 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 95.25 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 95.25 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a4f2a982-de0c-4d60-95b6-9b7e802fa4ad")
+		)
+		(pin "2"
+			(uuid "8497ed70-4916-4d2e-bc94-1348a3c9718c")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW39")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 260.35 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "db39b7fd-c27c-413e-95fe-c564122f70fc")
+		(property "Reference" "SW101"
+			(at 260.35 106.68 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "Right"
+			(at 260.35 109.22 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 260.35 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 260.35 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 260.35 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b6e019c3-c43f-4951-af4b-d86d5805f4fe")
+		)
+		(pin "2"
+			(uuid "0130409d-21b7-41e7-8d8b-efb1f4cb1afb")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW101")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 171.45 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dcd2413f-1d7c-4235-ad2e-0dae6111c9bd")
+		(property "Reference" "SW10"
+			(at 171.45 30.48 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "F9"
+			(at 171.45 33.02 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 171.45 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 171.45 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 171.45 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "35ca7f6e-a16d-4e0d-8763-16ad874c36e0")
+		)
+		(pin "2"
+			(uuid "52fad826-f636-4380-b1e5-e4f16a2234c5")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 196.85 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "de612bc4-ccef-4deb-ae4a-a75995398d5c")
+		(property "Reference" "SW47"
+			(at 196.85 68.58 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "]"
+			(at 196.85 71.12 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 196.85 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 196.85 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 196.85 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "101e33b0-4077-40fb-814a-87eaf7ae5f62")
+		)
+		(pin "2"
+			(uuid "b693f035-efeb-4008-832f-690b86e4d8bb")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW47")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 184.15 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e0b8c424-3c8f-44e9-8287-ae88ef02d1e4")
+		(property "Reference" "SW28"
+			(at 184.15 55.88 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "-"
+			(at 184.15 58.42 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 184.15 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 184.15 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 184.15 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "aca9e435-5ed8-468e-9bc3-fc3d33cda7ea")
+		)
+		(pin "2"
+			(uuid "f7f7aa67-d5fa-4f3d-8b1e-87cb66ae2f54")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW28")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 158.75 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e229487e-b2d8-46ec-96c3-d6c5f26cab09")
+		(property "Reference" "SW62"
+			(at 158.75 81.28 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "L"
+			(at 158.75 83.82 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 158.75 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 158.75 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 158.75 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4e65020a-8f1c-43c9-b054-1a5cf50676f6")
+		)
+		(pin "2"
+			(uuid "cd85b435-568e-41e1-acfd-e54c4ca7b73c")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW62")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 44.45 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e8d0f49f-ebb4-46b8-adb7-ed54f1924bdf")
+		(property "Reference" "SW1"
+			(at 44.45 30.48 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "Esc"
+			(at 44.45 33.02 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 44.45 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 44.45 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 44.45 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a62eb7f0-df6c-4ad0-bc53-102d8c2cedc1")
+		)
+		(pin "2"
+			(uuid "02b9b5f3-1d4c-47e1-8dcf-987e0b78b650")
+		)
+		(instances
+			(project ""
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 95.25 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ef91816d-331c-42e1-ac7d-88780e40c0e9")
+		(property "Reference" "SW5"
+			(at 95.25 30.48 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "F4"
+			(at 95.25 33.02 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 95.25 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 95.25 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 95.25 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2d813ae2-60fd-4ee1-ab5f-d1e0487f05ac")
+		)
+		(pin "2"
+			(uuid "e855396d-73c5-488e-9856-c6d143403f6d")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 133.35 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f8f39c41-dc52-444a-bc2e-dc1feb5c9384")
+		(property "Reference" "SW60"
+			(at 133.35 81.28 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "J"
+			(at 133.35 83.82 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 133.35 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 133.35 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 133.35 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b0340cdf-a7a1-4798-a27d-f741f5c2a22f")
+		)
+		(pin "2"
+			(uuid "7cb1531d-af85-48d3-9e00-06cd384aaffe")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW60")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 69.85 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fe68e079-c19a-4536-bff5-d0847eb10312")
+		(property "Reference" "SW19"
+			(at 69.85 55.88 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "2"
+			(at 69.85 58.42 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 69.85 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 69.85 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 69.85 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "736485cb-46d2-4455-85bb-6823baa214a1")
+		)
+		(pin "2"
+			(uuid "c47ac292-46b9-4936-8f94-eb6b40c40e18")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 260.35 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "feb07fa1-825a-411b-897c-c57f53251f63")
+		(property "Reference" "SW52"
+			(at 260.35 68.58 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+				)
+			)
+		)
+		(property "Value" "PgDw"
+			(at 260.35 71.12 0)
+			(effects
+				(font
+					(size 1.143 1.143)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 260.35 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 260.35 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 260.35 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3d504852-c46c-4ada-aa34-2f6a77de7970")
+		)
+		(pin "2"
+			(uuid "4adc83aa-654d-4894-b294-a2dadcbcd02c")
+		)
+		(instances
+			(project "ibm-modern-m-ssk"
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
+					(reference "SW52")
+					(unit 1)
+				)
+			)
+		)
+	)
+)
