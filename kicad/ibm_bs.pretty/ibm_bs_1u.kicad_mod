@@ -3,10 +3,12 @@
 	(generator "pcbnew")
 	(generator_version "9.0")
 	(layer "F.Cu")
+	(tags "ibm buckling springs")
 	(property "Reference" "REF**"
 		(at 0 -4.5 0)
 		(unlocked yes)
-		(layer "F.SilkS")
+		(layer "Dwgs.User")
+		(hide yes)
 		(uuid "4f0569cf-b1ed-4ebb-80c1-c6ac829c57d6")
 		(effects
 			(font
@@ -15,8 +17,8 @@
 			)
 		)
 	)
-	(property "Value" "ibm_bs_1u"
-		(at 0 9 0)
+	(property "Value" "SW_BS"
+		(at 0 -6.35 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "f3ac4bab-c6ad-451f-8940-450b09e3454e")
@@ -66,7 +68,7 @@
 		(uuid "7c9b24d8-ea42-4c08-a123-5172d5d47faa")
 	)
 	(fp_text user "${REFERENCE}"
-		(at 0 7 0)
+		(at 0 6.35 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "67b7509c-ba28-4772-9aab-04ae0b8b702d")
