@@ -247,7 +247,9 @@
   },
   "libraries": {
     "pinned_footprint_libs": [],
-    "pinned_symbol_libs": []
+    "pinned_symbol_libs": [
+      "easyeda2kicad"
+    ]
   },
   "meta": {
     "filename": "ibm-modern-m-ssk.kicad_pro",
