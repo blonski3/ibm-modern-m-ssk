@@ -5073,7 +5073,7 @@
 		)
 	)
 	(rectangle
-		(start 177.8 102.87)
+		(start 176.53 102.87)
 		(end 213.36 137.16)
 		(stroke
 			(width 0.1905)
@@ -5088,7 +5088,7 @@
 		(start 13.97 13.97)
 		(end 97.79 137.16)
 		(stroke
-			(width 0)
+			(width 0.1905)
 			(type default)
 		)
 		(fill
@@ -5269,7 +5269,7 @@
 	)
 	(text "ZIF Connector"
 		(exclude_from_sim no)
-		(at 109.728 135.89 0)
+		(at 99.568 136.144 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5347,7 +5347,7 @@
 	)
 	(text "Matrix"
 		(exclude_from_sim no)
-		(at 178.308 136.144 0)
+		(at 176.53 136.144 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -7769,7 +7769,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 77.47 49.53 0)
 			(effects
 				(font
@@ -7778,7 +7778,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/39506-CL10C120JB8NNNC/C38523"
 			(at 77.47 49.53 0)
 			(effects
 				(font
@@ -7788,6 +7788,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 77.47 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C38523"
 			(at 77.47 49.53 0)
 			(effects
 				(font
@@ -8113,7 +8122,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C2102.html"
 			(at 115.57 38.1 90)
 			(effects
 				(font
@@ -8183,7 +8192,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 149.86 41.91 0)
 			(effects
 				(font
@@ -8192,7 +8201,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/1986-CL10C100JB8NNNC/C1634"
 			(at 149.86 41.91 0)
 			(effects
 				(font
@@ -8202,6 +8211,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 149.86 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C1634"
 			(at 149.86 41.91 0)
 			(effects
 				(font
@@ -8320,7 +8338,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 177.8 36.83 0)
 			(effects
 				(font
@@ -8329,7 +8347,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/20375-CL10A475KO8NNNC/C19666"
 			(at 177.8 36.83 0)
 			(effects
 				(font
@@ -8339,6 +8357,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 177.8 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C19666"
 			(at 177.8 36.83 0)
 			(effects
 				(font
@@ -8397,7 +8424,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C720477.html"
 			(at 269.24 80.01 0)
 			(effects
 				(font
@@ -8444,7 +8471,7 @@
 		(at 264.16 67.31 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -8548,7 +8575,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://lcsc.com/product-detail/Others_TE-Connectivity_726386-2_TE-Connectivity-726386-2_C305817.html"
+		(property "Datasheet" "https://www.lcsc.com/product-detail/Others_TE-Connectivity_726386-2_TE-Connectivity-726386-2_C305817.html"
 			(at 223.52 68.58 0)
 			(effects
 				(font
@@ -8622,7 +8649,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C623847.html"
 			(at 196.85 31.75 0)
 			(effects
 				(font
@@ -8720,7 +8747,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C2892488.html"
 			(at 162.56 71.12 0)
 			(effects
 				(font
@@ -8811,7 +8838,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 109.22 73.66 0)
 			(effects
 				(font
@@ -8820,7 +8847,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C105872.html"
 			(at 109.22 73.66 0)
 			(effects
 				(font
@@ -8831,6 +8858,15 @@
 		)
 		(property "Description" "Resistor, small symbol"
 			(at 109.22 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C105872"
+			(at 109.22 73.66 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8948,7 +8984,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 109.22 41.91 0)
 			(effects
 				(font
@@ -8957,7 +8993,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C60491.html"
 			(at 109.22 41.91 0)
 			(effects
 				(font
@@ -8967,6 +9003,15 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 109.22 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C60491"
 			(at 109.22 41.91 0)
 			(effects
 				(font
@@ -9024,7 +9069,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C3020653.html"
 			(at 137.16 113.03 0)
 			(effects
 				(font
@@ -9500,7 +9545,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 77.47 39.37 0)
 			(effects
 				(font
@@ -9509,7 +9554,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/39506-CL10C120JB8NNNC/C38523"
 			(at 77.47 39.37 0)
 			(effects
 				(font
@@ -9519,6 +9564,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 77.47 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C38523"
 			(at 77.47 39.37 0)
 			(effects
 				(font
@@ -9567,7 +9621,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 109.22 88.9 0)
 			(effects
 				(font
@@ -9576,7 +9630,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C105872.html"
 			(at 109.22 88.9 0)
 			(effects
 				(font
@@ -9587,6 +9641,15 @@
 		)
 		(property "Description" "Resistor, small symbol"
 			(at 109.22 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C105872"
+			(at 109.22 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9643,7 +9706,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://lcsc.com/product-detail/_JST-Sales-America_S2B-PH-SM4-TB-LF-SN_JST-Sales-America-S2B-PH-SM4-TB-LF-SN_C295747.html"
+		(property "Datasheet" "https://www.lcsc.com/product-detail/_JST-Sales-America_S2B-PH-SM4-TB-LF-SN_JST-Sales-America-S2B-PH-SM4-TB-LF-SN_C295747.html"
 			(at 172.72 81.28 0)
 			(effects
 				(font
@@ -9785,7 +9848,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "LED_SMD:LED_0201_0603Metric"
 			(at 226.06 30.48 90)
 			(effects
 				(font
@@ -9794,7 +9857,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0603R/C2286"
 			(at 226.06 30.48 90)
 			(effects
 				(font
@@ -9823,6 +9886,15 @@
 		)
 		(property "Sim.Pin" "1=K 2=A"
 			(at 226.06 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C2286"
+			(at 226.06 30.48 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10004,7 +10076,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 30.48 78.74 0)
 			(effects
 				(font
@@ -10013,7 +10085,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C137890.html"
 			(at 30.48 78.74 0)
 			(effects
 				(font
@@ -10024,6 +10096,15 @@
 		)
 		(property "Description" "Resistor, small symbol"
 			(at 30.48 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C137890"
+			(at 30.48 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10149,7 +10230,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C3647032.html"
 			(at 190.5 68.58 0)
 			(effects
 				(font
@@ -10288,7 +10369,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 121.92 41.91 0)
 			(effects
 				(font
@@ -10297,7 +10378,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/20375-CL10A475KO8NNNC/C19666"
 			(at 121.92 41.91 0)
 			(effects
 				(font
@@ -10307,6 +10388,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 121.92 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C19666"
 			(at 121.92 41.91 0)
 			(effects
 				(font
@@ -10358,7 +10448,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 248.92 38.1 0)
 			(effects
 				(font
@@ -10367,7 +10457,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C138014.html"
 			(at 248.92 38.1 0)
 			(effects
 				(font
@@ -10377,6 +10467,15 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 248.92 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C138014"
 			(at 248.92 38.1 0)
 			(effects
 				(font
@@ -10428,7 +10527,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 210.82 30.48 0)
 			(effects
 				(font
@@ -10437,7 +10536,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C60488.html"
 			(at 210.82 30.48 0)
 			(effects
 				(font
@@ -10447,6 +10546,15 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 210.82 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C60488"
 			(at 210.82 30.48 0)
 			(effects
 				(font
@@ -10517,6 +10625,15 @@
 			)
 		)
 		(property "Description" "Multiprotocol BLE/ANT/2.4 GHz/802.15.4 Cortex-M4F SoC, nRF52840 module"
+			(at 53.34 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C5118826"
 			(at 53.34 78.74 0)
 			(effects
 				(font
@@ -10809,7 +10926,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 30.48 81.28 0)
 			(effects
 				(font
@@ -10818,7 +10935,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C137890.html"
 			(at 30.48 81.28 0)
 			(effects
 				(font
@@ -10829,6 +10946,15 @@
 		)
 		(property "Description" "Resistor, small symbol"
 			(at 30.48 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C137890"
+			(at 30.48 81.28 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10856,7 +10982,7 @@
 		(at 241.3 74.93 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -11096,7 +11222,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 248.92 30.48 0)
 			(effects
 				(font
@@ -11105,7 +11231,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C375495.html"
 			(at 248.92 30.48 0)
 			(effects
 				(font
@@ -11115,6 +11241,15 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 248.92 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C375495"
 			(at 248.92 30.48 0)
 			(effects
 				(font
@@ -11233,7 +11368,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "LED_SMD:LED_0201_0603Metric"
 			(at 271.78 30.48 90)
 			(effects
 				(font
@@ -11242,7 +11377,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0603B/C2288"
 			(at 271.78 30.48 90)
 			(effects
 				(font
@@ -11271,6 +11406,15 @@
 		)
 		(property "Sim.Pin" "1=K 2=A"
 			(at 271.78 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C2288"
+			(at 271.78 30.48 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11321,7 +11465,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "easyeda2kicad:FC-135R_L3.2-W1.5"
 			(at 80.01 44.45 0)
 			(effects
 				(font
@@ -11330,7 +11474,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C32346.html"
 			(at 80.01 44.45 0)
 			(effects
 				(font
@@ -11341,6 +11485,15 @@
 		)
 		(property "Description" "Two pin crystal, small symbol"
 			(at 80.01 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C32346"
+			(at 80.01 44.45 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11592,7 +11745,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 226.06 38.1 0)
 			(effects
 				(font
@@ -11601,7 +11754,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C105637.html"
 			(at 226.06 38.1 0)
 			(effects
 				(font
@@ -11611,6 +11764,15 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 226.06 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C105637"
 			(at 226.06 38.1 0)
 			(effects
 				(font
@@ -11669,7 +11831,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C5220177.html"
 			(at 137.16 40.64 0)
 			(effects
 				(font
@@ -11957,7 +12119,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C3647032.html"
 			(at 128.27 29.21 0)
 			(effects
 				(font
@@ -12155,7 +12317,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "1k"
+		(property "Value" "470"
 			(at 274.32 39.3699 0)
 			(effects
 				(font
@@ -12164,7 +12326,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 271.78 38.1 0)
 			(effects
 				(font
@@ -12173,7 +12335,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C114877.html"
 			(at 271.78 38.1 0)
 			(effects
 				(font
@@ -12183,6 +12345,15 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 271.78 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C114877"
 			(at 271.78 38.1 0)
 			(effects
 				(font
@@ -12241,7 +12412,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://lcsc.com/product-detail/Diodes-ESD_ON_ESD5B5-0ST1G_ESD5B5-0ST1G_C93623.html"
+		(property "Datasheet" "https://www.lcsc.com/product-detail/Diodes-ESD_ON_ESD5B5-0ST1G_ESD5B5-0ST1G_C93623.html"
 			(at 162.56 99.06 0)
 			(effects
 				(font
