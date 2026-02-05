@@ -1,0 +1,190 @@
+(footprint "LiPo_603450"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -0.5 0)
+		(unlocked yes)
+		(layer "Dwgs.User")
+		(hide yes)
+		(uuid "18aa30c2-3bb6-4017-bde8-87ad6b306cfc")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "LiPo_603450"
+		(at 0 13.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "bae28d5b-9105-41ce-ab88-e4e83cadf87e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d4129b77-c984-4b09-81ed-8387cd4435b0")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "cc54a648-977c-4bf4-a0a5-9a7abfa000bf")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -27 17.5)
+		(end -27 -17.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "a890602f-1b47-458d-b65c-0f29df6afc35")
+	)
+	(fp_line
+		(start -26.25 -18.25)
+		(end 26.25 -18.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "8186a27b-b76c-449b-bb2b-598ca5983a1f")
+	)
+	(fp_line
+		(start 26.25 18.25)
+		(end -26.25 18.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "43ff4886-5c6d-463d-abf3-21f745309131")
+	)
+	(fp_line
+		(start 27 -17.5)
+		(end 27 17.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "15744522-dc1c-486d-adff-c9e570b44d08")
+	)
+	(fp_arc
+		(start -27 -17.5)
+		(mid -26.78033 -18.03033)
+		(end -26.25 -18.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "cb05d5ab-965f-42de-be22-d45a99a9c197")
+	)
+	(fp_arc
+		(start -26.25 18.25)
+		(mid -26.78033 18.03033)
+		(end -27 17.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "d48718c9-14e8-424c-bc76-8cff6eae75f8")
+	)
+	(fp_arc
+		(start 26.25 -18.25)
+		(mid 26.78033 -18.03033)
+		(end 27 -17.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "337b8082-3c42-494e-853d-dd22fdeb4d49")
+	)
+	(fp_arc
+		(start 27 17.5)
+		(mid 26.78033 18.03033)
+		(end 26.25 18.25)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "d7ff07ab-1fe8-42c6-b4a8-566c04b8ffb5")
+	)
+	(fp_rect
+		(start -26.25 -17.5)
+		(end 26.25 17.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "769ab218-fd03-4f87-b5a5-53a2c45d601f")
+	)
+	(fp_text user "Li-Po 603450 3.7V "
+		(at -7.25 0.5 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "f4ffdbbb-0615-4ae2-b9f6-68bdc462e86e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 16 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "436c4b64-5c65-4f82-9d83-bae7ecf589d3")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/LiPo_603450_1200mAh.step"
+		(offset
+			(xyz -1.75 0 5)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 -180 90)
+		)
+	)
+)

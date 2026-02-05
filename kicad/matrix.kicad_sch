@@ -325,682 +325,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "easyeda2kicad:TF38-24S-0.5SV(830)"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U"
-				(at 0 39.37 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "TF38-24S-0.5SV(830)"
-				(at 0 -39.37 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "easyeda2kicad:FPC-SMD_24P-P0.50_TF38-24S-0.5SV-830"
-				(at 0 -41.91 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "LCSC Part" "C3020653"
-				(at 0 -44.45 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "TF38-24S-0.5SV(830)_0_1"
-				(rectangle
-					(start -2.54 31.75)
-					(end 3.81 -31.75)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(circle
-					(center -1.27 30.48)
-					(radius 0.38)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 29.21 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 26.67 0)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 24.13 0)
-					(length 2.54)
-					(name "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 21.59 0)
-					(length 2.54)
-					(name "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 19.05 0)
-					(length 2.54)
-					(name "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 16.51 0)
-					(length 2.54)
-					(name "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 13.97 0)
-					(length 2.54)
-					(name "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 11.43 0)
-					(length 2.54)
-					(name "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 8.89 0)
-					(length 2.54)
-					(name "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 6.35 0)
-					(length 2.54)
-					(name "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 3.81 0)
-					(length 2.54)
-					(name "11"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "11"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 1.27 0)
-					(length 2.54)
-					(name "12"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "12"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 -1.27 0)
-					(length 2.54)
-					(name "13"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "13"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 -3.81 0)
-					(length 2.54)
-					(name "14"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "14"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 -6.35 0)
-					(length 2.54)
-					(name "15"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "15"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 -8.89 0)
-					(length 2.54)
-					(name "16"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "16"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 -11.43 0)
-					(length 2.54)
-					(name "17"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "17"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 -13.97 0)
-					(length 2.54)
-					(name "18"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "18"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 -16.51 0)
-					(length 2.54)
-					(name "19"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "19"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 -19.05 0)
-					(length 2.54)
-					(name "20"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "20"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 -21.59 0)
-					(length 2.54)
-					(name "21"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "21"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 -24.13 0)
-					(length 2.54)
-					(name "22"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "22"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 -26.67 0)
-					(length 2.54)
-					(name "23"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "23"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 -29.21 0)
-					(length 2.54)
-					(name "24"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "24"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 2.54 34.29 270)
-					(length 2.54)
-					(name "26"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "26"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 2.54 -34.29 90)
-					(length 2.54)
-					(name "25"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "25"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "power:GND"
-			(power)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#PWR"
-				(at 0 -6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Value" "GND"
-				(at 0 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "GND_0_1"
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "GND_1_1"
-				(pin power_in line
-					(at 0 0 270)
-					(length 0)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-	)
-	(rectangle
-		(start 16.51 15.24)
-		(end 92.71 49.53)
-		(stroke
-			(width 0.1905)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 3f484b99-1f53-4c64-8498-094c60328272)
-	)
-	(text "ZIF Connector"
-		(exclude_from_sim no)
-		(at 17.018 48.514 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-				(thickness 0.3048)
-				(bold yes)
-			)
-			(justify left)
-		)
-		(uuid "db37f46d-8264-4531-b027-8f81f651b0a4")
 	)
 	(junction
 		(at 63.5 102.87)
@@ -3670,50 +2994,6 @@
 			)
 		)
 	)
-	(global_label "COL6"
-		(shape input)
-		(at 45.72 38.1 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.889 0.889)
-			)
-			(justify right)
-		)
-		(uuid "1f88f057-82b1-4484-be22-a3af78cf8f41")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 45.72 43.5762 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "COL7"
-		(shape input)
-		(at 49.53 38.1 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.889 0.889)
-			)
-			(justify right)
-		)
-		(uuid "1fc4b119-0851-42ed-9656-06739bbd6902")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 49.53 43.5762 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "COL3"
 		(shape input)
 		(at 26.67 133.35 180)
@@ -3727,28 +3007,6 @@
 		(uuid "2101510a-1ac2-4183-998e-51f2748c645c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 18.8467 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "COL8"
-		(shape input)
-		(at 53.34 38.1 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.889 0.889)
-			)
-			(justify right)
-		)
-		(uuid "265424fc-eabc-489d-8e80-9bb36d63a8ff")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 53.34 43.5762 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3776,28 +3034,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "COL9"
-		(shape input)
-		(at 57.15 38.1 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.889 0.889)
-			)
-			(justify right)
-		)
-		(uuid "2d594f87-cbba-4ce0-b771-6dae1f302316")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 57.15 43.5762 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
@@ -3868,28 +3104,6 @@
 			)
 		)
 	)
-	(global_label "COL3"
-		(shape input)
-		(at 34.29 38.1 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.889 0.889)
-			)
-			(justify right)
-		)
-		(uuid "48c522a0-cb76-4c49-acc7-ee002f6eb102")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 34.29 43.5762 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "COL8"
 		(shape input)
 		(at 152.4 64.77 90)
@@ -3930,28 +3144,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "COL3"
-		(shape input)
-		(at 55.88 31.75 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.889 0.889)
-			)
-			(justify right)
-		)
-		(uuid "59a6cf3f-8883-40fc-a536-ef6ee1b08287")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 55.88 37.2262 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
@@ -4000,28 +3192,6 @@
 			)
 		)
 	)
-	(global_label "COL5"
-		(shape input)
-		(at 41.91 38.1 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.889 0.889)
-			)
-			(justify right)
-		)
-		(uuid "6489c13c-8cc0-46d8-ad3e-e25c685ab8d9")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 41.91 43.5762 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "COL10"
 		(shape input)
 		(at 177.8 64.77 90)
@@ -4040,50 +3210,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "COL4"
-		(shape input)
-		(at 59.69 31.75 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.889 0.889)
-			)
-			(justify right)
-		)
-		(uuid "7723576b-7308-4d6c-a70d-07d9d3069b33")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 59.69 37.2262 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "COL4"
-		(shape input)
-		(at 38.1 38.1 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.889 0.889)
-			)
-			(justify right)
-		)
-		(uuid "7afd3211-336b-4203-aff4-afed7bfa04ce")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 38.1 43.5762 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
@@ -4128,94 +3254,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "COL0"
-		(shape input)
-		(at 44.45 31.75 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.889 0.889)
-			)
-			(justify right)
-		)
-		(uuid "8d0519ad-7ad4-440e-a905-ca5bfae8593d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 44.45 37.2262 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "COL2"
-		(shape input)
-		(at 30.48 38.1 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.889 0.889)
-			)
-			(justify right)
-		)
-		(uuid "958df83d-8614-4ddd-8c79-28a4c5048505")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 30.48 43.5762 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "COL12"
-		(shape input)
-		(at 68.58 38.1 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.889 0.889)
-			)
-			(justify right)
-		)
-		(uuid "a72a1a28-7d9e-45e2-86bb-86ad2ab0a249")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 68.58 44.4229 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "COL2"
-		(shape input)
-		(at 52.07 31.75 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.889 0.889)
-			)
-			(justify right)
-		)
-		(uuid "aaad157f-fb1e-467a-a742-6b7b998f2c93")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 52.07 37.2262 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
@@ -4286,50 +3324,6 @@
 			)
 		)
 	)
-	(global_label "COL16"
-		(shape input)
-		(at 83.82 38.1 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.889 0.889)
-			)
-			(justify right)
-		)
-		(uuid "c077fa15-bb0c-4a66-b9f3-effc7256bfb8")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 83.82 44.4229 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "COL11"
-		(shape input)
-		(at 64.77 38.1 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.889 0.889)
-			)
-			(justify right)
-		)
-		(uuid "c52b3ac7-854b-45f8-96ec-07ab67131591")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 64.77 44.4229 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "COL14"
 		(shape input)
 		(at 241.3 64.77 90)
@@ -4348,116 +3342,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "COL0"
-		(shape input)
-		(at 22.86 38.1 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.889 0.889)
-			)
-			(justify right)
-		)
-		(uuid "d06a34b7-3a39-4917-9800-c064d0e4a254")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 22.86 43.5762 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "COL14"
-		(shape input)
-		(at 76.2 38.1 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.889 0.889)
-			)
-			(justify right)
-		)
-		(uuid "df610aa4-069a-4528-b428-9cf25762d03a")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 76.2 44.4229 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "COL15"
-		(shape input)
-		(at 80.01 38.1 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.889 0.889)
-			)
-			(justify right)
-		)
-		(uuid "e4965cae-915e-4531-b78c-4c7981379fdb")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 80.01 44.4229 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "COL10"
-		(shape input)
-		(at 60.96 38.1 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.889 0.889)
-			)
-			(justify right)
-		)
-		(uuid "e5378262-bfdc-4391-b8d0-4cd1d7810fe6")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 60.96 44.4229 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "COL5"
-		(shape input)
-		(at 63.5 31.75 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.889 0.889)
-			)
-			(justify right)
-		)
-		(uuid "e5a7234e-99f5-475a-b101-92ce1f7fd9ec")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 63.5 37.2262 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
@@ -4484,50 +3368,6 @@
 			)
 		)
 	)
-	(global_label "COL1"
-		(shape input)
-		(at 48.26 31.75 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.889 0.889)
-			)
-			(justify right)
-		)
-		(uuid "e953d4f0-057a-462b-8e61-f3462bec03e7")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 48.26 37.2262 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "COL13"
-		(shape input)
-		(at 72.39 38.1 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.889 0.889)
-			)
-			(justify right)
-		)
-		(uuid "eb615970-f7af-42ca-8dc5-b0e376d7e556")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 72.39 44.4229 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "COL3"
 		(shape input)
 		(at 88.9 64.77 90)
@@ -4546,28 +3386,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "COL1"
-		(shape input)
-		(at 26.67 38.1 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.889 0.889)
-			)
-			(justify right)
-		)
-		(uuid "f3a6b20d-5240-4c2a-8e6b-b81391ae5545")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 26.67 43.5762 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
@@ -4669,7 +3487,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "01904cb2-d9d2-4dc5-b170-02513acb1804")
-		(property "Reference" "SW85"
+		(property "Reference" "SW86"
 			(at 236.22 148.59 0)
 			(effects
 				(font
@@ -4825,7 +3643,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "02dbbf4f-46e1-4f4c-b9c6-87aa5b407a96")
-		(property "Reference" "D6"
+		(property "Reference" "D10"
 			(at 105.918 80.01 90)
 			(effects
 				(font
@@ -5006,7 +3824,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "06c0a70b-5b74-4963-8564-3fe333e1941c")
-		(property "Reference" "D78"
+		(property "Reference" "D82"
 			(at 207.518 143.51 90)
 			(effects
 				(font
@@ -5109,7 +3927,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "078f2ae4-ac2a-40c6-816e-f9d3cf2e3cc3")
-		(property "Reference" "SW80"
+		(property "Reference" "SW81"
 			(at 45.72 148.336 0)
 			(effects
 				(font
@@ -5187,7 +4005,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "09acf944-723b-4e7e-b961-ef2f9ba0081d")
-		(property "Reference" "D10"
+		(property "Reference" "D14"
 			(at 169.418 80.01 90)
 			(effects
 				(font
@@ -5290,7 +4108,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0b4e86f2-f836-4a6b-bd90-a0c3a724bcaf")
-		(property "Reference" "SW53"
+		(property "Reference" "SW54"
 			(at 71.12 123.19 0)
 			(effects
 				(font
@@ -5368,7 +4186,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0c43e686-68f8-4255-a9c3-2f97598e5789")
-		(property "Reference" "SW24"
+		(property "Reference" "SW25"
 			(at 134.62 97.79 0)
 			(effects
 				(font
@@ -5446,7 +4264,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0d04ba28-a438-436d-82f6-6b4d7654a040")
-		(property "Reference" "D32"
+		(property "Reference" "D36"
 			(at 245.618 105.41 90)
 			(effects
 				(font
@@ -5549,7 +4367,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0e6504ab-e908-470e-b816-ae46e402459e")
-		(property "Reference" "D67"
+		(property "Reference" "D71"
 			(at 67.818 143.51 90)
 			(effects
 				(font
@@ -5652,7 +4470,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0f72ea34-f7e8-4cf0-a12c-91488b65d57a")
-		(property "Reference" "SW20"
+		(property "Reference" "SW21"
 			(at 83.82 97.79 0)
 			(effects
 				(font
@@ -5730,7 +4548,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "15453626-b298-4b21-869b-03e8437457b1")
-		(property "Reference" "D29"
+		(property "Reference" "D33"
 			(at 194.818 105.41 90)
 			(effects
 				(font
@@ -5911,7 +4729,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1938a65a-cbbc-4c97-b2de-a9f25b8c75f6")
-		(property "Reference" "D33"
+		(property "Reference" "D37"
 			(at 258.318 105.41 90)
 			(effects
 				(font
@@ -6014,7 +4832,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1947de44-793d-43f3-9847-1692adafdf18")
-		(property "Reference" "SW44"
+		(property "Reference" "SW45"
 			(at 172.72 110.236 0)
 			(effects
 				(font
@@ -6084,79 +4902,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 88.9 22.86 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1a051b87-c605-461f-9219-064c0f85ebd9")
-		(property "Reference" "#PWR02"
-			(at 88.9 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 88.9 27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 88.9 22.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 88.9 22.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 88.9 22.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c5ac12d4-e211-4e53-ac32-4685024876ea")
-		)
-		(instances
-			(project "ibm-modern-m-ssk"
-				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
-					(reference "#PWR029")
-					(unit 1)
-				)
-			)
-			(project "matrix"
-				(path "/3a9954dd-703c-41c6-821c-7c164acce3b5"
-					(reference "#PWR02")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:D_Small")
 		(at 142.24 105.41 90)
 		(unit 1)
@@ -6165,7 +4910,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1c7a0309-7a83-460c-ae14-4bf4de366ec1")
-		(property "Reference" "D25"
+		(property "Reference" "D29"
 			(at 144.018 105.41 90)
 			(effects
 				(font
@@ -6268,7 +5013,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1ccacb00-91c8-4193-a2cc-767db007ffcd")
-		(property "Reference" "SW42"
+		(property "Reference" "SW43"
 			(at 147.32 110.236 0)
 			(effects
 				(font
@@ -6346,7 +5091,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1d734434-6157-40ed-a735-157e9ac8451e")
-		(property "Reference" "SW68"
+		(property "Reference" "SW69"
 			(at 83.82 135.636 0)
 			(effects
 				(font
@@ -6424,7 +5169,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1d84d20a-0752-4cfe-87cb-af7fc0cefe8f")
-		(property "Reference" "D23"
+		(property "Reference" "D27"
 			(at 105.918 105.41 90)
 			(effects
 				(font
@@ -6527,7 +5272,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1dffb7d5-2600-42ef-bc0d-ad022b8e6c6d")
-		(property "Reference" "D11"
+		(property "Reference" "D15"
 			(at 182.118 80.01 90)
 			(effects
 				(font
@@ -6630,7 +5375,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2459bd8a-2929-4b96-9a3c-06b1b6f53e0c")
-		(property "Reference" "D51"
+		(property "Reference" "D55"
 			(at 42.418 130.81 90)
 			(effects
 				(font
@@ -6733,7 +5478,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "26383bda-6231-4119-80da-b64cbbcda21b")
-		(property "Reference" "D5"
+		(property "Reference" "D9"
 			(at 93.218 80.01 90)
 			(effects
 				(font
@@ -6836,7 +5581,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "267dcfde-4537-4d82-b9e9-b6b1bc3723ae")
-		(property "Reference" "SW81"
+		(property "Reference" "SW82"
 			(at 71.12 148.336 0)
 			(effects
 				(font
@@ -6914,7 +5659,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "27923533-4ea9-4e88-9150-ad95a784a062")
-		(property "Reference" "D9"
+		(property "Reference" "D13"
 			(at 144.018 80.01 90)
 			(effects
 				(font
@@ -7017,7 +5762,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2b20b3b8-9229-4712-9fb8-f1b8b0330b4e")
-		(property "Reference" "D41"
+		(property "Reference" "D45"
 			(at 131.318 118.11 90)
 			(effects
 				(font
@@ -7120,7 +5865,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2d35da61-0065-41c8-b929-3595658ef3fa")
-		(property "Reference" "D52"
+		(property "Reference" "D56"
 			(at 55.118 130.81 90)
 			(effects
 				(font
@@ -7223,7 +5968,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2def5b7c-46bf-4ad7-b11e-6018843b72e4")
-		(property "Reference" "D59"
+		(property "Reference" "D63"
 			(at 156.718 130.81 90)
 			(effects
 				(font
@@ -7326,7 +6071,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2e37b544-b988-4aa5-bc90-236c15131817")
-		(property "Reference" "D48"
+		(property "Reference" "D52"
 			(at 232.918 118.11 90)
 			(effects
 				(font
@@ -7429,7 +6174,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "30ab94df-8d51-4b61-89da-fce986a60030")
-		(property "Reference" "D87"
+		(property "Reference" "D91"
 			(at 258.318 156.21 90)
 			(effects
 				(font
@@ -7532,7 +6277,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "34a3f42c-cc6f-46bd-a623-8401b065b7e6")
-		(property "Reference" "SW70"
+		(property "Reference" "SW71"
 			(at 109.22 135.636 0)
 			(effects
 				(font
@@ -7610,7 +6355,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "36237dc8-4430-4837-9713-0f0f5e6de576")
-		(property "Reference" "SW34"
+		(property "Reference" "SW35"
 			(at 45.72 110.236 0)
 			(effects
 				(font
@@ -7688,7 +6433,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "36acec45-0eec-4c0f-884b-471379a78cfa")
-		(property "Reference" "D22"
+		(property "Reference" "D26"
 			(at 93.218 105.41 90)
 			(effects
 				(font
@@ -7791,7 +6536,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "37c93cf8-34ae-41f1-8cec-f6d926b3109c")
-		(property "Reference" "SW41"
+		(property "Reference" "SW42"
 			(at 134.62 110.236 0)
 			(effects
 				(font
@@ -7869,7 +6614,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "37cf1903-a6e0-4500-854f-48853a9e5893")
-		(property "Reference" "SW43"
+		(property "Reference" "SW44"
 			(at 160.02 110.236 0)
 			(effects
 				(font
@@ -7947,7 +6692,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3a09e43f-7588-4752-bd31-fe2a62de335d")
-		(property "Reference" "D12"
+		(property "Reference" "D16"
 			(at 194.818 80.01 90)
 			(effects
 				(font
@@ -8050,7 +6795,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3c5acfaf-60bc-465e-9019-d918d8ea02b9")
-		(property "Reference" "SW67"
+		(property "Reference" "SW68"
 			(at 71.12 135.636 0)
 			(effects
 				(font
@@ -8128,7 +6873,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3d5eed5a-30a2-4b14-b1e8-bc9d39c4eef8")
-		(property "Reference" "D35"
+		(property "Reference" "D39"
 			(at 55.118 118.11 90)
 			(effects
 				(font
@@ -8231,7 +6976,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3f845db8-7b5a-428b-a350-af55903902da")
-		(property "Reference" "D4"
+		(property "Reference" "D8"
 			(at 80.518 80.01 90)
 			(effects
 				(font
@@ -8334,7 +7079,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "402463e1-28a1-4b5b-8774-ec6854072217")
-		(property "Reference" "SW52"
+		(property "Reference" "SW53"
 			(at 58.42 123.19 0)
 			(effects
 				(font
@@ -8412,7 +7157,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "41c97f40-3bdd-467f-8b8d-bbdc576de9ff")
-		(property "Reference" "SW17"
+		(property "Reference" "SW18"
 			(at 45.72 97.79 0)
 			(effects
 				(font
@@ -8490,7 +7235,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "427f2e5b-4aa3-40c4-9eca-672ea918c7d1")
-		(property "Reference" "SW45"
+		(property "Reference" "SW46"
 			(at 185.42 110.236 0)
 			(effects
 				(font
@@ -8568,7 +7313,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "439be7f8-013b-44ed-bcb0-ef13d6b03097")
-		(property "Reference" "D64"
+		(property "Reference" "D68"
 			(at 67.818 130.9052 90)
 			(effects
 				(font
@@ -8671,7 +7416,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "45327cda-d9b8-4df1-90ea-ea77c8975eaa")
-		(property "Reference" "D81"
+		(property "Reference" "D85"
 			(at 67.818 156.21 90)
 			(effects
 				(font
@@ -8774,7 +7519,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "45bd6548-6456-4f15-a657-0dc406f5e27c")
-		(property "Reference" "D8"
+		(property "Reference" "D12"
 			(at 131.318 80.01 90)
 			(effects
 				(font
@@ -8877,7 +7622,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "464743a0-d88a-477e-83aa-67ce3e3a63f5")
-		(property "Reference" "SW84"
+		(property "Reference" "SW85"
 			(at 210.82 148.336 0)
 			(effects
 				(font
@@ -8955,7 +7700,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4767462e-a73d-4b00-96fe-4fbfc1bec3ef")
-		(property "Reference" "D43"
+		(property "Reference" "D47"
 			(at 156.718 118.11 90)
 			(effects
 				(font
@@ -9058,7 +7803,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "48ecbcbc-5471-458a-889c-d248a5208349")
-		(property "Reference" "D56"
+		(property "Reference" "D60"
 			(at 118.618 130.81 90)
 			(effects
 				(font
@@ -9161,7 +7906,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "492f6fa2-f3e0-4385-84af-2de56e85520d")
-		(property "Reference" "SW22"
+		(property "Reference" "SW23"
 			(at 109.22 97.79 0)
 			(effects
 				(font
@@ -9239,7 +7984,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "49b7abf3-705e-47d9-be75-29faaf356d52")
-		(property "Reference" "D54"
+		(property "Reference" "D58"
 			(at 93.218 130.81 90)
 			(effects
 				(font
@@ -9342,7 +8087,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4aee6ed7-e810-4cad-b9b1-41feb7327305")
-		(property "Reference" "D13"
+		(property "Reference" "D17"
 			(at 207.518 80.01 90)
 			(effects
 				(font
@@ -9445,7 +8190,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4bcc129b-004a-4cdd-a6ae-bee7f19c326b")
-		(property "Reference" "D77"
+		(property "Reference" "D81"
 			(at 194.818 143.51 90)
 			(effects
 				(font
@@ -9548,7 +8293,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4c7e8f09-4958-4d81-9c3a-0dda8a1bbf50")
-		(property "Reference" "SW72"
+		(property "Reference" "SW73"
 			(at 134.62 135.636 0)
 			(effects
 				(font
@@ -9626,7 +8371,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4dd7257b-8093-4961-ac49-4b889c62d262")
-		(property "Reference" "D16"
+		(property "Reference" "D20"
 			(at 258.318 80.01 90)
 			(effects
 				(font
@@ -9729,7 +8474,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4e853067-ef8e-446b-ad89-9c7f5f10589e")
-		(property "Reference" "D47"
+		(property "Reference" "D51"
 			(at 207.518 118.11 90)
 			(effects
 				(font
@@ -9832,7 +8577,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4e927112-c171-4f8d-91c8-9deffed1e3d9")
-		(property "Reference" "SW64"
+		(property "Reference" "SW65"
 			(at 210.82 123.19 0)
 			(effects
 				(font
@@ -9910,7 +8655,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5385847d-f772-47fe-a1fe-d2e36cd36c9e")
-		(property "Reference" "SW82"
+		(property "Reference" "SW83"
 			(at 121.92 148.336 0)
 			(effects
 				(font
@@ -9988,7 +8733,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5762fa00-ee9f-4210-856a-8682c4fbbeef")
-		(property "Reference" "SW32"
+		(property "Reference" "SW33"
 			(at 248.92 97.79 0)
 			(effects
 				(font
@@ -10066,7 +8811,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "580250ec-d2f6-4494-8043-6cb25153fca7")
-		(property "Reference" "SW61"
+		(property "Reference" "SW62"
 			(at 172.72 123.19 0)
 			(effects
 				(font
@@ -10144,7 +8889,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5882d82e-0221-4f3c-bcaa-f97a137cf6dd")
-		(property "Reference" "SW79"
+		(property "Reference" "SW80"
 			(at 248.92 135.636 0)
 			(effects
 				(font
@@ -10222,7 +8967,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5a86cf82-fd6d-4883-adf6-e26a8089f660")
-		(property "Reference" "D70"
+		(property "Reference" "D74"
 			(at 105.918 143.51 90)
 			(effects
 				(font
@@ -10325,7 +9070,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5c81a678-cfec-4275-9b71-ef375d8e2dce")
-		(property "Reference" "SW57"
+		(property "Reference" "SW58"
 			(at 121.92 123.19 0)
 			(effects
 				(font
@@ -10403,7 +9148,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5debb238-a557-4a72-9e7d-6332c1ded87a")
-		(property "Reference" "D20"
+		(property "Reference" "D24"
 			(at 67.818 105.41 90)
 			(effects
 				(font
@@ -10506,7 +9251,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5f84b79e-a42c-4033-80ac-e3b35f71ade1")
-		(property "Reference" "D76"
+		(property "Reference" "D80"
 			(at 182.118 143.51 90)
 			(effects
 				(font
@@ -10609,7 +9354,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "62eaec75-9984-467d-a017-5beb9b8db9a1")
-		(property "Reference" "SW75"
+		(property "Reference" "SW76"
 			(at 172.72 135.636 0)
 			(effects
 				(font
@@ -10765,7 +9510,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "67e7d07b-518d-43bd-99cd-a84f5fe8acac")
-		(property "Reference" "D36"
+		(property "Reference" "D40"
 			(at 67.818 118.11 90)
 			(effects
 				(font
@@ -10868,7 +9613,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "68b55413-d904-4b31-a60c-36a6331b1301")
-		(property "Reference" "SW33"
+		(property "Reference" "SW34"
 			(at 261.62 97.79 0)
 			(effects
 				(font
@@ -10946,7 +9691,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "69bb5dbf-f503-4a67-b197-058e3389afe2")
-		(property "Reference" "D85"
+		(property "Reference" "D89"
 			(at 232.918 156.21 90)
 			(effects
 				(font
@@ -11049,7 +9794,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6b783268-d43f-411d-b2ec-7aab1ee14fe9")
-		(property "Reference" "SW23"
+		(property "Reference" "SW24"
 			(at 121.92 97.79 0)
 			(effects
 				(font
@@ -11127,7 +9872,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6d1a14e9-7a8b-470f-9e43-a4ecd78c5915")
-		(property "Reference" "D38"
+		(property "Reference" "D42"
 			(at 93.218 118.11 90)
 			(effects
 				(font
@@ -11308,7 +10053,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6e8d1738-433a-4c97-90cd-5ec9d63eb64f")
-		(property "Reference" "SW29"
+		(property "Reference" "SW30"
 			(at 198.12 97.79 0)
 			(effects
 				(font
@@ -11386,7 +10131,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6ee9fefd-156a-4d05-a14e-9cf0439a1cf8")
-		(property "Reference" "SW55"
+		(property "Reference" "SW56"
 			(at 96.52 123.19 0)
 			(effects
 				(font
@@ -11464,7 +10209,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6ffe27ee-8db4-428d-9d4b-68bca49f5891")
-		(property "Reference" "SW39"
+		(property "Reference" "SW40"
 			(at 109.22 110.236 0)
 			(effects
 				(font
@@ -11542,7 +10287,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "71e884dc-eeab-43c1-ba3d-cc6ad922c811")
-		(property "Reference" "D7"
+		(property "Reference" "D11"
 			(at 118.618 80.01 90)
 			(effects
 				(font
@@ -11645,7 +10390,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7294d1fd-dfcf-4b07-b476-359726f1b5f5")
-		(property "Reference" "D80"
+		(property "Reference" "D84"
 			(at 42.418 156.21 90)
 			(effects
 				(font
@@ -11748,7 +10493,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "74d210e7-9d82-4aa6-bfa4-e54790090440")
-		(property "Reference" "SW78"
+		(property "Reference" "SW79"
 			(at 210.82 135.636 0)
 			(effects
 				(font
@@ -11826,7 +10571,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7a99cbdb-a72e-4a6e-be58-d14a17cb400e")
-		(property "Reference" "SW36"
+		(property "Reference" "SW37"
 			(at 71.12 110.236 0)
 			(effects
 				(font
@@ -11904,7 +10649,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7af5a92b-df8b-4507-ab66-ba6e6e10f3ec")
-		(property "Reference" "D39"
+		(property "Reference" "D43"
 			(at 105.918 118.11 90)
 			(effects
 				(font
@@ -12007,7 +10752,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7f752c59-93f3-48b7-b5ee-685e06509d20")
-		(property "Reference" "SW49"
+		(property "Reference" "SW50"
 			(at 248.92 110.49 0)
 			(effects
 				(font
@@ -12085,7 +10830,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "87501c11-b42d-43fd-9a77-e476c4430f79")
-		(property "Reference" "D58"
+		(property "Reference" "D62"
 			(at 144.018 130.81 90)
 			(effects
 				(font
@@ -12188,7 +10933,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8ace88df-c482-42ce-b00b-e4df3e8e9d42")
-		(property "Reference" "SW48"
+		(property "Reference" "SW49"
 			(at 236.22 110.49 0)
 			(effects
 				(font
@@ -12266,7 +11011,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8b419b9f-3ec0-4c8a-997e-55548f3c0361")
-		(property "Reference" "SW31"
+		(property "Reference" "SW32"
 			(at 236.22 97.79 0)
 			(effects
 				(font
@@ -12344,7 +11089,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8c741733-d6a8-481a-968c-e8faba6673a6")
-		(property "Reference" "D50"
+		(property "Reference" "D54"
 			(at 258.318 118.11 90)
 			(effects
 				(font
@@ -12525,7 +11270,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8ec259b4-3482-4a97-bb8a-0364332a242e")
-		(property "Reference" "SW54"
+		(property "Reference" "SW55"
 			(at 83.82 123.19 0)
 			(effects
 				(font
@@ -12603,7 +11348,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9047426b-aed0-456f-957e-94f7bee8626a")
-		(property "Reference" "D73"
+		(property "Reference" "D77"
 			(at 144.018 143.51 90)
 			(effects
 				(font
@@ -12706,7 +11451,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "90537284-c516-4683-a6a6-2a087809417d")
-		(property "Reference" "D18"
+		(property "Reference" "D22"
 			(at 42.418 105.41 90)
 			(effects
 				(font
@@ -12887,7 +11632,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "919b92a0-66f6-4c58-8df7-b78f5b42c903")
-		(property "Reference" "D31"
+		(property "Reference" "D35"
 			(at 232.918 105.41 90)
 			(effects
 				(font
@@ -12990,7 +11735,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9256bb21-ca92-457b-ad83-a2bd9bcef085")
-		(property "Reference" "D30"
+		(property "Reference" "D34"
 			(at 207.518 105.41 90)
 			(effects
 				(font
@@ -13171,7 +11916,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "943c907d-880b-4329-9b5e-e5a860972d23")
-		(property "Reference" "D44"
+		(property "Reference" "D48"
 			(at 169.418 118.11 90)
 			(effects
 				(font
@@ -13274,7 +12019,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9592b4b3-534a-4256-ab04-9c1c6b296e01")
-		(property "Reference" "D63"
+		(property "Reference" "D67"
 			(at 207.518 130.81 90)
 			(effects
 				(font
@@ -13377,7 +12122,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "95e41a7e-ef5b-4a89-88eb-268964cf01ed")
-		(property "Reference" "SW83"
+		(property "Reference" "SW84"
 			(at 185.42 148.336 0)
 			(effects
 				(font
@@ -13455,7 +12200,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "991ab9f9-f931-473d-96e0-032fa70fe266")
-		(property "Reference" "D26"
+		(property "Reference" "D30"
 			(at 156.718 105.41 90)
 			(effects
 				(font
@@ -13558,7 +12303,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "998bf95f-3b7d-41b9-8a1f-5d008c9cd4cd")
-		(property "Reference" "D46"
+		(property "Reference" "D50"
 			(at 194.818 118.11 90)
 			(effects
 				(font
@@ -13661,7 +12406,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9e9aa434-79a5-4114-b973-51fcd94a290c")
-		(property "Reference" "SW63"
+		(property "Reference" "SW64"
 			(at 198.12 123.19 0)
 			(effects
 				(font
@@ -13725,160 +12470,6 @@
 			(project "matrix"
 				(path "/3a9954dd-703c-41c6-821c-7c164acce3b5"
 					(reference "SW63")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "easyeda2kicad:TF38-24S-0.5SV(830)")
-		(at 54.61 25.4 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "9f416bdf-538f-4298-865b-8cd2c6d76434")
-		(property "Reference" "J1"
-			(at 54.61 17.018 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TF38-24S-0.5SV(830)"
-			(at 54.61 19.05 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "easyeda2kicad:FPC-SMD_24P-P0.50_TF38-24S-0.5SV-830"
-			(at 96.52 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/product-detail/C3020653.html"
-			(at 54.61 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 54.61 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part" "C3020653"
-			(at 99.06 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "be7f5d9b-eccc-45a0-a7f1-174205aeb575")
-		)
-		(pin "17"
-			(uuid "1b277063-08b8-4661-8975-8e94ffaf9856")
-		)
-		(pin "1"
-			(uuid "f26b0540-65fd-48ce-b23f-d4ce19f1ee9b")
-		)
-		(pin "3"
-			(uuid "820c8e70-4faf-4446-9353-b2bd75c99258")
-		)
-		(pin "5"
-			(uuid "ece601ed-b576-4ddc-a6c6-7de7de1f7211")
-		)
-		(pin "10"
-			(uuid "1c9737ca-e12a-4395-90c5-99b384c5600c")
-		)
-		(pin "4"
-			(uuid "06e95e92-2255-49eb-9eaf-bb5a49ce78fb")
-		)
-		(pin "8"
-			(uuid "f678503f-9a32-45e9-bed0-c07a746cd3a2")
-		)
-		(pin "14"
-			(uuid "7bac85b7-3f64-4d16-9f9c-a2331ad2e9ee")
-		)
-		(pin "12"
-			(uuid "aaef92ca-f5ed-4d76-bd42-03c10c9d8394")
-		)
-		(pin "13"
-			(uuid "046ec016-672c-49c0-8694-13b6edd53fec")
-		)
-		(pin "7"
-			(uuid "122d2201-e6fb-445b-8fbe-65a6682ff7ba")
-		)
-		(pin "9"
-			(uuid "850b0b8d-b4e0-4e6a-8ab6-ef4611880224")
-		)
-		(pin "16"
-			(uuid "e108df72-9b15-4749-adf4-966f920d9ba4")
-		)
-		(pin "19"
-			(uuid "168e2bf7-93be-4507-a52a-85d955b9bb49")
-		)
-		(pin "21"
-			(uuid "08f72abf-80b6-43e5-9a9e-27c13d07ed3d")
-		)
-		(pin "6"
-			(uuid "fc2caf25-32c3-47b1-8744-64bc92de7459")
-		)
-		(pin "18"
-			(uuid "d42a0898-1164-429e-86c6-6056e5cb9af2")
-		)
-		(pin "20"
-			(uuid "ab650227-e052-4be3-bb7e-7a82ed65ee6b")
-		)
-		(pin "11"
-			(uuid "09b2cd26-2264-4db5-b622-cc2b548a57df")
-		)
-		(pin "22"
-			(uuid "cf2f39b1-aa42-4f03-bcb5-a3937ee3ba43")
-		)
-		(pin "23"
-			(uuid "eedc4c36-9669-40a8-b0e8-1077d2da466f")
-		)
-		(pin "24"
-			(uuid "b7262780-babb-483d-83f2-d03992654ebf")
-		)
-		(pin "26"
-			(uuid "735a7d73-7605-4455-a94d-7cfba30fdac7")
-		)
-		(pin "25"
-			(uuid "1199ea2d-de38-461d-b865-59d42b60a0d2")
-		)
-		(pin "15"
-			(uuid "eb6e3307-e0c2-49ce-921e-2b8a9fcfa608")
-		)
-		(instances
-			(project "ibm-modern-m-ssk"
-				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
-					(reference "J6")
-					(unit 1)
-				)
-			)
-			(project "matrix"
-				(path "/3a9954dd-703c-41c6-821c-7c164acce3b5"
-					(reference "J1")
 					(unit 1)
 				)
 			)
@@ -13971,7 +12562,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a250b18c-4063-478a-812e-0cf52a8e2b52")
-		(property "Reference" "D17"
+		(property "Reference" "D21"
 			(at 118.618 105.4094 90)
 			(effects
 				(font
@@ -14074,7 +12665,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a5d80afd-b16d-40d9-b148-f15a42144e22")
-		(property "Reference" "D55"
+		(property "Reference" "D59"
 			(at 105.918 130.81 90)
 			(effects
 				(font
@@ -14177,7 +12768,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a7457f50-e150-420f-bdf1-e511b711f93a")
-		(property "Reference" "SW73"
+		(property "Reference" "SW74"
 			(at 147.32 135.636 0)
 			(effects
 				(font
@@ -14255,7 +12846,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a7f45869-a103-410f-8862-2dfdef725a93")
-		(property "Reference" "SW40"
+		(property "Reference" "SW41"
 			(at 121.92 110.236 0)
 			(effects
 				(font
@@ -14333,7 +12924,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ad4efdd6-8e6f-4c2b-87cd-fd88713fadb1")
-		(property "Reference" "SW51"
+		(property "Reference" "SW52"
 			(at 45.72 123.19 0)
 			(effects
 				(font
@@ -14411,7 +13002,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ad99f3bc-4068-44d6-be1e-98b81ba92499")
-		(property "Reference" "D74"
+		(property "Reference" "D78"
 			(at 156.718 143.51 90)
 			(effects
 				(font
@@ -14514,7 +13105,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b07198f1-eb29-4bd6-8724-f7912828874c")
-		(property "Reference" "D28"
+		(property "Reference" "D32"
 			(at 182.118 105.41 90)
 			(effects
 				(font
@@ -14617,7 +13208,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b18e37d9-9a69-4f36-9f42-cc79dfe3652c")
-		(property "Reference" "SW69"
+		(property "Reference" "SW70"
 			(at 96.52 135.636 0)
 			(effects
 				(font
@@ -14695,7 +13286,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b2c70718-3df0-4ea3-84e3-b3cce95f79a7")
-		(property "Reference" "SW59"
+		(property "Reference" "SW60"
 			(at 147.32 123.19 0)
 			(effects
 				(font
@@ -14773,7 +13364,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b2f9f39a-742e-48f6-a0db-1ca7cef74fa1")
-		(property "Reference" "SW30"
+		(property "Reference" "SW31"
 			(at 210.82 97.79 0)
 			(effects
 				(font
@@ -14851,7 +13442,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b484ff50-a149-471b-bb60-1c783c5a5564")
-		(property "Reference" "D45"
+		(property "Reference" "D49"
 			(at 182.118 118.11 90)
 			(effects
 				(font
@@ -15032,7 +13623,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b594a7ed-a31c-466b-89d2-bac007034295")
-		(property "Reference" "D79"
+		(property "Reference" "D83"
 			(at 245.618 143.51 90)
 			(effects
 				(font
@@ -15135,7 +13726,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b7ce138a-a3f0-4401-9b2a-047a0f98fc15")
-		(property "Reference" "SW86"
+		(property "Reference" "SW87"
 			(at 248.92 148.59 0)
 			(effects
 				(font
@@ -15213,7 +13804,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b89024a3-50f5-4719-83e1-783da21b2708")
-		(property "Reference" "SW66"
+		(property "Reference" "SW67"
 			(at 58.42 135.636 0)
 			(effects
 				(font
@@ -15291,7 +13882,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b897547a-101a-40f9-9dab-d632870e68f5")
-		(property "Reference" "D37"
+		(property "Reference" "D41"
 			(at 80.518 118.11 90)
 			(effects
 				(font
@@ -15394,7 +13985,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b9b32b93-0283-4891-aec7-fdba426ff37a")
-		(property "Reference" "SW56"
+		(property "Reference" "SW57"
 			(at 109.22 123.19 0)
 			(effects
 				(font
@@ -15472,7 +14063,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bc249b28-0aa7-4dbe-811d-59d193736f5a")
-		(property "Reference" "SW65"
+		(property "Reference" "SW66"
 			(at 45.72 135.636 0)
 			(effects
 				(font
@@ -15550,7 +14141,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bd4b732b-fc88-428d-8ea0-cf4918c7a2a1")
-		(property "Reference" "SW62"
+		(property "Reference" "SW63"
 			(at 185.42 123.19 0)
 			(effects
 				(font
@@ -15628,7 +14219,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bdc87607-1b03-4fd9-9696-b3e18ef80448")
-		(property "Reference" "SW71"
+		(property "Reference" "SW72"
 			(at 121.92 135.636 0)
 			(effects
 				(font
@@ -15706,7 +14297,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bea78fff-4667-4797-a6e1-26d026d7904c")
-		(property "Reference" "SW37"
+		(property "Reference" "SW38"
 			(at 83.82 110.236 0)
 			(effects
 				(font
@@ -15784,7 +14375,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bf33ebbb-f905-42c5-9fac-01b8a3a58ebd")
-		(property "Reference" "D71"
+		(property "Reference" "D75"
 			(at 118.618 143.51 90)
 			(effects
 				(font
@@ -15887,7 +14478,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bf929b81-966c-47ee-9eb8-17a8e5996975")
-		(property "Reference" "SW25"
+		(property "Reference" "SW26"
 			(at 147.32 97.79 0)
 			(effects
 				(font
@@ -15965,7 +14556,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c3b37149-2078-4b5f-807a-07a2960beade")
-		(property "Reference" "D49"
+		(property "Reference" "D53"
 			(at 245.618 118.11 90)
 			(effects
 				(font
@@ -16068,7 +14659,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c408151f-3bdf-4c40-8883-7a78881b0c7b")
-		(property "Reference" "D66"
+		(property "Reference" "D70"
 			(at 55.118 143.51 90)
 			(effects
 				(font
@@ -16171,7 +14762,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c4759dd5-4c78-4029-8174-9b9a802a684e")
-		(property "Reference" "SW27"
+		(property "Reference" "SW28"
 			(at 172.72 97.79 0)
 			(effects
 				(font
@@ -16249,7 +14840,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c4e83db4-bbae-4220-850c-d64e93af2eec")
-		(property "Reference" "SW18"
+		(property "Reference" "SW19"
 			(at 58.42 97.79 0)
 			(effects
 				(font
@@ -16327,7 +14918,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c5fd7ef3-6be4-45ba-a19d-4c69f6fc3cea")
-		(property "Reference" "D83"
+		(property "Reference" "D87"
 			(at 182.118 156.21 90)
 			(effects
 				(font
@@ -16430,7 +15021,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c7be61a5-6028-4877-be3f-4dc5ccd3d9bb")
-		(property "Reference" "SW77"
+		(property "Reference" "SW78"
 			(at 198.12 135.636 0)
 			(effects
 				(font
@@ -16508,7 +15099,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c8ab76a0-2e1a-41dc-bc02-62ac7605093a")
-		(property "Reference" "SW26"
+		(property "Reference" "SW27"
 			(at 160.02 97.79 0)
 			(effects
 				(font
@@ -16586,7 +15177,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c8ff6e9b-c0c7-4bb1-b82a-4b01018de064")
-		(property "Reference" "D27"
+		(property "Reference" "D31"
 			(at 169.418 105.41 90)
 			(effects
 				(font
@@ -16689,7 +15280,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c92ed246-ace0-41f7-ad3b-8e34b592ecff")
-		(property "Reference" "D68"
+		(property "Reference" "D72"
 			(at 80.518 143.51 90)
 			(effects
 				(font
@@ -16792,7 +15383,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c9926a83-6ee4-4f50-a022-cca858ddf0d8")
-		(property "Reference" "D34"
+		(property "Reference" "D38"
 			(at 42.418 118.11 90)
 			(effects
 				(font
@@ -16973,7 +15564,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cb829a5f-6d30-4c42-a105-4dbc1118bb3d")
-		(property "Reference" "D57"
+		(property "Reference" "D61"
 			(at 131.318 130.81 90)
 			(effects
 				(font
@@ -17154,7 +15745,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ccc8763b-4c2d-4aaa-95c6-7c0ad8dbf42d")
-		(property "Reference" "SW21"
+		(property "Reference" "SW22"
 			(at 96.52 97.79 0)
 			(effects
 				(font
@@ -17310,7 +15901,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cdfe4923-fea6-4e61-aab2-a3c8aea6287c")
-		(property "Reference" "D24"
+		(property "Reference" "D28"
 			(at 131.318 105.41 90)
 			(effects
 				(font
@@ -17413,7 +16004,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cf1351b4-5c84-4503-90a4-6646af6892f3")
-		(property "Reference" "D72"
+		(property "Reference" "D76"
 			(at 131.318 143.51 90)
 			(effects
 				(font
@@ -17516,7 +16107,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cf2fb330-1de1-4dad-bcc5-5fb85ac142f3")
-		(property "Reference" "D1"
+		(property "Reference" "D5"
 			(at 42.418 80.01 90)
 			(effects
 				(font
@@ -17619,7 +16210,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cf4ffdc1-e6aa-4355-8d9a-f5eff69399b4")
-		(property "Reference" "SW35"
+		(property "Reference" "SW36"
 			(at 58.42 110.236 0)
 			(effects
 				(font
@@ -17697,7 +16288,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cfdfbebf-ca8e-4f51-957d-c94d48a298aa")
-		(property "Reference" "SW30-1"
+		(property "Reference" "SW17"
 			(at 210.82 90.424 0)
 			(effects
 				(font
@@ -17774,7 +16365,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d0662d20-e025-418a-9c0e-83ef013c001b")
-		(property "Reference" "D19"
+		(property "Reference" "D23"
 			(at 55.118 105.41 90)
 			(effects
 				(font
@@ -17877,7 +16468,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d0f1adbb-024f-44e0-bf87-7dee67fa090e")
-		(property "Reference" "D61"
+		(property "Reference" "D65"
 			(at 182.118 130.81 90)
 			(effects
 				(font
@@ -17980,7 +16571,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d1933860-2c58-45b4-a0bb-2a51831783bb")
-		(property "Reference" "D53"
+		(property "Reference" "D57"
 			(at 80.518 130.81 90)
 			(effects
 				(font
@@ -18083,7 +16674,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d1d1b81e-5bf9-4f53-9011-0c1bffeeef25")
-		(property "Reference" "D42"
+		(property "Reference" "D46"
 			(at 144.018 118.11 90)
 			(effects
 				(font
@@ -18186,7 +16777,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d295a987-e182-41e5-8b64-e520b0d27c70")
-		(property "Reference" "SW76"
+		(property "Reference" "SW77"
 			(at 185.42 135.636 0)
 			(effects
 				(font
@@ -18264,7 +16855,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d333e1bf-5179-4d15-bc53-c4f90cbea3a6")
-		(property "Reference" "D65"
+		(property "Reference" "D69"
 			(at 42.418 143.51 90)
 			(effects
 				(font
@@ -18367,7 +16958,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d53f13cf-3727-49e1-9356-751922aae17e")
-		(property "Reference" "D69"
+		(property "Reference" "D73"
 			(at 93.218 143.51 90)
 			(effects
 				(font
@@ -18470,7 +17061,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d5a39c96-fa5d-4b3f-bc9e-32f5bebe6070")
-		(property "Reference" "D15"
+		(property "Reference" "D19"
 			(at 245.618 80.01 90)
 			(effects
 				(font
@@ -18573,7 +17164,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d5c47daa-ad10-41f0-acad-983db91fdf02")
-		(property "Reference" "SW74"
+		(property "Reference" "SW75"
 			(at 160.02 135.636 0)
 			(effects
 				(font
@@ -18651,7 +17242,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d69d5cce-ae70-4963-a864-5d002cead1b6")
-		(property "Reference" "SW47"
+		(property "Reference" "SW48"
 			(at 210.82 110.236 0)
 			(effects
 				(font
@@ -18729,7 +17320,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d7e56215-95c4-4980-8a85-aac8703d3492")
-		(property "Reference" "SW38"
+		(property "Reference" "SW39"
 			(at 96.52 110.236 0)
 			(effects
 				(font
@@ -18807,7 +17398,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "db39b7fd-c27c-413e-95fe-c564122f70fc")
-		(property "Reference" "SW87"
+		(property "Reference" "SW88"
 			(at 261.62 148.59 0)
 			(effects
 				(font
@@ -18963,7 +17554,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ddc29e37-0a75-4787-a15b-ed97e4e709fd")
-		(property "Reference" "D62"
+		(property "Reference" "D66"
 			(at 194.818 130.81 90)
 			(effects
 				(font
@@ -19066,7 +17657,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "de612bc4-ccef-4deb-ae4a-a75995398d5c")
-		(property "Reference" "SW46"
+		(property "Reference" "SW47"
 			(at 198.12 110.236 0)
 			(effects
 				(font
@@ -19144,7 +17735,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e0b8c424-3c8f-44e9-8287-ae88ef02d1e4")
-		(property "Reference" "SW28"
+		(property "Reference" "SW29"
 			(at 185.42 97.79 0)
 			(effects
 				(font
@@ -19222,7 +17813,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e229487e-b2d8-46ec-96c3-d6c5f26cab09")
-		(property "Reference" "SW60"
+		(property "Reference" "SW61"
 			(at 160.02 123.19 0)
 			(effects
 				(font
@@ -19300,7 +17891,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e5dd0a4a-2f76-4d4f-b557-9ae9e03f30db")
-		(property "Reference" "D82"
+		(property "Reference" "D86"
 			(at 118.618 156.21 90)
 			(effects
 				(font
@@ -19403,7 +17994,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e78d8bb9-bf7a-4b88-a4bd-6bf956fa1dde")
-		(property "Reference" "D2"
+		(property "Reference" "D6"
 			(at 55.118 80.01 90)
 			(effects
 				(font
@@ -19584,7 +18175,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ecf988f4-855f-4e21-b18e-9517c9de37d5")
-		(property "Reference" "D75"
+		(property "Reference" "D79"
 			(at 169.418 143.51 90)
 			(effects
 				(font
@@ -19765,7 +18356,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f287f064-5e4d-47a1-8663-3e0c507e359a")
-		(property "Reference" "D86"
+		(property "Reference" "D90"
 			(at 245.618 156.21 90)
 			(effects
 				(font
@@ -19868,7 +18459,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f2a43e7a-7cbe-43b4-a7ae-b1a433ddafef")
-		(property "Reference" "D84"
+		(property "Reference" "D88"
 			(at 207.518 156.21 90)
 			(effects
 				(font
@@ -19971,7 +18562,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f3d19d7e-a080-4dd5-9951-62fb5c66a8cd")
-		(property "Reference" "D14"
+		(property "Reference" "D18"
 			(at 232.918 80.01 90)
 			(effects
 				(font
@@ -20074,7 +18665,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f3f273a0-8168-44c7-bd92-50e9b8052b55")
-		(property "Reference" "D40"
+		(property "Reference" "D44"
 			(at 118.618 118.11 90)
 			(effects
 				(font
@@ -20177,7 +18768,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f615ef78-54cb-4fc2-9a3d-dd6010a8b1c1")
-		(property "Reference" "D3"
+		(property "Reference" "D7"
 			(at 67.818 80.01 90)
 			(effects
 				(font
@@ -20280,7 +18871,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f6e7ef73-91fb-4ba1-8685-eebf25892456")
-		(property "Reference" "D60"
+		(property "Reference" "D64"
 			(at 169.418 130.81 90)
 			(effects
 				(font
@@ -20383,7 +18974,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f8f39c41-dc52-444a-bc2e-dc1feb5c9384")
-		(property "Reference" "SW58"
+		(property "Reference" "SW59"
 			(at 134.62 123.19 0)
 			(effects
 				(font
@@ -20453,79 +19044,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 20.32 22.86 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f968fb16-e40e-4b14-b3d2-538d8e2ee090")
-		(property "Reference" "#PWR01"
-			(at 20.32 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 20.32 27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 20.32 22.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 20.32 22.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 20.32 22.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d4ba166d-9975-43e5-8faf-ddf036376cf8")
-		)
-		(instances
-			(project "ibm-modern-m-ssk"
-				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968/fcf2cb73-a256-4101-99b1-d123c9be8ab2"
-					(reference "#PWR028")
-					(unit 1)
-				)
-			)
-			(project "matrix"
-				(path "/3a9954dd-703c-41c6-821c-7c164acce3b5"
-					(reference "#PWR01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:D_Small")
 		(at 78.74 105.41 90)
 		(unit 1)
@@ -20534,7 +19052,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fbb90071-4eab-49c4-ab33-19a658a5fb8a")
-		(property "Reference" "D21"
+		(property "Reference" "D25"
 			(at 80.518 105.41 90)
 			(effects
 				(font
@@ -20637,7 +19155,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fe68e079-c19a-4536-bff5-d0847eb10312")
-		(property "Reference" "SW19"
+		(property "Reference" "SW20"
 			(at 71.12 97.79 0)
 			(effects
 				(font
@@ -20715,7 +19233,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "feb07fa1-825a-411b-897c-c57f53251f63")
-		(property "Reference" "SW50"
+		(property "Reference" "SW51"
 			(at 261.62 110.49 0)
 			(effects
 				(font
