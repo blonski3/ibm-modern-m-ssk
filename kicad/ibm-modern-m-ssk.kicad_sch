@@ -682,6 +682,183 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:Battery_Cell"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "BT"
+				(at 2.54 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "Battery_Cell"
+				(at 2.54 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 1.524 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 1.524 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Single-cell battery"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "battery cell"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Battery_Cell_0_1"
+				(rectangle
+					(start -2.286 1.778)
+					(end 2.286 1.524)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -1.524 1.016)
+					(end 1.524 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.778) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0.762) (xy 0 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 3.048) (xy 1.778 3.048)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 3.556) (xy 1.27 2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Battery_Cell_1_1"
+				(pin passive line
+					(at 0 5.08 270)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 90)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:C_Small"
 			(pin_numbers
 				(hide yes)
@@ -5181,6 +5358,18 @@
 		(uuid af365183-88b1-4f69-9170-c2821fbc121c)
 	)
 	(rectangle
+		(start 214.63 102.87)
+		(end 229.87 137.16)
+		(stroke
+			(width 0.1905)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid b53be6bc-83e0-417a-822e-61ddb349e341)
+	)
+	(rectangle
 		(start 231.14 54.61)
 		(end 254 101.6)
 		(stroke
@@ -5266,6 +5455,32 @@
 			(justify left)
 		)
 		(uuid "2ca05082-8dd6-43a0-ba85-6364087cc6fe")
+	)
+	(text "(only for 3d model)"
+		(exclude_from_sim no)
+		(at 215.138 136.398 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+				(thickness 0.3048)
+				(bold yes)
+			)
+			(justify left)
+		)
+		(uuid "4adf3814-eebb-42a8-9f8c-1f403b7f7e46")
+	)
+	(text "Battery"
+		(exclude_from_sim no)
+		(at 214.884 134.366 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+				(thickness 0.3048)
+				(bold yes)
+			)
+			(justify left)
+		)
+		(uuid "57025411-f05f-4e3c-8c38-dd5b6ba89a99")
 	)
 	(text "ZIF Connector"
 		(exclude_from_sim no)
@@ -5530,12 +5745,20 @@
 		(uuid "742982bf-66ad-48aa-9f34-06f0e15b3169")
 	)
 	(no_connect
+		(at 226.06 120.65)
+		(uuid "75fd78d7-8001-4aa5-9806-b51789f5b005")
+	)
+	(no_connect
 		(at 119.38 86.36)
 		(uuid "9bb4c4fa-600f-4dec-b8f0-1652477f0acb")
 	)
 	(no_connect
 		(at 208.28 30.48)
 		(uuid "abd62fc0-9d43-4817-af0a-c6b2cf90a8a7")
+	)
+	(no_connect
+		(at 218.44 120.65)
+		(uuid "cb0162f3-508f-46b9-ad2d-7e06aa986af6")
 	)
 	(wire
 		(pts
@@ -9697,7 +9920,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:CONN-SMD_P2.00_S2B-PH-SM4-TB-LF-SN"
+		(property "Footprint" "easyeda2kicad:CONN-SMD_2P-P1.00_SM02B-SRSS-TB-LF-SN"
 			(at 175.26 81.28 0)
 			(effects
 				(font
@@ -9706,7 +9929,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/product-detail/_JST-Sales-America_S2B-PH-SM4-TB-LF-SN_JST-Sales-America-S2B-PH-SM4-TB-LF-SN_C295747.html"
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C160402.html"
 			(at 172.72 81.28 0)
 			(effects
 				(font
@@ -9724,7 +9947,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C295747"
+		(property "LCSC Part" "C160402"
 			(at 170.18 81.28 0)
 			(effects
 				(font
@@ -12372,6 +12595,74 @@
 			(project "ibm-modern-m-ssk"
 				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968"
 					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Battery_Cell")
+		(at 223.52 120.65 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f225503a-35b8-40b8-a797-d10d11042f1f")
+		(property "Reference" "BT1"
+			(at 221.6785 113.03 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Li-Po 603450"
+			(at 221.6785 115.57 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "easyeda2kicad:LiPo_603450"
+			(at 221.996 120.65 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 221.996 120.65 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Single-cell battery"
+			(at 223.52 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dc71ca91-d290-4fe9-94c3-1fb6b49dada0")
+		)
+		(pin "2"
+			(uuid "49ca9cf3-2e5b-4592-a626-31265737a83f")
+		)
+		(instances
+			(project ""
+				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968"
+					(reference "BT1")
 					(unit 1)
 				)
 			)
