@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "nordic_nrf52840")(type "KiCad")(uri "${KIPRJMOD}/nRF52840-QIAA Reference Layout 1_3/Altium Designer files/nrf52840_qiaa.pretty/")(options "")(descr ""))
+)

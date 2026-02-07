@@ -1,0 +1,113 @@
+(footprint "TP_2x1mm_TH"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -2.01 0)
+		(layer "F.SilkS")
+		(uuid "3979fff7-4e24-4f80-8dc6-2b32ab519e11")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "TP_2x1mm_TH"
+		(at 0 2.01 0)
+		(layer "F.Fab")
+		(uuid "dfc11da2-47e5-4562-8d9f-e4b15e6a5dd8")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "23a56e73-02ed-4839-a168-584221af4bb1")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "aef845c8-6b2d-48c4-b4e2-32d75278e3dd")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_line
+		(start -0.6 0.635)
+		(end -0.6 -0.635)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "bc62c0d1-0699-4e78-b926-f25439e7ea46")
+	)
+	(fp_line
+		(start 0.6 0.635)
+		(end 0.6 -0.635)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "fe44d044-71bb-48be-bcb2-254ac5754ed4")
+	)
+	(fp_arc
+		(start -0.6 -0.635)
+		(mid 0 -1.235)
+		(end 0.6 -0.635)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "707c0c4c-a708-488d-8fc9-9aec6340f5ac")
+	)
+	(fp_arc
+		(start 0.6 0.635)
+		(mid 0 1.235)
+		(end -0.6 0.635)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "fc7e4080-2c93-4f6f-9cab-2bd20987224e")
+	)
+	(pad "1" thru_hole circle
+		(at 0 0.635 90)
+		(size 1 1)
+		(drill 0.7)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(thermal_bridge_angle 90)
+		(uuid "02a0e751-f5b1-430a-ab7c-be19e1d45f83")
+	)
+	(pad "2" thru_hole circle
+		(at 0 -0.635 90)
+		(size 1 1)
+		(drill 0.7)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(thermal_bridge_angle 90)
+		(uuid "482b1624-e0f2-43ae-82ce-6886aeadf1d6")
+	)
+	(embedded_fonts no)
+)
