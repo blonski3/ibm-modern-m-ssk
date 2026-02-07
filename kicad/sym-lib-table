@@ -1,4 +1,5 @@
 (sym_lib_table
   (version 7)
   (lib (name "easyeda2kicad")(type "KiCad")(uri "${KIPRJMOD}/libraries/easyeda2kicad.kicad_sym")(options "")(descr ""))
+  (lib (name "nrf52840_qiaa_config5")(type "KiCad")(uri "${KIPRJMOD}/libraries/nrf52840_qiaa_config5.kicad_sym")(options "")(descr ""))
 )

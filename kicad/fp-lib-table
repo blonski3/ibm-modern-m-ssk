@@ -2,4 +2,5 @@
   (version 7)
   (lib (name "ibm_bs")(type "KiCad")(uri "${KIPRJMOD}/libraries/ibm_bs.pretty")(options "")(descr ""))
   (lib (name "easyeda2kicad")(type "KiCad")(uri "${KIPRJMOD}/libraries/easyeda2kicad.pretty")(options "")(descr ""))
+  (lib (name "nrf52840_qiaa")(type "KiCad")(uri "${KIPRJMOD}/libraries/nrf52840_qiaa.pretty")(options "")(descr ""))
 )
