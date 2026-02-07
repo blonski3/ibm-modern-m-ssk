@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 0)
+  (lib (name "nrf52840_qiaa_config5-altium-import")(type "KiCad")(uri "${KIPRJMOD}/nrf52840_qiaa_config5-altium-import.kicad_sym")(options "")(descr ""))
+)
