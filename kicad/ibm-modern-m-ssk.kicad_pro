@@ -450,7 +450,8 @@
   "libraries": {
     "pinned_footprint_libs": [],
     "pinned_symbol_libs": [
-      "easyeda2kicad"
+      "easyeda2kicad",
+      "nrf52840_qiaa_config5"
     ]
   },
   "meta": {
@@ -559,7 +560,7 @@
           "show": false
         },
         {
-          "group_by": true,
+          "group_by": false,
           "label": "Footprint",
           "name": "Footprint",
           "show": true
@@ -603,10 +604,10 @@
       ],
       "filter_string": "",
       "group_symbols": true,
-      "include_excluded_from_bom": true,
+      "include_excluded_from_bom": false,
       "name": "",
       "sort_asc": true,
-      "sort_field": "${DNP}"
+      "sort_field": "Reference"
     },
     "connection_grid_size": 50.0,
     "drawing": {
