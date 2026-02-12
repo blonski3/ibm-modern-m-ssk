@@ -2931,250 +2931,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "easyeda2kicad:MAX17048G+T10"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U"
-				(at 0 10.16 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "MAX17048G+T10"
-				(at 0 -10.16 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "easyeda2kicad:TDFN-8_L2.0-W2.0-P0.50-BL-EP1.2"
-				(at 0 -12.7 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "LCSC Part" "C2682616"
-				(at 0 -15.24 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "MAX17048G+T10_0_1"
-				(rectangle
-					(start -10.16 7.62)
-					(end 10.16 -7.62)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(circle
-					(center -8.89 6.35)
-					(radius 0.38)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin unspecified line
-					(at -12.7 2.54 0)
-					(length 2.54)
-					(name "CTG"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -12.7 0 0)
-					(length 2.54)
-					(name "CELL"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -12.7 -2.54 0)
-					(length 2.54)
-					(name "VDD"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -12.7 -5.08 0)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 12.7 5.08 180)
-					(length 2.54)
-					(name "EP"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 12.7 2.54 180)
-					(length 2.54)
-					(name "SDA"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 12.7 0 180)
-					(length 2.54)
-					(name "SCL"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 12.7 -2.54 180)
-					(length 2.54)
-					(name "QSTRT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 12.7 -5.08 180)
-					(length 2.54)
-					(name "~{ALRT}"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "easyeda2kicad:S2B-PH-SM4-TB(LF)(SN)"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -9190,6 +8946,28 @@
 		)
 	)
 	(global_label "SYS_PWR"
+		(shape output)
+		(at 208.28 43.18 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 0.889 0.889)
+			)
+			(justify right)
+		)
+		(uuid "0b67fc74-29c3-452c-919d-c524e0076e36")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 200.2638 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SYS_PWR"
 		(shape input)
 		(at 346.71 -54.61 180)
 		(fields_autoplaced yes)
@@ -9718,7 +9496,7 @@
 		)
 	)
 	(global_label "SCL"
-		(shape input)
+		(shape bidirectional)
 		(at 208.28 38.1 180)
 		(fields_autoplaced yes)
 		(effects
@@ -9729,7 +9507,7 @@
 		)
 		(uuid "39fcfb64-b412-4e82-8c33-aaf47f5a9695")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 203.7351 38.1 0)
+			(at 202.9572 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10091,28 +9869,6 @@
 			)
 		)
 	)
-	(global_label "SCL"
-		(shape input)
-		(at 298.45 41.91 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.889 0.889)
-			)
-			(justify left)
-		)
-		(uuid "6ca6aa01-a043-4e2e-98a9-73deb567f60b")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 302.9949 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "VDD_NRF"
 		(shape input)
 		(at 44.45 101.6 90)
@@ -10289,6 +10045,28 @@
 			)
 		)
 	)
+	(global_label "VBUS"
+		(shape input)
+		(at 231.14 38.1 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 0.889 0.889)
+			)
+			(justify left)
+		)
+		(uuid "89f3763c-0ad5-4eeb-827a-1b2a0336df78")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 236.6585 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "ConnD-"
 		(shape output)
 		(at 210.82 97.79 180)
@@ -10390,28 +10168,6 @@
 		(uuid "91575384-4e76-409c-bfef-b1263ed60156")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 284.2411 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "SDA"
-		(shape input)
-		(at 298.45 39.37 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 0.889 0.889)
-			)
-			(justify left)
-		)
-		(uuid "938c26bd-17cf-4229-a6dc-95674d7acb60")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 303.0372 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10597,8 +10353,30 @@
 			)
 		)
 	)
+	(global_label "{slash}INT"
+		(shape output)
+		(at 231.14 33.02 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 0.889 0.889)
+			)
+			(justify left)
+		)
+		(uuid "b04d81e9-2fb5-45d3-85c4-759bcee8eb68")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 236.1927 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "SDA"
-		(shape input)
+		(shape bidirectional)
 		(at 208.28 40.64 180)
 		(fields_autoplaced yes)
 		(effects
@@ -10609,7 +10387,7 @@
 		)
 		(uuid "b25631bc-c51e-4e87-860a-c135601de045")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 203.6928 40.64 0)
+			(at 202.9149 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11443,7 +11221,7 @@
 	)
 	(symbol
 		(lib_id "easyeda2kicad:TPS62840DLCR")
-		(at 361.95 43.18 0)
+		(at 273.05 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11452,7 +11230,7 @@
 		(fields_autoplaced yes)
 		(uuid "0b6c8bd1-e5ff-4414-8f74-9da357fdca40")
 		(property "Reference" "U7"
-			(at 361.95 31.75 0)
+			(at 273.05 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11460,7 +11238,7 @@
 			)
 		)
 		(property "Value" "TPS62840DLCR"
-			(at 361.95 34.29 0)
+			(at 273.05 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11468,7 +11246,7 @@
 			)
 		)
 		(property "Footprint" "easyeda2kicad:VSON-8_L2.0-W1.5-P0.50-BL"
-			(at 361.95 54.61 0)
+			(at 273.05 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11477,7 +11255,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 361.95 43.18 0)
+			(at 273.05 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11486,7 +11264,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 361.95 43.18 0)
+			(at 273.05 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11495,7 +11273,7 @@
 			)
 		)
 		(property "LCSC Part" "C2071859"
-			(at 361.95 57.15 0)
+			(at 273.05 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12169,104 +11947,6 @@
 			(project "ibm-modern-m-ssk"
 				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968"
 					(reference "#PWR017")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "easyeda2kicad:MAX17048G+T10")
-		(at 285.75 41.91 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2ea26abd-3849-4b92-a855-d910241fd708")
-		(property "Reference" "U6"
-			(at 285.75 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "MAX17048G+T10"
-			(at 285.75 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "easyeda2kicad:TDFN-8_L2.0-W2.0-P0.50-BL-EP1.2"
-			(at 285.75 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 285.75 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 285.75 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part" "C2682616"
-			(at 285.75 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "0463036e-f450-4f80-9671-e32c6ef7130b")
-		)
-		(pin "7"
-			(uuid "0abc1de6-d7ed-4f44-a093-389c9029f123")
-		)
-		(pin "5"
-			(uuid "3a716664-61b8-4121-9249-987ddc55b494")
-		)
-		(pin "9"
-			(uuid "d93d3de9-7a2d-4bbf-a728-9aef3a1d76dc")
-		)
-		(pin "1"
-			(uuid "f80ff3c4-d3bf-49da-8803-9a68bd431dda")
-		)
-		(pin "8"
-			(uuid "cf18ce5a-bbcc-4141-8b84-5009155e19fc")
-		)
-		(pin "4"
-			(uuid "8cff05a0-67a2-49a6-b0b4-4d8b998fc303")
-		)
-		(pin "6"
-			(uuid "f6c293be-a5ee-4cfd-a188-58f6c1f5ca8a")
-		)
-		(pin "3"
-			(uuid "8a867327-786d-49ec-94cd-ea71e7270426")
-		)
-		(instances
-			(project ""
-				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968"
-					(reference "U6")
 					(unit 1)
 				)
 			)
