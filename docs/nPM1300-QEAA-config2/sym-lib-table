@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 0)
+  (lib (name "npm1300_qeaa_config2-altium-import")(type "KiCad")(uri "${KIPRJMOD}/npm1300_qeaa_config2-altium-import.kicad_sym")(options "")(descr ""))
+)

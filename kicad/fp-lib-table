@@ -3,4 +3,5 @@
   (lib (name "ibm_bs")(type "KiCad")(uri "${KIPRJMOD}/libraries/ibm_bs.pretty")(options "")(descr ""))
   (lib (name "easyeda2kicad")(type "KiCad")(uri "${KIPRJMOD}/libraries/easyeda2kicad.pretty")(options "")(descr ""))
   (lib (name "nrf52840_qiaa")(type "KiCad")(uri "${KIPRJMOD}/libraries/nrf52840_qiaa.pretty")(options "")(descr ""))
+  (lib (name "Nordic_QFN50P500X500X90-33N")(type "KiCad")(uri "${KIPRJMOD}/libraries/Nordic_QFN50P500X500X90-33N.pretty")(options "")(descr ""))
 )

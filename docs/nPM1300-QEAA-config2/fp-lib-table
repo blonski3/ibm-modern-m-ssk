@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Nordic_QFN50P500X500X90-33N")(type "KiCad")(uri "${KIPRJMOD}/Nordic_QFN50P500X500X90-33N.pretty")(options "")(descr ""))
+)
