@@ -1,0 +1,7 @@
+Can not find model defined with enviroment variable (C:\Program Files\KiCad\share\kicad\modules\packages3d :
+kicad-embed://QFN50P500X500X90_HS-33N.step
+Can not find model defined with enviroment variable (C:\Program Files\KiCad\share\kicad\modules\packages3d :
+kicad-embed://LGA88C25P25X25_700X700X85.step
+Can not find model defined with enviroment variable:
+${EASYEDA2KICAD}/easyeda2kicad.3dshapes/CONN-TH_726386-2.wrl
+[('U2', 'kicad-embed://QFN50P500X500X90_HS-33N.step'), ('U1', 'kicad-embed://LGA88C25P25X25_700X700X85.step'), ('SW90', 'C:\\Users\\bln15\\Documents\\GitHub\\ibm-modern-m-ssk\\kicad\\libraries\\easyeda2kicad.3dshapes\\SW-SMD_L3.9-W2.9-H2.0-LS4.8.wrl'), ('J5', '${EASYEDA2KICAD}/easyeda2kicad.3dshapes/CONN-TH_726386-2.wrl')]

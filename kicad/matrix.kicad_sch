@@ -3535,6 +3535,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 237.49 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "8f909c7c-265a-4a7b-9f42-0d99ee97413e")
 		)
@@ -3605,6 +3614,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 237.49 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 237.49 59.69 0)
 			(effects
 				(font
@@ -3716,6 +3734,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 105.41 62.23 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "64b7ca6d-008a-4c35-b877-c4c839486fb2")
 		)
@@ -3786,6 +3813,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 262.89 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 262.89 59.69 0)
 			(effects
 				(font
@@ -3897,6 +3933,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 207.01 125.73 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "2be7e199-621d-4f66-b280-d50c4c188314")
 		)
@@ -3967,6 +4012,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 46.99 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 46.99 135.89 0)
 			(effects
 				(font
@@ -4078,6 +4132,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 168.91 62.23 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "be53514e-3fe4-4f40-ab74-fc9db0836c08")
 		)
@@ -4156,6 +4219,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 72.39 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "fde0e651-8991-46db-8fc5-6258747fe14b")
 		)
@@ -4226,6 +4298,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 135.89 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 135.89 85.09 0)
 			(effects
 				(font
@@ -4337,6 +4418,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 245.11 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "7878c90a-e39e-4ed1-ba84-42d3b319bd6f")
 		)
@@ -4440,6 +4530,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 67.31 125.73 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "93456cc3-7536-4650-b723-29e04e3642f3")
 		)
@@ -4510,6 +4609,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 85.09 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 85.09 85.09 0)
 			(effects
 				(font
@@ -4621,6 +4729,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 194.31 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "4b59c182-6f56-429c-bdb9-a00fc2fc0a29")
 		)
@@ -4691,6 +4808,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 250.19 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 250.19 59.69 0)
 			(effects
 				(font
@@ -4802,6 +4928,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 257.81 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "0e04bd17-22dc-425f-8293-ba2519abee70")
 		)
@@ -4872,6 +5007,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 173.99 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 173.99 97.79 0)
 			(effects
 				(font
@@ -4983,6 +5127,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 143.51 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "55624c1c-b655-445f-89e3-9611f676bd54")
 		)
@@ -5061,6 +5214,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 148.59 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "3c12977e-9ccc-4f5b-a9bb-52e21db0334f")
 		)
@@ -5131,6 +5293,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 85.09 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 85.09 123.19 0)
 			(effects
 				(font
@@ -5242,6 +5413,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 105.41 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "b0752750-5d60-4545-b341-b03391ee7635")
 		)
@@ -5337,6 +5517,15 @@
 			)
 		)
 		(property "LCSC Part" "C2288"
+			(at 181.61 62.23 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 181.61 62.23 90)
 			(effects
 				(font
@@ -5448,6 +5637,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 41.91 113.03 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "7e6fab48-6ed6-4c40-8468-7a6467352997")
 		)
@@ -5551,6 +5749,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 92.71 62.23 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "3872903b-5a86-4422-b056-44e0f2bee71f")
 		)
@@ -5621,6 +5828,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 72.39 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 72.39 135.89 0)
 			(effects
 				(font
@@ -5732,6 +5948,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 143.51 62.23 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "9639aded-d900-403e-964e-a47f72e6b532")
 		)
@@ -5827,6 +6052,15 @@
 			)
 		)
 		(property "LCSC Part" "C2288"
+			(at 130.81 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 130.81 100.33 90)
 			(effects
 				(font
@@ -5938,6 +6172,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 54.61 113.03 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "9ffe49da-e797-42b2-b9aa-c3adbf3f56ee")
 		)
@@ -6033,6 +6276,15 @@
 			)
 		)
 		(property "LCSC Part" "C2288"
+			(at 156.21 113.03 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 156.21 113.03 90)
 			(effects
 				(font
@@ -6144,6 +6396,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 232.41 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "3c3a68f9-5383-45aa-89ef-d36ed985b10d")
 		)
@@ -6247,6 +6508,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 257.81 138.43 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "578183de-6b08-4a09-b425-018caa19f49e")
 		)
@@ -6325,6 +6595,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 110.49 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b03704b9-a8ba-4ed4-a730-f04ded654a3a")
 		)
@@ -6395,6 +6674,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 46.99 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 46.99 97.79 0)
 			(effects
 				(font
@@ -6506,6 +6794,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 92.71 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "db264c5a-f836-405a-ac57-28ca81befd53")
 		)
@@ -6584,6 +6881,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 135.89 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "8d62afa9-0512-4a19-ab25-0e9a846e1bb3")
 		)
@@ -6654,6 +6960,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 161.29 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 161.29 97.79 0)
 			(effects
 				(font
@@ -6765,6 +7080,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 194.31 62.23 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "e6596f38-c6c6-4da1-919c-af473aed5d26")
 		)
@@ -6835,6 +7159,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 72.39 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 72.39 123.19 0)
 			(effects
 				(font
@@ -6946,6 +7279,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 54.61 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "50624071-ffee-4b29-a75c-a61a5f8852e8")
 		)
@@ -7049,6 +7391,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 80.01 62.23 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "a7855231-2bcb-4fac-bfbc-b6ff022c2763")
 		)
@@ -7119,6 +7470,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 59.69 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 59.69 110.49 0)
 			(effects
 				(font
@@ -7205,6 +7565,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 46.99 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "22f2d362-31a0-4b0a-9e4f-37b8ee4f6cdc")
 		)
@@ -7275,6 +7644,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 186.69 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 186.69 97.79 0)
 			(effects
 				(font
@@ -7386,6 +7764,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 67.31 113.1252 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "32d12870-c3cf-48fa-be8d-5ba08399dbb1")
 		)
@@ -7481,6 +7868,15 @@
 			)
 		)
 		(property "LCSC Part" "C2288"
+			(at 67.31 138.43 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 67.31 138.43 90)
 			(effects
 				(font
@@ -7592,6 +7988,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 130.81 62.23 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bf963702-aec5-487b-b8fd-f06b37f6ec98")
 		)
@@ -7662,6 +8067,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 212.09 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 212.09 135.89 0)
 			(effects
 				(font
@@ -7773,6 +8187,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 156.21 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "276d7e23-9758-403d-a592-3e21fc498727")
 		)
@@ -7876,6 +8299,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 118.11 113.03 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "a0361aab-26eb-41f3-bf3c-b8386e0ea015")
 		)
@@ -7946,6 +8378,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 110.49 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 110.49 85.09 0)
 			(effects
 				(font
@@ -8057,6 +8498,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 92.71 113.03 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bdbeccfd-bf6d-4bc0-8d78-e562f45d4b28")
 		)
@@ -8152,6 +8602,15 @@
 			)
 		)
 		(property "LCSC Part" "C2288"
+			(at 207.01 62.23 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 207.01 62.23 90)
 			(effects
 				(font
@@ -8263,6 +8722,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 194.31 125.73 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "d4f0e709-d81c-4f3b-853a-9d488cbcee5e")
 		)
@@ -8333,6 +8801,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 135.89 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 135.89 123.19 0)
 			(effects
 				(font
@@ -8444,6 +8921,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 257.81 62.23 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bc096f0d-a44b-4eee-84cc-6728d5a4f035")
 		)
@@ -8547,6 +9033,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 207.01 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "a23aeb4a-c8a1-4fe0-91dd-c951105510a6")
 		)
@@ -8617,6 +9112,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 212.09 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 212.09 110.49 0)
 			(effects
 				(font
@@ -8703,6 +9207,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 123.19 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "d84b6451-b531-49a6-bea5-527ed4364dba")
 		)
@@ -8773,6 +9286,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 250.19 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 250.19 85.09 0)
 			(effects
 				(font
@@ -8859,6 +9381,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 173.99 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "1896ec47-7a94-4873-a300-0f93b5e9f79d")
 		)
@@ -8929,6 +9460,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 250.19 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 250.19 123.19 0)
 			(effects
 				(font
@@ -9040,6 +9580,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 105.41 125.73 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "7640aa30-8bfd-4e85-ac8f-2ca367401c2a")
 		)
@@ -9110,6 +9659,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 123.19 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 123.19 110.49 0)
 			(effects
 				(font
@@ -9221,6 +9779,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 67.31 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "0da12beb-3603-4142-abb3-13da33351ab7")
 		)
@@ -9324,6 +9891,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 181.61 125.73 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "00ad99a3-434f-4c9d-bf35-50716c89828c")
 		)
@@ -9402,6 +9978,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 173.99 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "e1de50d7-d500-4ae0-a2d0-6dd3ca79180b")
 		)
@@ -9472,6 +10057,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 212.09 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 212.09 59.69 0)
 			(effects
 				(font
@@ -9583,6 +10177,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 67.31 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "0947086b-1a5f-4a4c-87da-a4762b8dead9")
 		)
@@ -9653,6 +10256,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 262.89 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 262.89 85.09 0)
 			(effects
 				(font
@@ -9764,6 +10376,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 232.41 138.43 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "66aef4ce-7722-4b6b-a4a3-fd389aaa46bf")
 		)
@@ -9834,6 +10455,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 123.19 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 123.19 85.09 0)
 			(effects
 				(font
@@ -9945,6 +10575,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 92.71 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "ae6332c6-c5a1-46f4-b93d-c2332f2fb427")
 		)
@@ -10015,6 +10654,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 85.09 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 85.09 59.69 0)
 			(effects
 				(font
@@ -10101,6 +10749,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 199.39 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "28bf95af-8868-4db2-a486-088aa75fea9c")
 		)
@@ -10179,6 +10836,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 97.79 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "e7f9964a-4a65-462c-8056-49e24c66efe5")
 		)
@@ -10249,6 +10915,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 110.49 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 110.49 97.79 0)
 			(effects
 				(font
@@ -10360,6 +11035,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 118.11 62.23 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "5ad6791b-3edf-46a7-b0fb-e515976cd92e")
 		)
@@ -10463,6 +11147,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 41.91 138.43 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "c5243690-4f26-4faa-bf71-d377165f78bf")
 		)
@@ -10541,6 +11234,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 212.09 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "dbdecebe-3880-495b-911a-9ecd519b2d2e")
 		)
@@ -10611,6 +11313,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 72.39 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 72.39 97.79 0)
 			(effects
 				(font
@@ -10722,6 +11433,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 105.41 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "038221b2-a0c2-48cf-9a3a-8a707ff6dfd9")
 		)
@@ -10792,6 +11512,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 250.19 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 250.19 97.79 0)
 			(effects
 				(font
@@ -10903,6 +11632,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 143.51 113.03 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "12c495bc-61da-4278-949b-519462cf7d7b")
 		)
@@ -10981,6 +11719,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 237.49 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "4f11c242-e62d-433c-b3fb-23e338a1990e")
 		)
@@ -11051,6 +11798,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 237.49 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 237.49 85.09 0)
 			(effects
 				(font
@@ -11162,6 +11918,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 257.81 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "50a1c10e-dcaf-4419-a128-32eca08c7635")
 		)
@@ -11240,6 +12005,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 72.39 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2470ce0e-03d8-4575-b7b9-cb125036366e")
 		)
@@ -11310,6 +12084,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 85.09 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 85.09 110.49 0)
 			(effects
 				(font
@@ -11421,6 +12204,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 143.51 125.73 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "892dee57-be87-4054-8af7-313bc1507fb4")
 		)
@@ -11524,6 +12316,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 41.91 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "67ab8a6b-d44e-4bac-ab81-86b6b392ca1e")
 		)
@@ -11594,6 +12395,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 148.59 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 148.59 59.69 0)
 			(effects
 				(font
@@ -11705,6 +12515,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 232.41 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "fedfedc0-045d-4589-b265-6bfd00a1da20")
 		)
@@ -11808,6 +12627,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 207.01 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "2d90fbb5-42c0-4ec1-a886-effdba6b48ca")
 		)
@@ -11878,6 +12706,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 135.89 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 135.89 59.69 0)
 			(effects
 				(font
@@ -11989,6 +12826,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 168.91 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "80804759-487e-4b67-bd1c-f27fff7a6bd1")
 		)
@@ -12092,6 +12938,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 207.01 113.03 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "0386412c-9a19-4668-892e-93cb00922350")
 		)
@@ -12162,6 +13017,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 186.69 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 186.69 135.89 0)
 			(effects
 				(font
@@ -12273,6 +13137,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 156.21 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "5a897be9-e8b7-493e-9fa5-cc7124d0366d")
 		)
@@ -12376,6 +13249,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 194.31 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "fd9f8d54-f939-41f7-9f89-d11940899d70")
 		)
@@ -12454,6 +13336,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 199.39 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "5e45a187-7fa2-4fc4-9575-62cf66d645c7")
 		)
@@ -12524,6 +13415,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 123.19 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 123.19 59.69 0)
 			(effects
 				(font
@@ -12635,6 +13535,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 118.11 87.6294 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "d0a23e59-e16e-4d82-8e65-90f550010430")
 		)
@@ -12738,6 +13647,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 105.41 113.03 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "251daeef-2a14-4cd8-859f-4810f36572f6")
 		)
@@ -12808,6 +13726,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 148.59 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 148.59 123.19 0)
 			(effects
 				(font
@@ -12894,6 +13821,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 123.19 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "d48f9a1e-c7e3-42ae-a276-b4883cfab631")
 		)
@@ -12964,6 +13900,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 46.99 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 46.99 110.49 0)
 			(effects
 				(font
@@ -13075,6 +14020,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 156.21 125.73 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "2443a796-17b1-46f2-b0b6-5bef7cb186be")
 		)
@@ -13178,6 +14132,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 181.61 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "4f84f1ee-877c-4749-953f-a0d802f24986")
 		)
@@ -13248,6 +14211,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 97.79 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 97.79 123.19 0)
 			(effects
 				(font
@@ -13334,6 +14306,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 148.59 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "26f32b9f-bf1a-4041-aa31-a43e45951921")
 		)
@@ -13404,6 +14385,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 212.09 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 212.09 85.09 0)
 			(effects
 				(font
@@ -13515,6 +14505,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 181.61 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "7143d440-3aaf-47be-8408-5df9761dbb84")
 		)
@@ -13585,6 +14584,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 199.39 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 199.39 59.69 0)
 			(effects
 				(font
@@ -13696,6 +14704,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 245.11 125.73 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "33075b15-4ada-481e-b888-c2f32e46724e")
 		)
@@ -13774,6 +14791,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 250.19 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "26cdc056-53a7-41b0-95ba-24b5ad0c09ce")
 		)
@@ -13844,6 +14870,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 59.69 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 59.69 123.19 0)
 			(effects
 				(font
@@ -13955,6 +14990,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 80.01 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "b0cff503-adb4-4e75-b2aa-af88c73d0c89")
 		)
@@ -14025,6 +15069,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 110.49 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 110.49 110.49 0)
 			(effects
 				(font
@@ -14111,6 +15164,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 46.99 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "03cefb91-bc3c-4a8f-accb-91953a9a8b5c")
 		)
@@ -14181,6 +15243,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 186.69 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 186.69 110.49 0)
 			(effects
 				(font
@@ -14267,6 +15338,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 123.19 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "504d265b-4cd7-4d45-9cdd-56828ed44612")
 		)
@@ -14337,6 +15417,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 85.09 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 85.09 97.79 0)
 			(effects
 				(font
@@ -14448,6 +15537,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 118.11 125.73 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "fbccee3f-c0e9-4183-a68f-f544baf674bc")
 		)
@@ -14518,6 +15616,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 148.59 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 148.59 85.09 0)
 			(effects
 				(font
@@ -14629,6 +15736,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 245.11 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "aef19cd4-b63d-4ff1-9f85-34efb5801a56")
 		)
@@ -14732,6 +15848,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 54.61 125.73 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "1c605b61-a78d-4e43-8bcd-ba3dcb613980")
 		)
@@ -14810,6 +15935,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 173.99 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b969f1a4-9950-43a9-b978-40a24a041779")
 		)
@@ -14880,6 +16014,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 59.69 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 59.69 85.09 0)
 			(effects
 				(font
@@ -14991,6 +16134,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 181.61 138.43 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "af24ca39-05c2-4125-a928-8591f55fff63")
 		)
@@ -15069,6 +16221,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 199.39 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "5b411c23-1cfe-47b5-8371-f35b6616d085")
 		)
@@ -15139,6 +16300,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 161.29 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 161.29 85.09 0)
 			(effects
 				(font
@@ -15250,6 +16420,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 168.91 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "38abd973-edb2-4f0f-b11c-8cb02888c9e6")
 		)
@@ -15345,6 +16524,15 @@
 			)
 		)
 		(property "LCSC Part" "C2288"
+			(at 80.01 125.73 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 80.01 125.73 90)
 			(effects
 				(font
@@ -15456,6 +16644,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 41.91 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "2dd8e905-473d-4bbc-a07f-5eae54d78793")
 		)
@@ -15526,6 +16723,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 59.69 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 59.69 59.69 0)
 			(effects
 				(font
@@ -15637,6 +16843,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 130.81 113.03 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "d2aa840f-b09d-4b73-9753-6abddad90d12")
 		)
@@ -15707,6 +16922,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 110.49 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 110.49 59.69 0)
 			(effects
 				(font
@@ -15793,6 +17017,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 97.79 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "806e2480-7d76-4d94-967a-8035ae0dff87")
 		)
@@ -15863,6 +17096,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 186.69 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 186.69 59.69 0)
 			(effects
 				(font
@@ -15974,6 +17216,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 130.81 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "5f502599-2577-497c-95c1-33c6423e53e2")
 		)
@@ -16069,6 +17320,15 @@
 			)
 		)
 		(property "LCSC Part" "C2288"
+			(at 130.81 125.73 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 130.81 125.73 90)
 			(effects
 				(font
@@ -16180,6 +17440,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 41.91 62.23 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "55d2092a-c466-470d-9fff-63d9cb79d3d2")
 		)
@@ -16258,6 +17527,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 59.69 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "a234379c-95fd-4a45-8192-0f0057c1999d")
 		)
@@ -16327,6 +17605,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 212.09 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 212.09 76.2 0)
 			(effects
 				(font
@@ -16438,6 +17725,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 54.61 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "6c2abf84-57d8-45cc-b029-a42f082ca43f")
 		)
@@ -16533,6 +17829,15 @@
 			)
 		)
 		(property "LCSC Part" "C2288"
+			(at 181.61 113.03 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 181.61 113.03 90)
 			(effects
 				(font
@@ -16644,6 +17949,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 80.01 113.03 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "6057073f-953f-48bc-8623-ac4aacab89a0")
 		)
@@ -16747,6 +18061,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 143.51 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "331e77d4-1e09-4043-b177-d7b4aff90bc4")
 		)
@@ -16817,6 +18140,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 186.69 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 186.69 123.19 0)
 			(effects
 				(font
@@ -16928,6 +18260,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 41.91 125.73 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "1fd517a8-4fc4-4b53-b102-3ce9784c9f67")
 		)
@@ -17023,6 +18364,15 @@
 			)
 		)
 		(property "LCSC Part" "C2288"
+			(at 92.71 125.73 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 92.71 125.73 90)
 			(effects
 				(font
@@ -17134,6 +18484,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 245.11 62.23 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "8289ebdc-83d2-49cd-b151-fe0421e265fe")
 		)
@@ -17204,6 +18563,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 161.29 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 161.29 123.19 0)
 			(effects
 				(font
@@ -17290,6 +18658,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 212.09 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "7801e5b0-ebec-49fd-aa69-90208d0e34d6")
 		)
@@ -17360,6 +18737,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 97.79 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 97.79 97.79 0)
 			(effects
 				(font
@@ -17446,6 +18832,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 262.89 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b6e019c3-c43f-4951-af4b-d86d5805f4fe")
 		)
@@ -17516,6 +18911,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 173.99 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 173.99 59.69 0)
 			(effects
 				(font
@@ -17627,6 +19031,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 194.31 113.03 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "5538afb6-4317-411e-89e4-97ed1230073c")
 		)
@@ -17697,6 +19110,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 199.39 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 199.39 97.79 0)
 			(effects
 				(font
@@ -17783,6 +19205,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 186.69 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "aca9e435-5ed8-468e-9bc3-fc3d33cda7ea")
 		)
@@ -17853,6 +19284,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 161.29 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 161.29 110.49 0)
 			(effects
 				(font
@@ -17964,6 +19404,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 118.11 138.43 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "b0256a81-69ec-49fc-aab3-4c0ae687fd5d")
 		)
@@ -18067,6 +19516,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 54.61 62.23 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "cd48d3a6-0f9e-49e3-b4a9-e0f5f0ca0040")
 		)
@@ -18137,6 +19595,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 46.99 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 46.99 59.69 0)
 			(effects
 				(font
@@ -18248,6 +19715,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 168.91 125.73 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "8e3dc970-3eaa-4666-87ed-31d111ade49f")
 		)
@@ -18318,6 +19794,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 97.79 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 97.79 59.69 0)
 			(effects
 				(font
@@ -18429,6 +19914,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 245.11 138.43 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "c1415a0a-14ef-4bc0-ace3-252bfea25a4c")
 		)
@@ -18524,6 +20018,15 @@
 			)
 		)
 		(property "LCSC Part" "C2288"
+			(at 207.01 138.43 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 207.01 138.43 90)
 			(effects
 				(font
@@ -18635,6 +20138,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 232.41 62.23 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "2f50019a-2a47-44d0-976d-07b2da43daf0")
 		)
@@ -18730,6 +20242,15 @@
 			)
 		)
 		(property "LCSC Part" "C2288"
+			(at 118.11 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 118.11 100.33 90)
 			(effects
 				(font
@@ -18841,6 +20362,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 67.31 62.23 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "a55ecdec-6fb7-4a0a-b42a-1779f7fec275")
 		)
@@ -18944,6 +20474,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 168.91 113.03 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "a998cf9b-2601-4d5c-bb80-4abed13f9bf3")
 		)
@@ -19014,6 +20553,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 135.89 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 135.89 110.49 0)
 			(effects
 				(font
@@ -19125,6 +20673,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 80.01 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "a8d90cf5-4ec7-4305-8e06-e76b9f89ab62")
 		)
@@ -19203,6 +20760,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Pin" ""
+			(at 72.39 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "736485cb-46d2-4455-85bb-6823baa214a1")
 		)
@@ -19273,6 +20839,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 262.89 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pin" ""
 			(at 262.89 97.79 0)
 			(effects
 				(font

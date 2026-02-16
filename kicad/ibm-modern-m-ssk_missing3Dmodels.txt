@@ -1,0 +1,13 @@
+### Missing 3D models - created on 2026-02-15 00:40
+### Printed by checking_3D_models plugin
+Board file: C:\Users\bln15\Documents\GitHub\ibm-modern-m-ssk\kicad\ibm-modern-m-ssk.kicad_pcb
+3D missing models written to:
+C:\Users\bln15\Documents\GitHub\ibm-modern-m-ssk\kicad\ibm-modern-m-ssk_missing3Dmodels.txt
+-------
+('U2', 'kicad-embed://QFN50P500X500X90_HS-33N.step')
+('U1', 'kicad-embed://LGA88C25P25X25_700X700X85.step')
+('SW90', 'C:\\Users\\bln15\\Documents\\GitHub\\ibm-modern-m-ssk\\kicad\\libraries\\easyeda2kicad.3dshapes\\SW-SMD_L3.9-W2.9-H2.0-LS4.8.wrl')
+('J5', '${EASYEDA2KICAD}/easyeda2kicad.3dshapes/CONN-TH_726386-2.wrl')
+-------
+NUM of 3D missing models:4
+checked extensions ['.stp', '.step', '.stpZ']

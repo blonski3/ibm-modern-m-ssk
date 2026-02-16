@@ -1,4 +1,4 @@
-26797426420035676
+26831068436784901
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -73506,6 +73506,13 @@ net tie
 0
 4
 4
+Nordic_QFN50P500X500X90-33N
+Nordic_QFN50P500X500X90-33N
+
+
+0
+33
+33
 OptoDevice
 ADNS-9800
 Laser Gaming Sensor ADNS-9800
@@ -106428,6 +106435,13 @@ FPC-SMD_24P-P0.50_TF38-24S-0.5SV-830
 28
 26
 easyeda2kicad
+LED-SMD_4P-L1.6-W1.5-TR-1
+
+
+0
+4
+4
+easyeda2kicad
 LED0603-RD
 
 
@@ -106441,6 +106455,13 @@ LiPo_603450
 0
 0
 0
+easyeda2kicad
+QFN-16_L3.0-W3.0-P0.50-TL-EP1.7
+
+
+0
+17
+17
 easyeda2kicad
 SOD-123_L2.8-W1.8-LS3.7-RD
 
@@ -106463,6 +106484,20 @@ SOD-723_L1.0-W0.6-P1.4-RD
 2
 2
 easyeda2kicad
+SOD-882_L1.0-W0.6-BI
+
+
+0
+2
+2
+easyeda2kicad
+SON-6_L1.4-W1.0-P0.50-TL_USBULC6-2M6
+
+
+0
+6
+6
+easyeda2kicad
 SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR
 
 
@@ -106484,12 +106519,47 @@ SW-SMD_L3.9-W3.0-P4.45
 2
 2
 easyeda2kicad
+TDFN-8_L2.0-W2.0-P0.50-BL-EP1.2
+
+
+0
+9
+9
+easyeda2kicad
 USB-C_SMD-TYPE-C-31-M-12_1
 
 
 0
 18
 16
+easyeda2kicad
+USP-6C_L2.0-W1.8-P0.50-BL-EP
+
+
+0
+7
+7
+easyeda2kicad
+VSON-8_L2.0-W1.5-P0.50-BL
+
+
+0
+8
+8
+easyeda2kicad
+WCSP-8_L1.6-W1.0-P0.40-TL_IS31FL3194-CLS2
+
+
+0
+8
+8
+easyeda2kicad
+WLCSP-9_L1.6-W1.8-R3-C3-P0.50-BL
+
+
+0
+9
+9
 easyeda2kicad
 X2SON-4_L1.0-W1.0-P0.65-TL-EP
 
@@ -106501,6 +106571,69 @@ ibm_bs
 ibm_bs_1u
 
 ibm buckling springs
+0
+2
+2
+nrf52840_qiaa
+AQFN50P700X700X85_HS-74N
+
+
+0
+90
+74
+nrf52840_qiaa
+BT-XTAL_2016
+
+
+0
+4
+4
+nrf52840_qiaa
+CAPC1005X04L
+
+
+0
+2
+2
+nrf52840_qiaa
+CAPC1608X06L
+
+
+0
+2
+2
+nrf52840_qiaa
+INDC1005X04L
+
+
+0
+2
+2
+nrf52840_qiaa
+INDC1608X06L
+Chip Inductor, 2-Leads, Body 1.6x0.8mm, IPC High Density
+
+0
+2
+2
+nrf52840_qiaa
+RESC1005X04L
+
+
+0
+2
+2
+nrf52840_qiaa
+TP_2x1mm_TH
+
+
+0
+2
+2
+nrf52840_qiaa
+XTAL_3215
+
+
 0
 2
 2
