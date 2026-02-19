@@ -6330,7 +6330,7 @@
 	)
 	(text "not req for Fxx and later"
 		(exclude_from_sim no)
-		(at 145.288 88.9 0)
+		(at 150.368 89.408 0)
 		(effects
 			(font
 				(size 0.889 0.889)
