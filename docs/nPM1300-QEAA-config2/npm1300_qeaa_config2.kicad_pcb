@@ -46,11 +46,72 @@
 		(65 "User.14" user "Top Via Capping")
 	)
 	(setup
+		(stackup
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 1"
+				(type "core")
+				(thickness 0.48408)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 2"
+				(type "prepreg")
+				(thickness 0.48408)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 3"
+				(type "core")
+				(thickness 0.48408)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(copper_finish "None")
+			(dielectric_constraints no)
+		)
 		(pad_to_mask_clearance 0.0762)
 		(allow_soldermask_bridges_in_footprints no)
 		(tenting front back)
 		(aux_axis_origin 77.79376 183.2212)
-		(grid_origin 77.79376 183.2212)
+		(grid_origin 149.37609 105.5036)
 		(pcbplotparams
 			(layerselection 0x00000000_00000000_55555555_5755f5ff)
 			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
@@ -409,7 +470,7 @@
 			(at 2.648 0.002567 90)
 			(unlocked yes)
 			(layer "F.SilkS")
-			(uuid "5fe0838d-b272-4847-82e7-91610815d33d")
+			(uuid "fe5a267e-b0e7-4cb6-b087-0dae4bdcefe6")
 			(effects
 				(font
 					(size 0.635 0.635)
@@ -423,7 +484,7 @@
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "aaedcf4f-8e25-414b-aca1-0e4a75d34214")
+			(uuid "d860537b-71e4-45e6-b020-5a8034f81416")
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -435,7 +496,7 @@
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "86f264ec-7fee-441b-aa16-dbd529d357e2")
+			(uuid "6f9c203f-fd9f-4c24-8659-037d182bac8f")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -447,7 +508,7 @@
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "64f07d99-d41e-4941-a35b-ed9bba58a655")
+			(uuid "167d6c43-b5f8-4231-93e7-786a68756285")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -922,7 +983,7 @@
 			(uuid "4918aedf-ce9e-4384-9145-06eb1cc737ed")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0.575 -0.187338 360)
+			(at 0.575 -0.187338 0)
 			(unlocked yes)
 			(layer "User.7")
 			(uuid "aa1b36aa-58c6-485b-a2b4-eae37f42fd78")
@@ -2083,7 +2144,7 @@
 			(uuid "633f1c02-ab21-4d2b-ba3b-9a9a331223c9")
 		)
 		(fp_text user "${REFERENCE}"
-			(at -0.7112 0.189738 360)
+			(at -0.7112 0.189738 0)
 			(unlocked yes)
 			(layer "User.7")
 			(uuid "e485d064-f43c-4959-8c63-5513758a99fe")
@@ -2420,7 +2481,7 @@
 			(at -0.126995 1.052557 0)
 			(unlocked yes)
 			(layer "F.SilkS")
-			(uuid "29ed460f-37dd-4695-81aa-e5866c5aab28")
+			(uuid "1a565f25-0a25-4451-a2ff-ba5ca7ebf216")
 			(effects
 				(font
 					(size 0.635 0.635)
@@ -2433,7 +2494,7 @@
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "91f487b7-cb15-4836-99f0-3e72bd2bf9ce")
+			(uuid "a1bd2ad0-099a-427a-b2a8-dd0248d965c0")
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -2445,7 +2506,7 @@
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "c0668f56-8404-4988-b07b-6da84e44c852")
+			(uuid "90a3972b-2616-4ea0-860c-f03cc45509b4")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2457,7 +2518,7 @@
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "3d551c42-1518-47d8-8f55-37584ff2b3e8")
+			(uuid "c803c99e-584a-4489-bba4-fab34a42c1bc")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4220,7 +4281,7 @@
 			(uuid "e941a8ad-4e4f-4b6c-beb3-0180a41957ff")
 		)
 		(fp_text user "${REFERENCE}"
-			(at -0.87862 0.177563 360)
+			(at -0.87862 0.177563 0)
 			(unlocked yes)
 			(layer "User.7")
 			(uuid "a0647a80-5c83-4d89-b01a-246ed2cac9c3")
@@ -5281,7 +5342,7 @@
 			(extension_offset 0)
 			(keep_text_aligned yes)
 		)
-		(gr_text "14,0"
+		(gr_text "14.0"
 			(at 158.7261 105.0036 90)
 			(layer "User.3")
 			(uuid "56e74dc0-9edb-4ebf-bcea-76a658dc3798")
@@ -5317,7 +5378,7 @@
 			(extension_offset 0)
 			(keep_text_aligned yes)
 		)
-		(gr_text "16,8"
+		(gr_text "16.8"
 			(at 148.5011 114.1036 0)
 			(layer "User.3")
 			(uuid "ae8526bd-ba79-460d-aba6-09697eb421cc")
