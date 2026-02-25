@@ -1,4 +1,4 @@
-27289832782812161
+27291606436870329
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -107982,6 +107982,13 @@ IPEX-SMD_3P-L2.6-W2.6-LS3.0_ZCF-CF0001-0002IPEX
 3
 3
 easyeda2kicad
+KEY-SMD_SKRTLAE010
+
+
+0
+7
+5
+easyeda2kicad
 LED-SMD_4P-L1.6-W1.5-TR-1
 
 
@@ -107996,7 +108003,7 @@ LED0603-RD
 2
 2
 easyeda2kicad
-LiPo_603450
+LP803040
 
 
 0

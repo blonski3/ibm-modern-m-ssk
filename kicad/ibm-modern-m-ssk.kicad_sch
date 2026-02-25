@@ -682,129 +682,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Connector:Conn_01x01_Socket"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Conn_01x01_Socket"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Generic connector, single row, 01x01, script generated"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "connector"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Connector*:*_1x??_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Conn_01x01_Socket_1_1"
-				(polyline
-					(pts
-						(xy -1.27 0) (xy -0.508 0)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 -0.508)
-					(mid -0.5058 0)
-					(end 0 0.508)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "Pin_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Connector:Conn_01x04_Pin"
 			(pin_names
 				(offset 1.016)
@@ -3016,8 +2893,8 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "Q"
-				(at 5.08 1.27 0)
+			(property "Reference" "Q1"
+				(at 6.35 1.2701 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -3025,16 +2902,16 @@
 					(justify left)
 				)
 			)
-			(property "Value" "Q_PMOS"
-				(at 5.08 -1.27 0)
+			(property "Value" "PMZB350UPE,315"
+				(at 6.35 -1.2699 0)
 				(effects
 					(font
-						(size 1.27 1.27)
+						(size 0.889 0.889)
 					)
 					(justify left)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Package_DFN_QFN:Diodes_DFN1006-3"
 				(at 5.08 2.54 0)
 				(effects
 					(font
@@ -3043,7 +2920,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "~"
+			(property "Datasheet" "https://www.lcsc.com/product-detail/C478140.html"
 				(at 0 0 0)
 				(effects
 					(font
@@ -3053,6 +2930,15 @@
 				)
 			)
 			(property "Description" "P-MOSFET transistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC Part" "C478140"
 				(at 0 0 0)
 				(effects
 					(font
@@ -3248,7 +3134,7 @@
 							)
 						)
 					)
-					(number "G"
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3266,7 +3152,7 @@
 							)
 						)
 					)
-					(number "D"
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3284,7 +3170,7 @@
 							)
 						)
 					)
-					(number "S"
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3403,192 +3289,6 @@
 					(at 0 -2.54 90)
 					(length 0.762)
 					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Jumper:SolderJumper_2_Open"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom no)
-			(on_board yes)
-			(property "Reference" "JP"
-				(at 0 2.032 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "SolderJumper_2_Open"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Solder Jumper, 2-pole, open"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "solder jumper SPST"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "SolderJumper*Open*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "SolderJumper_2_Open_0_1"
-				(polyline
-					(pts
-						(xy -0.254 1.016) (xy -0.254 -1.016)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -0.254 -1.016)
-					(mid -1.2656 0)
-					(end -0.254 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -0.254 -1.016)
-					(mid -1.2656 0)
-					(end -0.254 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(arc
-					(start 0.254 1.016)
-					(mid 1.2656 0)
-					(end 0.254 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0.254 1.016)
-					(mid 1.2656 0)
-					(end 0.254 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.254 1.016) (xy 0.254 -1.016)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "SolderJumper_2_Open_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "B"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -6735,22 +6435,9 @@
 		)
 		(uuid f17cb80f-8d47-4917-95ee-91b33b702ce2)
 	)
-	(text "(only for 3d model)"
-		(exclude_from_sim no)
-		(at 178.816 279.908 0)
-		(effects
-			(font
-				(size 0.762 0.762)
-				(thickness 0.3048)
-				(bold yes)
-			)
-			(justify left)
-		)
-		(uuid "4adf3814-eebb-42a8-9f8c-1f403b7f7e46")
-	)
 	(text "Battery"
 		(exclude_from_sim no)
-		(at 178.562 277.876 0)
+		(at 178.308 279.4 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -7035,12 +6722,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5ad2c783-c45c-46f1-a03b-31935bec1d80")
-	)
-	(junction
-		(at 226.06 66.04)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5b616383-64da-485e-845c-797ec3b46771")
 	)
 	(junction
 		(at 306.07 93.98)
@@ -8447,6 +8128,16 @@
 			(type default)
 		)
 		(uuid "92debefe-cb5c-452c-ae16-3e05abb50223")
+	)
+	(wire
+		(pts
+			(xy 226.06 66.04) (xy 226.06 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9390f23f-4dab-4591-bfd1-1d16e78282a9")
 	)
 	(wire
 		(pts
@@ -11815,71 +11506,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Conn_01x01_Socket")
-		(at 220.98 66.04 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "15a2c8a8-64b8-4608-8063-711bf32877ae")
-		(property "Reference" "NTC1"
-			(at 219.456 66.04 0)
-			(effects
-				(font
-					(size 0.889 0.889)
-				)
-			)
-		)
-		(property "Value" "Conn_01x01_Socket"
-			(at 221.615 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 220.98 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 220.98 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x01, script generated"
-			(at 220.98 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b4947b25-9fa9-4a80-8a98-7280bafef676")
-		)
-		(instances
-			(project ""
-				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968"
-					(reference "NTC1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C_Small")
 		(at 121.92 45.72 0)
 		(unit 1)
@@ -12097,76 +11723,6 @@
 			(project "ibm-modern-m-ssk"
 				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968"
 					(reference "#PWR08")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Jumper:SolderJumper_2_Open")
-		(at 226.06 69.85 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "24c85f60-868f-4126-a794-8f49d14178db")
-		(property "Reference" "JP1"
-			(at 227.584 70.104 90)
-			(effects
-				(font
-					(size 0.889 0.889)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "SolderJumper_2_Open"
-			(at 228.6 71.1199 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm"
-			(at 226.06 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 226.06 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Solder Jumper, 2-pole, open"
-			(at 226.06 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "fdfe3f24-b4f6-4604-8eb7-160df156ea57")
-		)
-		(pin "2"
-			(uuid "1b6e645c-b367-4ba6-bda7-5423bd96aee3")
-		)
-		(instances
-			(project ""
-				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968"
-					(reference "JP1")
 					(unit 1)
 				)
 			)
@@ -13774,13 +13330,13 @@
 				(hide yes)
 			)
 		)
-		(pin "D"
+		(pin "2"
 			(uuid "e31cce6b-1719-479c-b648-669c75d0138b")
 		)
-		(pin "G"
+		(pin "1"
 			(uuid "8a242ad9-4b38-48bd-954a-93398d553443")
 		)
-		(pin "S"
+		(pin "3"
 			(uuid "70247cf9-5737-48b4-901b-76fb455c99be")
 		)
 		(instances
@@ -16139,7 +15695,7 @@
 				)
 			)
 		)
-		(property "Value" "S2B-PH-SM4-TB(LF)(SN)"
+		(property "Value" "Molex PicoBlade"
 			(at 180.34 240.03 90)
 			(effects
 				(font
@@ -16147,7 +15703,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:CONN-SMD_2P-P1.00_SM02B-SRSS-TB-LF-SN"
+		(property "Footprint" "Connector_Molex:Molex_PicoBlade_53261-0271_1x02-1MP_P1.25mm_Horizontal"
 			(at 166.37 228.6 0)
 			(effects
 				(font
@@ -16156,7 +15712,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/product-detail/C160402.html"
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C177225.html"
 			(at 163.83 228.6 0)
 			(effects
 				(font
@@ -16174,7 +15730,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C160402"
+		(property "LCSC Part" "C177225"
 			(at 161.29 228.6 0)
 			(effects
 				(font
@@ -19585,7 +19141,7 @@
 				)
 			)
 		)
-		(property "Value" "Li-Po 603450"
+		(property "Value" "LP803040"
 			(at 189.9285 262.89 90)
 			(effects
 				(font
@@ -19593,7 +19149,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LiPo_603450"
+		(property "Footprint" "easyeda2kicad:LP803040"
 			(at 190.246 267.97 90)
 			(effects
 				(font
@@ -19602,7 +19158,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.tme.eu/Document/8518e6f80c7c95dc96792c6f2286ce95/aky2417.pdf"
 			(at 190.246 267.97 90)
 			(effects
 				(font
