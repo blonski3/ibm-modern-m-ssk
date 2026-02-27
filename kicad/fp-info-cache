@@ -1,4 +1,4 @@
-27291606436870329
+27293378624909902
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -107960,6 +107960,13 @@ DFN2510-10_L2.5-W1.0-P0.50-BL
 0
 10
 10
+easyeda2kicad
+Diodes_DFN1006-2
+DFN package size 1006 3 pins
+DFN package size 1006 3 pins
+0
+2
+2
 easyeda2kicad
 FC-135R_L3.2-W1.5
 
