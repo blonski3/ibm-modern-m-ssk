@@ -2,7 +2,7 @@
 	(version 20250114)
 	(generator "eeschema")
 	(generator_version "9.0")
-	(uuid "ac1fb7cc-1653-4ec6-8cad-492a8f56eb03")
+	(uuid "032553b5-31c8-4e49-86bc-e5ef30d20dd6")
 	(paper "A3")
 	(lib_symbols
 		(symbol "AltiumLib:root_0_nPM1300_QEAA_AltiumLib.DbLib"
@@ -10884,7 +10884,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:SW-SMD_L3.9-W3.0-P4.45"
+		(property "Footprint" "easyeda2kicad:SW-SMD_2P-L3.0-W2.5-LS4.0"
 			(at 130.81 236.22 0)
 			(effects
 				(font
@@ -10893,7 +10893,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/product-detail/C720477.html"
+		(property "Datasheet" "C49234121"
 			(at 130.81 236.22 0)
 			(effects
 				(font
@@ -10911,16 +10911,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C720477"
-			(at 130.81 241.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pin" ""
+		(property "LCSC Part" "C49234121"
 			(at 130.81 241.3 0)
 			(effects
 				(font

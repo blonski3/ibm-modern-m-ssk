@@ -703,7 +703,7 @@
 	(footprint "Package_DFN_QFN:Diodes_DFN1006-3"
 		(layer "F.Cu")
 		(uuid "058731e7-7eaf-4eba-8660-4b83534ce940")
-		(at 132.59999 94.8 180)
+		(at 109.25 51.5 180)
 		(descr "DFN package size 1006 3 pins")
 		(tags "DFN package size 1006 3 pins")
 		(property "Reference" "Q1"
