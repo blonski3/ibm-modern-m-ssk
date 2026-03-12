@@ -3471,7 +3471,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "3c321bfa-b947-4159-a54c-dfd32a1aba40")
+		(uuid "3c321bfa-b947-4159-a54c-dfd32a1aba41")
 	)
 	(label "LED_DATA"
 		(at 172.72 73.66 0)
@@ -3481,7 +3481,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "3c321bfa-b947-4159-a54c-dfd32a1aba40")
+		(uuid "3c321bfa-b947-4159-a54c-dfd32a1aba42")
 	)
 	(label "D-"
 		(at 139.7 92.71 0)
@@ -3521,7 +3521,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "e4c8b831-782b-4c2f-b23e-92a64f71a868")
+		(uuid "e4c8b831-782b-4c2f-b23e-92a64f71a869")
 	)
 	(label "CC2"
 		(at 92.71 81.28 0)
@@ -3531,7 +3531,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "e4c8b831-782b-4c2f-b23e-92a64f71a868")
+		(uuid "e4c8b831-782b-4c2f-b23e-92a64f71a86a")
 	)
 	(label "CC1"
 		(at 92.71 78.74 0)
@@ -3541,7 +3541,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "e4c8b831-782b-4c2f-b23e-92a64f71a868")
+		(uuid "e4c8b831-782b-4c2f-b23e-92a64f71a86b")
 	)
 	(hierarchical_label "LED_DATA"
 		(shape input)
@@ -3563,7 +3563,7 @@
 			)
 			(justify right)
 		)
-		(uuid "176684cf-71db-40af-b0d7-22b2f5ca9725")
+		(uuid "176684cf-71db-40af-b0d7-22b2f5ca9726")
 	)
 	(hierarchical_label "D+"
 		(shape input)
@@ -3574,7 +3574,7 @@
 			)
 			(justify right)
 		)
-		(uuid "176684cf-71db-40af-b0d7-22b2f5ca9725")
+		(uuid "176684cf-71db-40af-b0d7-22b2f5ca9727")
 	)
 	(hierarchical_label "D-"
 		(shape input)
@@ -3585,7 +3585,7 @@
 			)
 			(justify right)
 		)
-		(uuid "176684cf-71db-40af-b0d7-22b2f5ca9725")
+		(uuid "176684cf-71db-40af-b0d7-22b2f5ca9728")
 	)
 	(hierarchical_label "CC1"
 		(shape input)
@@ -3596,7 +3596,7 @@
 			)
 			(justify right)
 		)
-		(uuid "176684cf-71db-40af-b0d7-22b2f5ca9725")
+		(uuid "176684cf-71db-40af-b0d7-22b2f5ca9729")
 	)
 	(hierarchical_label "BT_PAIR"
 		(shape input)
@@ -3607,7 +3607,7 @@
 			)
 			(justify right)
 		)
-		(uuid "176684cf-71db-40af-b0d7-22b2f5ca9725")
+		(uuid "176684cf-71db-40af-b0d7-22b2f5ca972a")
 	)
 	(hierarchical_label "SHPHLD"
 		(shape input)
@@ -3618,7 +3618,7 @@
 			)
 			(justify right)
 		)
-		(uuid "176684cf-71db-40af-b0d7-22b2f5ca9725")
+		(uuid "176684cf-71db-40af-b0d7-22b2f5ca972b")
 	)
 	(hierarchical_label "VBUS"
 		(shape input)
