@@ -1,4 +1,4 @@
-26852343213644216
+26860534668132887
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -106646,6 +106646,41 @@ X2SON-4_L1.0-W1.0-P0.65-TL-EP
 5
 easyeda2kicad
 db_holder
+
+
+0
+0
+0
+easyeda2kicad
+mouse-bite-1mm-slot
+
+
+0
+0
+0
+easyeda2kicad
+mouse-bite-2.54mm-slot
+
+
+0
+0
+0
+easyeda2kicad
+mouse-bite-2mm-slot
+
+
+0
+0
+0
+easyeda2kicad
+mouse-bite-3mm-slot
+
+
+0
+0
+0
+easyeda2kicad
+mouse-bite-5mm-slot
 
 
 0

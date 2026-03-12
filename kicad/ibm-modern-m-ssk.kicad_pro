@@ -839,12 +839,12 @@
       "dashed_lines_dash_length_ratio": 12.0,
       "dashed_lines_gap_length_ratio": 3.0,
       "default_line_thickness": 6.0,
-      "default_text_size": 50.0,
+      "default_text_size": 35.0,
       "field_names": [],
       "intersheets_ref_own_page": false,
       "intersheets_ref_prefix": "",
       "intersheets_ref_short": false,
-      "intersheets_ref_show": false,
+      "intersheets_ref_show": true,
       "intersheets_ref_suffix": "",
       "junction_size_choice": 2,
       "label_size_ratio": 0.375,
@@ -886,6 +886,14 @@
     [
       "17f6a4a5-fbff-4e30-a1cc-9481373e4968",
       "Root"
+    ],
+    [
+      "0f3c1877-5271-448c-b354-c4d8810124ff",
+      "motherboard"
+    ],
+    [
+      "c9a46136-57a3-45fc-88ce-38da53378f82",
+      "daughterboard"
     ],
     [
       "fcf2cb73-a256-4101-99b1-d123c9be8ab2",
