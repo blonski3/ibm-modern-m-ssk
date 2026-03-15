@@ -3748,7 +3748,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_Wurth_150044M155260"
+		(property "Footprint" "easyeda2kicad:WS2812C-2020-V1"
 			(at 162.56 81.28 0)
 			(effects
 				(font
@@ -4274,7 +4274,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:SW-SMD_2P-L3.0-W2.5-LS4.0"
+		(property "Footprint" "easyeda2kicad:KEY-SMD_B3U-1000PM"
 			(at 157.48 87.63 0)
 			(effects
 				(font
@@ -4283,7 +4283,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "C49234121"
+		(property "Datasheet" "www.lcsc.com/product-detail/C231329.html"
 			(at 157.48 87.63 0)
 			(effects
 				(font
@@ -4293,6 +4293,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 157.48 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C231329"
 			(at 157.48 92.71 0)
 			(effects
 				(font
@@ -4782,7 +4791,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:SW-SMD_2P-L3.0-W2.5-LS4.0"
+		(property "Footprint" "easyeda2kicad:KEY-SMD_B3U-1000PM"
 			(at 157.48 97.79 0)
 			(effects
 				(font
@@ -4791,7 +4800,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "C49234121"
+		(property "Datasheet" "www.lcsc.com/product-detail/C231329.html"
 			(at 157.48 97.79 0)
 			(effects
 				(font
@@ -4801,6 +4810,15 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 157.48 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C231329"
 			(at 157.48 102.87 0)
 			(effects
 				(font
@@ -4852,7 +4870,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_Wurth_150044M155260"
+		(property "Footprint" "easyeda2kicad:WS2812C-2020-V1"
 			(at 149.86 81.28 0)
 			(effects
 				(font
