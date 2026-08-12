@@ -9,3 +9,5 @@
 [nRF52840 Product Specification v1.5](https://docs.nordicsemi.com/viewer/book-attachment/de~7rocmcN70bRHnA4~zJA/H1GC97m6GZQEaMxKCN6OOg-de~7rocmcN70bRHnA4~zJA)
 
 [nPM1300 Product Specification v1.3](https://docs.nordicsemi.com/viewer/book-attachment/ZO1FVHHS04YNNMSlbsZ0Kg/KbFbu1gXgIMOyTgBK7q46A-ZO1FVHHS04YNNMSlbsZ0Kg)
+
+[Keyboard Layout Editor NG - IBM Model M](https://editor.keyboard-tools.xyz/#share=NobwRAhgrgLgFgewE5gFxgEYBsEDswA0YuEAtgKZpgCSAQgLIAEAyswNKP0IAm5WnhMAGcADhADGAS1wBzAPoBPNACYADADoAHABYAvgVCQ0q-WELgAHmgCMpwfaLmwV1BoCsdx17MFLx9R7eDj5+rgGePmYAugbgSqi2QUmRwanJDqHW4ekxhgDuNtkp6SXFZU4FCUVOLu4R9rnglVkA7IHlpWkdTSrqyu1gjWCVyn0DnRPFPVVtnqGjA0PN1b7ONkTL49Mtc8OFW2sJG-u7tSspQy7Wo21E8QC0AMy7y-12S4VvQUMPysdVi1ih2sekclxs2juaHuoOiUSAA)
