@@ -11,3 +11,5 @@
 [nPM1300 Product Specification v1.3](https://docs.nordicsemi.com/viewer/book-attachment/ZO1FVHHS04YNNMSlbsZ0Kg/KbFbu1gXgIMOyTgBK7q46A-ZO1FVHHS04YNNMSlbsZ0Kg)
 
 [Keyboard Layout Editor NG - IBM Model M](https://editor.keyboard-tools.xyz/#share=NobwRAhgrgLgFgewE5gFxgEYBsEDswA0YuEAtgKZpgCSAQgLIAEAyswNKP0IAm5WnhMAGcADhADGAS1wBzAPoBPNACYADADoAHABYAvgVCQ0q-WELgAHmgCMpwfaLmwV1BoCsdx17MFLx9R7eDj5+rgGePmYAugbgSqi2QUmRwanJDqHW4ekxhgDuNtkp6SXFZU4FCUVOLu4R9rnglVkA7IHlpWkdTSrqyu1gjWCVyn0DnRPFPVVtnqGjA0PN1b7ONkTL49Mtc8OFW2sJG-u7tSspQy7Wo21E8QC0AMy7y-12S4VvQUMPysdVi1ih2sekclxs2juaHuoOiUSAA)
+
+[WR-PHD Pin Header drawing](https://www.we-online.com/components/products/datasheet/61300811021.pdf)
