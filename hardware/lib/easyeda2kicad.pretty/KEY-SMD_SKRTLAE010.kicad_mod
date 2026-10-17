@@ -29,7 +29,7 @@
 	(pad "" thru_hole circle (at 2.12 -0.08) (size 0.90 0.90) (drill 0.90) (layers *.Cu *.Mask))
 	(pad "" thru_hole circle (at -2.13 -0.08) (size 0.90 0.90) (drill 0.90) (layers *.Cu *.Mask))
 	(fp_circle (center -2.25 -1.43) (end -2.22 -1.43) (layer F.Fab) (width 0.06))
-	(model "${EASYEDA2KICAD}/easyeda2kicad.3dshapes/KEY-SMD_L4.6-W3.4-H3.4.wrl"
+	(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/KEY-SMD_L4.6-W3.4-H3.4.wrl"
 		(offset (xyz 0.000 -0.200 0.500))
 		(scale (xyz 1 1 1))
 		(rotate (xyz 0 0 0))

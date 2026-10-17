@@ -27,7 +27,7 @@
 	(fp_circle (center -1.00 1.50) (end -0.97 1.50) (layer F.Fab) (width 0.06))
 	(fp_circle (center -0.89 1.73) (end -0.79 1.73) (layer Cmts.User) (width 0.20))
 	(fp_circle (center -1.30 1.80) (end -1.24 1.80) (layer F.SilkS) (width 0.15))
-	(model "${EASYEDA2KICAD}/easyeda2kicad.3dshapes/DFN-8_L3.0-W2.0-P0.50-BL-EP1.6.wrl"
+	(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/DFN-8_L3.0-W2.0-P0.50-BL-EP1.6.wrl"
 		(offset (xyz 0.000 -0.000 -0.000))
 		(scale (xyz 1 1 1))
 		(rotate (xyz 0 0 0))

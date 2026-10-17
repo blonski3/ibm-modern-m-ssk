@@ -32,7 +32,7 @@
 	(pad 8 smd rect (at -4.70 1.54 0.00) (size 0.80 2.00) (layers F.Cu F.Paste F.Mask))
 	(fp_circle (center -5.40 -1.80) (end -5.37 -1.80) (layer F.Fab) (width 0.06))
 	(fp_circle (center -3.30 -1.52) (end -3.17 -1.52) (layer Cmts.User) (width 0.25))
-	(model "${EASYEDA2KICAD}/easyeda2kicad.3dshapes/CONN-TH_6P-P1.00_GT-F1007SR20-06S0101.wrl"
+	(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/CONN-TH_6P-P1.00_GT-F1007SR20-06S0101.wrl"
 		(offset (xyz 0.000 -1.060 0.000))
 		(scale (xyz 1 1 1))
 		(rotate (xyz 0 0 0))

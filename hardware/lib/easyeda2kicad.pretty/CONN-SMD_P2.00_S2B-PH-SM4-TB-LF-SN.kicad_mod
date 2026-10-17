@@ -24,7 +24,7 @@
 	(pad 3 smd rect (at 3.35 2.93 0.00) (size 1.50 3.40) (layers F.Cu F.Paste F.Mask))
 	(pad 4 smd rect (at -3.35 2.93 0.00) (size 1.50 3.40) (layers F.Cu F.Paste F.Mask))
 	(fp_circle (center -3.95 -4.23) (end -3.92 -4.23) (layer F.Fab) (width 0.06))
-	(model "${EASYEDA2KICAD}/easyeda2kicad.3dshapes/CONN-SMD_P2.00_S2B-PH-SM4-TB-LF-SN.wrl"
+	(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/CONN-SMD_P2.00_S2B-PH-SM4-TB-LF-SN.wrl"
 		(offset (xyz 0.000 -0.100 -0.000))
 		(scale (xyz 1 1 1))
 		(rotate (xyz 0 0 0))

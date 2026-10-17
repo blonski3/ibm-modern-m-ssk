@@ -363,7 +363,7 @@
 			(uuid "3516a83f-6dbf-4790-9342-fdfe39bd5e0b")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/LED-SMD_4P-L2.0-W2.0-H0.8-TL_WS2812B-2020.wrl"
+		(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/LED-SMD_4P-L2.0-W2.0-H0.8-TL_WS2812B-2020.wrl"
 			(offset
 				(xyz 0 0 -0)
 			)
@@ -577,7 +577,7 @@
 			(uuid "d7d09d9d-eaa5-4b97-94a7-0d19c32a8728")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/KEY-SMD_2P-L3.0-W2.5-H1.6-LS4.0.wrl"
+		(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/KEY-SMD_2P-L3.0-W2.5-H1.6-LS4.0.wrl"
 			(offset
 				(xyz 0 -0 -0)
 			)
@@ -825,7 +825,7 @@
 			(uuid "cb850979-b162-48c4-9b88-21415923ba5d")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/DFN1006H4-3.stp"
+		(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/DFN1006H4-3.stp"
 			(offset
 				(xyz 0 0 0.4)
 			)
@@ -4562,7 +4562,7 @@
 			(uuid "e7bf00a7-9b02-42f2-89fd-1185dd7330a8")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/USB-C-SMD_TYPE-C-31-D-06.wrl"
+		(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/USB-C-SMD_TYPE-C-31-D-06.wrl"
 			(offset
 				(xyz -0 0.02 3.675)
 			)
@@ -5573,7 +5573,7 @@
 			(uuid "01788ab3-61d4-4f6c-8459-1f70b5770f21")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/CONN-TH_726386-2.wrl"
+		(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/CONN-TH_726386-2.wrl"
 			(offset
 				(xyz 0 -0 6)
 			)
@@ -5993,7 +5993,7 @@
 			(uuid "de951737-0f2c-4639-836a-2a3121bd7189")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/KEY-SMD_2P-L3.0-W2.5-H1.6-LS4.0.wrl"
+		(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/KEY-SMD_2P-L3.0-W2.5-H1.6-LS4.0.wrl"
 			(offset
 				(xyz 0 -0 -0)
 			)
@@ -7192,7 +7192,7 @@
 			(uuid "c5a42274-5212-4b32-bdd8-e49141e6f5f0")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/CONN-SMD-12P_AFC11-S12ICA-00.wrl"
+		(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/CONN-SMD-12P_AFC11-S12ICA-00.wrl"
 			(offset
 				(xyz 0 3 2.45)
 			)
@@ -8094,7 +8094,7 @@
 			(uuid "dc260f68-8660-40e9-91e2-fa07eeacf561")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/LED-SMD_4P-L2.0-W2.0-H0.8-TL_WS2812B-2020.wrl"
+		(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/LED-SMD_4P-L2.0-W2.0-H0.8-TL_WS2812B-2020.wrl"
 			(offset
 				(xyz 0 0 -0)
 			)
@@ -10335,7 +10335,7 @@
 			(uuid "c27f4fc7-0506-4689-976b-4dfc70b8b534")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/FPC-SMD_6P-P1.00_AFB10-S6LCA-00.wrl"
+		(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/FPC-SMD_6P-P1.00_AFB10-S6LCA-00.wrl"
 			(offset
 				(xyz 0 -0 5.6)
 			)
@@ -14236,7 +14236,7 @@
 			(uuid "b6672732-1014-4e09-8da4-812ad26809a4")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/FPC-SMD_18P-P1.00_AFB10-S18LCA-00.wrl"
+		(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/FPC-SMD_18P-P1.00_AFB10-S18LCA-00.wrl"
 			(offset
 				(xyz -0 -0 5.6)
 			)
@@ -14580,7 +14580,7 @@
 			(uuid "7e12f4de-cb52-4374-a469-7606c6d1ee0e")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/SMD_COAX_4MM.step"
+		(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/SMD_COAX_4MM.step"
 			(offset
 				(xyz 0 0.75 0)
 			)
@@ -15045,7 +15045,7 @@
 			(uuid "9aca4a20-8f1b-40a2-8acf-6307a221143d")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/DFN1006-2.stp"
+		(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/DFN1006-2.stp"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -15687,7 +15687,7 @@
 			(uuid "2bc01c83-1844-4598-ab78-401f220f30cf")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/QFN_2016_4pins.STEP"
+		(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/QFN_2016_4pins.STEP"
 			(offset
 				(xyz 0 0 0.8)
 			)
@@ -16127,7 +16127,7 @@
 			(uuid "9916966b-5820-438b-9397-676e53e17df9")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/KEY-SMD_2P-L3.0-W2.5-H1.6-LS4.0.wrl"
+		(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/KEY-SMD_2P-L3.0-W2.5-H1.6-LS4.0.wrl"
 			(offset
 				(xyz 0 -0 -0)
 			)

@@ -191,7 +191,7 @@
 		(uuid "50475cda-b090-4bbf-84e2-72e386d0a52c")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/CONN-TH_726386-2.wrl"
+	(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/CONN-TH_726386-2.wrl"
 		(offset
 			(xyz 0 -0 6)
 		)

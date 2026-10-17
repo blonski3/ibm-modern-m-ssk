@@ -236,7 +236,7 @@
 		(uuid "a270d4ea-8f7a-4c23-aff2-af9c860aee68")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/FPC-SMD_6P-P1.00_AFB10-S6LCA-00.wrl"
+	(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/FPC-SMD_6P-P1.00_AFB10-S6LCA-00.wrl"
 		(offset
 			(xyz 0 -0 5.6)
 		)

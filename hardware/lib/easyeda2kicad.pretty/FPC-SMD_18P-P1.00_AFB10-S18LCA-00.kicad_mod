@@ -433,7 +433,7 @@
 		(uuid "6e3885d8-19ca-412d-8bac-878f0896d714")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/FPC-SMD_18P-P1.00_AFB10-S18LCA-00.wrl"
+	(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/FPC-SMD_18P-P1.00_AFB10-S18LCA-00.wrl"
 		(offset
 			(xyz -0 -0 5.6)
 		)

@@ -319,7 +319,7 @@
 		(uuid "bd4c0dfe-7281-4976-93a3-48b75c688ba0")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/FH12-12S-0.5SVA_54_.stp"
+	(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/FH12-12S-0.5SVA_54_.stp"
 		(offset
 			(xyz 0 0 0)
 		)

@@ -202,7 +202,7 @@
 		(uuid "68185bfd-a946-4ce5-8acd-cd49692bb628")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/DFN1006-2.stp"
+	(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/DFN1006-2.stp"
 		(offset
 			(xyz 0 0 0)
 		)

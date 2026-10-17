@@ -273,7 +273,7 @@
 		(uuid "1770c9fb-1e01-4348-a210-88a5572c983b")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/USB-C-SMD_TYPE-C-31-D-06.wrl"
+	(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/USB-C-SMD_TYPE-C-31-D-06.wrl"
 		(offset
 			(xyz -0 0.02 3.675)
 		)

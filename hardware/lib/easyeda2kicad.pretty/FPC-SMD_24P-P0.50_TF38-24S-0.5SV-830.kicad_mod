@@ -589,7 +589,7 @@
 		(uuid "30983e48-2bd4-41b8-9231-0a64e4d9ade6")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/FPC-SMD_24P-P0.50_TF38-24S-0.5SV-830.wrl"
+	(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/FPC-SMD_24P-P0.50_TF38-24S-0.5SV-830.wrl"
 		(offset
 			(xyz 6.825 -1.65 -0)
 		)

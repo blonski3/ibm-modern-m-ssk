@@ -175,7 +175,7 @@
 		(uuid "e2e9ca1a-c67f-45e8-a7cb-07d41c8c53bd")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/SMD_COAX_4MM.step"
+	(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/SMD_COAX_4MM.step"
 		(offset
 			(xyz 0 0.75 0)
 		)

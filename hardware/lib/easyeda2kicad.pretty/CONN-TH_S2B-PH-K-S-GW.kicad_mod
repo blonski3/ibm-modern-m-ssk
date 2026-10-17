@@ -41,7 +41,7 @@
 	(fp_circle (center 3.13 -6.38) (end 3.16 -6.38) (layer F.Fab) (width 0.06))
 	(fp_circle (center 1.00 0.00) (end 1.18 0.00) (layer F.Fab) (width 0.35))
 	(fp_circle (center -1.00 0.00) (end -0.82 0.00) (layer F.Fab) (width 0.35))
-	(model "${EASYEDA2KICAD}/easyeda2kicad.3dshapes/CONN-TH_S2B-PH-K-S-GW.wrl"
+	(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/CONN-TH_S2B-PH-K-S-GW.wrl"
 		(offset (xyz 0.000 2.460 0.000))
 		(scale (xyz 1 1 1))
 		(rotate (xyz 0 0 0))

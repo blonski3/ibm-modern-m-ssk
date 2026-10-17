@@ -134,7 +134,7 @@
 		(uuid "78e64a42-4107-4bc8-9b2e-3b99cc24f710")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/QFN_2016_4pins.STEP"
+	(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/QFN_2016_4pins.STEP"
 		(offset
 			(xyz 0 0 0.8)
 		)

@@ -178,7 +178,7 @@
 		(uuid "bec3cf22-370f-438a-9660-467db8d04c82")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/KEY-SMD_2P-L3.0-W2.5-H1.6-LS4.0.wrl"
+	(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/KEY-SMD_2P-L3.0-W2.5-H1.6-LS4.0.wrl"
 		(offset
 			(xyz 0 -0 -0)
 		)

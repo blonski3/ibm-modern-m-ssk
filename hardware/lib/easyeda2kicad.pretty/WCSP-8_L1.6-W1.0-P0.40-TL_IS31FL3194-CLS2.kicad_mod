@@ -33,7 +33,7 @@
 	(fp_circle (center 0.20 -0.20) (end 0.26 -0.20) (layer F.Fab) (width 0.12))
 	(fp_circle (center -0.20 -0.60) (end -0.14 -0.60) (layer F.Fab) (width 0.12))
 	(fp_circle (center 0.20 -0.60) (end 0.26 -0.60) (layer F.Fab) (width 0.12))
-	(model "${EASYEDA2KICAD}/easyeda2kicad.3dshapes/WCSP-8_L1.6-W1.0-P0.40-TL_IS31FL3194-CLS2.wrl"
+	(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/WCSP-8_L1.6-W1.0-P0.40-TL_IS31FL3194-CLS2.wrl"
 		(offset (xyz 0.000 -0.000 -0.000))
 		(scale (xyz 1 1 1))
 		(rotate (xyz 0 0 0))

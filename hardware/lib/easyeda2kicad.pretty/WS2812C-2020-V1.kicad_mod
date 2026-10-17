@@ -181,7 +181,7 @@
 		(uuid "b85ec02e-213a-42f6-9b7c-fba1c8b259f0")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/LED-SMD_4P-L2.0-W2.0-H0.8-TL_WS2812B-2020.wrl"
+	(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/LED-SMD_4P-L2.0-W2.0-H0.8-TL_WS2812B-2020.wrl"
 		(offset
 			(xyz 0 0 -0)
 		)

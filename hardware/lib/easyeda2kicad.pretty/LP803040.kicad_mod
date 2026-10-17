@@ -102,7 +102,7 @@
 		)
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/libraries/easyeda2kicad.3dshapes/LiPo_603450_1200mAh.step"
+	(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/LiPo_603450_1200mAh.step"
 		(offset
 			(xyz -1.75 0 5)
 		)

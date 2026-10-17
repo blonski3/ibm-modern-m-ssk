@@ -43,7 +43,7 @@
 	(pad "" thru_hole circle (at -3.75 0.00) (size 0.52 0.52) (drill 0.52) (layers *.Cu *.Mask))
 	(fp_circle (center -4.47 -2.30) (end -4.44 -2.30) (layer F.Fab) (width 0.06))
 	(fp_circle (center -3.75 0.00) (end -3.65 0.00) (layer Cmts.User) (width 0.20))
-	(model "${EASYEDA2KICAD}/easyeda2kicad.3dshapes/USB-C-SMD_TYPEC-303-ACP16.wrl"
+	(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/USB-C-SMD_TYPEC-303-ACP16.wrl"
 		(offset (xyz 0.000 -0.000 1.200))
 		(scale (xyz 1 1 1))
 		(rotate (xyz 0 0 0))

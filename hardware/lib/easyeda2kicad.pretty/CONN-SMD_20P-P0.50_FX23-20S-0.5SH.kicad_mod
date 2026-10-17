@@ -54,7 +54,7 @@
 	(fp_line (start -7.75 -4.00) (end 7.75 -4.00) (layer F.CrtYd) (width 0.05))
 	(fp_line (start 7.75 -4.00) (end 7.75 4.00) (layer F.CrtYd) (width 0.05))
 	(fp_line (start 7.75 4.00) (end -7.75 4.00) (layer F.CrtYd) (width 0.05))
-	(model "${EASYEDA2KICAD}/easyeda2kicad.3dshapes/CONN-SMD_20P-P0.50_FX23-20S-0.5SH.wrl"
+	(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/CONN-SMD_20P-P0.50_FX23-20S-0.5SH.wrl"
 		(offset (xyz 0.000 0.000 0.000))
 		(scale (xyz 1 1 1))
 		(rotate (xyz 0 0 0))
