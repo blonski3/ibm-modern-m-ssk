@@ -10,7 +10,6 @@ fp-info-cache
 
 # --- KiCad Fabrication Toolkit: wyjscie w katalogu projektu (regenerowane) ---
 # Zamrozone paczki zamowien trzymamy w /production/ na gorze repo.
-/kicad/production/
 /hardware/*/production/
 
 # --- lokalne raporty ERC/DRC do porownan ---
