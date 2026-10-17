@@ -89,7 +89,7 @@ Na koniec sesji, w której coś się zmieniło (KiCad, firmware, mechanika, teks
       Oczekiwane: 0 nierozwiązanych zmiennych, tylko 4 znane brakujące modele; ERC/DRC/netlista = baseline.
 - [x] Podział na projekty (2026-10-17, gałąź `kicad-split`): projekt przemianowany na `controller` (`hardware/controller/controller.kicad_pro`), nowy `hardware/membrane/` z zawartością arkusza `matrix`, arkusz `matrix` usunięty z controllera. Netlista controllera = baseline.
 - [x] Krok 5 (reszta, 2026-10-17): README z sekcją „Struktura repozytorium”.
-- [ ] Krok 6: tag `restructure-done`, merge do `main` (na prośbę właściciela).
+- [x] Krok 6 (2026-10-17): tag `restructure-done`, fast-forward `kicad-split` → `main`, push.
 
 ## Docelowe drzewo
 
