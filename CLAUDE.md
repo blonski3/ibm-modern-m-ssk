@@ -88,7 +88,7 @@ Na koniec sesji, w której coś się zmieniło (KiCad, firmware, mechanika, teks
       ```
       Oczekiwane: 0 nierozwiązanych zmiennych, tylko 4 znane brakujące modele; ERC/DRC/netlista = baseline.
 - [x] Podział na projekty (2026-10-17, gałąź `kicad-split`): projekt przemianowany na `controller` (`hardware/controller/controller.kicad_pro`), nowy `hardware/membrane/` z zawartością arkusza `matrix`, arkusz `matrix` usunięty z controllera. Netlista controllera = baseline.
-- [ ] Krok 5 (reszta): README z sekcją „Struktura repozytorium”.
+- [x] Krok 5 (reszta, 2026-10-17): README z sekcją „Struktura repozytorium”.
 - [ ] Krok 6: tag `restructure-done`, merge do `main` (na prośbę właściciela).
 
 ## Docelowe drzewo
@@ -115,5 +115,5 @@ Ustalenia porządkowe: `lib` to zwykły katalog (nie submoduł, nie zmienna śro
 ## Faza 2 (praca właściciela, audyt po każdym kroku)
 
 - Naniesienie wpisów „Do naniesienia” z `docs/CHANGELOG.md` w schemacie.
-- Łącze MB ↔ DB, propozycja DO ZATWIERDZENIA: dwa symbole (`J_MB`, `J_DB`), sieci po stronie DB z prefiksem `DB_`, identyczne mapowanie pin → sieć, `J_DB` wykluczony z BOM i pozycji; footprint 1×10 P1.00 do dodania. Mapowanie sprawdzane skryptem na netliście.
+- Łącze MB ↔ DB: w schemacie od 2026-10-17 (A10): J9 = strona MB, J8 = strona DB (poza BOM/CPL), sieci DB z prefiksem `DB_`. Do zrobienia: footprint krawędziowy J8, drugi obrys DB z mouse bites, sprawdzenie numeracji na modelu 3D.
 - Membrana: ogony 18 i 6 styków (pinout lustrzany do J4/J7, 24. styk GND wg I5), stackup i reguły FPC, obrys z Onshape. Schemat matrycy już jest w projekcie.
