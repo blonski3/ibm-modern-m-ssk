@@ -1,0 +1,393 @@
+# Hardware Decisions: baza do pracy inżynierskiej
+
+2026-10-11 (treść decyzji) · od 2026-10-17 źródłem prawdy jest ten plik w repo; dokument w Claude Docs to archiwum ze stanu 11.10 (rev 25).
+
+Wszystkie pięć domen przeszło pierwszy audyt: PMIC (nPM1300-QEAA, szyna 3,3 V z BUCK2), MCU i radio (nRF52840-QIAA), interfejsy, złącze rozszerzeń i ustawienia firmware'u. Zmiany są zatwierdzone, ale jeszcze nienaniesione w KiCadzie; mechanika i membrana są w toku.
+
+> **Zasada prowadzenia:** wpis dla bloku/komponentu dodajemy po zatwierdzeniu: przyjęte parametry, uzasadnienie, wzór z dokumentacji, referencja ze stroną (nPM1300_PS_v1.3, nRF52840_PS_v1.5). Otwarte kwestie na końcu dokumentu.
+
+## Założenia architektoniczne
+
+Ramy zatwierdzone 11.10.2026.
+
+| Obszar | Ustalenie |
+| --- | --- |
+| Podział na płytki | Motherboard i daughterboard projektowane i zamawiane jako jedna płytka, DB wyłamywany; membrana jako osobna płytka FPC |
+| Projekty KiCada | `controller` (arkusze motherboard i daughterboard) oraz `membrane`; wspólna biblioteka `lib` |
+| MCU | nRF52840-QIAA, VDD = VDDH = 3,3 V (tryb Normal Voltage), REG1 w trybie DC/DC |
+| PMIC | nPM1300-QEAA, BUCK2 = 3,3 V, BUCK1 wyłączony, sterowanie przez I2C |
+| USB-C | Gniazdo, bezpiecznik PTC i ESD na DB; CC1/CC2 bezpośrednio do nPM1300 (wewnętrzne Rd 5,1 kΩ), bez zewnętrznych rezystorów |
+| Łącze MB ↔ DB | Listwa goldpin 1×10, raster 1 mm, piny lutowane do krawędzi DB i wchodzące pionowo w MB: 2× VBUS, 4× GND, D+, D−, CC1, CC2 |
+| Matryca | Własna membrana FPC, 6 wierszy × 17 kolumn, 88 przełączników, dioda na klawisz; złącza FFC 1,0 mm: J4 (18 pinów) i J7 (6 pinów) |
+| Bateria | Li-Po LP803040, 1000 mAh, 4,2 V, z PCM, dwa przewody, bez NTC; w drukowanym koszyku, nieklejona do PCB |
+| Ładowanie | Prąd i napięcie końcowe ustawiane przez firmware; sprzęt wymiarowany na 800 mA |
+| Przyciski | Tylko RESET na MB; BT_PAIR i SHPHLD usunięte |
+| Dioda RGB | Jedna WS2812C-2020 na motherboardzie, zasilana z VSYS przez LOADSW1 |
+| Programowanie | SWD przez złącze Tag-Connect TC2030 |
+| Firmware | ZMK na Zephyr 4.1 (Hardware Model V2) |
+| Smart features | Haptyka i akcelerometr na osobnych płytkach; na MB złącze rozszerzeń J3 2×6 z VSYS, 3,3 V, I2C i sześcioma GPIO |
+
+## Blok PMIC: połączenia nPM1300-QEAA
+
+Układ pracuje w konfiguracji 1 z datasheetu ograniczonej do jednej przetwornicy: BUCK2 daje 3,3 V dla nRF52840 i VDDIO, BUCK1 jest wyłączony. Wszystkie referencje dotyczą nPM1300 Product Specification v1.3.
+
+| Pin | Połączenie | Uzasadnienie | Referencja |
+| --- | --- | --- | --- |
+| 21 VBUS | VBUS z DB, C27 1 µF do GND | Wejście zasilania, tolerancja do 22 V | Rys. 59, s. 161; tab. 4, s. 17 |
+| 23 CC1, 24 CC2 | Bezpośrednio do gniazda USB-C (przez łącze MB ↔ DB) | Piny mają wewnętrzne Rd = 5,1 kΩ i komparatory wykrywające wydajność źródła; muszą być połączone bezpośrednio z gniazdem | Rozdz. 6.1.3, s. 20–21; tab. 9, s. 22 |
+| 22 VBUSOUT | C32 1 µF do GND, pin VBUS nRF52840 z C21 4,7 µF | Chronione napięcie VBUS dla detekcji USB w nRF; kondensator wymagany | Rozdz. 6.1.5, s. 21 |
+| 19 VBAT | C28 2,2 µF do GND, przez Q1 do złącza baterii J2 | Odsprzęganie wejścia baterii | Rys. 59, s. 161 |
+| 18 NTC | Do GND | Termistor nieużywany; funkcję trzeba wyłączyć w rejestrze BCHGDISABLESET | Rozdz. 6.2.4, s. 29 |
+| 20 VSYS + 4 PVDD | Połączone; C30 10 µF do PVSS2, C31 10 µF do GND | PVDD to wejście mocy przetwornic; kondensator wejściowy zamyka pętlę prądową BUCK2 | Rys. 59 (C3, C4), s. 161; rozdz. 9.3.4, s. 165 |
+| 5 SW2 | L4 2,2 µH do VOUT2 | Cewka BUCK2 | Rys. 59 (L2), s. 161 |
+| 32 VOUT2 | Szyna VDD_NRF 3,3 V, C29 10 µF do PVSS2 | Wyjście i sprzężenie zwrotne BUCK2 | Rys. 59 (C8), s. 161 |
+| 6 PVSS2 | Net-tie do GND tuż przy pinie | Jeden punkt powrotu pętli mocy do warstwy GND | Rys. 59, s. 161 |
+| 16 VSET2 | R10 470 kΩ do GND | Zakres 250–500 kΩ ustawia 3,3 V przy starcie; pin czytany tylko przy włączeniu | Tab. 18, s. 50 |
+| 17 VSET1 | Do GND | Poniżej 100 Ω BUCK1 jest wyłączony | Tab. 17, s. 50 |
+| 1 VOUT1, 3 SW1, 2 PVSS1 | VOUT1 do VSYS, SW1 niepodłączony, PVSS1 do GND | Zakończenie nieużywanej przetwornicy; wniosek przez symetrię, datasheet pokazuje tylko nieużywany BUCK2 | Rys. 61, s. 162 |
+| 12 VDDIO | VDD_NRF, kondensator 100 nF do GND | Zasila TWI i GPIO; musi być obecny poza trybami Ship i Hibernate | Rozdz. 7.6, s. 125; rys. 59 (C13) |
+| 13 SDA, 14 SCL | Do GPIO nRF52840 i złącza J3, pull-upy 4,7 kΩ do VDDIO | Magistrala konfiguracji i pomiarów, adres 7-bitowy 110 1011 | Rozdz. 7.6, s. 125; rys. 59 (R1, R2) |
+| 7 GPIO0, 8 GPIO1 | GPIO0 do nRF52840 jako przerwanie; GPIO1 z nRF52840 jako włącznik LOADSW1 | Tryb GPOIRQ zgłasza zdarzenia VBUS, CC i ładowarki | Rozdz. 6.6, s. 89–92 |
+| 15 SHPHLD | Niepodłączony, punkt testowy | Wewnętrzny pull-up 50 kΩ; bez przycisku z trybu Ship wychodzi się przez podłączenie VBUS | Rozdz. 7.4, s. 121; tab. 32, s. 122 |
+| 28 LSIN1 | VSYS | Wejście przełącznika obciążenia, do 100 mA | Tab. 22, s. 75 |
+| 29 LSOUT1 | C33 1 µF do GND, przełączane zasilanie diody WS2812C-2020 na MB | Firmware może odciąć zasilanie diody | Rys. 61 (C14), s. 162 |
+| 30 LSIN2, 31 LSOUT2 | Do GND | Nieużywany przełącznik | Rys. 61, s. 162 |
+| 25–27 LED0–LED2 | Niepodłączone | Wolne wyjścia 5 mA, wysoka impedancja w stanie wyłączonym | Rozdz. 6.2.7, s. 31 |
+| 33 AVSS | GND | Pad termiczny i masa analogowa | Tab. 34, s. 155 |
+
+## Blok PMIC: dobrane elementy
+
+Wszystkie elementy bierne spełniają wymagania datasheetu; do wymiany jest tylko tranzystor Q1.
+
+| Element | Typ i parametry | Wymaganie | Referencja | Ocena |
+| --- | --- | --- | --- | --- |
+| L4 | APV APH252010T2R2M: 2,2 µH ±20%, Isat 3 A, Irms 2,1 A, DCR 70 mΩ, 1008 | 2,2 µH, tolerancja ≤ 20%, Isat > 350 mA, Imax > 200 mA, DCR ≤ 400 mΩ | Tab. 19, s. 51 | Spełnia |
+| C29, C30, C31 | Yageo CC0603MRX5R8BB106: 10 µF ±20%, 25 V, X5R, 0603 | 10 µF X5R 25 V 0603; efektywnie ≥ 4 µF, ESR ≤ 50 mΩ na wyjściu BUCK | Tab. 20, s. 51; tab. 39, s. 162 | Spełnia; pojemność przy 3,3 V do potwierdzenia w krzywej DC-bias |
+| C27 (VBUS) | Yageo CC0603KRX7R9BB105: 1 µF ±10%, 50 V, X7R | 1,0 µF | Tab. 39 (C1) | Spełnia, z zapasem napięciowym |
+| C32 (VBUSOUT) | 1 µF, 50 V, X7R | 1,0 µF, wymagany także przy nieużywanym pinie | Tab. 39 (C5); rozdz. 6.1.5 | Spełnia |
+| C28 (VBAT) | Yageo CC0603KRX5R8BB225: 2,2 µF ±10%, 25 V, X5R | 2,2 µF | Tab. 39 (C6) | Spełnia |
+| C33 (LSOUT1) | 1 µF, 50 V, X7R | 1,0 µF w trybie przełącznika | Tab. 40 (C14), s. 163 | Spełnia |
+| Kondensator VDDIO | 100 nF, nowy element | 100 nF | Tab. 39 (C13) | Do dodania |
+| Pull-upy SDA/SCL | 2× 4,7 kΩ, nowe elementy | Zależne od prędkości i pojemności magistrali; referencja 10 kΩ | Tab. 39 (R1, R2) | Do dodania |
+| R10 (VSET2) | 470 kΩ, 0402 | 250–500 kΩ, tolerancja ≤ 5% | Tab. 18, s. 50 | Spełnia |
+| Q1 | Nexperia PMZB350UPE: P-MOSFET 20 V, 1,4 A, RDS(on) 450 mΩ przy VGS = −4,5 V | Zabezpieczenie przed odwróconą baterią; dren od strony złącza, RDS(on) ≤ 100 mΩ przy VGS = −2,5 V, prąd ≥ 1 A | Wymaganie własne projektu | Do wymiany i obrócenia |
+| J2 | Molex PicoBlade 53261-0271, 1,25 mm | Pasuje do wtyku ogniwa Molex 51021-0200 | Karta LP803040 | Spełnia; biegunowość do sprawdzenia na ogniwie |
+| BT1 | Akyga LP803040: 1000 mAh, 3,7 V, ładowanie do 4,2 V, standardowo 0,2 C, maks. 1 C, 0–45 °C, PCM (4,30 V / 2,5 V) | Prąd ładowania w zakresie 32–800 mA układu | Karta LP803040; rozdz. 6.2.3, s. 28 | Założenie robocze |
+
+## Blok PMIC: obliczenia
+
+### Tętnienia prądu cewki BUCK2
+
+Szczytowy prąd cewki wynosi 0,27 A, czyli 9% prądu nasycenia L4 (3 A). Liczone dla najgorszego przypadku: zasilanie z USB (5,0 V), pełne obciążenie 200 mA, częstotliwość PWM 3,6 MHz (podpisy rys. 37–38, s. 63–64).
+
+```latex
+\Delta I_L = \frac{V_{OUT}\left(1 - \frac{V_{OUT}}{V_{IN}}\right)}{L \cdot f_{SW}} = \frac{3{,}3 \cdot \left(1 - \frac{3{,}3}{5{,}0}\right)}{2{,}2\,\mu\mathrm{H} \cdot 3{,}6\,\mathrm{MHz}} = 0{,}142\,\mathrm{A}
+```
+
+```latex
+I_{L,pk} = I_{OUT} + \frac{\Delta I_L}{2} = 0{,}200 + 0{,}071 = 0{,}271\,\mathrm{A}
+```
+
+Przy indukcyjności na dolnej granicy tolerancji (1,76 µH) szczyt rośnie do 0,289 A. Wymaganie datasheetu Isat > 350 mA jest spełnione z dużym zapasem.
+
+### Obciążenie szyny 3,3 V
+
+nRF52840 przy nadawaniu +8 dBm pobiera 16,4 mA (regulator DC/DC, nRF52840 PS v1.5, rozdz. 5.2.1.5, s. 61), czyli 8% wydajności BUCK2 (200 mA, tab. na s. 51). Haptyka i dioda RGB są zasilane z VSYS, nie z tej szyny.
+
+### Zakres regulacji 3,3 V
+
+Przetwornica utrzymuje 3,3 V, dopóki VSYS przekracza napięcie wyjściowe o spadek VDROP_OUT (100 mV przy 1 mA, s. 51), czyli do VBAT około 3,4 V. Poniżej VDD podąża za baterią. nRF52840 pracuje od 1,7 V, więc układ działa do odcięcia; ustawienie 3,0 V (150 kΩ na VSET2) utrzymałoby regulację w całym zakresie rozładowania.
+
+### Straty w ładowarce liniowej
+
+Przy maksymalnym prądzie 800 mA układ rozprasza do 1,6 W i nagrzewa się o około 39 K ponad otoczenie; przy 400 mA jest to 0,8 W i 19 K. RθJA = 24,2 °C/W dla QFN32 według JESD51-7 (tab. 7, s. 18); najgorszy przypadek to VBUS = 5,0 V i VBAT = 3,0 V.
+
+```latex
+P = (V_{BUS} - V_{BAT}) \cdot I_{CHG} = (5{,}0 - 3{,}0) \cdot 0{,}8 = 1{,}6\,\mathrm{W}, \qquad \Delta T = P \cdot R_{\theta JA} = 1{,}6 \cdot 24{,}2 \approx 39\,\mathrm{K}
+```
+
+Ładowanie zatrzymuje się samo przy 110 °C struktury i wznawia przy 100 °C (tab. 16, s. 34–35).
+
+### Spadek napięcia na Q1
+
+Obecny PMZB350UPE (450 mΩ) daje 0,18 V spadku przy 400 mA i 0,36 V przy 800 mA. Ładowarka reguluje napięcie na pinie VBAT, więc ogniwo wchodzi w fazę stałego napięcia wcześniej i ładuje się dłużej. Przy 100 mΩ spadek wynosi 0,04 V i 0,08 V.
+
+```latex
+\Delta V_{Q1} = I_{CHG} \cdot R_{DS(on)} = 0{,}4 \cdot 0{,}45 = 0{,}18\,\mathrm{V}
+```
+
+## Blok MCU i radio: nRF52840-QIAA
+
+Układ pracuje w konfiguracji 5 z datasheetu bez NFC: VDD = VDDH (tryb Normal Voltage), przetwornica REG1 włączona, USB aktywne. Wszystkie referencje dotyczą nRF52840 Product Specification v1.5.
+
+### Połączenia
+
+| Pin | Połączenie | Uzasadnienie | Referencja |
+| --- | --- | --- | --- |
+| VDD (A22, AD14, AD23, B1, W1), VDDH (Y2) | Szyna VDD_NRF 3,3 V z BUCK2; C7, C8, C12 100 nF, C14 1 µF, C6 4,7 µF | VDDH zwarty z VDD wybiera tryb Normal Voltage, REG0 pominięty | Tab. 162, s. 598; rys. 217, s. 599 |
+| DCC (B3) | L2 10 µH i L3 15 nH szeregowo do DEC4/DEC6; C15 1 µF, C16 47 nF | Filtr wyjściowy przetwornicy REG1 | Rys. 217, s. 599 |
+| DCCH (AB2) | Niepodłączony | Przetwornica REG0 nieużywana | Rys. 217, s. 599 |
+| DEC1, DEC3, DEC5, DECUSB | C5 100 nF, C11 100 pF, C9 820 pF, C20 4,7 µF | Odsprzęganie regulatorów wewnętrznych; C9 zbędny od wersji Fxx | Tab. 163, s. 600 |
+| VBUS (AD2) | VBUSOUT z nPM1300, C21 4,7 µF | Detekcja USB i zasilanie regulatora USB 3,3 V z chronionego napięcia | Rozdz. 6.1.5 nPM1300 PS, s. 21 |
+| D+ (AD6), D− (AD4) | Bezpośrednio do gniazda USB-C przez ESD | Pull-up D+ jest wewnętrzny; zewnętrznych elementów nie wolno dodawać | Rozdz. 6.35, opis USBPULLUP |
+| XC1, XC2 | Y1 32 MHz, C1 i C2 12 pF | Zegar radia; wymagane ±40 ppm dla BLE | Rozdz. 5.4.4.2, s. 99 |
+| XL1, XL2 (P0.00, P0.01) | Y2 32,768 kHz, C17 i C18 12 pF | Zegar niskiej częstotliwości dla stosu BLE i uśpienia | Rozdz. 5.4.4.3, s. 100 |
+| ANT (H23) | C3 0,8 pF do GND, L1 4,7 nH szeregowo, C4 0,5 pF do GND, C22 nieobsadzony, złącze U.FL J6 | Dopasowanie do 50 Ω, wartości v1.1 | Tab. 163, s. 600 |
+| P0.18/nRESET (AC13) | Sieć RESET: przycisk SW90 do GND, pin 3 złącza J10 | Reset sprzętowy i wejście w bootloader | Tab. 145, s. 579; rozdz. 4.5.1.4, s. 45 |
+| SWDIO (AC24), SWDCLK (AA24) | Piny 2 i 4 złącza J10 (Tag-Connect TC2030) | Programowanie i debug | Tab. 145, s. 579 |
+| P1.00 (AD22) | SWO, pin 6 złącza J10 | Podgląd logów przez programator | Tab. 145, s. 580 |
+| P0.09, P0.10 (NFC) | Niepodłączone | NFC nieużywane | Tab. 162, s. 598 |
+
+### Przydział GPIO
+
+Potrzeba 27 linii: 17 kolumn, 6 wierszy, SDA, SCL, przerwanie PMIC i dane diody RGB. Piny oznaczone w tab. 145 jako „standard drive, low frequency I/O only" przyjmują sygnały do 10 kHz; matryca skanowana około 1 kHz się w tym mieści, I2C i dioda RGB nie. Numery pinów zostaną ustalone przy routingu.
+
+| Strona układu | Piny | Ograniczenie | Przeznaczenie |
+| --- | --- | --- | --- |
+| Górna | P0.02, P0.03, P0.28–P0.31, P1.10–P1.15 (12) | Tylko sygnały do 10 kHz | 12 kolumn matrycy |
+| Lewa | P0.04–P0.08, P0.11, P0.12, P0.26, P0.27, P1.08, P1.09 (11) | Brak | 5 kolumn i 6 wierszy matrycy |
+| Dolna | P0.13–P0.17, P0.19–P0.25, P1.00 (13) | Brak | SDA, SCL, dane diody, SWO, sześć GPIO złącza J3; 3 wolne |
+| Prawa | P1.01–P1.07, P0.09, P0.10 | Tylko sygnały do 10 kHz, sąsiedztwo anteny | Tylko sygnały statyczne: przerwanie PMIC (GPIO0) i włącznik diody (GPIO1) |
+
+Diody matrycy mają katody na liniach ROW, więc kolumny są wyjściami, a wiersze wejściami (w ZMK kierunek `col2row`).
+
+### Dobrane elementy
+
+| Element | Typ i parametry | Wymaganie (tab. 163, s. 600) | Ocena |
+| --- | --- | --- | --- |
+| Y1 | Do wybrania: 32 MHz, 2016, CL = 8 pF, łącznie ≤ ±40 ppm | 32 MHz, CL = 8 pF, ±40 ppm; CL ≤ 12 pF, ESR ≤ 60 Ω (s. 99) | Obecny Epson Q22FA12800018 (CL 12 pF, ±10 ppm) do wymiany |
+| Y2 | Epson Q13FC13500003: 32,768 kHz, CL 9 pF, ±20 ppm, ESR 70 kΩ, 3215 | CL = 9 pF, ±50 ppm; ESR ≤ 100 kΩ (s. 100) | Spełnia |
+| C1, C2, C17, C18 | Yageo CC0402GRNPO9BN120: 12 pF ±2%, NP0, 50 V | 12 pF, NP0, ±2% | Spełnia |
+| L1 | Tai-Tech HCI1005LF-4N7S: 4,7 nH ±5%, SRF 4 GHz, 0402 | 4,7 nH ±5%, wysokoczęstotliwościowa | Spełnia; brak w magazynie LCSC |
+| L2 | Murata LQM18FN100M00D: 10 µH ±20%, 50 mA, DCR 1,17 Ω, 0603 | 10 µH ±20%, prąd min. 50 mA | Spełnia bez zapasu |
+| L3 | FH VHF100505H15NKT: 15 nH ±10%, SRF 2,3 GHz, 0402 | 15 nH ±10%, wysokoczęstotliwościowa | Spełnia |
+| C6, C20, C21 | Yageo CC0603KRX5R7BB475: 4,7 µF ±10%, X5R, 16 V | 4,7 µF ±10%, X7R lub X7S | Odstępstwo: X5R zamiast X7R, akceptowalne do 85 °C |
+| C3, C4 | 0,8 pF i 0,5 pF, 0402 | NP0, ±10% | Wartości zgodne; dielektryk do potwierdzenia |
+
+### Obliczenia: obciążenie kwarców
+
+Kwarc 32 MHz z CL = 8 pF i kondensatorami 12 pF jest obciążony dokładnie nominalnie. Pojemność pinu XC1/XC2 wynosi 3 pF (s. 99), pojemność ścieżek przyjęto 1 pF.
+
+```latex
+C_L = \frac{C_1' \cdot C_2'}{C_1' + C_2'}, \qquad C_n' = C_n + C_{pcb} + C_{pin} = 12 + 1 + 3 = 16\,\mathrm{pF} \;\Rightarrow\; C_L = 8\,\mathrm{pF}
+```
+
+Dotychczasowy kwarc o CL = 12 pF w tym samym układzie był niedociążony o 4 pF. Dla typowej pojemności dynamicznej 2–3 fF i C0 = 1 pF (wartości założone, do weryfikacji w karcie) daje to odstrojenie 34–51 ppm w górę.
+
+```latex
+\frac{\Delta f}{f} = \frac{C_m}{2}\left(\frac{1}{C_0 + C_{L,rz}} - \frac{1}{C_0 + C_{L,nom}}\right) = \frac{3\,\mathrm{fF}}{2}\left(\frac{1}{9\,\mathrm{pF}} - \frac{1}{13\,\mathrm{pF}}\right) \approx 51\,\mathrm{ppm}
+```
+
+Kwarc 32,768 kHz (CL = 9 pF) z kondensatorami 12 pF i pinem 4 pF (s. 100) widzi 8,5 pF, czyli 0,5 pF poniżej nominału. Stos BLE wymaga ±500 ppm, kwarc daje ±20 ppm.
+
+## Blok interfejsów: USB-C, łącze MB ↔ DB, matryca, dioda
+
+Część elektryczna jest zatwierdzona; typ listwy, geometria membrany i uchwyt DB czekają na projekt mechaniczny w Onshape.
+
+### Daughterboard
+
+| Element | Połączenie i parametry | Uzasadnienie | Ocena |
+| --- | --- | --- | --- |
+| J1 | Korean Hroparts TYPE-C-31-D-06, 16 pinów, pionowe SMD; cztery piny VBUS razem, D+ i D− zmostkowane parami, CC1 i CC2 osobno, SBU wolne, ekran do GND | Gniazdo USB 2.0; osobne linie CC są warunkiem wykrycia orientacji i wydajności źródła | Bez zmian |
+| U3 | TI TPD4E05U06 na CC1, D+, D−, CC2 w układzie przelotowym (piny 1/10, 2/9, 4/7, 5/6) | Ochrona ESD czterech linii sygnałowych tuż przy gnieździe | Bez zmian |
+| F1 | Dziś BHFUSE BSMD0603L-150: trzyma 1,5 A, wyzwala 3 A, 6 V, 5–55 mΩ | Ogranicza prąd przy zwarciu za gniazdem | Do wymiany na typ ≥ 24 V |
+| D1 | Dziś Prisemi PESDNC2FD5VB: VRWM 5 V, przebicie 6,7 V, 80 W (8/20 µs) | Ochrona ESD linii VBUS | Do wymiany na typ z VRWM ≥ 20 V |
+| SW89, SW91, D4, D92 | Usunięte z DB | Parowanie w ZMK, wyjście z trybu Ship przez VBUS, dioda przeniesiona na MB | Do usunięcia |
+
+### Koordynacja zabezpieczeń toru VBUS
+
+Po wymianie F1 i D1 każdy element na VBUS wytrzymuje co najmniej 20 V, a nPM1300 odłącza VBUS od układu powyżej 5,5 V; klawiatura pracuje wtedy z baterii. Źródło USB-C podaje więcej niż 5 V tylko po negocjacji Power Delivery, której klawiatura nie prowadzi, więc chodzi o przypadek wadliwej ładowarki.
+
+| Element na VBUS | Wytrzymałość dziś | Wytrzymałość docelowa | Referencja |
+| --- | --- | --- | --- |
+| nPM1300, pin VBUS | 22 V, odłączenie powyżej 5,5 V (VBUSOVP) | Bez zmian | nPM1300 PS v1.3, tab. 4, s. 17; rozdz. 6.1.2, s. 20; tab. 9, s. 22 |
+| C27 | 50 V | Bez zmian | Karta Yageo |
+| F1 | 6 V | ≥ 24 V, prąd podtrzymania ≥ 1 A | Karta elementu |
+| D1 | Przewodzi od 6,7 V | VRWM ≥ 20 V | Karta elementu |
+| Pin VBUS nRF52840 | Zasilany z VBUSOUT, za zabezpieczeniem nPM1300 | Bez zmian | nPM1300 PS v1.3, rozdz. 6.1.5, s. 21 |
+
+Dwa ograniczenia zostają. TVS o napięciu pracy 20 V ogranicza impuls ESD na poziomie około 30 V, czyli chwilowo powyżej 22 V. Linie CC wytrzymują 5,5 V (tab. 4, s. 17), więc zwarcie CC do VBUS przy 20 V wymagałoby osobnego układu ochrony portu.
+
+### Łącze MB ↔ DB
+
+Listwa goldpin 1×10, raster 1 mm, proste piny lutowane powierzchniowo do krawędzi DB i wchodzące pionowo w otwory MB. DB jest przykręcony do drukowanego uchwytu, a uchwyt do MB, więc siły od wtyczki nie obciążają lutów.
+
+| Pin | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Sygnał | VBUS | VBUS | GND | CC1 | GND | D+ | D− | GND | CC2 | GND |
+
+Para D+/D− ma masę po obu stronach, VBUS ma dwa styki, GND cztery. Numeracja i lustrzane odbicie między płytkami do sprawdzenia na modelu 3D.
+
+### Złącza matrycy
+
+J4 (18 styków) i J7 (6 styków) to Jushuo AFB10, raster 1,0 mm, pionowe, bez zatrzasku, ze stykami po jednej stronie, na taśmę o grubości 0,3 mm, 0,5 A na styk. Matryca zajmuje 23 styki (17 kolumn, 6 wierszy); 24. styk proponowany na GND. Membrana musi mieć ogony o grubości 0,3 mm z usztywnieniem i styki po stronie zgodnej ze złączem. Złącze trzyma taśmę tylko tarciem, więc przy drganiach od sprężyn warto rozważyć wersję z zatrzaskiem.
+
+### Dioda statusu
+
+Jedna Worldsemi WS2812C-2020-V1 na MB, zasilana z VSYS przez przełącznik LOADSW1 nPM1300, z kondensatorem 100 nF przy diodzie i C33 1 µF na wyjściu przełącznika.
+
+| Parametr | Wartość z karty | Warunek w projekcie | Ocena |
+| --- | --- | --- | --- |
+| Napięcie zasilania | 3,7–5,3 V | VSYS: 3,0–4,2 V z baterii, około 5 V z USB | W zakresie na USB i przy baterii powyżej 3,7 V; poniżej działanie niegwarantowane |
+| Próg VIH wejścia DIN | min. 2,7 V | Logika nRF52840 3,3 V | Spełniony bez konwersji poziomów |
+| Prąd spoczynkowy | < 0,5 mA | Odcinany przez LOADSW1 | Uzasadnia przełącznik |
+| Prąd kanału | 5 mA | LOADSW1 do 100 mA | Spełnia |
+| Szybkość danych | 800 kb/s | Pin nRF bez ograniczenia częstotliwości (dolna strona) | Spełnia |
+| Odsprzęganie | 100 nF | 100 nF przy diodzie | Spełnia |
+
+Bez przełącznika sama dioda rozładowałaby ogniwo 1000 mAh w około 83 dni.
+
+```latex
+t = \frac{Q}{I_Q} = \frac{1000\,\mathrm{mAh}}{0{,}5\,\mathrm{mA}} = 2000\,\mathrm{h} \approx 83\,\mathrm{dni}
+```
+
+Przy wyłączonym przełączniku firmware musi trzymać linię DIN w stanie niskim, żeby nie zasilać diody przez wejście danych.
+
+## Smart features: złącze rozszerzeń J3
+
+Haptyka i akcelerometr nie są na motherboardzie; MB wyprowadza zasilanie, I2C i sześć GPIO na złącze 2×6 pod osobne płytki modułów. Typ złącza zależy od projektu mechanicznego.
+
+| Pin | Sygnał | Pin | Sygnał |
+| --- | --- | --- | --- |
+| 1 | VSYS (3,0–5 V, nieregulowane) | 2 | 3,3 V z BUCK2 |
+| 3 | GND | 4 | GND |
+| 5 | SDA | 6 | SCL |
+| 7 | GPIO A (np. przerwanie akcelerometru) | 8 | GPIO B (np. drugie przerwanie) |
+| 9 | GPIO C (np. włączenie haptyki) | 10 | GPIO D (np. wyzwalanie haptyki) |
+| 11 | GPIO E (rezerwa) | 12 | GPIO F (rezerwa) |
+
+| Decyzja | Uzasadnienie | Referencja |
+| --- | --- | --- |
+| Dwa zasilania: VSYS i 3,3 V | Sterownik haptyki pobiera prąd silnika z VSYS; BUCK2 ma 200 mA na cały układ, więc dla modułów na 3,3 V przyjęto budżet 100 mA | nPM1300 PS v1.3, tab. na s. 51; tab. 3, s. 16 |
+| I2C wspólne z nPM1300 | Jedna magistrala; nPM1300 ma adres 7-bitowy 110 1011 (0x6B); adresy modułów do sprawdzenia w ich kartach | nPM1300 PS v1.3, rozdz. 7.6, s. 125 |
+| Sześć GPIO z dolnej strony nRF52840 | Piny bez ograniczenia częstotliwości; każdy pin można przypisać do dowolnego peryferium i każdy może budzić układ, co wystarcza dla wake-on-motion | nRF52840 PS v1.5, rozdz. 6.9, s. 152; tab. 145, s. 579–580 |
+| Pull-upy I2C 4,7 kΩ | Magistrala wychodzi przewodem poza płytkę, więc jej pojemność rośnie | Obliczenie poniżej |
+
+### Obliczenie: pull-upy I2C
+
+Przy 4,7 kΩ tryb 400 kHz jest spełniony do pojemności magistrali około 75 pF; przy 10 kΩ i 100 pF czas narastania wynosiłby 847 ns wobec dopuszczalnych 300 ns. Wzory i limity według specyfikacji magistrali I2C (NXP UM10204), przytoczone z pamięci i do potwierdzenia w dokumencie.
+
+```latex
+R_{p,max} = \frac{t_r}{0{,}8473 \cdot C_b} = \frac{300\,\mathrm{ns}}{0{,}8473 \cdot 75\,\mathrm{pF}} \approx 4{,}7\,\mathrm{k\Omega}, \qquad R_{p,min} = \frac{V_{DD} - V_{OL}}{I_{OL}} = \frac{3{,}3 - 0{,}4}{3\,\mathrm{mA}} \approx 0{,}97\,\mathrm{k\Omega}
+```
+
+## Firmware: ZMK na Zephyr 4.1
+
+Sprzęt nie wymaga przebudowy pod firmware; audyt dodał jedną linię (włącznik diody) i wskazał jedną niezgodność po stronie ZMK (raportowanie baterii).
+
+### Ustalenia ze źródeł
+
+| Temat | Ustalenie | Skutek dla projektu |
+| --- | --- | --- |
+| Brak NTC | Sterownik ładowarki nPM1300 w Zephyr 4.1 przy `thermistor-ohms = 0` sam wyłącza funkcję NTC | Pin NTC do GND wystarczy, bez własnego kodu |
+| Limit prądu VBUS | Sterownik zapisuje limit startowy z `vbus-limit-microamp` przy inicjalizacji; nie czyta stanu CC i nie obsługuje przerwań | Stałe 500 mA działa bez własnego kodu; wyższy limit zależny od źródła wymaga własnego modułu |
+| Procent baterii | ZMK czyta kanał `SENSOR_CHAN_GAUGE_STATE_OF_CHARGE` albo `SENSOR_CHAN_VOLTAGE`; sterownik nPM1300 udostępnia `SENSOR_CHAN_GAUGE_VOLTAGE` | Potrzebny moduł ZMK pośredniczący między sterownikiem a ZMK |
+| Zasilanie diody | `zmk,ext-power-generic` steruje wyłącznie pinem GPIO | Pin nRF52840 do GPIO1 nPM1300, skonfigurowanego jako włącznik LOADSW1 |
+| Przerwanie PMIC | Binding `nordic,npm1300` ma `host-int-gpios` i `pmic-int-pin` | GPIO0 nPM1300 do nRF52840; używane przez własny kod |
+| Wskaźnik stanu baterii | Algorytm Nordica jest częścią nRF Connect SDK, nie ZMK | Liniowe przeliczenie napięcia w ZMK: 3,45 V = 0%, 4,20 V = 100% |
+
+### Ustawienia startowe
+
+Wartości dla ogniwa LP803040 i portu USB 2.0; zmienia się je w konfiguracji płytki, bez ingerencji w sprzęt.
+
+| Ustawienie | Wartość | Uzasadnienie |
+| --- | --- | --- |
+| `term-microvolt` | 4 200 000 | Napięcie końca ładowania z karty ogniwa |
+| `current-microamp` | 400 000 | 0,4 C; karta dopuszcza do 1 C, standard to 0,2 C; pełne ładowanie mieści się w limicie 7 h (nPM1300 PS v1.3, tab. 16, s. 35) |
+| `term-current-percent` | 10 | 40 mA, blisko 0,05 C z karty ogniwa |
+| `vbus-limit-microamp` | 500 000 | Bezpieczne dla portu USB 2.0; poniżej prądu podtrzymania bezpiecznika |
+| `dischg-limit-microamp` | 1 000 000 | Wymagane przy haptyce; dozwolone wartości to 200 mA i 1 A |
+| `thermistor-ohms` | 0 | Brak NTC |
+| BUCK2 | `regulator-always-on` | Błąd w tym miejscu odcina zasilanie nRF52840 |
+| REG1 nRF52840 | Tryb DC/DC | Na płytce są L2 i L3 |
+| Matryca | `zmk,kscan-gpio-matrix`, `col2row`, 17 kolumn, 6 wierszy | Katody diod na liniach ROW |
+| Reset | P0.18 jako nRESET | Przycisk SW90 i złącze J10 |
+| Zegar LF | Kwarc 32,768 kHz, 20 ppm | Y2 |
+
+### Ograniczenia
+
+- Ogniwo wolno ładować w zakresie 0–45 °C, a bez NTC układ tego nie kontroluje; działa tylko ograniczenie temperatury struktury nPM1300 (110 °C).
+- Domyślny próg odcięcia VSYSPOF to 2,7 V (nPM1300 PS v1.3, tab. 29, s. 114), a karta ogniwa podaje 3,0 V; podniesienie progu wymaga zapisu rejestru we własnym kodzie.
+- Wyjście z trybu Ship jest możliwe tylko przez podłączenie USB.
+- Bootloader UF2 trzeba raz wgrać przez SWD; kolejne aktualizacje idą przez USB.
+- Sterowanie LOADSW1 przez GPIO1 i zachowanie limitu VBUS po ponownym wpięciu kabla nie były testowane i wymagają sprawdzenia na prototypie.
+
+## Otwarte kwestie
+
+- [ ] Typ nowego Q1 (RDS(on) ≤ 100 mΩ przy VGS = −2,5 V) i potwierdzenie pinoutu w jego karcie
+- [ ] Typ nowego kwarcu Y1 (32 MHz, 2016, CL = 8 pF, łącznie ≤ ±40 ppm) i potwierdzenie CL obecnego w karcie Epsona
+- [ ] Typ nowego F1 (PTC ≥ 24 V, prąd podtrzymania ≥ 1 A) i nowego D1 (TVS z VRWM ≥ 20 V); limit prądu wejściowego w firmware nie wyższy niż prąd podtrzymania F1
+- [ ] Typ listwy goldpin 1×10, obciążalność styku, numeracja pinów między płytkami na modelu 3D
+- [ ] Membrana: geometria ogonów (0,3 mm, raster 1,0 mm, strona styków), miejsce na diody w stosie, typ diod, 24. styk na GND
+- [ ] Złącza matrycy: wersja bez zatrzasku czy z zatrzaskiem
+- [ ] Dopasowanie RF: dwuelementowe (do +4 dBm) czy czteroelementowe z konfiguracji 7 (od +5 dBm); zależy od docelowej mocy nadawania
+- [ ] Linia 50 Ω od dopasowania do złącza U.FL policzona dla docelowego stackupu; pomiar toru analizatorem
+- [ ] Numery pinów nRF52840 dla matrycy, SDA, SCL, przerwania i diody (przy routingu)
+- [ ] Pinout kabla Tag-Connect: potwierdzenie, że pin 3 to nRESET
+- [ ] Czy wewnętrzne Rd na CC działa przy całkowicie rozładowanej baterii (pytanie do Nordica)
+- [ ] Obsługa detekcji CC i braku NTC (`thermistor-ohms = 0`) w sterowniku Zephyra używanym przez ZMK (blok Firmware)
+- [ ] Prąd ładowania, napięcie końcowe i próg VSYSPOF dla ogniwa LP803040 (blok Firmware)
+- [ ] Sterowanie LOADSW1 i linią DIN diody w ZMK (blok Firmware)
+- [ ] Rzeczywista pojemność C29 przy 3,3 V z krzywej DC-bias Yageo
+- [ ] Biegunowość wtyku ogniwa względem pinu 1 złącza J2
+- [ ] Typ złącza rozszerzeń J3 i sposób połączenia z płytką modułu (mechanika)
+- [ ] Układy na płytkach modułów (sterownik haptyki, akcelerometr): adresy I2C, napięcia, pobór prądu
+- [ ] Limit prądu rozładowania nPM1300: 1 A, jeśli haptyka będzie używana (blok Firmware)
+- [ ] Moduł ZMK udostępniający napięcie baterii z nPM1300 w kanale czytanym przez ZMK
+- [ ] Prototyp: sterowanie LOADSW1 przez GPIO1 i zachowanie limitu VBUS po ponownym wpięciu kabla
+- [ ] Próg VSYSPOF podniesiony do 3,0 V własnym zapisem rejestru
+- [ ] Bootloader UF2: konfiguracja dla płytki i wgranie przez SWD
+
+### Dopisane 2026-10-17 (porządki, do rozstrzygnięcia)
+
+- [ ] Ładowanie bez NTC: nPM1300_PS_v1.3 rozdz. 3.4 wymaga wtedy bezpiecznika termicznego w pakiecie; karta LP803040 wymienia tylko PCM (4,30 V / 2,5 V). Potwierdzić bezpiecznik w ogniwie albo wrócić do NTC 10 kΩ przy ogniwie (dotyczy P7)
+- [ ] WS2812C-2020 z LSOUT1/VSYS: VSYS nie jest regulowane i przy VBUS ma ok. 5 V (nPM1300_PS_v1.3 rozdz. 6.1.1); przy VIH = 0,7·VDD próg ok. 3,5 V > 3,3 V z nRF. Sprawdzić VIH w karcie WS2812C-2020; ewentualnie translator lub inne zasilanie diody (dotyczy I2)
+- [ ] Tętnienia BUCK2: obliczenie ΔI_L dotyczy trybu PWM, a przy obciążeniu ok. 16 mA przetwornica pracuje w trybie histerezowym (PWM od ok. 90 mA wg raportu wykonalności z 11.10, do potwierdzenia w datasheecie); przeliczyć lub zmierzyć do rozdziału pracy
+- [ ] VSET2: zostaje 3,3 V czy 3,0 V (sugestia z raportu wykonalności z 11.10)
+- [ ] Zakres pracy: czy haptyka i akcelerometr powstają w ramach pracy, czy tylko złącze J3 jako kierunek rozwoju
+- [ ] Membrana FPC: jeden arkusz czy segmenty; potrzebny obrys z ogonami (limit JLC 234 × 490 mm, do 250 × 600 mm po uzgodnieniu). Bolt-mod wykonany, rysunki membrany istnieją
+- [ ] BOM sprzed audytu: brak J4 przy obecnym J7, J5 726386-2 bez opisu w dokumentach, C10 = NC a dokumenty mówią o nieobsadzonym C22
+- [ ] Harmonogram: raport wykonalności z 11.10 zakładał zamówienie rev A do 2026-11-09 i działającą SSK bez kabla do 2026-12-08; nie jest zatwierdzony
+
+## Źródła
+
+- nPM1300 Product Specification v1.3 (4490_483, 2026-03-02), w bazie wiedzy projektu
+- nRF52840 Product Specification v1.5 (4413_417), w bazie wiedzy projektu
+- Netlista, raport ERC i schemat projektu z 11.10.2026
+- [APV APH252010T2R2M, LCSC C5349606](https://www.lcsc.com/product-detail/C5349606.html)
+- [Yageo CC0603MRX5R8BB106, LCSC C596327](https://www.lcsc.com/product-detail/C596327.html)
+- [Yageo CC0603KRX7R9BB105, LCSC C559769](https://www.lcsc.com/product-detail/C559769.html)
+- [Yageo CC0603KRX5R8BB225, LCSC C309478](https://www.lcsc.com/product-detail/C309478.html)
+- [Nexperia PMZB350UPE, LCSC C478140](https://www.lcsc.com/product-detail/C478140.html)
+- [Karta PMZB670UPE (pinout obudowy DFN1006B-3)](https://docs.rs-online.com/c225/0900766b812e057d.pdf)
+- [Karta ogniwa Akyga LP803040](https://www.tme.eu/Document/8518e6f80c7c95dc96792c6f2286ce95/aky2417.pdf)
+- [Nordic DevZone: nPM1300 hardware](https://devzone.nordicsemi.com/f/nordic-q-a/127900/npm1300-hardware)
+- [Zephyr: binding nordic,npm1300-charger](https://docs.zephyrproject.org/latest/build/dts/api/bindings/sensor/nordic,npm1300-charger.html)
+- [ZMK: Zephyr 4.1 Update](https://zmk.dev/blog/2025/12/09/zephyr-4-1)
+
+Karty elementów bloku MCU:
+
+- [Epson Q22FA12800018, LCSC C255896](https://www.lcsc.com/product-detail/C255896.html)
+- [Epson Q13FC13500003, LCSC C99010](https://www.lcsc.com/product-detail/C99010.html)
+- [Murata LQM18FN100M00D, LCSC C86083](https://www.lcsc.com/product-detail/C86083.html)
+- [Tai-Tech HCI1005LF-4N7S, LCSC C304335](https://www.lcsc.com/product-detail/C304335.html)
+- [FH VHF100505H15NKT, LCSC C381880](https://www.lcsc.com/product-detail/C381880.html)
+- [Yageo CC0402GRNPO9BN120, LCSC C526985](https://www.lcsc.com/product-detail/C526985.html)
+- [Yageo CC0603KRX5R7BB475, LCSC C277476](https://www.lcsc.com/product-detail/C277476.html)
+
+Karty elementów bloku interfejsów:
+
+- [Karta WS2812C-2020](https://akizukidenshi.com/goodsaffix/ws2812c-2020.pdf)
+- [Prisemi PESDNC2FD5VB, LCSC C110694](https://www.lcsc.com/product-detail/C110694.html)
+- [BHFUSE BSMD0603L-150, LCSC C914094](https://www.lcsc.com/product-detail/C914094.html)
+- [Korean Hroparts TYPE-C-31-D-06, LCSC C2689964](https://www.lcsc.com/product-detail/C2689964.html)
+- [Jushuo AFB10-S18LCA-00, LCSC C7499267](https://www.lcsc.com/product-detail/C7499267.html)
+
+Źródła bloku firmware:
+
+- [ZMK: konfiguracja baterii](https://zmk.dev/docs/config/battery)
+- [ZMK: battery.c](https://raw.githubusercontent.com/zmkfirmware/zmk/main/app/src/battery.c)
+- [Zephyr v4.1.0: npm1300_charger.c](https://raw.githubusercontent.com/zephyrproject-rtos/zephyr/v4.1.0/drivers/sensor/nordic/npm1300_charger/npm1300_charger.c)
+- [Zephyr: binding nordic,npm1300-regulator](https://docs.zephyrproject.org/latest/build/dts/api/bindings/regulator/nordic,npm1300-regulator.html)
+- [Zephyr: binding nordic,npm1300](https://docs.zephyrproject.org/latest/build/dts/api/bindings/mfd/nordic,npm1300.html)
+- [ZMK: konfiguracja zasilania](https://zmk.dev/docs/config/power)

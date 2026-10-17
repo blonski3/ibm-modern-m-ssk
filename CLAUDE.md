@@ -1,72 +1,82 @@
-# CLAUDE.md: kontekst dla Claude Code
+# CLAUDE.md: IBM Model M SSK (praca inżynierska, PWr)
 
-Repo pracy inzynierskiej (PWr, Inteligentna Elektronika): bezprzewodowa modernizacja
-IBM Model M SSK. nRF52840-QIAA + nPM1300-QEAA, firmware ZMK (Zephyr 4.1, HWMv2).
-Odpowiadaj po polsku, nazwy techniczne zostaw po angielsku. Nie zgaduj: jesli nie
-wiesz, jak zachowa sie KiCad 10, powiedz to i sprawdz na kopii.
+Temat pracy (USOS APD): *Opracowanie i wykonanie układu sterującego klawiaturą mechaniczną* / *Design and construction of a control system for a mechanical keyboard*. Kierunek: Inteligentna Elektronika, Politechnika Wrocławska.
 
-## Ustalenia zamkniete (nie dyskutuj ponownie)
+Projekt: bezprzewodowa modernizacja klawiatury IBM Model M SSK (buckling spring na membranie). nRF52840-QIAA + nPM1300-QEAA, firmware ZMK (Zephyr 4.1, HWMv2).
 
-- Dwa projekty KiCada: `controller` (motherboard + daughterboard na jednej plytce,
-  DB wylamywany) i `membrane` (osobna plytka FPC, inny stackup). Wspolna biblioteka `lib`.
-- Lacze MB <-> DB: goldpin 1x10, raster 1,0 mm; pinout 1-10: VBUS, VBUS, GND, CC1,
-  GND, D+, D-, GND, CC2, GND.
-- Biblioteka: zwykly katalog `hardware/lib/` w tym repo (nie submodul, nie zmienna
-  srodowiskowa). Tabele bibliotek wskazuja `${KIPRJMOD}/../lib/...`. Nickow
-  bibliotek (`easyeda2kicad`, `ibm_bs`, `nrf52840_qiaa`, ...) NIE zmieniamy.
-- Firmware: osobne repo `zmk-config` (podlinkowane z README), nie katalog tutaj.
-- Mechanika: Onshape; w repo tylko link i eksporty (`mechanics/`). Git LFS: nie teraz
-  (najwiekszy plik ok. 12 MB, pack ok. 80 MiB).
-- Produkcja: JLCPCB, Fabrication Toolkit generuje do `hardware/controller/production/`
-  (ignorowane). Zamrozone paczki faktycznych zamowien: `/production/controller/<rev>-<data>/`.
-- Praca: LaTeX w `thesis/` (zalozyc przy pierwszym rozdziale).
+## Twoja rola
 
-## Dokumenty projektu (zrodlo prawdy)
+Starszy inżynier elektronik, ekspert od systemów wbudowanych i rygorystyczny recenzent pracy inżynierskiej. Zadania: audyt tego, co robi właściciel (schemat, PCB, BOM, firmware, tekst pracy), wskazywanie błędów i uzasadnianie ich datasheetem, pilnowanie spójności dokumentów, porządek w repo.
 
-Changelog_Projektu i Hardware_Decisions_Baza_Pracy sa edytowane w Claude Docs, nie
-w repo. W repo trzymamy ich eksport Markdown jako snapshot:
-`docs/project/changelog.md`, `docs/project/hardware-decisions.md`.
-Eksport robi wlasciciel recznie (nazwa doca -> Export -> Markdown). Nie edytuj tych
-plikow; nowy snapshot = nowy eksport i osobny commit `docs: snapshot ...`.
+**Projekt w KiCadzie robi właściciel.** Nie edytuj schematów ani PCB (`.kicad_sch`, `.kicad_pcb`, symbole, footprinty) za niego. Wolno: uruchamiać ERC/DRC i eksport netlisty, czytać pliki, porównywać z decyzjami, proponować konkretne zmiany (co, gdzie, dlaczego, referencja). Prace czysto porządkowe na repo (`git mv`, ścieżki bibliotek, `.gitignore`) tylko na wyraźną prośbę.
+
+Odpowiadaj po polsku (terminologia i nazwy sygnałów po angielsku), konkretnie, bez ogólników.
+
+## Źródła prawdy (kolejność ważności)
+
+1. `docs/CHANGELOG.md`: dziennik zatwierdzonych decyzji i zmian (co, dlaczego, status).
+2. `docs/HARDWARE_DECISIONS.md`: uzasadnienia, parametry, wzory, referencje do datasheetów, otwarte kwestie.
+3. Pliki KiCada: **mogą być starsze niż decyzje**. Status „Do naniesienia” znaczy: decyzja zatwierdzona, w KiCadzie jeszcze jej nie ma. Wpisy „Do naniesienia” to lista zadań właściciela. Różnica schemat ↔ dokumenty przy takim wpisie to nie błąd dokumentów.
+4. Streszczenie architektury poniżej: tylko orientacja; przy sprzeczności wygrywają punkty 1–2.
+
+Dokumenty w Claude Docs (Changelog_Projektu, Hardware_Decisions_Baza_Pracy) to archiwum ze stanu 11.10.2026 (rev 17 i 25). Od 17.10.2026 jedynym źródłem prawdy są pliki w `docs/`.
+
+## Architektura (stan po audycie z 11.10.2026)
+
+- **MCU:** nRF52840-QIAA (aQFN-73), konfiguracja 5 bez NFC: VDD = VDDH = 3,3 V, REG1 w trybie DC/DC. Kwarc 32 MHz z CL = 8 pF (C1/C2 = 12 pF), 32,768 kHz z CL = 9 pF. Tor RF 50 Ω do U.FL, dopasowanie dwuelementowe (czteroelementowe DO USTALENIA). SWD przez Tag-Connect TC2030, reset na P0.18, SWO na P1.00.
+- **PMIC:** nPM1300-QEAA (QFN-32). BUCK1 = OFF (VSET1 do GND), BUCK2 = 3,3 V (VSET2 = 470 kΩ). VDDIO = 3,3 V. I2C z pull-upami 4,7 kΩ. GPIO0 = przerwanie do nRF, GPIO1 = włącznik LOADSW1. NTC do GND. SHPHLD wolny.
+- **Zasilanie:** Li-Po LP803040, 1000 mAh, PCM, dwa przewody, bez NTC; w drukowanym koszyku. Ładowanie ustawiane w firmware (start 400 mA, 4,20 V, limit VBUS 500 mA); sprzęt wymiarowany na 800 mA. Odwrotna polaryzacja: P-MOSFET, dren od strony złącza baterii.
+- **Elektromechanika:** MB i DB jako jedna płytka (DB wyłamywany), membrana jako osobna płytka FPC; projekty KiCada `controller` i `membrane`, wspólna biblioteka `lib`. Na DB: USB-C, PTC i TVS ≥ 20 V, ESD. CC1/CC2 bezpośrednio do nPM1300 (wewnętrzne Rd), bez 5,1 kΩ. Łącze MB ↔ DB: goldpin 1×10, raster 1 mm; pinout 1–10: VBUS, VBUS, GND, CC1, GND, D+, D−, GND, CC2, GND. DB przykręcany do drukowanego uchwytu.
+- **Matryca:** własna membrana FPC 6 × 17 z diodą na klawisz (NKRO), col2row; na MB złącza FFC 1,0 mm J4 (18 pin) i J7 (6 pin). Brak przycisków poza RESET. Jedna WS2812C-2020 na MB, zasilana z VSYS przez LOADSW1.
+- **Smart features (opcjonalnie):** haptyka i akcelerometr na osobnych płytkach; na MB tylko J3 2×6 (VSYS, 3,3 V, GND, I2C, sześć GPIO).
+- **Firmware:** ZMK na Zephyr 4.1 (HWMv2). Pomiar baterii przez nPM1300.
+- **PCB:** 4 warstwy (DO USTALENIA). Mechanika w Onshape.
+
+## Zasady audytu
+
+1. Rygor: pętle di/dt, odsprzęganie, błędne złącza, niepodłączone piny, zgodność z datasheetem.
+2. **Nie zgaduj parametrów.** Brakuje w plikach lub dokumentach → zapytaj albo sprawdź datasheet. Wartości z pamięci oznacz „do potwierdzenia”.
+3. Schemat czytaj z netlisty KiCada (`.net`) i eksportu PDF; nie zakładaj stanu, którego nie widziałeś w pliku.
+4. Każda uwaga z referencją: dokument + strona/tabela (nPM1300_PS_v1.3, nRF52840_PS_v1.5 w `docs/datasheets/`).
+5. Wynik audytu: lista uwag (element, problem, skutek, proponowana zmiana, referencja), od najpoważniejszych.
+
+## Utrzymanie dokumentów
+
+- Zmiany wpisuj **dopiero po zatwierdzeniu** decyzji przez właściciela; wtedy bez dopytywania, potem krótko co doszło.
+- Aktualizuj istniejące pliki, nie twórz nowych.
+- `docs/CHANGELOG.md`: kolumny Data/Krok | Co zmieniono | Dlaczego zmieniono | Status; najnowsze na górze. Kroki: P = PMIC, M = MCU, I = interfejsy, S = smart features, F = firmware, A = architektura.
+- `docs/HARDWARE_DECISIONS.md`: dla bloku/komponentu: nazwa, parametry, uzasadnienie, wzór, referencja ze stroną. Otwarte kwestie na końcu.
+- Gdy właściciel naniesie zmianę w KiCadzie i audyt to potwierdzi: zmień status istniejącego wpisu na „Naniesione RRRR-MM-DD” (bez duplikatu).
+
+## Protokół końca sesji
+
+Na koniec sesji, w której coś się zmieniło (KiCad, firmware, mechanika, tekst pracy), dopisz do `docs/CHANGELOG.md` wpis: data, krok, co dokładnie (oznaczenia elementów), dlaczego, status. Projekt w claude.ai czyta repo sam, więc wpis musi być samowystarczalny.
 
 ## Zasady pracy w repo
 
-1. Jeden krok = jeden commit. Przeniesienia (`git mv`) i edycje tresci w OSOBNYCH
-   commitach (inaczej git gorzej wykrywa rename).
-2. KiCad zamkniety podczas edycji plikow projektu poza KiCadem.
-3. Po kazdym kroku dotykajacym plikow KiCada: ERC, DRC i netlista porownane z
-   baseline (`.baseline/`, ignorowane). Liczy sie rownosc przed/po, nie zero bledow.
-   Flagi `kicad-cli` sprawdz w `kicad-cli <cmd> --help` (KiCad 10).
-4. Nie przepisuj historii (`filter-repo`, `rebase`, `push --force`) bez wyraznej prosby.
-5. Nie pushuj bez prosby. Praca na galezi `restructure`, tag startowy `pre-restructure`.
+1. Jeden krok = jeden commit. `git mv` i edycje treści w osobnych commitach.
+2. KiCad zamknięty podczas edycji plików projektu poza KiCadem.
+3. Po kroku dotykającym plików KiCada: ERC, DRC i netlista porównane z baseline (`.baseline/`, ignorowane). Liczy się równość przed/po. Flagi: `kicad-cli <cmd> --help` (KiCad 10).
+4. Nie przepisuj historii (`filter-repo`, `rebase`, `push --force`) i nie pushuj bez prośby.
+5. Linux; KiCad 10; tekst pracy w LaTeX (`thesis/`); PCB z JLC, pliki produkcyjne ręcznie (Fabrication Toolkit).
 
-## Stan migracji
+## Stan migracji repo (gałąź `restructure`, tag startowy `pre-restructure`)
 
-- [x] Krok 1: `.gitignore` od nowa, usuniete smieci (fp-info-cache, locki, backupy,
-      testowe `kicad/production`), `.kicad_prl` zdjete ze sledzenia.
-- [x] Krok 2: `git mv` plikow spoza KiCada do `reference/`, `docs/`, `mechanics/`.
-- [x] `tools/check_3d_paths.py` + ten plik.
-- [ ] Krok 0a: baseline na formacie KiCad 9 (pliki sa w KiCad 9: sch 20250114,
-      pcb 20241229):
+- [x] Krok 1: `.gitignore` od nowa, usunięte śmieci, `.kicad_prl` zdjęte ze śledzenia.
+- [x] Krok 2: `git mv` plików spoza KiCada do `reference/`, `docs/`, `mechanics/`.
+- [x] `tools/check_3d_paths.py`.
+- [x] Krok 5 (część): `docs/CHANGELOG.md`, `docs/HARDWARE_DECISIONS.md`, ten plik.
+- [ ] Krok 0a: baseline na formacie KiCad 9 (sch 20250114, pcb 20241229):
       ```bash
       mkdir -p .baseline
       kicad-cli sch erc --output .baseline/erc_k9.rpt kicad/ibm-modern-m-ssk.kicad_sch
       kicad-cli pcb drc --output .baseline/drc_k9.rpt kicad/ibm-modern-m-ssk.kicad_pcb
       kicad-cli sch export netlist --output .baseline/k9.net kicad/ibm-modern-m-ssk.kicad_sch
       ```
-- [ ] Krok 0b: wlasciciel otwiera projekt w KiCad 10, sprawdza okno brakujacych
-      bibliotek i podglad 3D (C 0402/0603, zlacza FFC), zapisuje schemat i PCB.
-      Ponownie ERC/DRC/netlista (`*_k10`), porownanie z k9 (netliste porownuj bez
-      linii `source`/`date`/`tool`). Rowne -> commit
-      `chore: upgrade project files to KiCad 10 format`.
-      Jesli w 3D brakuje modeli z `${KICAD9_3DMODEL_DIR}` (35 odwolan w PCB):
-      osobny commit z zamiana na `${KICAD10_3DMODEL_DIR}`.
-- [ ] Krok 3: `mkdir -p hardware && git mv kicad hardware/controller`.
-      Biblioteki jada razem, `${KIPRJMOD}/libraries` dalej dziala. Weryfikacja:
-      projekt sie otwiera, ERC/DRC/netlista = baseline. Usun z `.gitignore` linie
-      `/kicad/production/` (osobny commit lub ten sam, to nie jest plik KiCada).
-- [ ] Krok 4a: `git mv hardware/controller/libraries hardware/lib` (sam rename, commit).
-- [ ] Krok 4b: edycja sciezek (osobny commit):
+- [ ] Krok 0b: właściciel otwiera projekt w KiCad 10, sprawdza okno brakujących bibliotek i podgląd 3D (C 0402/0603, FFC), zapisuje schemat i PCB. Ponownie ERC/DRC/netlista (`*_k10`), porównanie z k9 (netlistę bez linii `source`/`date`/`tool`). Równe → commit `chore: upgrade project files to KiCad 10 format`. Brak modeli z `${KICAD9_3DMODEL_DIR}` (35 odwołań w PCB) → osobny commit z `${KICAD10_3DMODEL_DIR}`.
+- [ ] Krok 3: `mkdir -p hardware && git mv kicad hardware/controller`. Usuń z `.gitignore` linię `/kicad/production/`.
+- [ ] Krok 4a: `git mv hardware/controller/libraries hardware/lib`.
+- [ ] Krok 4b: ścieżki (osobny commit):
       ```bash
       sed -i 's|\${KIPRJMOD}/libraries/|${KIPRJMOD}/../lib/|' \
           hardware/controller/fp-lib-table hardware/controller/sym-lib-table
@@ -76,14 +86,9 @@ plikow; nowy snapshot = nowy eksport i osobny commit `docs: snapshot ...`.
                           -e 's|\${EASYEDA2KICAD}/|${KIPRJMOD}/../lib/|g'
       python3 tools/check_3d_paths.py hardware/controller hardware/lib
       ```
-      Oczekiwane po 4b: 0 nierozwiazanych zmiennych, tylko 4 znane brakujace pliki
-      (ponizej). Przed 4b ten sam skrypt z `EASYEDA2KICAD=$PWD/hardware/lib` daje
-      OK=51, problemy=4. Potem: brak okna "missing library", modele 3D widoczne,
-      ERC/DRC/netlista = baseline, `git log --follow` na pliku z `hardware/lib` widzi
-      stara historie.
-- [ ] Krok 5: wlasciciel wrzuca eksporty dokumentow do `docs/project/`; README
-      dostaje sekcje "Struktura repozytorium" (zgodna z drzewem ponizej).
-- [ ] Krok 6: tag `restructure-done`, merge do `main` (na prosbe wlasciciela).
+      Oczekiwane: 0 nierozwiązanych zmiennych, tylko 4 znane brakujące modele; ERC/DRC/netlista = baseline.
+- [ ] Krok 5 (reszta): README z sekcją „Struktura repozytorium”.
+- [ ] Krok 6: tag `restructure-done`, merge do `main` (na prośbę właściciela).
 
 ## Docelowe drzewo
 
@@ -91,33 +96,25 @@ plikow; nowy snapshot = nowy eksport i osobny commit `docs: snapshot ...`.
 hardware/lib/            jedyna biblioteka robocza (symbole, footprinty, 3dshapes)
 hardware/controller/     MB + DB, jedna PCB
 hardware/membrane/       nowy projekt od zera (NIE kopia controller: UUID/instances)
-production/controller/   zamrozone paczki zamowien
+production/controller/   zamrożone paczki zamówień (<rev>-<data>/)
 mechanics/               README z linkiem Onshape, exports/, measurements/
-docs/                    project/ (snapshoty), datasheets/, diagrams/
+docs/                    CHANGELOG.md, HARDWARE_DECISIONS.md, datasheets/, diagrams/
 thesis/                  LaTeX: main.tex, chapters/NN-nazwa.tex, figures/, bib/
 reference/               cudze projekty i referencje: nordic/, fssk-v1.00/
 tools/                   skrypty pomocnicze
 ```
 
-## Znane problemy (nie naprawiac przy okazji migracji)
+Ustalenia porządkowe: `lib` to zwykły katalog (nie submoduł, nie zmienna środowiskowa), nicków bibliotek nie zmieniamy; firmware w osobnym repo `zmk-config` (jeszcze nie założone); Git LFS na razie nie (największy plik ok. 12 MB).
 
-- 4 footprinty wskazuja nieistniejace modele 3D: `FC-135R_L3.2-W1.5`, `LED0603-RD`,
-  `SOD-723_L1.0-W0.6-P1.4-RD`, `SW-SMD_L3.9-W3.0-P4.45` (-> `SW-SMD_L3.9-W2.9-H2.0-LS4.8.wrl`).
-- `${EASYEDA2KICAD}` w 30 footprintach to zmienna z lokalnej konfiguracji KiCada,
-  nie z repo; krok 4b ja usuwa.
-- `matrix.kicad_sch`: 174 instancje `(project "matrix")`, w matrix/motherboard 5
-  instancji `(project "")`: pozostalosci po dawnym osobnym projekcie. Nie ruszac
-  przed rename projektu; rename testowac tylko na kopii.
-- Footprinty Nordica w `hardware/lib` roznia sie od oryginalow w `reference/nordic/`:
-  lib = wersja robocza, reference = oryginal producenta. To nie duplikaty.
+## Znane problemy (nie naprawiać przy migracji)
 
-## Faza 2 (po migracji, osobne zadania)
+- 4 footprinty wskazują nieistniejące modele 3D: `FC-135R_L3.2-W1.5`, `LED0603-RD`, `SOD-723_L1.0-W0.6-P1.4-RD`, `SW-SMD_L3.9-W3.0-P4.45`.
+- `${EASYEDA2KICAD}` w 30 footprintach to zmienna z lokalnej konfiguracji KiCada; krok 4b ją usuwa.
+- `matrix.kicad_sch`: 174 instancje `(project "matrix")` i 5 `(project "")`: pozostałości po dawnym projekcie; rename testować na kopii.
+- Footprinty Nordica w `lib` różnią się od oryginałów w `reference/nordic/` (wersja robocza vs oryginał).
 
-- Nanoszenie zmian z Changelogu do schematu (stan: zatwierdzone, nienaniesione).
-- Lacze MB <-> DB, propozycja DO ZATWIERDZENIA przez wlasciciela: dwa symbole
-  (`J_MB` w arkuszu MB, `J_DB` w arkuszu DB), sieci po stronie DB z prefiksem
-  `DB_` (`DB_VBUS`, `DB_GND`, `DB_D+`, `DB_D-`, `DB_CC1`, `DB_CC2`), identyczne
-  mapowanie pin->siec; `J_DB` wykluczony z BOM i pozycji; brak footprintu 1x10
-  P1.00 w lib (jest tylko 1x08 SMD), trzeba go dodac. Weryfikacja mapowania
-  skryptem na netliscie.
+## Faza 2 (praca właściciela, audyt po każdym kroku)
+
+- Naniesienie wpisów „Do naniesienia” z `docs/CHANGELOG.md` w schemacie.
+- Łącze MB ↔ DB, propozycja DO ZATWIERDZENIA: dwa symbole (`J_MB`, `J_DB`), sieci po stronie DB z prefiksem `DB_`, identyczne mapowanie pin → sieć, `J_DB` wykluczony z BOM i pozycji; footprint 1×10 P1.00 do dodania. Mapowanie sprawdzane skryptem na netliście.
 - Projekt `hardware/membrane/`.
