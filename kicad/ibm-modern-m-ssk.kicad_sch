@@ -1,7 +1,7 @@
 (kicad_sch
-	(version 20250114)
+	(version 20260306)
 	(generator "eeschema")
-	(generator_version "9.0")
+	(generator_version "10.0")
 	(uuid "17f6a4a5-fbff-4e30-a1cc-9481373e4968")
 	(paper "A4")
 	(lib_symbols)
@@ -338,11 +338,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "0f3c1877-5271-448c-b354-c4d8810124ff")
 		(property "Sheetname" "motherboard"
 			(at 87.63 57.7084 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -352,6 +354,8 @@
 		)
 		(property "Sheetfile" "motherboard.kicad_sch"
 			(at 87.63 123.7746 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -700,11 +704,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "c9a46136-57a3-45fc-88ce-38da53378f82")
 		(property "Sheetname" "daughterboard"
 			(at 127 57.7084 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -714,6 +720,8 @@
 		)
 		(property "Sheetfile" "daughterboard.kicad_sch"
 			(at 127 80.5946 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -832,11 +840,13 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0.0000)
+			(color 0 0 0 0)
 		)
 		(uuid "fcf2cb73-a256-4101-99b1-d123c9be8ab2")
 		(property "Sheetname" "matrix"
 			(at 127 84.3784 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -846,6 +856,8 @@
 		)
 		(property "Sheetfile" "matrix.kicad_sch"
 			(at 127 123.7746 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
