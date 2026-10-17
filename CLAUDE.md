@@ -66,17 +66,17 @@ Na koniec sesji, w której coś się zmieniło (KiCad, firmware, mechanika, teks
 - [x] Krok 2: `git mv` plików spoza KiCada do `reference/`, `docs/`, `mechanics/`.
 - [x] `tools/check_3d_paths.py`.
 - [x] Krok 5 (część): `docs/CHANGELOG.md`, `docs/HARDWARE_DECISIONS.md`, ten plik.
-- [ ] Krok 0a: baseline na formacie KiCad 9 (sch 20250114, pcb 20241229):
+- [x] Krok 0a (2026-10-17): baseline na formacie KiCad 9 (sch 20250114, pcb 20241229):
       ```bash
       mkdir -p .baseline
       kicad-cli sch erc --output .baseline/erc_k9.rpt kicad/ibm-modern-m-ssk.kicad_sch
       kicad-cli pcb drc --output .baseline/drc_k9.rpt kicad/ibm-modern-m-ssk.kicad_pcb
       kicad-cli sch export netlist --output .baseline/k9.net kicad/ibm-modern-m-ssk.kicad_sch
       ```
-- [ ] Krok 0b: właściciel otwiera projekt w KiCad 10, sprawdza okno brakujących bibliotek i podgląd 3D (C 0402/0603, FFC), zapisuje schemat i PCB. Ponownie ERC/DRC/netlista (`*_k10`), porównanie z k9 (netlistę bez linii `source`/`date`/`tool`). Równe → commit `chore: upgrade project files to KiCad 10 format`. Brak modeli z `${KICAD9_3DMODEL_DIR}` (35 odwołań w PCB) → osobny commit z `${KICAD10_3DMODEL_DIR}`.
-- [ ] Krok 3: `mkdir -p hardware && git mv kicad hardware/controller`. Usuń z `.gitignore` linię `/kicad/production/`.
-- [ ] Krok 4a: `git mv hardware/controller/libraries hardware/lib`.
-- [ ] Krok 4b: ścieżki (osobny commit):
+- [x] Krok 0b (2026-10-17, modele 3D widoczne, `${KICAD9_3DMODEL_DIR}` zostaje): właściciel otwiera projekt w KiCad 10, sprawdza okno brakujących bibliotek i podgląd 3D (C 0402/0603, FFC), zapisuje schemat i PCB. Ponownie ERC/DRC/netlista (`*_k10`), porównanie z k9 (netlistę bez linii `source`/`date`/`tool`). Równe → commit `chore: upgrade project files to KiCad 10 format`. Brak modeli z `${KICAD9_3DMODEL_DIR}` (35 odwołań w PCB) → osobny commit z `${KICAD10_3DMODEL_DIR}`.
+- [x] Krok 3 (2026-10-17): `mkdir -p hardware && git mv kicad hardware/controller`. Usuń z `.gitignore` linię `/kicad/production/`.
+- [x] Krok 4a (2026-10-17): `git mv hardware/controller/libraries hardware/lib`.
+- [x] Krok 4b (2026-10-17): ścieżki (osobny commit):
       ```bash
       sed -i 's|\${KIPRJMOD}/libraries/|${KIPRJMOD}/../lib/|' \
           hardware/controller/fp-lib-table hardware/controller/sym-lib-table
@@ -87,6 +87,7 @@ Na koniec sesji, w której coś się zmieniło (KiCad, firmware, mechanika, teks
       python3 tools/check_3d_paths.py hardware/controller hardware/lib
       ```
       Oczekiwane: 0 nierozwiązanych zmiennych, tylko 4 znane brakujące modele; ERC/DRC/netlista = baseline.
+- [x] Podział na projekty (2026-10-17, gałąź `kicad-split`): projekt przemianowany na `controller` (`hardware/controller/controller.kicad_pro`), nowy `hardware/membrane/` z zawartością arkusza `matrix`, arkusz `matrix` usunięty z controllera. Netlista controllera = baseline.
 - [ ] Krok 5 (reszta): README z sekcją „Struktura repozytorium”.
 - [ ] Krok 6: tag `restructure-done`, merge do `main` (na prośbę właściciela).
 
@@ -95,7 +96,7 @@ Na koniec sesji, w której coś się zmieniło (KiCad, firmware, mechanika, teks
 ```
 hardware/lib/            jedyna biblioteka robocza (symbole, footprinty, 3dshapes)
 hardware/controller/     MB + DB, jedna PCB
-hardware/membrane/       nowy projekt od zera (NIE kopia controller: UUID/instances)
+hardware/membrane/       membrana FPC: matryca 6 × 17 (SW1–SW88, D5–D91)
 production/controller/   zamrożone paczki zamówień (<rev>-<data>/)
 mechanics/               README z linkiem Onshape, exports/, measurements/
 docs/                    CHANGELOG.md, HARDWARE_DECISIONS.md, datasheets/, diagrams/
@@ -109,12 +110,10 @@ Ustalenia porządkowe: `lib` to zwykły katalog (nie submoduł, nie zmienna śro
 ## Znane problemy (nie naprawiać przy migracji)
 
 - 4 footprinty wskazują nieistniejące modele 3D: `FC-135R_L3.2-W1.5`, `LED0603-RD`, `SOD-723_L1.0-W0.6-P1.4-RD`, `SW-SMD_L3.9-W3.0-P4.45`.
-- `${EASYEDA2KICAD}` w 30 footprintach to zmienna z lokalnej konfiguracji KiCada; krok 4b ją usuwa.
-- `matrix.kicad_sch`: 174 instancje `(project "matrix")` i 5 `(project "")`: pozostałości po dawnym projekcie; rename testować na kopii.
 - Footprinty Nordica w `lib` różnią się od oryginałów w `reference/nordic/` (wersja robocza vs oryginał).
 
 ## Faza 2 (praca właściciela, audyt po każdym kroku)
 
 - Naniesienie wpisów „Do naniesienia” z `docs/CHANGELOG.md` w schemacie.
 - Łącze MB ↔ DB, propozycja DO ZATWIERDZENIA: dwa symbole (`J_MB`, `J_DB`), sieci po stronie DB z prefiksem `DB_`, identyczne mapowanie pin → sieć, `J_DB` wykluczony z BOM i pozycji; footprint 1×10 P1.00 do dodania. Mapowanie sprawdzane skryptem na netliście.
-- Projekt `hardware/membrane/`.
+- Membrana: ogony 18 i 6 styków (pinout lustrzany do J4/J7, 24. styk GND wg I5), stackup i reguły FPC, obrys z Onshape. Schemat matrycy już jest w projekcie.

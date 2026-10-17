@@ -18,7 +18,7 @@ Ramy zatwierdzone 11.10.2026.
 | PMIC | nPM1300-QEAA, BUCK2 = 3,3 V, BUCK1 wyłączony, sterowanie przez I2C |
 | USB-C | Gniazdo, bezpiecznik PTC i ESD na DB; CC1/CC2 bezpośrednio do nPM1300 (wewnętrzne Rd 5,1 kΩ), bez zewnętrznych rezystorów |
 | Łącze MB ↔ DB | Listwa goldpin 1×10, raster 1 mm, piny lutowane do krawędzi DB i wchodzące pionowo w MB: 2× VBUS, 4× GND, D+, D−, CC1, CC2 |
-| Matryca | Własna membrana FPC, 6 wierszy × 17 kolumn, 88 przełączników, dioda na klawisz; złącza FFC 1,0 mm: J4 (18 pinów) i J7 (6 pinów) |
+| Matryca | Własna membrana FPC, 6 wierszy × 17 kolumn, 88 przełączników, dioda na klawisz (87 diod: Backspace ma dwa styki SW17 i SW31 równolegle na D34, jak w oryginale); złącza FFC 1,0 mm: J4 (18 pinów) i J7 (6 pinów) |
 | Bateria | Li-Po LP803040, 1000 mAh, 4,2 V, z PCM, dwa przewody, bez NTC; w drukowanym koszyku, nieklejona do PCB |
 | Ładowanie | Prąd i napięcie końcowe ustawiane przez firmware; sprzęt wymiarowany na 800 mA |
 | Przyciski | Tylko RESET na MB; BT_PAIR i SHPHLD usunięte |
