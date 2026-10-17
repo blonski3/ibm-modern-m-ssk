@@ -9831,8 +9831,7 @@
 		)
 		(uuid "fdf75627-ca02-438a-86b8-e62d3f8b47de")
 	)
-	(hierarchical_label "COL6"
-		(shape input)
+	(label "COL6"
 		(at 140.97 205.74 0)
 		(effects
 			(font
@@ -9842,8 +9841,7 @@
 		)
 		(uuid "01d6be4c-8bc0-46ff-a181-07f2fa1e3ad0")
 	)
-	(hierarchical_label "COL10"
-		(shape input)
+	(label "COL10"
 		(at 140.97 195.58 0)
 		(effects
 			(font
@@ -9853,8 +9851,7 @@
 		)
 		(uuid "12c0fed5-8a45-4840-8b6f-205032a317e3")
 	)
-	(hierarchical_label "COL7"
-		(shape input)
+	(label "COL7"
 		(at 140.97 203.2 0)
 		(effects
 			(font
@@ -9875,8 +9872,7 @@
 		)
 		(uuid "2161102f-60bb-4099-a978-68a7f723c403")
 	)
-	(hierarchical_label "COL11"
-		(shape input)
+	(label "COL11"
 		(at 140.97 193.04 0)
 		(effects
 			(font
@@ -9886,8 +9882,7 @@
 		)
 		(uuid "3d62f85d-9035-47e5-8d53-b3762801ee2e")
 	)
-	(hierarchical_label "COL15"
-		(shape input)
+	(label "COL15"
 		(at 140.97 182.88 0)
 		(effects
 			(font
@@ -9897,8 +9892,7 @@
 		)
 		(uuid "4587e936-d401-4bd0-a912-37c28c9a1bc6")
 	)
-	(hierarchical_label "COL3"
-		(shape input)
+	(label "COL3"
 		(at 140.97 213.36 0)
 		(effects
 			(font
@@ -9930,8 +9924,7 @@
 		)
 		(uuid "557a71f5-f5ee-4c69-bc50-291bfef62733")
 	)
-	(hierarchical_label "ROW5"
-		(shape input)
+	(label "ROW5"
 		(at 140.97 165.1 0)
 		(effects
 			(font
@@ -9952,8 +9945,7 @@
 		)
 		(uuid "6ab5cdc2-d2f8-4c64-8cb8-543bdf4aebe7")
 	)
-	(hierarchical_label "COL2"
-		(shape input)
+	(label "COL2"
 		(at 140.97 215.9 0)
 		(effects
 			(font
@@ -9963,8 +9955,7 @@
 		)
 		(uuid "865532e1-3668-4d31-b45d-b96e2f9f871c")
 	)
-	(hierarchical_label "ROW4"
-		(shape input)
+	(label "ROW4"
 		(at 140.97 167.64 0)
 		(effects
 			(font
@@ -9974,8 +9965,7 @@
 		)
 		(uuid "a5ceacb6-7ebf-4c68-9099-0d8e08340a2d")
 	)
-	(hierarchical_label "COL16"
-		(shape input)
+	(label "COL16"
 		(at 140.97 180.34 0)
 		(effects
 			(font
@@ -9985,8 +9975,7 @@
 		)
 		(uuid "a6b0a57c-8e27-44f1-8f3f-97306323fe76")
 	)
-	(hierarchical_label "COL13"
-		(shape input)
+	(label "COL13"
 		(at 140.97 187.96 0)
 		(effects
 			(font
@@ -9996,8 +9985,7 @@
 		)
 		(uuid "adaf592f-56b3-463b-91dd-77d52002ca4a")
 	)
-	(hierarchical_label "COL9"
-		(shape input)
+	(label "COL9"
 		(at 140.97 198.12 0)
 		(effects
 			(font
@@ -10007,8 +9995,7 @@
 		)
 		(uuid "ae7baee2-8482-4a08-9b60-89c7e02ae6b8")
 	)
-	(hierarchical_label "ROW2"
-		(shape input)
+	(label "ROW2"
 		(at 140.97 172.72 0)
 		(effects
 			(font
@@ -10029,8 +10016,7 @@
 		)
 		(uuid "b9ccb664-2adb-48ed-af96-b6ca7f033030")
 	)
-	(hierarchical_label "COL4"
-		(shape input)
+	(label "COL4"
 		(at 140.97 210.82 0)
 		(effects
 			(font
@@ -10040,8 +10026,7 @@
 		)
 		(uuid "bd124031-bf97-4d58-8d04-3cb29099463a")
 	)
-	(hierarchical_label "ROW3"
-		(shape input)
+	(label "ROW3"
 		(at 140.97 170.18 0)
 		(effects
 			(font
@@ -10062,8 +10047,7 @@
 		)
 		(uuid "c9e1f583-b0e6-48ba-863d-3f43858fd39c")
 	)
-	(hierarchical_label "COL14"
-		(shape input)
+	(label "COL14"
 		(at 140.97 185.42 0)
 		(effects
 			(font
@@ -10084,8 +10068,7 @@
 		)
 		(uuid "ca4b408f-fcfc-47a9-9700-afd42af6ef60")
 	)
-	(hierarchical_label "COL1"
-		(shape input)
+	(label "COL1"
 		(at 140.97 218.44 0)
 		(effects
 			(font
@@ -10106,8 +10089,7 @@
 		)
 		(uuid "d912e35c-bb38-4484-95cc-77cc51972a73")
 	)
-	(hierarchical_label "COL5"
-		(shape input)
+	(label "COL5"
 		(at 140.97 208.28 0)
 		(effects
 			(font
@@ -10128,8 +10110,7 @@
 		)
 		(uuid "ee4ba77b-7b9e-40d5-89d8-12ba8d9055a2")
 	)
-	(hierarchical_label "ROW1"
-		(shape input)
+	(label "ROW1"
 		(at 140.97 175.26 0)
 		(effects
 			(font
@@ -10139,8 +10120,7 @@
 		)
 		(uuid "ee712fc4-f84d-4bcd-a1a5-9c6e1cfbe50e")
 	)
-	(hierarchical_label "COL8"
-		(shape input)
+	(label "COL8"
 		(at 140.97 200.66 0)
 		(effects
 			(font
@@ -10150,8 +10130,7 @@
 		)
 		(uuid "efc72c4d-8946-469b-8f1e-babe97d887f8")
 	)
-	(hierarchical_label "ROW0"
-		(shape input)
+	(label "ROW0"
 		(at 140.97 177.8 0)
 		(effects
 			(font
@@ -10161,8 +10140,7 @@
 		)
 		(uuid "f17f158d-6a60-42e4-b5f4-58584deed07b")
 	)
-	(hierarchical_label "COL0"
-		(shape input)
+	(label "COL0"
 		(at 140.97 220.98 0)
 		(effects
 			(font
@@ -10172,8 +10150,7 @@
 		)
 		(uuid "f680b25d-7d3c-40b1-8dd5-260818f16184")
 	)
-	(hierarchical_label "COL12"
-		(shape input)
+	(label "COL12"
 		(at 140.97 190.5 0)
 		(effects
 			(font
