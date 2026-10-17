@@ -527,7 +527,7 @@
     ]
   },
   "meta": {
-    "filename": "ibm-modern-m-ssk.kicad_pro",
+    "filename": "controller.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -931,8 +931,8 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "ibm-modern-m-ssk.kicad_sch",
-        "name": "ibm-modern-m-ssk",
+        "filename": "controller.kicad_sch",
+        "name": "controller",
         "uuid": "17f6a4a5-fbff-4e30-a1cc-9481373e4968"
       }
     ],
@@ -942,7 +942,7 @@
   "sheets": [
     [
       "17f6a4a5-fbff-4e30-a1cc-9481373e4968",
-      "ibm-modern-m-ssk"
+      "controller"
     ],
     [
       "0f3c1877-5271-448c-b354-c4d8810124ff",
