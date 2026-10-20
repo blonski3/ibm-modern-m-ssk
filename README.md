@@ -1,6 +1,5 @@
-# IBM Model M SSK: bezprzewodowy kontroler
-
-Praca inżynierska (Politechnika Wrocławska, Inteligentna Elektronika): *Opracowanie i wykonanie układu sterującego klawiaturą mechaniczną*. Bezprzewodowa modernizacja IBM Model M SSK: nRF52840 + nPM1300, własna membrana FPC z diodą na klawisz, firmware ZMK.
+# IBM Model M SSK Wireless
+*Opracowanie i wykonanie układu sterującego klawiaturą mechaniczną*. Bezprzewodowa modernizacja IBM Model M SSK: nRF52840 + nPM1300, własna membrana FPC z diodą na klawisz, firmware ZMK.
 
 ## Struktura repozytorium
 
@@ -16,7 +15,7 @@ tools/                 skrypty pomocnicze (np. check_3d_paths.py)
 
 Decyzje projektowe i ich uzasadnienia: `docs/HARDWARE_DECISIONS.md`; historia zmian: `docs/CHANGELOG.md`.
 
-## Źródła
+## Resources
 
 [Bolt Mod, A Comprehensive Tutorial: IBM Model M SSK 1991](https://imgur.com/gallery/bolt-mod-comprehensive-tutorial-ibm-model-m-ssk-1991-arUYken)
 
