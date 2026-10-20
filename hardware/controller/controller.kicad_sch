@@ -44,7 +44,7 @@
 			)
 		)
 		(instances
-			(project "ibm-modern-m-ssk"
+			(project "controller"
 				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968"
 					(page "2")
 				)
@@ -90,7 +90,7 @@
 			)
 		)
 		(instances
-			(project "ibm-modern-m-ssk"
+			(project "controller"
 				(path "/17f6a4a5-fbff-4e30-a1cc-9481373e4968"
 					(page "3")
 				)
