@@ -981,6 +981,15 @@
 					)
 				)
 			)
+			(text "SUPPLY"
+				(at -9.144 40.64 0)
+				(effects
+					(font
+						(size 1.016 1.016)
+					)
+					(justify left)
+				)
+			)
 		)
 		(symbol "nRF52840-QIAA_2_1"
 			(rectangle
@@ -1120,6 +1129,15 @@
 					)
 				)
 			)
+			(text "DEC"
+				(at -9.144 40.64 0)
+				(effects
+					(font
+						(size 1.016 1.016)
+					)
+					(justify left)
+				)
+			)
 		)
 		(symbol "nRF52840-QIAA_3_1"
 			(rectangle
@@ -1257,6 +1275,15 @@
 							(size 1.27 1.27)
 						)
 					)
+				)
+			)
+			(text "CLK/RF/USB"
+				(at -9.144 40.64 0)
+				(effects
+					(font
+						(size 1.016 1.016)
+					)
+					(justify left)
 				)
 			)
 		)
@@ -1794,6 +1821,15 @@
 					)
 				)
 			)
+			(text "GPIO P0"
+				(at -9.144 40.64 0)
+				(effects
+					(font
+						(size 1.016 1.016)
+					)
+					(justify left)
+				)
+			)
 		)
 		(symbol "nRF52840-QIAA_5_1"
 			(rectangle
@@ -2147,6 +2183,15 @@
 							(size 1.27 1.27)
 						)
 					)
+				)
+			)
+			(text "P1/SWD"
+				(at -9.144 40.64 0)
+				(effects
+					(font
+						(size 1.016 1.016)
+					)
+					(justify left)
 				)
 			)
 		)
