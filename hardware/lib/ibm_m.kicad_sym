@@ -981,15 +981,6 @@
 					)
 				)
 			)
-			(text "SUPPLY"
-				(at -7.62 5.08 900)
-				(effects
-					(font
-						(size 1.778 1.778)
-						(bold yes)
-					)
-				)
-			)
 		)
 		(symbol "nRF52840-QIAA_2_1"
 			(rectangle
@@ -1129,15 +1120,6 @@
 					)
 				)
 			)
-			(text "DEC"
-				(at -7.62 1.27 900)
-				(effects
-					(font
-						(size 1.778 1.778)
-						(bold yes)
-					)
-				)
-			)
 		)
 		(symbol "nRF52840-QIAA_3_1"
 			(rectangle
@@ -1274,15 +1256,6 @@
 						(font
 							(size 1.27 1.27)
 						)
-					)
-				)
-			)
-			(text "CLOCK / RF / USB"
-				(at -7.62 8.89 900)
-				(effects
-					(font
-						(size 1.778 1.778)
-						(bold yes)
 					)
 				)
 			)
@@ -1821,15 +1794,6 @@
 					)
 				)
 			)
-			(text "GPIO P0"
-				(at -7.62 1.27 900)
-				(effects
-					(font
-						(size 1.778 1.778)
-						(bold yes)
-					)
-				)
-			)
 		)
 		(symbol "nRF52840-QIAA_5_1"
 			(rectangle
@@ -2182,15 +2146,6 @@
 						(font
 							(size 1.27 1.27)
 						)
-					)
-				)
-			)
-			(text "GPIO P1 / SWD"
-				(at -7.62 13.97 900)
-				(effects
-					(font
-						(size 1.778 1.778)
-						(bold yes)
 					)
 				)
 			)
