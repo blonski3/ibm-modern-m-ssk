@@ -28,15 +28,6 @@
 			)
 		)
 		(property "Footprint" "Nordic_QFN50P500X500X90-33N:Nordic_QFN50P500X500X90-33N"
-			(at 0 -63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://docs.nordicsemi.com/viewer/book-attachment/ZO1FVHHS04YNNMSlbsZ0Kg/KbFbu1gXgIMOyTgBK7q46A-ZO1FVHHS04YNNMSlbsZ0Kg"
 			(at 0 -66.04 0)
 			(effects
 				(font
@@ -45,8 +36,17 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "PMIC: ładowarka Li-Ion 800 mA, 2x BUCK 200 mA, 2x load switch/LDO, USB-C CC, I2C; QFN-32 5x5 mm. Pełne nazwy pinów: LSIN1/VINLDO1, LSOUT1/VOUTLDO1, LSIN2/VINLDO2, LSOUT2/VOUTLDO2 (nPM1300 PS v1.3, tab. 34, s. 155)"
+		(property "Datasheet" "https://docs.nordicsemi.com/viewer/book-attachment/ZO1FVHHS04YNNMSlbsZ0Kg/KbFbu1gXgIMOyTgBK7q46A-ZO1FVHHS04YNNMSlbsZ0Kg"
 			(at 0 -68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "PMIC: ładowarka Li-Ion 800 mA, 2x BUCK 200 mA, 2x load switch/LDO, USB-C CC, I2C; QFN-32 5x5 mm. Pełne nazwy pinów: LSIN1/VINLDO1, LSOUT1/VOUTLDO1, LSIN2/VINLDO2, LSOUT2/VOUTLDO2 (nPM1300 PS v1.3, tab. 34, s. 155)"
+			(at 0 -71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -75,7 +75,7 @@
 		(symbol "nPM1300-QEAA_0_1"
 			(rectangle
 				(start -15.24 50.8)
-				(end 15.24 -58.42)
+				(end 15.24 -60.96)
 				(stroke
 					(width 0.254)
 					(type default)
@@ -231,7 +231,7 @@
 				)
 			)
 			(pin power_in line
-				(at -17.78 -10.16 0)
+				(at -17.78 -25.4 0)
 				(length 2.54)
 				(name "VDDIO"
 					(effects
@@ -249,7 +249,7 @@
 				)
 			)
 			(pin input line
-				(at -17.78 -12.7 0)
+				(at -17.78 -20.32 0)
 				(length 2.54)
 				(name "SCL"
 					(effects
@@ -267,7 +267,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -17.78 -15.24 0)
+				(at -17.78 -22.86 0)
 				(length 2.54)
 				(name "SDA"
 					(effects
@@ -285,7 +285,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -17.78 -30.48 0)
+				(at -17.78 -40.64 0)
 				(length 2.54)
 				(name "GPIO0"
 					(effects
@@ -303,7 +303,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -17.78 -33.02 0)
+				(at -17.78 -43.18 0)
 				(length 2.54)
 				(name "GPIO1"
 					(effects
@@ -321,7 +321,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -17.78 -35.56 0)
+				(at -17.78 -45.72 0)
 				(length 2.54)
 				(name "GPIO2"
 					(effects
@@ -339,7 +339,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -17.78 -38.1 0)
+				(at -17.78 -48.26 0)
 				(length 2.54)
 				(name "GPIO3"
 					(effects
@@ -357,7 +357,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -17.78 -40.64 0)
+				(at -17.78 -50.8 0)
 				(length 2.54)
 				(name "GPIO4"
 					(effects
@@ -627,7 +627,7 @@
 				)
 			)
 			(pin power_in line
-				(at -5.08 -60.96 90)
+				(at -5.08 -63.5 90)
 				(length 2.54)
 				(name "PVSS1"
 					(effects
@@ -645,7 +645,7 @@
 				)
 			)
 			(pin power_in line
-				(at 0 -60.96 90)
+				(at 0 -63.5 90)
 				(length 2.54)
 				(name "AVSS"
 					(effects
@@ -663,7 +663,7 @@
 				)
 			)
 			(pin power_in line
-				(at 5.08 -60.96 90)
+				(at 5.08 -63.5 90)
 				(length 2.54)
 				(name "PVSS2"
 					(effects
