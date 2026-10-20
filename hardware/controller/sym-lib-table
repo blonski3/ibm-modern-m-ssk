@@ -2,4 +2,5 @@
   (version 7)
   (lib (name "easyeda2kicad")(type "KiCad")(uri "${KIPRJMOD}/../lib/easyeda2kicad.kicad_sym")(options "")(descr ""))
   (lib (name "nrf52840_qiaa_config5")(type "KiCad")(uri "${KIPRJMOD}/../lib/nrf52840_qiaa_config5.kicad_sym")(options "")(descr ""))
+  (lib (name "ibm_m")(type "KiCad")(uri "${KIPRJMOD}/../lib/ibm_m.kicad_sym")(options "")(descr "Symbole wlasne projektu"))
 )
