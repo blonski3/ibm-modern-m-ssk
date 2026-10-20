@@ -691,7 +691,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(property "Reference" "U"
-			(at -15.24 36.83 0)
+			(at -10.16 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -700,7 +700,7 @@
 			)
 		)
 		(property "Value" "nRF52840-QIAA"
-			(at 15.24 36.83 0)
+			(at 10.16 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -709,7 +709,7 @@
 			)
 		)
 		(property "Footprint" "nrf52840_qiaa:AQFN50P700X700X85_HS-74N"
-			(at 0 -50.8 0)
+			(at 0 -45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -718,7 +718,7 @@
 			)
 		)
 		(property "Datasheet" "https://docs.nordicsemi.com/bundle/ps_nrf52840/page/keyfeatures_html5.html"
-			(at 0 -53.34 0)
+			(at 0 -48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -727,7 +727,7 @@
 			)
 		)
 		(property "Description" "SoC Bluetooth LE / 802.15.4, Cortex-M4F 64 MHz, 1 MB flash, 256 kB RAM, USB 2.0 FS; aQFN-73 7x7 mm. Części: Power, Clock_RF_USB_SWD, P0, P1"
-			(at 0 -55.88 0)
+			(at 0 -50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -755,8 +755,8 @@
 		)
 		(symbol "nRF52840-QIAA_1_1"
 			(rectangle
-				(start -15.24 35.56)
-				(end 15.24 -43.18)
+				(start -10.16 38.1)
+				(end 10.16 -38.1)
 				(stroke
 					(width 0.254)
 					(type default)
@@ -766,7 +766,7 @@
 				)
 			)
 			(pin power_in line
-				(at -20.32 33.02 0)
+				(at 15.24 35.56 180)
 				(length 5.08)
 				(name "VDD"
 					(effects
@@ -784,7 +784,7 @@
 				)
 			)
 			(pin power_in line
-				(at -20.32 30.48 0)
+				(at 15.24 33.02 180)
 				(length 5.08)
 				(name "VDD"
 					(effects
@@ -802,7 +802,7 @@
 				)
 			)
 			(pin power_in line
-				(at -20.32 27.94 0)
+				(at 15.24 30.48 180)
 				(length 5.08)
 				(name "VDD"
 					(effects
@@ -820,7 +820,7 @@
 				)
 			)
 			(pin power_in line
-				(at -20.32 25.4 0)
+				(at 15.24 27.94 180)
 				(length 5.08)
 				(name "VDD"
 					(effects
@@ -838,7 +838,7 @@
 				)
 			)
 			(pin power_in line
-				(at -20.32 22.86 0)
+				(at 15.24 25.4 180)
 				(length 5.08)
 				(name "VDD"
 					(effects
@@ -856,7 +856,7 @@
 				)
 			)
 			(pin power_in line
-				(at -20.32 15.24 0)
+				(at 15.24 17.78 180)
 				(length 5.08)
 				(name "VDDH"
 					(effects
@@ -874,7 +874,7 @@
 				)
 			)
 			(pin power_in line
-				(at -20.32 0 0)
+				(at 15.24 2.54 180)
 				(length 5.08)
 				(name "VBUS"
 					(effects
@@ -892,7 +892,7 @@
 				)
 			)
 			(pin passive line
-				(at -20.32 -15.24 0)
+				(at 15.24 -12.7 180)
 				(length 5.08)
 				(name "DECUSB"
 					(effects
@@ -910,7 +910,7 @@
 				)
 			)
 			(pin passive line
-				(at -20.32 -30.48 0)
+				(at 15.24 -20.32 180)
 				(length 5.08)
 				(name "DCCH"
 					(effects
@@ -927,134 +927,8 @@
 					)
 				)
 			)
-			(pin passive line
-				(at 20.32 33.02 180)
-				(length 5.08)
-				(name "DEC1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "C1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 20.32 17.78 180)
-				(length 5.08)
-				(name "DEC2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "A18"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 20.32 2.54 180)
-				(length 5.08)
-				(name "DEC3"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "D23"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 20.32 -12.7 180)
-				(length 5.08)
-				(name "DEC5"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "N24"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 20.32 -27.94 180)
-				(length 5.08)
-				(name "DCC"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "B3"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 20.32 -30.48 180)
-				(length 5.08)
-				(name "DEC4"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "B5"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 20.32 -33.02 180)
-				(length 5.08)
-				(name "DEC6"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "E24"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
 			(pin power_in line
-				(at -5.08 -48.26 90)
+				(at 15.24 -27.94 180)
 				(length 5.08)
 				(name "VSS"
 					(effects
@@ -1072,7 +946,7 @@
 				)
 			)
 			(pin power_in line
-				(at 0 -48.26 90)
+				(at 15.24 -30.48 180)
 				(length 5.08)
 				(name "GND"
 					(effects
@@ -1090,7 +964,7 @@
 				)
 			)
 			(pin power_in line
-				(at 5.08 -48.26 90)
+				(at 15.24 -33.02 180)
 				(length 5.08)
 				(name "VSS_PA"
 					(effects
@@ -1110,8 +984,8 @@
 		)
 		(symbol "nRF52840-QIAA_2_1"
 			(rectangle
-				(start -15.24 27.94)
-				(end 15.24 -27.94)
+				(start -10.16 38.1)
+				(end 10.16 -38.1)
 				(stroke
 					(width 0.254)
 					(type default)
@@ -1121,7 +995,146 @@
 				)
 			)
 			(pin passive line
-				(at -20.32 25.4 0)
+				(at 15.24 35.56 180)
+				(length 5.08)
+				(name "DEC1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "C1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 15.24 20.32 180)
+				(length 5.08)
+				(name "DEC2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "A18"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 15.24 5.08 180)
+				(length 5.08)
+				(name "DEC3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "D23"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 15.24 -10.16 180)
+				(length 5.08)
+				(name "DEC5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "N24"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 15.24 -25.4 180)
+				(length 5.08)
+				(name "DCC"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "B3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 15.24 -27.94 180)
+				(length 5.08)
+				(name "DEC4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "B5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 15.24 -30.48 180)
+				(length 5.08)
+				(name "DEC6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "E24"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(symbol "nRF52840-QIAA_3_1"
+			(rectangle
+				(start -10.16 38.1)
+				(end 10.16 -38.1)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+			(pin passive line
+				(at 15.24 35.56 180)
 				(length 5.08)
 				(name "XC1"
 					(effects
@@ -1139,7 +1152,7 @@
 				)
 			)
 			(pin passive line
-				(at -20.32 20.32 0)
+				(at 15.24 30.48 180)
 				(length 5.08)
 				(name "XC2"
 					(effects
@@ -1157,7 +1170,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 5.08 0)
+				(at 15.24 15.24 180)
 				(length 5.08)
 				(name "P0.00/XL1"
 					(effects
@@ -1175,7 +1188,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 0 0)
+				(at 15.24 10.16 180)
 				(length 5.08)
 				(name "P0.01/XL2"
 					(effects
@@ -1192,62 +1205,8 @@
 					)
 				)
 			)
-			(pin bidirectional line
-				(at -20.32 -15.24 0)
-				(length 5.08)
-				(name "SWDIO"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "AC24"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin input line
-				(at -20.32 -17.78 0)
-				(length 5.08)
-				(name "SWDCLK"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "AA24"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin bidirectional line
-				(at -20.32 -25.4 0)
-				(length 5.08)
-				(name "P0.18/RESET"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "AC13"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
 			(pin passive line
-				(at 20.32 25.4 180)
+				(at 15.24 -5.08 180)
 				(length 5.08)
 				(name "ANT"
 					(effects
@@ -1265,7 +1224,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 20.32 10.16 180)
+				(at 15.24 -20.32 180)
 				(length 5.08)
 				(name "D+"
 					(effects
@@ -1283,7 +1242,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 20.32 7.62 180)
+				(at 15.24 -22.86 180)
 				(length 5.08)
 				(name "D-"
 					(effects
@@ -1301,10 +1260,10 @@
 				)
 			)
 		)
-		(symbol "nRF52840-QIAA_3_1"
+		(symbol "nRF52840-QIAA_4_1"
 			(rectangle
-				(start -15.24 20.32)
-				(end 15.24 -20.32)
+				(start -10.16 38.1)
+				(end 10.16 -38.1)
 				(stroke
 					(width 0.254)
 					(type default)
@@ -1314,7 +1273,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 17.78 0)
+				(at 15.24 35.56 180)
 				(length 5.08)
 				(name "P0.02/AIN0"
 					(effects
@@ -1332,7 +1291,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 15.24 0)
+				(at 15.24 33.02 180)
 				(length 5.08)
 				(name "P0.03/AIN1"
 					(effects
@@ -1350,7 +1309,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 12.7 0)
+				(at 15.24 30.48 180)
 				(length 5.08)
 				(name "P0.04/AIN2"
 					(effects
@@ -1368,7 +1327,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 10.16 0)
+				(at 15.24 27.94 180)
 				(length 5.08)
 				(name "P0.05/AIN3"
 					(effects
@@ -1386,7 +1345,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 7.62 0)
+				(at 15.24 25.4 180)
 				(length 5.08)
 				(name "P0.06"
 					(effects
@@ -1404,7 +1363,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 5.08 0)
+				(at 15.24 22.86 180)
 				(length 5.08)
 				(name "P0.07"
 					(effects
@@ -1422,7 +1381,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 2.54 0)
+				(at 15.24 20.32 180)
 				(length 5.08)
 				(name "P0.08"
 					(effects
@@ -1440,7 +1399,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 0 0)
+				(at 15.24 17.78 180)
 				(length 5.08)
 				(name "P0.09/NFC1"
 					(effects
@@ -1458,7 +1417,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 -2.54 0)
+				(at 15.24 15.24 180)
 				(length 5.08)
 				(name "P0.10/NFC2"
 					(effects
@@ -1476,7 +1435,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 -5.08 0)
+				(at 15.24 12.7 180)
 				(length 5.08)
 				(name "P0.11"
 					(effects
@@ -1494,7 +1453,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 -7.62 0)
+				(at 15.24 10.16 180)
 				(length 5.08)
 				(name "P0.12"
 					(effects
@@ -1512,7 +1471,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 -10.16 0)
+				(at 15.24 7.62 180)
 				(length 5.08)
 				(name "P0.13"
 					(effects
@@ -1530,7 +1489,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 -12.7 0)
+				(at 15.24 5.08 180)
 				(length 5.08)
 				(name "P0.14"
 					(effects
@@ -1548,7 +1507,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 -15.24 0)
+				(at 15.24 2.54 180)
 				(length 5.08)
 				(name "P0.15"
 					(effects
@@ -1566,7 +1525,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 -17.78 0)
+				(at 15.24 0 180)
 				(length 5.08)
 				(name "P0.16"
 					(effects
@@ -1584,7 +1543,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 20.32 17.78 180)
+				(at 15.24 -2.54 180)
 				(length 5.08)
 				(name "P0.17"
 					(effects
@@ -1602,7 +1561,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 20.32 15.24 180)
+				(at 15.24 -5.08 180)
 				(length 5.08)
 				(name "P0.19"
 					(effects
@@ -1620,7 +1579,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 20.32 12.7 180)
+				(at 15.24 -7.62 180)
 				(length 5.08)
 				(name "P0.20"
 					(effects
@@ -1638,7 +1597,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 20.32 10.16 180)
+				(at 15.24 -10.16 180)
 				(length 5.08)
 				(name "P0.21"
 					(effects
@@ -1656,7 +1615,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 20.32 7.62 180)
+				(at 15.24 -12.7 180)
 				(length 5.08)
 				(name "P0.22"
 					(effects
@@ -1674,7 +1633,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 20.32 5.08 180)
+				(at 15.24 -15.24 180)
 				(length 5.08)
 				(name "P0.23"
 					(effects
@@ -1692,7 +1651,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 20.32 2.54 180)
+				(at 15.24 -17.78 180)
 				(length 5.08)
 				(name "P0.24"
 					(effects
@@ -1710,7 +1669,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 20.32 0 180)
+				(at 15.24 -20.32 180)
 				(length 5.08)
 				(name "P0.25"
 					(effects
@@ -1728,7 +1687,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 20.32 -2.54 180)
+				(at 15.24 -22.86 180)
 				(length 5.08)
 				(name "P0.26"
 					(effects
@@ -1746,7 +1705,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 20.32 -5.08 180)
+				(at 15.24 -25.4 180)
 				(length 5.08)
 				(name "P0.27"
 					(effects
@@ -1764,7 +1723,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 20.32 -7.62 180)
+				(at 15.24 -27.94 180)
 				(length 5.08)
 				(name "P0.28/AIN4"
 					(effects
@@ -1782,7 +1741,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 20.32 -10.16 180)
+				(at 15.24 -30.48 180)
 				(length 5.08)
 				(name "P0.29/AIN5"
 					(effects
@@ -1800,7 +1759,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 20.32 -12.7 180)
+				(at 15.24 -33.02 180)
 				(length 5.08)
 				(name "P0.30/AIN6"
 					(effects
@@ -1818,7 +1777,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 20.32 -15.24 180)
+				(at 15.24 -35.56 180)
 				(length 5.08)
 				(name "P0.31/AIN7"
 					(effects
@@ -1836,10 +1795,10 @@
 				)
 			)
 		)
-		(symbol "nRF52840-QIAA_4_1"
+		(symbol "nRF52840-QIAA_5_1"
 			(rectangle
-				(start -15.24 12.7)
-				(end 15.24 -10.16)
+				(start -10.16 38.1)
+				(end 10.16 -38.1)
 				(stroke
 					(width 0.254)
 					(type default)
@@ -1849,7 +1808,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 10.16 0)
+				(at 15.24 35.56 180)
 				(length 5.08)
 				(name "P1.00"
 					(effects
@@ -1867,7 +1826,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 7.62 0)
+				(at 15.24 33.02 180)
 				(length 5.08)
 				(name "P1.01"
 					(effects
@@ -1885,7 +1844,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 5.08 0)
+				(at 15.24 30.48 180)
 				(length 5.08)
 				(name "P1.02"
 					(effects
@@ -1903,7 +1862,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 2.54 0)
+				(at 15.24 27.94 180)
 				(length 5.08)
 				(name "P1.03"
 					(effects
@@ -1921,7 +1880,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 0 0)
+				(at 15.24 25.4 180)
 				(length 5.08)
 				(name "P1.04"
 					(effects
@@ -1939,7 +1898,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 -2.54 0)
+				(at 15.24 22.86 180)
 				(length 5.08)
 				(name "P1.05"
 					(effects
@@ -1957,7 +1916,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 -5.08 0)
+				(at 15.24 20.32 180)
 				(length 5.08)
 				(name "P1.06"
 					(effects
@@ -1975,7 +1934,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at -20.32 -7.62 0)
+				(at 15.24 17.78 180)
 				(length 5.08)
 				(name "P1.07"
 					(effects
@@ -1993,7 +1952,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 20.32 10.16 180)
+				(at 15.24 15.24 180)
 				(length 5.08)
 				(name "P1.08"
 					(effects
@@ -2011,7 +1970,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 20.32 7.62 180)
+				(at 15.24 12.7 180)
 				(length 5.08)
 				(name "P1.09"
 					(effects
@@ -2029,7 +1988,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 20.32 5.08 180)
+				(at 15.24 10.16 180)
 				(length 5.08)
 				(name "P1.10"
 					(effects
@@ -2047,7 +2006,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 20.32 2.54 180)
+				(at 15.24 7.62 180)
 				(length 5.08)
 				(name "P1.11"
 					(effects
@@ -2065,7 +2024,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 20.32 0 180)
+				(at 15.24 5.08 180)
 				(length 5.08)
 				(name "P1.12"
 					(effects
@@ -2083,7 +2042,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 20.32 -2.54 180)
+				(at 15.24 2.54 180)
 				(length 5.08)
 				(name "P1.13"
 					(effects
@@ -2101,7 +2060,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 20.32 -5.08 180)
+				(at 15.24 0 180)
 				(length 5.08)
 				(name "P1.14"
 					(effects
@@ -2119,7 +2078,7 @@
 				)
 			)
 			(pin bidirectional line
-				(at 20.32 -7.62 180)
+				(at 15.24 -2.54 180)
 				(length 5.08)
 				(name "P1.15"
 					(effects
@@ -2129,6 +2088,60 @@
 					)
 				)
 				(number "A14"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin bidirectional line
+				(at 15.24 -10.16 180)
+				(length 5.08)
+				(name "SWDIO"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "AC24"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at 15.24 -12.7 180)
+				(length 5.08)
+				(name "SWDCLK"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "AA24"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin bidirectional line
+				(at 15.24 -15.24 180)
+				(length 5.08)
+				(name "P0.18/RESET"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "AC13"
 					(effects
 						(font
 							(size 1.27 1.27)
