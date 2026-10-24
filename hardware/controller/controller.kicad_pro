@@ -937,7 +937,7 @@
         "uuid": "17f6a4a5-fbff-4e30-a1cc-9481373e4968"
       }
     ],
-    "used_designators": "NT1,TP1,R11-12,#LABEL31,#LABEL33,#LABEL43,#LABEL51-52,#LABEL54,#PWR20,#PWR23-24,#PWR26,#PWR29,#PWR42-63,C34-35,U4",
+    "used_designators": "NT1,TP1,R11-12,#LABEL31,#LABEL33-35,#LABEL43,#LABEL51-52,#LABEL54,#PWR20,#PWR23-24,#PWR26,#PWR29,#PWR41-68,D2,C19,C34-35,U4",
     "variants": []
   },
   "sheets": [
