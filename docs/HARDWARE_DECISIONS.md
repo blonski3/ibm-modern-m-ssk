@@ -25,7 +25,7 @@ Ramy zatwierdzone 11.10.2026.
 | Dioda RGB | Jedna WS2812C-2020 na motherboardzie, zasilana z VSYS przez LOADSW1 |
 | Programowanie | SWD przez złącze Tag-Connect TC2030 |
 | Firmware | ZMK na Zephyr 4.1 (Hardware Model V2) |
-| Smart features | Haptyka i akcelerometr na osobnych płytkach; na MB złącze rozszerzeń J3 2×6 z VSYS, 3,3 V, I2C i sześcioma GPIO |
+| Smart features | Haptyka i akcelerometr na osobnych płytkach; na MB złącze rozszerzeń J3 2×3 (listwa SMD 1,27 mm) z VSYS, 3,3 V, I2C i przerwaniem |
 
 ## Blok PMIC: połączenia nPM1300-QEAA
 
@@ -245,22 +245,19 @@ Przy wyłączonym przełączniku firmware musi trzymać linię DIN w stanie nisk
 
 ## Smart features: złącze rozszerzeń J3
 
-Haptyka i akcelerometr nie są na motherboardzie; MB wyprowadza zasilanie, I2C i sześć GPIO na złącze 2×6 pod osobne płytki modułów. Typ złącza zależy od projektu mechanicznego.
+Haptyka i akcelerometr nie są na motherboardzie; MB wyprowadza zasilanie, I2C i jedną linię przerwania na złącze 2×3 pod osobne płytki modułów. Złącze: listwa goldpin 2×3, raster 1,27 mm, SMD, pionowa (`Connector_PinHeader_1.27mm:PinHeader_2x03_P1.27mm_Vertical_SMD`), symbol `Conn_02x03_Odd_Even`; po stronie modułów gniazdo 1,27 mm albo tasiemka IDC.
 
 | Pin | Sygnał | Pin | Sygnał |
 | --- | --- | --- | --- |
-| 1 | VSYS (3,0–5 V, nieregulowane) | 2 | 3,3 V z BUCK2 |
-| 3 | GND | 4 | GND |
-| 5 | SDA | 6 | SCL |
-| 7 | GPIO A (np. przerwanie akcelerometru) | 8 | GPIO B (np. drugie przerwanie) |
-| 9 | GPIO C (np. włączenie haptyki) | 10 | GPIO D (np. wyzwalanie haptyki) |
-| 11 | GPIO E (rezerwa) | 12 | GPIO F (rezerwa) |
+| 1 | VSYS (3,0–5 V, nieregulowane) | 2 | 3,3 V z BUCK2 (VDD_NRF) |
+| 3 | GND | 4 | EXT_INT: przerwanie akcelerometru, P0.19 |
+| 5 | SCL | 6 | SDA |
 
 | Decyzja | Uzasadnienie | Referencja |
 | --- | --- | --- |
 | Dwa zasilania: VSYS i 3,3 V | Sterownik haptyki pobiera prąd silnika z VSYS; BUCK2 ma 200 mA na cały układ, więc dla modułów na 3,3 V przyjęto budżet 100 mA | nPM1300 PS v1.3, tab. na s. 51; tab. 3, s. 16 |
 | I2C wspólne z nPM1300 | Jedna magistrala; nPM1300 ma adres 7-bitowy 110 1011 (0x6B); adresy modułów do sprawdzenia w ich kartach | nPM1300 PS v1.3, rozdz. 7.6, s. 125 |
-| Sześć GPIO z dolnej strony nRF52840 | Piny bez ograniczenia częstotliwości; każdy pin można przypisać do dowolnego peryferium i każdy może budzić układ, co wystarcza dla wake-on-motion | nRF52840 PS v1.5, rozdz. 6.9, s. 152; tab. 145, s. 579–580 |
+| Jedna linia przerwania (P0.19, dolna strona nRF52840); bez linii EN haptyki | Pin bez ograniczenia częstotliwości, może budzić układ, co wystarcza dla wake-on-motion. Sterownik haptyki usypiany przez I2C (tryb standby) zamiast osobnej linii EN; prąd uśpienia do sprawdzenia w karcie wybranego sterownika. Zmniejszenie z 2×6 do 2×3 na prośbę jakuba (2026-10-25) | nRF52840 PS v1.5, rozdz. 6.9, s. 152; tab. 145, s. 579–580 |
 | Pull-upy I2C 4,7 kΩ | Magistrala wychodzi przewodem poza płytkę, więc jej pojemność rośnie | Obliczenie poniżej |
 
 ### Obliczenie: pull-upy I2C
