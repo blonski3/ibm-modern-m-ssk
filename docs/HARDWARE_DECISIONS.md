@@ -57,7 +57,7 @@ Układ pracuje w konfiguracji 1 z datasheetu ograniczonej do jednej przetwornicy
 
 ## Blok PMIC: dobrane elementy
 
-Wszystkie elementy bierne spełniają wymagania datasheetu; do wymiany jest tylko tranzystor Q1.
+Wszystkie elementy spełniają wymagania datasheetu.
 
 | Element | Typ i parametry | Wymaganie | Referencja | Ocena |
 | --- | --- | --- | --- | --- |
@@ -70,8 +70,8 @@ Wszystkie elementy bierne spełniają wymagania datasheetu; do wymiany jest tylk
 | Kondensator VDDIO | 100 nF, nowy element | 100 nF | Tab. 39 (C13) | Do dodania |
 | Pull-upy SDA/SCL | 2× 4,7 kΩ, nowe elementy | Zależne od prędkości i pojemności magistrali; referencja 10 kΩ | Tab. 39 (R1, R2) | Do dodania |
 | R10 (VSET2) | 470 kΩ, 0402 | 250–500 kΩ, tolerancja ≤ 5% | Tab. 18, s. 50 | Spełnia |
-| Q1 | Nexperia PMZB350UPE: P-MOSFET 20 V, 1,4 A, RDS(on) 450 mΩ przy VGS = −4,5 V | Zabezpieczenie przed odwróconą baterią; dren od strony złącza, RDS(on) ≤ 100 mΩ przy VGS = −2,5 V, prąd ≥ 1 A | Wymaganie własne projektu | Do wymiany i obrócenia |
-| J2 | Molex PicoBlade 53261-0271, 1,25 mm | Pasuje do wtyku ogniwa Molex 51021-0200 | Karta LP803040 | Spełnia; biegunowość do sprawdzenia na ogniwie |
+| Q1 | Nexperia PMPB15XP,115 (LCSC C513107): P-MOSFET −12 V, VGS ±12 V, DFN2020MD-6; RDS(on) maks. 19 mΩ przy VGS = −4,5 V, 20 mΩ przy −2,5 V, 33 mΩ przy −1,8 V | Zabezpieczenie przed odwróconą baterią; dren od strony złącza, RDS(on) ≤ 100 mΩ przy VGS = −2,5 V, prąd ≥ 1 A | Wymaganie własne projektu | Spełnia; dren (piny 1, 2, 5, 6, 7) do J2.1, źródło (4, 8) do VBAT, bramka (3) do GND |
+| J2 | Molex PicoBlade 53261-0271, 1,25 mm | Pasuje do wtyku ogniwa Molex 51021-0200 | Karta LP803040 | Spełnia; biegunowość do sprawdzenia na ogniwie. W schemacie od 2026-10-25 footprint JST PH `S2B-PH-SM4-TB` (2 mm), niezgodny z wtykiem PicoBlade ogniwa: do rozstrzygnięcia |
 | BT1 | Akyga LP803040: 1000 mAh, 3,7 V, ładowanie do 4,2 V, standardowo 0,2 C, maks. 1 C, 0–45 °C, PCM (4,30 V / 2,5 V) | Prąd ładowania w zakresie 32–800 mA układu | Karta LP803040; rozdz. 6.2.3, s. 28 | Założenie robocze |
 
 ## Blok PMIC: obliczenia
@@ -110,10 +110,10 @@ P = (V_{BUS} - V_{BAT}) \cdot I_{CHG} = (5{,}0 - 3{,}0) \cdot 0{,}8 = 1{,}6\,\ma
 
 ### Spadek napięcia na Q1
 
-Obecny PMZB350UPE (450 mΩ) daje 0,18 V spadku przy 400 mA i 0,36 V przy 800 mA. Ładowarka reguluje napięcie na pinie VBAT, więc ogniwo wchodzi w fazę stałego napięcia wcześniej i ładuje się dłużej. Przy 100 mΩ spadek wynosi 0,04 V i 0,08 V.
+Pierwotny PMZB350UPE (450 mΩ) dawał 0,18 V spadku przy 400 mA i 0,36 V przy 800 mA. Ładowarka reguluje napięcie na pinie VBAT, więc ogniwo wchodziło w fazę stałego napięcia wcześniej i ładowało się dłużej. PMPB15XP (maks. 20 mΩ przy VGS = −2,5 V) daje 8 mV przy 400 mA i 16 mV przy 800 mA.
 
 ```latex
-\Delta V_{Q1} = I_{CHG} \cdot R_{DS(on)} = 0{,}4 \cdot 0{,}45 = 0{,}18\,\mathrm{V}
+\Delta V_{Q1} = I_{CHG} \cdot R_{DS(on)} = 0{,}4 \cdot 0{,}02 = 0{,}008\,\mathrm{V}
 ```
 
 ## Blok MCU i radio: nRF52840-QIAA
@@ -155,7 +155,7 @@ Diody matrycy mają katody na liniach ROW, więc kolumny są wyjściami, a wiers
 
 | Element | Typ i parametry | Wymaganie (tab. 163, s. 600) | Ocena |
 | --- | --- | --- | --- |
-| Y1 | Do wybrania: 32 MHz, 2016, CL = 8 pF, łącznie ≤ ±40 ppm | 32 MHz, CL = 8 pF, ±40 ppm; CL ≤ 12 pF, ESR ≤ 60 Ω (s. 99) | Obecny Epson Q22FA12800018 (CL 12 pF, ±10 ppm) do wymiany |
+| Y1 | NDK NX2016SA-32MHZ-EXS00A-CS06654 (LCSC C5441424): 32 MHz, CL 8 pF, ESR ≤ 60 Ω, 2016 | 32 MHz, CL = 8 pF, ±40 ppm; CL ≤ 12 pF, ESR ≤ 60 Ω (s. 99) | Spełnia; tolerancja i stabilność do potwierdzenia w karcie NDK. Zastąpił Epson Q22FA12800018 (CL 12 pF) |
 | Y2 | Epson Q13FC13500003: 32,768 kHz, CL 9 pF, ±20 ppm, ESR 70 kΩ, 3215 | CL = 9 pF, ±50 ppm; ESR ≤ 100 kΩ (s. 100) | Spełnia |
 | C1, C2, C17, C18 | Yageo CC0402GRNPO9BN120: 12 pF ±2%, NP0, 50 V | 12 pF, NP0, ±2% | Spełnia |
 | L1 | Tai-Tech HCI1005LF-4N7S: 4,7 nH ±5%, SRF 4 GHz, 0402 | 4,7 nH ±5%, wysokoczęstotliwościowa | Spełnia; brak w magazynie LCSC |
@@ -214,7 +214,7 @@ Listwa goldpin 1×10, raster 1 mm, proste piny lutowane powierzchniowo do krawę
 
 | Pin | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Sygnał | VBUS | VBUS | GND | CC1 | GND | D+ | D− | GND | CC2 | GND |
+| Sygnał | VBUS | VBUS | CC1 | GND | D+ | D− | GND | CC2 | GND | GND |
 
 Para D+/D− ma masę po obu stronach, VBUS ma dwa styki, GND cztery. Numeracja i lustrzane odbicie między płytkami do sprawdzenia na modelu 3D.
 
@@ -311,8 +311,8 @@ Wartości dla ogniwa LP803040 i portu USB 2.0; zmienia się je w konfiguracji p�
 
 ## Otwarte kwestie
 
-- [ ] Typ nowego Q1 (RDS(on) ≤ 100 mΩ przy VGS = −2,5 V) i potwierdzenie pinoutu w jego karcie
-- [ ] Typ nowego kwarcu Y1 (32 MHz, 2016, CL = 8 pF, łącznie ≤ ±40 ppm) i potwierdzenie CL obecnego w karcie Epsona
+- [x] Typ nowego Q1: Nexperia PMPB15XP,115, pinout sprawdzony z kartą (2026-10-25)
+- [x] Typ nowego kwarcu Y1: NDK NX2016SA-32MHZ-EXS00A-CS06654 (2026-10-25); tolerancja i stabilność do potwierdzenia w karcie
 - [ ] Typ nowego F1 (PTC ≥ 24 V, prąd podtrzymania ≥ 1 A) i nowego D1 (TVS z VRWM ≥ 20 V); limit prądu wejściowego w firmware nie wyższy niż prąd podtrzymania F1
 - [ ] Typ listwy goldpin 1×10, obciążalność styku, numeracja pinów między płytkami na modelu 3D
 - [ ] Membrana: geometria ogonów (0,3 mm, raster 1,0 mm, strona styków), miejsce na diody w stosie, typ diod, 24. styk na GND
@@ -355,6 +355,7 @@ Wartości dla ogniwa LP803040 i portu USB 2.0; zmienia się je w konfiguracji p�
 - [Yageo CC0603MRX5R8BB106, LCSC C596327](https://www.lcsc.com/product-detail/C596327.html)
 - [Yageo CC0603KRX7R9BB105, LCSC C559769](https://www.lcsc.com/product-detail/C559769.html)
 - [Yageo CC0603KRX5R8BB225, LCSC C309478](https://www.lcsc.com/product-detail/C309478.html)
+- [Nexperia PMPB15XP,115, LCSC C513107](https://www.lcsc.com/product-detail/C513107.html)
 - [Nexperia PMZB350UPE, LCSC C478140](https://www.lcsc.com/product-detail/C478140.html)
 - [Karta PMZB670UPE (pinout obudowy DFN1006B-3)](https://docs.rs-online.com/c225/0900766b812e057d.pdf)
 - [Karta ogniwa Akyga LP803040](https://www.tme.eu/Document/8518e6f80c7c95dc96792c6f2286ce95/aky2417.pdf)
@@ -364,6 +365,7 @@ Wartości dla ogniwa LP803040 i portu USB 2.0; zmienia się je w konfiguracji p�
 
 Karty elementów bloku MCU:
 
+- [NDK NX2016SA-32MHZ-EXS00A-CS06654, LCSC C5441424](https://www.lcsc.com/product-detail/C5441424.html)
 - [Epson Q22FA12800018, LCSC C255896](https://www.lcsc.com/product-detail/C255896.html)
 - [Epson Q13FC13500003, LCSC C99010](https://www.lcsc.com/product-detail/C99010.html)
 - [Murata LQM18FN100M00D, LCSC C86083](https://www.lcsc.com/product-detail/C86083.html)
