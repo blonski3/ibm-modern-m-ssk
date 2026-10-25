@@ -937,7 +937,7 @@
         "uuid": "17f6a4a5-fbff-4e30-a1cc-9481373e4968"
       }
     ],
-    "used_designators": "J11,NT1,TP1,R11-12,#LABEL31,#LABEL33-37,#LABEL43-44,#LABEL51-52,#LABEL54,#PWR20,#PWR23-24,#PWR26,#PWR29,#PWR33,#PWR36,#PWR41-68,D2,C19,C34-35,Q2,U4",
+    "used_designators": "#FLG1-5,J11,NT1,TP1,R11-12,#LABEL1-2,#LABEL6,#LABEL31,#LABEL33-37,#LABEL43-44,#LABEL51-52,#LABEL54,#PWR20,#PWR23-24,#PWR26,#PWR29,#PWR33,#PWR36-37,#PWR41-71,D2,C19,C34-35,F2,Q2,U4",
     "variants": []
   },
   "sheets": [
@@ -952,6 +952,10 @@
     [
       "c9a46136-57a3-45fc-88ce-38da53378f82",
       "daughterboard"
+    ],
+    [
+      "d1f2a033-a7f3-481c-a59d-5863c52f4faf",
+      "ERC"
     ]
   ],
   "text_variables": {},

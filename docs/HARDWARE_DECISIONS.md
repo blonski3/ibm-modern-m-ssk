@@ -71,7 +71,7 @@ Wszystkie elementy spełniają wymagania datasheetu.
 | Pull-upy SDA/SCL | 2× 4,7 kΩ, nowe elementy | Zależne od prędkości i pojemności magistrali; referencja 10 kΩ | Tab. 39 (R1, R2) | Do dodania |
 | R10 (VSET2) | 470 kΩ, 0402 | 250–500 kΩ, tolerancja ≤ 5% | Tab. 18, s. 50 | Spełnia |
 | Q1 | Nexperia PMPB15XP,115 (LCSC C513107): P-MOSFET −12 V, VGS ±12 V, DFN2020MD-6; RDS(on) maks. 19 mΩ przy VGS = −4,5 V, 20 mΩ przy −2,5 V, 33 mΩ przy −1,8 V | Zabezpieczenie przed odwróconą baterią; dren od strony złącza, RDS(on) ≤ 100 mΩ przy VGS = −2,5 V, prąd ≥ 1 A | Wymaganie własne projektu | Spełnia; dren (piny 1, 2, 5, 6, 7) do J2.1, źródło (4, 8) do VBAT, bramka (3) do GND |
-| J2 | Molex PicoBlade 53261-0271, 1,25 mm | Pasuje do wtyku ogniwa Molex 51021-0200 | Karta LP803040 | Spełnia; biegunowość do sprawdzenia na ogniwie. W schemacie od 2026-10-25 footprint JST PH `S2B-PH-SM4-TB` (2 mm), niezgodny z wtykiem PicoBlade ogniwa: do rozstrzygnięcia |
+| J2 | JST PH `S2B-PH-SM4-TB`, 2,0 mm, SMD poziome | Decyzja 2026-10-25: ogniwo kupowane z wtykiem JST PH 2.0 zamiast PicoBlade z LP803040 | Karta JST PH | Spełnia; biegunowość wtyku względem J2.1 (plus) do sprawdzenia przy zakupie ogniwa |
 | BT1 | Akyga LP803040: 1000 mAh, 3,7 V, ładowanie do 4,2 V, standardowo 0,2 C, maks. 1 C, 0–45 °C, PCM (4,30 V / 2,5 V) | Prąd ładowania w zakresie 32–800 mA układu | Karta LP803040; rozdz. 6.2.3, s. 28 | Założenie robocze |
 
 ## Blok PMIC: obliczenia
@@ -190,8 +190,8 @@ Część elektryczna jest zatwierdzona; typ listwy, geometria membrany i uchwyt 
 | --- | --- | --- | --- |
 | J1 | Korean Hroparts TYPE-C-31-D-06, 16 pinów, pionowe SMD; cztery piny VBUS razem, D+ i D− zmostkowane parami, CC1 i CC2 osobno, SBU wolne, ekran do GND | Gniazdo USB 2.0; osobne linie CC są warunkiem wykrycia orientacji i wydajności źródła | Bez zmian |
 | U3 | TI TPD4E05U06 na CC1, D+, D−, CC2 w układzie przelotowym (piny 1/10, 2/9, 4/7, 5/6) | Ochrona ESD czterech linii sygnałowych tuż przy gnieździe | Bez zmian |
-| F1 | Dziś BHFUSE BSMD0603L-150: trzyma 1,5 A, wyzwala 3 A, 6 V, 5–55 mΩ | Ogranicza prąd przy zwarciu za gniazdem | Do wymiany na typ ≥ 24 V |
-| D1 | Dziś Prisemi PESDNC2FD5VB: VRWM 5 V, przebicie 6,7 V, 80 W (8/20 µs) | Ochrona ESD linii VBUS | Do wymiany na typ z VRWM ≥ 20 V |
+| F1 | TECHFUSE SMD1210-110-24V (LCSC C22436715): trzyma 1,1 A, wyzwala 2,2 A, 24 V, obudowa 1210 | Ogranicza prąd przy zwarciu za gniazdem | Spełnia (od 2026-10-25) |
+| D1 | MDD SMF20A (LCSC C123788): jednokierunkowa, VRWM 20 V, VC 32,4 V, 200 W, SOD-123FL; katoda na DB_VBUS | Ochrona ESD i przepięć linii VBUS | Spełnia (od 2026-10-25) |
 | SW89, SW91, D4, D92 | Usunięte z DB | Parowanie w ZMK, wyjście z trybu Ship przez VBUS, dioda przeniesiona na MB | Do usunięcia |
 
 ### Koordynacja zabezpieczeń toru VBUS
@@ -202,8 +202,8 @@ Po wymianie F1 i D1 każdy element na VBUS wytrzymuje co najmniej 20 V, a nPM130
 | --- | --- | --- | --- |
 | nPM1300, pin VBUS | 22 V, odłączenie powyżej 5,5 V (VBUSOVP) | Bez zmian | nPM1300 PS v1.3, tab. 4, s. 17; rozdz. 6.1.2, s. 20; tab. 9, s. 22 |
 | C27 | 50 V | Bez zmian | Karta Yageo |
-| F1 | 6 V | ≥ 24 V, prąd podtrzymania ≥ 1 A | Karta elementu |
-| D1 | Przewodzi od 6,7 V | VRWM ≥ 20 V | Karta elementu |
+| F1 | 24 V, prąd podtrzymania 1,1 A (SMD1210-110-24V) | ≥ 24 V, prąd podtrzymania ≥ 1 A: spełnia | Karta elementu |
+| D1 | VRWM 20 V (SMF20A) | VRWM ≥ 20 V: spełnia | Karta elementu |
 | Pin VBUS nRF52840 | Zasilany z VBUSOUT, za zabezpieczeniem nPM1300 | Bez zmian | nPM1300 PS v1.3, rozdz. 6.1.5, s. 21 |
 
 Dwa ograniczenia zostają. TVS o napięciu pracy 20 V ogranicza impuls ESD na poziomie około 30 V, czyli chwilowo powyżej 22 V. Linie CC wytrzymują 5,5 V (tab. 4, s. 17), więc zwarcie CC do VBUS przy 20 V wymagałoby osobnego układu ochrony portu.
@@ -313,7 +313,8 @@ Wartości dla ogniwa LP803040 i portu USB 2.0; zmienia się je w konfiguracji p�
 
 - [x] Typ nowego Q1: Nexperia PMPB15XP,115, pinout sprawdzony z kartą (2026-10-25)
 - [x] Typ nowego kwarcu Y1: NDK NX2016SA-32MHZ-EXS00A-CS06654 (2026-10-25); tolerancja i stabilność do potwierdzenia w karcie
-- [ ] Typ nowego F1 (PTC ≥ 24 V, prąd podtrzymania ≥ 1 A) i nowego D1 (TVS z VRWM ≥ 20 V); limit prądu wejściowego w firmware nie wyższy niż prąd podtrzymania F1
+- [x] Typ nowego F1 (PTC ≥ 24 V, prąd podtrzymania ≥ 1 A) i nowego D1 (TVS z VRWM ≥ 20 V): SMD1210-110-24V i SMF20A (2026-10-25)
+- [ ] Limit prądu wejściowego VBUS w firmware nie wyższy niż prąd podtrzymania F1 (1,1 A), czyli 1 A
 - [ ] Typ listwy goldpin 1×10, obciążalność styku, numeracja pinów między płytkami na modelu 3D
 - [ ] Membrana: geometria ogonów (0,3 mm, raster 1,0 mm, strona styków), miejsce na diody w stosie, typ diod, 24. styk na GND
 - [ ] Złącza matrycy: wersja bez zatrzasku czy z zatrzaskiem
@@ -338,7 +339,7 @@ Wartości dla ogniwa LP803040 i portu USB 2.0; zmienia się je w konfiguracji p�
 ### Dopisane 2026-10-17 (porządki, do rozstrzygnięcia)
 
 - [ ] Ładowanie bez NTC: nPM1300_PS_v1.3 rozdz. 3.4 wymaga wtedy bezpiecznika termicznego w pakiecie; karta LP803040 wymienia tylko PCM (4,30 V / 2,5 V). Potwierdzić bezpiecznik w ogniwie albo wrócić do NTC 10 kΩ przy ogniwie (dotyczy P7)
-- [ ] WS2812C-2020 z LSOUT1/VSYS: VSYS nie jest regulowane i przy VBUS ma ok. 5 V (nPM1300_PS_v1.3 rozdz. 6.1.1); przy VIH = 0,7·VDD próg ok. 3,5 V > 3,3 V z nRF. Sprawdzić VIH w karcie WS2812C-2020; ewentualnie translator lub inne zasilanie diody (dotyczy I2)
+- [x] WS2812C-2020 z LSOUT1/VSYS: VSYS nie jest regulowane i przy VBUS ma ok. 5 V (nPM1300_PS_v1.3 rozdz. 6.1.1); przy VIH = 0,7·VDD próg ok. 3,5 V > 3,3 V z nRF. Sprawdzić VIH w karcie WS2812C-2020; ewentualnie translator lub inne zasilanie diody (dotyczy I2). Rozstrzygnięte: karta podaje VIH min. 2,7 V niezależnie od VDD, translator niepotrzebny (tabela „Dioda statusu”)
 - [ ] Tętnienia BUCK2: obliczenie ΔI_L dotyczy trybu PWM, a przy obciążeniu ok. 16 mA przetwornica pracuje w trybie histerezowym (PWM od ok. 90 mA wg raportu wykonalności z 11.10, do potwierdzenia w datasheecie); przeliczyć lub zmierzyć do rozdziału pracy
 - [ ] VSET2: zostaje 3,3 V czy 3,0 V (sugestia z raportu wykonalności z 11.10)
 - [ ] Zakres pracy: czy haptyka i akcelerometr powstają w ramach pracy, czy tylko złącze J3 jako kierunek rozwoju
@@ -377,8 +378,8 @@ Karty elementów bloku MCU:
 Karty elementów bloku interfejsów:
 
 - [Karta WS2812C-2020](https://akizukidenshi.com/goodsaffix/ws2812c-2020.pdf)
-- [Prisemi PESDNC2FD5VB, LCSC C110694](https://www.lcsc.com/product-detail/C110694.html)
-- [BHFUSE BSMD0603L-150, LCSC C914094](https://www.lcsc.com/product-detail/C914094.html)
+- [MDD SMF20A, LCSC C123788](https://www.lcsc.com/product-detail/C123788.html)
+- [TECHFUSE SMD1210-110-24V, LCSC C22436715](https://www.lcsc.com/product-detail/C22436715.html)
 - [Korean Hroparts TYPE-C-31-D-06, LCSC C2689964](https://www.lcsc.com/product-detail/C2689964.html)
 - [Jushuo AFB10-S18LCA-00, LCSC C7499267](https://www.lcsc.com/product-detail/C7499267.html)
 
