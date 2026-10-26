@@ -3709,7 +3709,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x10_P1.00mm_Vertical"
+		(property "Footprint" "ibm_bs:PinHeader_1x10_P1.00mm_Vertical_SMD_Pin1Left"
 			(at 203.2 101.6 0)
 			(hide yes)
 			(show_name no)

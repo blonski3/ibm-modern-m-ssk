@@ -10280,7 +10280,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_2x03_P1.27mm_Vertical_SMD"
+		(property "Footprint" "ibm_bs:PinHeader_2x03_P1.27mm_Vertical_SMD"
 			(at 91.44 180.34 0)
 			(hide yes)
 			(show_name no)

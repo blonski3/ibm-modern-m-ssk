@@ -4712,7 +4712,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_JST:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal"
+		(property "Footprint" "ibm_bs:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal"
 			(at 83.82 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -8292,7 +8292,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+		(property "Footprint" "ibm_bs:SOT-23"
 			(at 110.49 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -10161,7 +10161,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+		(property "Footprint" "ibm_bs:TestPoint_Pad"
 			(at 133.35 82.55 0)
 			(hide yes)
 			(show_name no)
@@ -12098,7 +12098,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x10_P1.00mm_Vertical"
+		(property "Footprint" "ibm_bs:PinHeader_1x10_P1.00mm_Vertical"
 			(at 45.72 54.61 0)
 			(hide yes)
 			(show_name no)
