@@ -19,10 +19,10 @@ Ramy zatwierdzone 11.10.2026.
 | USB-C | Gniazdo, bezpiecznik PTC i ESD na DB; CC1/CC2 bezpośrednio do nPM1300 (wewnętrzne Rd 5,1 kΩ), bez zewnętrznych rezystorów |
 | Łącze MB ↔ DB | Listwa goldpin 1×10, raster 1 mm, piny lutowane do krawędzi DB i wchodzące pionowo w MB: 2× VBUS, 4× GND, D+, D−, CC1, CC2 |
 | Matryca | Własna membrana FPC, 6 wierszy × 17 kolumn, 88 przełączników, dioda na klawisz (87 diod: Backspace ma dwa styki SW17 i SW31 równolegle na D34, jak w oryginale); złącza FFC 1,0 mm: J4 (18 pinów) i J7 (6 pinów) |
-| Bateria | Li-Po LP803040, 1000 mAh, 4,2 V, z PCM, dwa przewody, bez NTC; w drukowanym koszyku, nieklejona do PCB |
+| Bateria | Li-Po ok. 1000 mAh (wymiary klasy LP803040), 4,2 V, z PCM, dwa przewody z wtykiem JST PH 2.0 (J2), bez NTC; w drukowanym koszyku, nieklejona do PCB |
 | Ładowanie | Prąd i napięcie końcowe ustawiane przez firmware; sprzęt wymiarowany na 800 mA |
 | Przyciski | Tylko RESET na MB; BT_PAIR i SHPHLD usunięte |
-| Dioda RGB | Jedna WS2812C-2020 na motherboardzie, zasilana z VSYS przez LOADSW1 |
+| Dioda RGB | Jedna WS2812B-2020-V6 na motherboardzie, zasilana z VSYS przez LOADSW1 |
 | Programowanie | SWD przez złącze Tag-Connect TC2030 |
 | Firmware | ZMK na Zephyr 4.1 (Hardware Model V2) |
 | Smart features | Haptyka i akcelerometr na osobnych płytkach; na MB złącze rozszerzeń J3 2×3 (listwa SMD 1,27 mm) z VSYS, 3,3 V, I2C i przerwaniem |
@@ -70,7 +70,7 @@ Wszystkie elementy spełniają wymagania datasheetu.
 | Kondensator VDDIO | 100 nF, nowy element | 100 nF | Tab. 39 (C13) | Do dodania |
 | Pull-upy SDA/SCL | 2× 4,7 kΩ, nowe elementy | Zależne od prędkości i pojemności magistrali; referencja 10 kΩ | Tab. 39 (R1, R2) | Do dodania |
 | R10 (VSET2) | 470 kΩ, 0402 | 250–500 kΩ, tolerancja ≤ 5% | Tab. 18, s. 50 | Spełnia |
-| Q1 | Nexperia PMPB15XP,115 (LCSC C513107): P-MOSFET −12 V, VGS ±12 V, DFN2020MD-6; RDS(on) maks. 19 mΩ przy VGS = −4,5 V, 20 mΩ przy −2,5 V, 33 mΩ przy −1,8 V | Zabezpieczenie przed odwróconą baterią; dren od strony złącza, RDS(on) ≤ 100 mΩ przy VGS = −2,5 V, prąd ≥ 1 A | Wymaganie własne projektu | Spełnia; dren (piny 1, 2, 5, 6, 7) do J2.1, źródło (4, 8) do VBAT, bramka (3) do GND |
+| Q1 | Alpha & Omega AO3401A (LCSC C15127, JLC basic): P-MOSFET −30 V, VGS ±12 V, SOT-23; RDS(on) maks. 85 mΩ przy VGS = −2,5 V | Zabezpieczenie przed odwróconą baterią; dren od strony złącza, RDS(on) ≤ 100 mΩ przy VGS = −2,5 V, prąd ≥ 1 A | Wymaganie własne projektu | Spełnia; dren (pin 3) do J2.1, źródło (2) do VBAT, bramka (1) do GND; symbol `ibm_m:AO3401A`. W schemacie tymczasowo Q2 |
 | J2 | JST PH `S2B-PH-SM4-TB`, 2,0 mm, SMD poziome | Decyzja 2026-10-25: ogniwo kupowane z wtykiem JST PH 2.0 zamiast PicoBlade z LP803040 | Karta JST PH | Spełnia; biegunowość wtyku względem J2.1 (plus) do sprawdzenia przy zakupie ogniwa |
 | BT1 | Akyga LP803040: 1000 mAh, 3,7 V, ładowanie do 4,2 V, standardowo 0,2 C, maks. 1 C, 0–45 °C, PCM (4,30 V / 2,5 V) | Prąd ładowania w zakresie 32–800 mA układu | Karta LP803040; rozdz. 6.2.3, s. 28 | Założenie robocze |
 
@@ -110,11 +110,13 @@ P = (V_{BUS} - V_{BAT}) \cdot I_{CHG} = (5{,}0 - 3{,}0) \cdot 0{,}8 = 1{,}6\,\ma
 
 ### Spadek napięcia na Q1
 
-Pierwotny PMZB350UPE (450 mΩ) dawał 0,18 V spadku przy 400 mA i 0,36 V przy 800 mA. Ładowarka reguluje napięcie na pinie VBAT, więc ogniwo wchodziło w fazę stałego napięcia wcześniej i ładowało się dłużej. PMPB15XP (maks. 20 mΩ przy VGS = −2,5 V) daje 8 mV przy 400 mA i 16 mV przy 800 mA.
+Pierwotny PMZB350UPE (450 mΩ) dawał 0,18 V spadku przy 400 mA i 0,36 V przy 800 mA. Ładowarka reguluje napięcie na pinie VBAT, więc ogniwo wchodziło w fazę stałego napięcia wcześniej i ładowało się dłużej. AO3401A (maks. 85 mΩ przy VGS = −2,5 V, typowo ok. 60 mΩ) daje najwyżej 34 mV przy 400 mA i 68 mV przy 800 mA. W fazie stałego napięcia prąd maleje, więc przy prądzie końcowym 40 mA różnica wynosi 3 mV i ogniwo dochodzi do 4,2 V. Przy pracy z baterii (kilkanaście mA) spadek jest poniżej 2 mV.
 
 ```latex
-\Delta V_{Q1} = I_{CHG} \cdot R_{DS(on)} = 0{,}4 \cdot 0{,}02 = 0{,}008\,\mathrm{V}
+\Delta V_{Q1} = I_{CHG} \cdot R_{DS(on)} = 0{,}4 \cdot 0{,}085 = 0{,}034\,\mathrm{V}
 ```
+
+Rozważany PMPB15XP (20 mΩ, 8 mV przy 400 mA) jest w JLC częścią extended, a AO3401A basic; różnica spadku nie ma praktycznego znaczenia, więc wybrano tańszy wariant (2026-10-25).
 
 ## Blok MCU i radio: nRF52840-QIAA
 
@@ -132,8 +134,8 @@ Układ pracuje w konfiguracji 5 z datasheetu bez NFC: VDD = VDDH (tryb Normal Vo
 | D+ (AD6), D− (AD4) | Bezpośrednio do gniazda USB-C przez ESD | Pull-up D+ jest wewnętrzny; zewnętrznych elementów nie wolno dodawać | Rozdz. 6.35, opis USBPULLUP |
 | XC1, XC2 | Y1 32 MHz, C1 i C2 12 pF | Zegar radia; wymagane ±40 ppm dla BLE | Rozdz. 5.4.4.2, s. 99 |
 | XL1, XL2 (P0.00, P0.01) | Y2 32,768 kHz, C17 i C18 12 pF | Zegar niskiej częstotliwości dla stosu BLE i uśpienia | Rozdz. 5.4.4.3, s. 100 |
-| ANT (H23) | C3 0,8 pF do GND, L1 4,7 nH szeregowo, C4 0,5 pF do GND, C22 nieobsadzony, złącze U.FL J6 | Dopasowanie do 50 Ω, wartości v1.1 | Tab. 163, s. 600 |
-| P0.18/nRESET (AC13) | Sieć RESET: przycisk SW90 do GND, pin 3 złącza J10 | Reset sprzętowy i wejście w bootloader | Tab. 145, s. 579; rozdz. 4.5.1.4, s. 45 |
+| ANT (H23) | C3 1,0 pF do GND, L1 4,7 nH szeregowo, C4 1,2 pF do GND, L5 2,2 nH szeregowo, złącze U.FL J6 | Dopasowanie do 50 Ω z referencji Nordica konfiguracja 7 (4 elementy); drugi stopień LC mocniej tłumi 2. i 3. harmoniczną | Referencja nRF52840-QIAA config 7 |
+| P0.18/nRESET (AC13) | Sieć RESET: przycisk SW1 (XKB TS-1187A-B-A-B) do GND, pin 3 złącza J10 | Reset sprzętowy i wejście w bootloader | Tab. 145, s. 579; rozdz. 4.5.1.4, s. 45 |
 | SWDIO (AC24), SWDCLK (AA24) | Piny 2 i 4 złącza J10 (Tag-Connect TC2030) | Programowanie i debug | Tab. 145, s. 579 |
 | P1.00 (AD22) | SWO, pin 6 złącza J10 | Podgląd logów przez programator | Tab. 145, s. 580 |
 | P0.09, P0.10 (NFC) | Niepodłączone | NFC nieużywane | Tab. 162, s. 598 |
@@ -146,7 +148,7 @@ Potrzeba 27 linii: 17 kolumn, 6 wierszy, SDA, SCL, przerwanie PMIC i dane diody 
 | --- | --- | --- | --- |
 | Górna | P0.02, P0.03, P0.28–P0.31, P1.10–P1.15 (12) | Tylko sygnały do 10 kHz | 12 kolumn matrycy |
 | Lewa | P0.04–P0.08, P0.11, P0.12, P0.26, P0.27, P1.08, P1.09 (11) | Brak | 5 kolumn i 6 wierszy matrycy |
-| Dolna | P0.13–P0.17, P0.19–P0.25, P1.00 (13) | Brak | SDA, SCL, dane diody, SWO, sześć GPIO złącza J3; 3 wolne |
+| Dolna | P0.13–P0.17, P0.19–P0.25, P1.00 (13) | Brak | SDA, SCL, dane diody, SWO, przerwanie EXT_INT złącza J3 (P0.19); 8 wolnych |
 | Prawa | P1.01–P1.07, P0.09, P0.10 | Tylko sygnały do 10 kHz, sąsiedztwo anteny | Tylko sygnały statyczne: przerwanie PMIC (GPIO0) i włącznik diody (GPIO1) |
 
 Diody matrycy mają katody na liniach ROW, więc kolumny są wyjściami, a wiersze wejściami (w ZMK kierunek `col2row`).
@@ -162,7 +164,7 @@ Diody matrycy mają katody na liniach ROW, więc kolumny są wyjściami, a wiers
 | L2 | Murata LQM18FN100M00D: 10 µH ±20%, 50 mA, DCR 1,17 Ω, 0603 | 10 µH ±20%, prąd min. 50 mA | Spełnia bez zapasu |
 | L3 | FH VHF100505H15NKT: 15 nH ±10%, SRF 2,3 GHz, 0402 | 15 nH ±10%, wysokoczęstotliwościowa | Spełnia |
 | C6, C20, C21 | Yageo CC0603KRX5R7BB475: 4,7 µF ±10%, X5R, 16 V | 4,7 µF ±10%, X7R lub X7S | Odstępstwo: X5R zamiast X7R, akceptowalne do 85 °C |
-| C3, C4 | 0,8 pF i 0,5 pF, 0402 | NP0, ±10% | Wartości zgodne; dielektryk do potwierdzenia |
+| C3, C4, L5 | FH 0402CG1R0C500NT 1,0 pF (LCSC C1550), FH 0402CG1R2C500NT 1,2 pF (C1551), C0G, 0402; Chilisin CLH1005T-2N2S-S-NP 2,2 nH (C142238), SRF 8,1 GHz | Wartości z referencji config 7 | Spełnia; strojone pod płytkę Nordica, na prototypie pomiar VNA |
 
 ### Obliczenia: obciążenie kwarców
 
@@ -224,12 +226,12 @@ J4 (18 styków) i J7 (6 styków) to Jushuo AFB10, raster 1,0 mm, pionowe, bez za
 
 ### Dioda statusu
 
-Jedna Worldsemi WS2812C-2020-V1 na MB, zasilana z VSYS przez przełącznik LOADSW1 nPM1300, z kondensatorem 100 nF przy diodzie i C33 1 µF na wyjściu przełącznika.
+Jedna Worldsemi WS2812B-2020-V6 (LCSC C52917434) na MB, zasilana z VSYS przez przełącznik LOADSW1 nPM1300, z kondensatorem 100 nF przy diodzie i C33 1 µF na wyjściu przełącznika.
 
 | Parametr | Wartość z karty | Warunek w projekcie | Ocena |
 | --- | --- | --- | --- |
-| Napięcie zasilania | 3,7–5,3 V | VSYS: 3,0–4,2 V z baterii, około 5 V z USB | W zakresie na USB i przy baterii powyżej 3,7 V; poniżej działanie niegwarantowane |
-| Próg VIH wejścia DIN | min. 2,7 V | Logika nRF52840 3,3 V | Spełniony bez konwersji poziomów |
+| Napięcie zasilania | 3,3–5,3 V (opis JLC; karta do potwierdzenia) | VSYS: 3,0–4,2 V z baterii, około 5 V z USB | W zakresie na USB i przy baterii powyżej 3,3 V; poniżej działanie niegwarantowane. WS2812C-2020 (3,7 V min.) zastąpiona 2026-10-26, bo niedostępna w JLC |
+| Próg VIH wejścia DIN | min. 2,7 V (karta WS2812C; dla V6 do potwierdzenia) | Logika nRF52840 3,3 V | Spełniony bez konwersji poziomów, jeśli V6 ma ten sam próg |
 | Prąd spoczynkowy | < 0,5 mA | Odcinany przez LOADSW1 | Uzasadnia przełącznik |
 | Prąd kanału | 5 mA | LOADSW1 do 100 mA | Spełnia |
 | Szybkość danych | 800 kb/s | Pin nRF bez ograniczenia częstotliwości (dolna strona) | Spełnia |
@@ -309,16 +311,43 @@ Wartości dla ogniwa LP803040 i portu USB 2.0; zmienia się je w konfiguracji p�
 - Bootloader UF2 trzeba raz wgrać przez SWD; kolejne aktualizacje idą przez USB.
 - Sterowanie LOADSW1 przez GPIO1 i zachowanie limitu VBUS po ponownym wpięciu kabla nie były testowane i wymagają sprawdzenia na prototypie.
 
+## BOM pod montaż JLC (2026-10-25)
+
+Zasada: części JLC basic, gdzie nie tracą względem referencji Nordica (extended kosztuje ok. 3 USD za unikalną część na zamówienie). Porównanie z referencjami nRF52840-QIAA config 5 i 7 oraz nPM1300-QEAA config 2.
+
+| Elementy | Część (LCSC) | Typ | Uwagi |
+| --- | --- | --- | --- |
+| C5, C7, C8, C12, C19, C35 (100 nF 0402) | C1525 CL05B104KO5NNNC, X7R | Basic | |
+| C1, C2, C17, C18 (12 pF 0402) | C1547 0402CG120J500NT, C0G ±5% | Basic | ±5% przesuwa CL o ok. 0,3 pF, mieści się w budżecie ±40 ppm |
+| C11 (100 pF 0402) | C1546, C0G ±5% | Basic | |
+| C6, C20, C21 (4,7 µF 0603) | C19666, X5R 16 V | Basic | |
+| C14, C15, C27, C32, C33 (1 µF 0603) | C15849, X5R 50 V | Basic | 50 V dla C27 na VBUS |
+| C28 (2,2 µF 0603) | C23630, X5R 16 V | Basic | |
+| C29, C30, C31 (10 µF 0603) | C19702, X5R 10 V | Basic | Jak w referencji nPM1300 |
+| C16 (47 nF) | C1622, X7R, 0603 | Basic | Footprint zmieniony z 0402 na 0603 |
+| R10 (470 kΩ) | C23178, 0603 | Basic | Poprzedni numer C25792 był 47 kΩ |
+| R11, R12 (4,7 kΩ), R1, R2 (0 Ω) | C25900, C17168, 0402 | Basic | R1/R2 w SCL/SDA do J3, miejsce na 33–100 Ω |
+| C9 (DEC5) | DNP | – | Niepotrzebny od rewizji Fxx |
+| Q1 | AO3401A C15127 | Basic | |
+| SW1 | XKB TS-1187A-B-A-B C318884, 5,1 × 5,1 × 1,5 mm | – | Pady A–B i C–D zwarte parami; w footprincie numeracja 1, 1, 2, 2 |
+| D2 | WS2812B-2020-V6 C52917434 | Extended | WS2812C-2020 niedostępna |
+| J6 | XUNPU U.FL-IPEX-1 C53433123 | Extended | Montaż JLC; sygnał na dolnym małym padzie (1), pozostałe 3 pady GND (2) |
+| J2, J8, J9 | – | – | Lutowane ręcznie; na PCB „Exclude from position files” |
+
+Extended zostają: U1, U2, U3, Y1, Y2, C3, C4, L1–L5, D1, D2, F1, J1, J4, J6, J7.
+
 ## Otwarte kwestie
 
-- [x] Typ nowego Q1: Nexperia PMPB15XP,115, pinout sprawdzony z kartą (2026-10-25)
+- [x] Typ nowego Q1: AO3401A (C15127, basic), pinout sprawdzony z kartą (2026-10-25; wcześniej PMPB15XP)
 - [x] Typ nowego kwarcu Y1: NDK NX2016SA-32MHZ-EXS00A-CS06654 (2026-10-25); tolerancja i stabilność do potwierdzenia w karcie
 - [x] Typ nowego F1 (PTC ≥ 24 V, prąd podtrzymania ≥ 1 A) i nowego D1 (TVS z VRWM ≥ 20 V): SMD1210-110-24V i SMF20A (2026-10-25)
 - [ ] Limit prądu wejściowego VBUS w firmware nie wyższy niż prąd podtrzymania F1 (1,1 A), czyli 1 A
 - [ ] Typ listwy goldpin 1×10, obciążalność styku, numeracja pinów między płytkami na modelu 3D
 - [ ] Membrana: geometria ogonów (0,3 mm, raster 1,0 mm, strona styków), miejsce na diody w stosie, typ diod, 24. styk na GND
 - [ ] Złącza matrycy: wersja bez zatrzasku czy z zatrzaskiem
-- [ ] Dopasowanie RF: dwuelementowe (do +4 dBm) czy czteroelementowe z konfiguracji 7 (od +5 dBm); zależy od docelowej mocy nadawania
+- [x] Dopasowanie RF: czteroelementowe z konfiguracji 7 (2026-10-25, M5)
+- [ ] Karta WS2812B-2020-V6: próg VIH, prąd spoczynkowy, minimalne VDD
+- [ ] Footprint NT1 (net-tie PVSS2 → GND) do narysowania przy PCB
 - [ ] Linia 50 Ω od dopasowania do złącza U.FL policzona dla docelowego stackupu; pomiar toru analizatorem
 - [ ] Numery pinów nRF52840 dla matrycy, SDA, SCL, przerwania i diody (przy routingu)
 - [ ] Pinout kabla Tag-Connect: potwierdzenie, że pin 3 to nRESET
@@ -356,6 +385,7 @@ Wartości dla ogniwa LP803040 i portu USB 2.0; zmienia się je w konfiguracji p�
 - [Yageo CC0603MRX5R8BB106, LCSC C596327](https://www.lcsc.com/product-detail/C596327.html)
 - [Yageo CC0603KRX7R9BB105, LCSC C559769](https://www.lcsc.com/product-detail/C559769.html)
 - [Yageo CC0603KRX5R8BB225, LCSC C309478](https://www.lcsc.com/product-detail/C309478.html)
+- [Alpha & Omega AO3401A, LCSC C15127](https://www.lcsc.com/product-detail/C15127.html)
 - [Nexperia PMPB15XP,115, LCSC C513107](https://www.lcsc.com/product-detail/C513107.html)
 - [Nexperia PMZB350UPE, LCSC C478140](https://www.lcsc.com/product-detail/C478140.html)
 - [Karta PMZB670UPE (pinout obudowy DFN1006B-3)](https://docs.rs-online.com/c225/0900766b812e057d.pdf)
@@ -377,7 +407,10 @@ Karty elementów bloku MCU:
 
 Karty elementów bloku interfejsów:
 
+- [Worldsemi WS2812B-2020-V6, LCSC C52917434](https://jlcpcb.com/partdetail/C52917434)
 - [Karta WS2812C-2020](https://akizukidenshi.com/goodsaffix/ws2812c-2020.pdf)
+- [XKB TS-1187A-B-A-B, LCSC C318884](https://jlcpcb.com/partdetail/C318884)
+- [XUNPU U.FL-IPEX-1, LCSC C53433123](https://jlcpcb.com/partdetail/C53433123)
 - [MDD SMF20A, LCSC C123788](https://www.lcsc.com/product-detail/C123788.html)
 - [TECHFUSE SMD1210-110-24V, LCSC C22436715](https://www.lcsc.com/product-detail/C22436715.html)
 - [Korean Hroparts TYPE-C-31-D-06, LCSC C2689964](https://www.lcsc.com/product-detail/C2689964.html)

@@ -23,12 +23,12 @@ Dokumenty w Claude Docs (Changelog_Projektu, Hardware_Decisions_Baza_Pracy) to a
 
 ## Architektura (stan po audycie z 11.10.2026)
 
-- **MCU:** nRF52840-QIAA (aQFN-73), konfiguracja 5 bez NFC: VDD = VDDH = 3,3 V, REG1 w trybie DC/DC. Kwarc 32 MHz z CL = 8 pF (C1/C2 = 12 pF), 32,768 kHz z CL = 9 pF. Tor RF 50 Ω do U.FL, dopasowanie dwuelementowe (czteroelementowe DO USTALENIA). SWD przez Tag-Connect TC2030, reset na P0.18, SWO na P1.00.
+- **MCU:** nRF52840-QIAA (aQFN-73), konfiguracja 5 bez NFC: VDD = VDDH = 3,3 V, REG1 w trybie DC/DC. Kwarc 32 MHz z CL = 8 pF (C1/C2 = 12 pF), 32,768 kHz z CL = 9 pF. Tor RF 50 Ω do U.FL, dopasowanie czteroelementowe z referencji config 7 (C3 1,0 pF, L1 4,7 nH, C4 1,2 pF, L5 2,2 nH). SWD przez Tag-Connect TC2030, reset na P0.18, SWO na P1.00.
 - **PMIC:** nPM1300-QEAA (QFN-32). BUCK1 = OFF (VSET1 do GND), BUCK2 = 3,3 V (VSET2 = 470 kΩ). VDDIO = 3,3 V. I2C z pull-upami 4,7 kΩ. GPIO0 = przerwanie do nRF, GPIO1 = włącznik LOADSW1. NTC do GND. SHPHLD wolny.
-- **Zasilanie:** Li-Po LP803040, 1000 mAh, PCM, dwa przewody, bez NTC; w drukowanym koszyku. Ładowanie ustawiane w firmware (start 400 mA, 4,20 V, limit VBUS 500 mA); sprzęt wymiarowany na 800 mA. Odwrotna polaryzacja: P-MOSFET, dren od strony złącza baterii.
+- **Zasilanie:** Li-Po ok. 1000 mAh (klasa LP803040), PCM, dwa przewody z wtykiem JST PH 2.0 (J2), bez NTC; w drukowanym koszyku. Ładowanie ustawiane w firmware (start 400 mA, 4,20 V, limit VBUS 500 mA); sprzęt wymiarowany na 800 mA. Odwrotna polaryzacja: P-MOSFET AO3401A, dren od strony złącza baterii.
 - **Elektromechanika:** MB i DB jako jedna płytka (DB wyłamywany), membrana jako osobna płytka FPC; projekty KiCada `controller` i `membrane`, wspólna biblioteka `lib`. Na DB: USB-C, PTC i TVS ≥ 20 V, ESD. CC1/CC2 bezpośrednio do nPM1300 (wewnętrzne Rd), bez 5,1 kΩ. Łącze MB ↔ DB: goldpin 1×10, raster 1 mm; pinout 1–10: VBUS, VBUS, GND, CC1, GND, D+, D−, GND, CC2, GND. DB przykręcany do drukowanego uchwytu.
-- **Matryca:** własna membrana FPC 6 × 17 z diodą na klawisz (NKRO), col2row; na MB złącza FFC 1,0 mm J4 (18 pin) i J7 (6 pin). Brak przycisków poza RESET. Jedna WS2812C-2020 na MB, zasilana z VSYS przez LOADSW1.
-- **Smart features (opcjonalnie):** haptyka i akcelerometr na osobnych płytkach; na MB tylko J3 2×6 (VSYS, 3,3 V, GND, I2C, sześć GPIO).
+- **Matryca:** własna membrana FPC 6 × 17 z diodą na klawisz (NKRO), col2row; na MB złącza FFC 1,0 mm J4 (18 pin) i J7 (6 pin). Brak przycisków poza RESET. Jedna WS2812B-2020-V6 na MB, zasilana z VSYS przez LOADSW1.
+- **Smart features (opcjonalnie):** haptyka i akcelerometr na osobnych płytkach; na MB tylko J3 2×3, listwa SMD 1,27 mm (VSYS, 3,3 V, GND, EXT_INT, SCL, SDA).
 - **Firmware:** ZMK na Zephyr 4.1 (HWMv2). Pomiar baterii przez nPM1300.
 - **PCB:** 4 warstwy (DO USTALENIA). Mechanika w Onshape.
 

@@ -4,6 +4,11 @@
 	(generator_version "10.0")
 	(uuid "80cb5826-c754-4381-9466-23c1a26e8fca")
 	(paper "A4")
+	(title_block
+		(title "IBM Model M Controller")
+		(date "2026-10-25")
+		(rev "1")
+	)
 	(lib_symbols
 		(symbol "Connector:USB_C_Receptacle_USB2.0_16P"
 			(pin_names
@@ -1962,74 +1967,84 @@
 		)
 	)
 	(junction
-		(at 165.1 97.79)
+		(at 196.85 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "20bdd2e6-a241-4da1-a8ae-82f6baeb8751")
 	)
 	(junction
-		(at 91.44 86.36)
+		(at 115.57 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "64bfb088-eedb-440a-82b4-c3179d223827")
 	)
 	(junction
-		(at 91.44 91.44)
+		(at 115.57 104.14)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "82de10b2-9e7e-4078-af52-59bff3a5c899")
 	)
 	(junction
-		(at 165.1 77.47)
+		(at 196.85 91.44)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "aade5b8a-ed60-46d0-9b2f-81c1ebcbbc29")
 	)
 	(junction
-		(at 165.1 92.71)
+		(at 196.85 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ae2d86fd-3a55-47c3-b160-2be240d6694e")
 	)
 	(junction
-		(at 165.1 100.33)
+		(at 196.85 114.3)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c25a359b-bfe4-4e84-beff-eefea424f304")
 	)
 	(junction
-		(at 104.14 73.66)
+		(at 128.27 86.36)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fec728c7-a410-42c7-b5d7-d8dff7f04b24")
 	)
 	(junction
-		(at 71.12 113.03)
+		(at 95.25 125.73)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ff7f12f5-e8fe-4e8d-8ef0-3ba93dc37b4e")
 	)
 	(no_connect
-		(at 90.17 104.14)
+		(at 114.3 116.84)
 		(uuid "14870de2-2a8e-4167-8d8b-ef07b4277bff")
 	)
 	(no_connect
-		(at 90.17 101.6)
+		(at 114.3 114.3)
 		(uuid "51aead86-6147-4517-b954-c2c4ebcfde6e")
 	)
 	(wire
 		(pts
-			(xy 135.89 105.41) (xy 138.43 105.41)
+			(xy 193.04 105.41) (xy 193.04 104.14)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "098ac4a5-9650-482a-9253-6d6e9e9cf79b")
+		(uuid "088d44a8-4216-4688-8917-3279c0e55a04")
 	)
 	(wire
 		(pts
-			(xy 92.71 91.44) (xy 91.44 91.44)
+			(xy 193.04 101.6) (xy 193.04 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0a4e7f9e-b30f-464e-ac87-a27006d2395e")
+	)
+	(wire
+		(pts
+			(xy 116.84 104.14) (xy 115.57 104.14)
 		)
 		(stroke
 			(width 0)
@@ -2039,7 +2054,17 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 91.44) (xy 91.44 91.44)
+			(xy 193.04 104.14) (xy 198.12 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0ca8fce9-951f-4245-8aa2-4c47b0dd36e5")
+	)
+	(wire
+		(pts
+			(xy 114.3 104.14) (xy 115.57 104.14)
 		)
 		(stroke
 			(width 0)
@@ -2049,7 +2074,17 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 100.33) (xy 166.37 100.33)
+			(xy 193.04 109.22) (xy 193.04 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "186ba127-2771-4570-ac3d-c02a2a25b31e")
+	)
+	(wire
+		(pts
+			(xy 196.85 114.3) (xy 198.12 114.3)
 		)
 		(stroke
 			(width 0)
@@ -2059,7 +2094,27 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 77.47) (xy 166.37 77.47)
+			(xy 193.04 97.79) (xy 193.04 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1cdb2d01-5a54-4901-bf33-3d35608bd044")
+	)
+	(wire
+		(pts
+			(xy 170.18 97.79) (xy 193.04 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d730a71-6c0b-4e3f-8471-066ce3fad618")
+	)
+	(wire
+		(pts
+			(xy 196.85 91.44) (xy 198.12 91.44)
 		)
 		(stroke
 			(width 0)
@@ -2069,7 +2124,17 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 85.09) (xy 165.1 92.71)
+			(xy 170.18 105.41) (xy 193.04 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "251e184f-bbf4-4646-8f5f-63709607ad47")
+	)
+	(wire
+		(pts
+			(xy 196.85 99.06) (xy 196.85 106.68)
 		)
 		(stroke
 			(width 0)
@@ -2079,7 +2144,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 101.6) (xy 160.02 100.33)
+			(xy 191.77 115.57) (xy 191.77 114.3)
 		)
 		(stroke
 			(width 0)
@@ -2089,7 +2154,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 92.71) (xy 166.37 92.71)
+			(xy 196.85 106.68) (xy 198.12 106.68)
 		)
 		(stroke
 			(width 0)
@@ -2099,7 +2164,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 77.47) (xy 165.1 77.47)
+			(xy 191.77 91.44) (xy 196.85 91.44)
 		)
 		(stroke
 			(width 0)
@@ -2109,7 +2174,7 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 86.36) (xy 91.44 88.9)
+			(xy 115.57 99.06) (xy 115.57 101.6)
 		)
 		(stroke
 			(width 0)
@@ -2119,7 +2184,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 92.71) (xy 165.1 97.79)
+			(xy 196.85 106.68) (xy 196.85 111.76)
 		)
 		(stroke
 			(width 0)
@@ -2129,7 +2194,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 111.76) (xy 67.31 113.03)
+			(xy 91.44 124.46) (xy 91.44 125.73)
 		)
 		(stroke
 			(width 0)
@@ -2139,17 +2204,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 97.79) (xy 138.43 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "53fd1263-c75f-4f28-a220-a3161eaed75b")
-	)
-	(wire
-		(pts
-			(xy 118.11 102.87) (xy 120.65 102.87)
+			(xy 152.4 105.41) (xy 154.94 105.41)
 		)
 		(stroke
 			(width 0)
@@ -2159,7 +2214,17 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 78.74) (xy 90.17 78.74)
+			(xy 170.18 107.95) (xy 193.04 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "66683fd6-9f98-4895-9815-f8d137095e2f")
+	)
+	(wire
+		(pts
+			(xy 116.84 91.44) (xy 114.3 91.44)
 		)
 		(stroke
 			(width 0)
@@ -2169,7 +2234,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 97.79) (xy 166.37 97.79)
+			(xy 196.85 111.76) (xy 198.12 111.76)
 		)
 		(stroke
 			(width 0)
@@ -2179,7 +2244,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 86.36) (xy 91.44 86.36)
+			(xy 114.3 99.06) (xy 115.57 99.06)
 		)
 		(stroke
 			(width 0)
@@ -2189,7 +2254,7 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 85.09) (xy 165.1 85.09)
+			(xy 198.12 99.06) (xy 196.85 99.06)
 		)
 		(stroke
 			(width 0)
@@ -2199,7 +2264,7 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 73.66) (xy 107.95 73.66)
+			(xy 128.27 86.36) (xy 132.08 86.36)
 		)
 		(stroke
 			(width 0)
@@ -2209,7 +2274,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 97.79) (xy 120.65 97.79)
+			(xy 152.4 100.33) (xy 154.94 100.33)
 		)
 		(stroke
 			(width 0)
@@ -2219,7 +2284,17 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 74.93) (xy 104.14 73.66)
+			(xy 193.04 109.22) (xy 198.12 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7f061d6b-920b-4355-b659-82f6c49a9606")
+	)
+	(wire
+		(pts
+			(xy 128.27 87.63) (xy 128.27 86.36)
 		)
 		(stroke
 			(width 0)
@@ -2229,7 +2304,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 113.03) (xy 71.12 113.03)
+			(xy 91.44 125.73) (xy 95.25 125.73)
 		)
 		(stroke
 			(width 0)
@@ -2239,7 +2314,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 95.25) (xy 120.65 95.25)
+			(xy 152.4 97.79) (xy 154.94 97.79)
 		)
 		(stroke
 			(width 0)
@@ -2249,7 +2324,17 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 81.28) (xy 104.14 80.01)
+			(xy 193.04 101.6) (xy 198.12 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "88b61a26-eb6b-4fc2-b219-76e2687602ad")
+	)
+	(wire
+		(pts
+			(xy 128.27 93.98) (xy 128.27 92.71)
 		)
 		(stroke
 			(width 0)
@@ -2259,7 +2344,17 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 93.98) (xy 91.44 93.98)
+			(xy 193.04 96.52) (xy 198.12 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e3fee5b-718e-4681-af9e-64cdbd699b18")
+	)
+	(wire
+		(pts
+			(xy 114.3 106.68) (xy 115.57 106.68)
 		)
 		(stroke
 			(width 0)
@@ -2269,7 +2364,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 88.9) (xy 91.44 88.9)
+			(xy 114.3 101.6) (xy 115.57 101.6)
 		)
 		(stroke
 			(width 0)
@@ -2279,7 +2374,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 100.33) (xy 138.43 100.33)
+			(xy 170.18 102.87) (xy 172.72 102.87)
 		)
 		(stroke
 			(width 0)
@@ -2289,7 +2384,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 80.01) (xy 165.1 77.47)
+			(xy 196.85 93.98) (xy 196.85 91.44)
 		)
 		(stroke
 			(width 0)
@@ -2299,7 +2394,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 86.36) (xy 91.44 86.36)
+			(xy 116.84 99.06) (xy 115.57 99.06)
 		)
 		(stroke
 			(width 0)
@@ -2309,17 +2404,7 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 87.63) (xy 160.02 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ac42a56b-424c-4838-aafa-9f36a49ba00e")
-	)
-	(wire
-		(pts
-			(xy 101.6 73.66) (xy 104.14 73.66)
+			(xy 125.73 86.36) (xy 128.27 86.36)
 		)
 		(stroke
 			(width 0)
@@ -2329,7 +2414,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 100.33) (xy 165.1 100.33)
+			(xy 191.77 114.3) (xy 196.85 114.3)
 		)
 		(stroke
 			(width 0)
@@ -2339,7 +2424,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 105.41) (xy 120.65 105.41)
+			(xy 152.4 107.95) (xy 154.94 107.95)
 		)
 		(stroke
 			(width 0)
@@ -2349,17 +2434,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 95.25) (xy 138.43 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c3acbf1d-936a-40bd-a26e-55780aa8f605")
-	)
-	(wire
-		(pts
-			(xy 71.12 114.3) (xy 71.12 113.03)
+			(xy 95.25 127) (xy 95.25 125.73)
 		)
 		(stroke
 			(width 0)
@@ -2369,37 +2444,7 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 90.17) (xy 160.02 90.17)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c56e9de6-fa63-41d4-92cb-2c6bb7c79f07")
-	)
-	(wire
-		(pts
-			(xy 135.89 102.87) (xy 138.43 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c775059e-41a3-4d44-9c23-f36cd5af5daa")
-	)
-	(wire
-		(pts
-			(xy 166.37 95.25) (xy 160.02 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cb7c5f2b-462c-4634-a32a-bae1ead861b6")
-	)
-	(wire
-		(pts
-			(xy 71.12 113.03) (xy 74.93 113.03)
+			(xy 95.25 125.73) (xy 99.06 125.73)
 		)
 		(stroke
 			(width 0)
@@ -2409,7 +2454,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 81.28) (xy 90.17 81.28)
+			(xy 116.84 93.98) (xy 114.3 93.98)
 		)
 		(stroke
 			(width 0)
@@ -2419,17 +2464,7 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 82.55) (xy 160.02 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "da405254-7eaa-492b-815c-c83ea2e4ec2a")
-	)
-	(wire
-		(pts
-			(xy 74.93 111.76) (xy 74.93 113.03)
+			(xy 99.06 124.46) (xy 99.06 125.73)
 		)
 		(stroke
 			(width 0)
@@ -2439,7 +2474,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 100.33) (xy 120.65 100.33)
+			(xy 152.4 102.87) (xy 154.94 102.87)
 		)
 		(stroke
 			(width 0)
@@ -2449,7 +2484,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 73.66) (xy 93.98 73.66)
+			(xy 114.3 86.36) (xy 118.11 86.36)
 		)
 		(stroke
 			(width 0)
@@ -2459,7 +2494,7 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 80.01) (xy 165.1 80.01)
+			(xy 198.12 93.98) (xy 196.85 93.98)
 		)
 		(stroke
 			(width 0)
@@ -2469,7 +2504,17 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 91.44) (xy 91.44 93.98)
+			(xy 170.18 100.33) (xy 193.04 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f786ee3b-d956-425f-a4d2-f9b35270c350")
+	)
+	(wire
+		(pts
+			(xy 115.57 104.14) (xy 115.57 106.68)
 		)
 		(stroke
 			(width 0)
@@ -2479,7 +2524,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 97.79) (xy 165.1 100.33)
+			(xy 196.85 111.76) (xy 196.85 114.3)
 		)
 		(stroke
 			(width 0)
@@ -2488,27 +2533,27 @@
 		(uuid "fee3642d-043f-4525-8375-e296d1255924")
 	)
 	(label "DB_D+"
-		(at 138.43 97.79 0)
+		(at 193.04 101.6 180)
 		(effects
 			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "115877fd-ed30-443a-84dd-c1d1b35eb91b")
-	)
-	(label "DB_D+"
-		(at 160.02 87.63 180)
-		(effects
-			(font
-				(size 1.27 1.27)
+				(size 0.889 0.889)
 			)
 			(justify right)
 		)
-		(uuid "127a1c64-870f-4c55-98d2-3e8bacac38ac")
+		(uuid "0e106182-f96c-4d58-9077-49df2adadf62")
+	)
+	(label "DB_CC1"
+		(at 193.04 96.52 180)
+		(effects
+			(font
+				(size 0.889 0.889)
+			)
+			(justify right top)
+		)
+		(uuid "18349ff7-fb48-4130-84e6-09e03c248a99")
 	)
 	(label "DB_D+"
-		(at 118.11 97.79 180)
+		(at 152.4 100.33 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2517,8 +2562,18 @@
 		)
 		(uuid "1d90f770-67ae-4029-b962-9a7a39840d4c")
 	)
+	(label "DB_D-"
+		(at 193.04 104.14 180)
+		(effects
+			(font
+				(size 0.889 0.889)
+			)
+			(justify right top)
+		)
+		(uuid "1dde38e1-c40d-448b-8ca8-18e6d1860778")
+	)
 	(label "DB_CC2"
-		(at 118.11 105.41 180)
+		(at 152.4 107.95 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2527,38 +2582,8 @@
 		)
 		(uuid "2636f788-d291-4d79-a142-ce3c916804f7")
 	)
-	(label "DB_CC1"
-		(at 160.02 82.55 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "373bf2a4-293c-4f74-bcd1-41e85ebe440e")
-	)
-	(label "DB_CC1"
-		(at 138.43 95.25 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "37d8a4f6-312b-4d3d-840a-9c5321a45a98")
-	)
-	(label "DB_CC2"
-		(at 160.02 95.25 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "47531b83-f7bd-4d46-ad8c-334bed080169")
-	)
 	(label "DB_D-"
-		(at 118.11 102.87 180)
+		(at 152.4 105.41 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2568,17 +2593,17 @@
 		(uuid "5c72cbc7-7d05-406f-8d96-1705a3123d52")
 	)
 	(label "DB_CC2"
-		(at 138.43 105.41 0)
+		(at 193.04 109.22 180)
 		(effects
 			(font
-				(size 1.27 1.27)
+				(size 0.889 0.889)
 			)
-			(justify left)
+			(justify right)
 		)
-		(uuid "708778ca-804c-4213-ba29-0c1e64e9d7ed")
+		(uuid "97ddc359-b1f4-4bf6-8657-c2eed03334f4")
 	)
 	(label "DB_CC1"
-		(at 118.11 95.25 180)
+		(at 152.4 97.79 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2588,17 +2613,7 @@
 		(uuid "a632687a-11c5-4f1f-a127-a6cfc6e2e384")
 	)
 	(label "DB_D-"
-		(at 160.02 90.17 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "beb1809d-b76c-4f1a-8104-d1c91a74f6c6")
-	)
-	(label "DB_D-"
-		(at 92.71 86.36 0)
+		(at 116.84 99.06 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2608,7 +2623,7 @@
 		(uuid "e4c8b831-782b-4c2f-b23e-92a64f71a868")
 	)
 	(label "DB_D+"
-		(at 92.71 91.44 0)
+		(at 116.84 104.14 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2618,7 +2633,7 @@
 		(uuid "e4c8b831-782b-4c2f-b23e-92a64f71a869")
 	)
 	(label "DB_CC2"
-		(at 92.71 81.28 0)
+		(at 116.84 93.98 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2628,7 +2643,7 @@
 		(uuid "e4c8b831-782b-4c2f-b23e-92a64f71a86a")
 	)
 	(label "DB_CC1"
-		(at 92.71 78.74 0)
+		(at 116.84 91.44 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2637,19 +2652,9 @@
 		)
 		(uuid "e4c8b831-782b-4c2f-b23e-92a64f71a86b")
 	)
-	(label "DB_D-"
-		(at 138.43 102.87 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "fcdfc4f2-449a-47b8-98ae-e8333ed612d2")
-	)
 	(symbol
 		(lib_id "Device:Polyfuse")
-		(at 97.79 73.66 90)
+		(at 121.92 86.36 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2660,7 +2665,7 @@
 		(fields_autoplaced yes)
 		(uuid "06dd4f84-ab8f-45e3-a53d-9e3520fbe0dc")
 		(property "Reference" "F1"
-			(at 97.79 68.58 90)
+			(at 121.92 81.28 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2670,7 +2675,7 @@
 			)
 		)
 		(property "Value" "SMD1210-110-24V"
-			(at 97.79 71.12 90)
+			(at 121.92 83.82 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2680,7 +2685,7 @@
 			)
 		)
 		(property "Footprint" "Fuse:Fuse_1210_3225Metric"
-			(at 102.87 72.39 0)
+			(at 127 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2692,7 +2697,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 97.79 73.66 0)
+			(at 121.92 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2703,7 +2708,7 @@
 			)
 		)
 		(property "Description" "Resettable fuse, polymeric positive temperature coefficient"
-			(at 97.79 73.66 0)
+			(at 121.92 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2714,7 +2719,326 @@
 			)
 		)
 		(property "LCSC Part" "C22436715"
-			(at 97.79 73.66 90)
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ALTIUM_VALUE" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ARTIKKELNR NOCA" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ASSEMBLY" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "AUTHOR" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENT CLASS" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENT STATUS" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENTLINK1DESCRIPTION" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENTLINK1URL" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENTLINK2DESCRIPTION" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENTLINK2URL" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "FOOTPRINT DOC" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "HELPURL" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LATESTREVISIONDATE" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER PART NUMBER" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "NOTE" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PAD COUNT" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PART NUMBER" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PART NUMBER IPS" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PART NUMBER NEMS" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PART NUMBER NORAUTRON" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTID" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PUBLISHED" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER 1" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER 2" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER PART NUMBER 1" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER PART NUMBER 2" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 121.92 86.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 121.92 86.36 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2741,7 +3065,7 @@
 	)
 	(symbol
 		(lib_id "easyeda2kicad:gnd")
-		(at 160.02 101.6 0)
+		(at 191.77 115.57 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -2753,7 +3077,7 @@
 		(fields_autoplaced yes)
 		(uuid "0bb27d81-0de8-4f8e-9e86-47f1c8fb7ae6")
 		(property "Reference" "#PWR063"
-			(at 160.02 107.95 0)
+			(at 191.77 121.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2764,7 +3088,7 @@
 			)
 		)
 		(property "Value" "DB_GND"
-			(at 160.02 105.41 0)
+			(at 191.77 119.38 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2774,7 +3098,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 160.02 101.6 0)
+			(at 191.77 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2785,7 +3109,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 160.02 101.6 0)
+			(at 191.77 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2796,7 +3120,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 160.02 101.6 0)
+			(at 191.77 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2820,7 +3144,7 @@
 	)
 	(symbol
 		(lib_id "Connector:USB_C_Receptacle_USB2.0_16P")
-		(at 74.93 88.9 0)
+		(at 99.06 101.6 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2831,7 +3155,7 @@
 		(fields_autoplaced yes)
 		(uuid "188bf47f-3550-44bf-bf7f-4683c76f30a0")
 		(property "Reference" "J1"
-			(at 74.93 66.04 0)
+			(at 99.06 78.74 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2841,7 +3165,7 @@
 			)
 		)
 		(property "Value" "TYPE-C-31-D-06"
-			(at 74.93 68.58 0)
+			(at 99.06 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2851,7 +3175,7 @@
 			)
 		)
 		(property "Footprint" "easyeda2kicad:USB-C-SMD_TYPE-C-31-D-06"
-			(at 78.74 88.9 0)
+			(at 102.87 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2862,7 +3186,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.usb.org/sites/default/files/documents/usb_type-c.zip"
-			(at 78.74 88.9 0)
+			(at 102.87 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2873,7 +3197,7 @@
 			)
 		)
 		(property "Description" "USB 2.0-only 16P Type-C Receptacle connector"
-			(at 74.93 88.9 0)
+			(at 99.06 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2884,7 +3208,326 @@
 			)
 		)
 		(property "LCSC Part" "C2689964"
-			(at 74.93 88.9 0)
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ALTIUM_VALUE" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ARTIKKELNR NOCA" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ASSEMBLY" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "AUTHOR" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENT CLASS" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENT STATUS" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENTLINK1DESCRIPTION" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENTLINK1URL" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENTLINK2DESCRIPTION" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENTLINK2URL" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "FOOTPRINT DOC" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "HELPURL" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LATESTREVISIONDATE" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER PART NUMBER" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "NOTE" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PAD COUNT" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PART NUMBER" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PART NUMBER IPS" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PART NUMBER NEMS" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PART NUMBER NORAUTRON" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTID" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PUBLISHED" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER 1" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER 2" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER PART NUMBER 1" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER PART NUMBER 2" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 99.06 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2956,7 +3599,7 @@
 	)
 	(symbol
 		(lib_id "easyeda2kicad:vbus")
-		(at 160.02 77.47 0)
+		(at 191.77 91.44 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2967,7 +3610,7 @@
 		(fields_autoplaced yes)
 		(uuid "299ffe6d-c877-4195-a520-d3c09806fc91")
 		(property "Reference" "#LABEL037"
-			(at 160.02 81.28 0)
+			(at 191.77 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2978,7 +3621,7 @@
 			)
 		)
 		(property "Value" "DB_VBUS"
-			(at 160.02 73.66 0)
+			(at 191.77 87.63 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2988,7 +3631,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 160.02 77.47 0)
+			(at 191.77 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2999,7 +3642,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 160.02 77.47 0)
+			(at 191.77 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3010,7 +3653,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label"
-			(at 160.02 77.47 0)
+			(at 191.77 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3034,7 +3677,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x10")
-		(at 171.45 87.63 0)
+		(at 203.2 101.6 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3045,7 +3688,7 @@
 		(fields_autoplaced yes)
 		(uuid "397b9069-e64e-4cba-badc-254662d672d6")
 		(property "Reference" "J8"
-			(at 173.99 87.6299 0)
+			(at 205.74 101.5999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3056,7 +3699,7 @@
 			)
 		)
 		(property "Value" "Header_1x10_P1.00mm"
-			(at 173.99 90.17 0)
+			(at 205.74 104.14 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3067,7 +3710,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x10_P1.00mm_Vertical"
-			(at 171.45 87.63 0)
+			(at 203.2 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3078,7 +3721,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 171.45 87.63 0)
+			(at 203.2 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3089,7 +3732,326 @@
 			)
 		)
 		(property "Description" "Goldpin 1x10, raster 1,00 mm; lacze MB-DB, pinout wg I1: VBUS, VBUS, GND, CC1, GND, D+, D-, GND, CC2, GND. Strona DB: piny lutowane do krawedzi; footprint tymczasowy, poza BOM i CPL (czesc liczona przy J9)"
-			(at 171.45 87.63 0)
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ALTIUM_VALUE" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ARTIKKELNR NOCA" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ASSEMBLY" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "AUTHOR" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENT CLASS" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENT STATUS" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENTLINK1DESCRIPTION" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENTLINK1URL" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENTLINK2DESCRIPTION" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENTLINK2URL" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "FOOTPRINT DOC" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "HELPURL" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LATESTREVISIONDATE" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER PART NUMBER" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "NOTE" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PAD COUNT" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PART NUMBER" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PART NUMBER IPS" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PART NUMBER NEMS" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PART NUMBER NORAUTRON" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTID" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PUBLISHED" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER 1" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER 2" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER PART NUMBER 1" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER PART NUMBER 2" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 203.2 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 203.2 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3140,7 +4102,7 @@
 	)
 	(symbol
 		(lib_id "Device:D_Zener_Small")
-		(at 104.14 77.47 90)
+		(at 128.27 90.17 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -3151,7 +4113,7 @@
 		(dnp no)
 		(uuid "3df4bf40-04c0-475e-a7e0-c6df919a14a4")
 		(property "Reference" "D1"
-			(at 106.68 76.1999 90)
+			(at 130.81 88.8999 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3162,7 +4124,7 @@
 			)
 		)
 		(property "Value" "SMF20A"
-			(at 106.68 78.74 90)
+			(at 130.81 91.44 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3173,7 +4135,7 @@
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_SOD-123F"
-			(at 104.14 77.47 90)
+			(at 128.27 90.17 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3184,7 +4146,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 104.14 77.47 90)
+			(at 128.27 90.17 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3195,7 +4157,7 @@
 			)
 		)
 		(property "Description" "Zener diode, small symbol"
-			(at 104.14 77.47 0)
+			(at 128.27 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3206,7 +4168,326 @@
 			)
 		)
 		(property "LCSC Part" "C123788"
-			(at 104.14 77.47 90)
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ALTIUM_VALUE" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ARTIKKELNR NOCA" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ASSEMBLY" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "AUTHOR" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENT CLASS" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENT STATUS" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENTLINK1DESCRIPTION" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENTLINK1URL" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENTLINK2DESCRIPTION" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENTLINK2URL" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "FOOTPRINT DOC" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "HELPURL" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LATESTREVISIONDATE" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER PART NUMBER" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "NOTE" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PAD COUNT" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PART NUMBER" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PART NUMBER IPS" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PART NUMBER NEMS" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PART NUMBER NORAUTRON" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTID" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PUBLISHED" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER 1" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER 2" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER PART NUMBER 1" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER PART NUMBER 2" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 128.27 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 128.27 90.17 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3233,7 +4514,7 @@
 	)
 	(symbol
 		(lib_id "ibm_m:TPD4E05U06DQA")
-		(at 128.27 100.33 0)
+		(at 162.56 102.87 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3244,7 +4525,7 @@
 		(fields_autoplaced yes)
 		(uuid "4975603c-e7f9-4143-91c5-bf7b9dcb7c4a")
 		(property "Reference" "U3"
-			(at 128.27 87.63 0)
+			(at 162.56 90.17 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3254,7 +4535,7 @@
 			)
 		)
 		(property "Value" "TPD4E05U06DQAR"
-			(at 128.27 90.17 0)
+			(at 162.56 92.71 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3264,7 +4545,7 @@
 			)
 		)
 		(property "Footprint" "Package_SON:USON-10_2.5x1.0mm_P0.5mm"
-			(at 128.27 111.125 0)
+			(at 162.56 113.665 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3275,7 +4556,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tpd4e05u06.pdf"
-			(at 128.27 113.03 0)
+			(at 162.56 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3286,7 +4567,7 @@
 			)
 		)
 		(property "Description" "4-kanałowa ochrona ESD (TI TPD4E05U06DQA), USON-10 2,5x1,0. Rysunek jak obudowa w karcie (widok z góry). Piny NC 10, 9, 7, 6 leżą naprzeciw 1, 2, 4, 5 i łączy się je z tą samą linią (flow-through); GND na 3 i 8"
-			(at 128.27 115.57 0)
+			(at 162.56 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3297,7 +4578,326 @@
 			)
 		)
 		(property "LCSC Part" "C138714"
-			(at 128.27 100.33 0)
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ALTIUM_VALUE" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ARTIKKELNR NOCA" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ASSEMBLY" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "AUTHOR" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENT CLASS" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENT STATUS" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENTLINK1DESCRIPTION" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENTLINK1URL" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENTLINK2DESCRIPTION" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "COMPONENTLINK2URL" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "FOOTPRINT DOC" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "HELPURL" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LATESTREVISIONDATE" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER PART NUMBER" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "NOTE" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PAD COUNT" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PART NUMBER" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PART NUMBER IPS" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PART NUMBER NEMS" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PART NUMBER NORAUTRON" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTID" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PUBLISHED" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER 1" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER 2" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER PART NUMBER 1" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SUPPLIER PART NUMBER 2" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 162.56 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 162.56 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3348,7 +4948,7 @@
 	)
 	(symbol
 		(lib_id "easyeda2kicad:gnd")
-		(at 138.43 100.33 90)
+		(at 172.72 102.87 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -3360,7 +4960,7 @@
 		(fields_autoplaced yes)
 		(uuid "6910c413-0118-47dc-b7a0-6a2603300d9e")
 		(property "Reference" "#PWR069"
-			(at 144.78 100.33 0)
+			(at 179.07 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3371,7 +4971,7 @@
 			)
 		)
 		(property "Value" "DB_GND"
-			(at 140.97 100.33 90)
+			(at 175.26 102.87 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3382,7 +4982,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 138.43 100.33 0)
+			(at 172.72 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3393,7 +4993,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 138.43 100.33 0)
+			(at 172.72 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3404,7 +5004,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 138.43 100.33 0)
+			(at 172.72 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3428,7 +5028,7 @@
 	)
 	(symbol
 		(lib_id "easyeda2kicad:gnd")
-		(at 71.12 114.3 0)
+		(at 95.25 127 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3439,7 +5039,7 @@
 		(fields_autoplaced yes)
 		(uuid "6a0bfb99-2210-4fe3-b667-8274d6f18bae")
 		(property "Reference" "#PWR038"
-			(at 71.12 120.65 0)
+			(at 95.25 133.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3450,7 +5050,7 @@
 			)
 		)
 		(property "Value" "DB_GND"
-			(at 71.12 118.11 0)
+			(at 95.25 130.81 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3460,7 +5060,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 71.12 114.3 0)
+			(at 95.25 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3471,7 +5071,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 71.12 114.3 0)
+			(at 95.25 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3482,7 +5082,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 71.12 114.3 0)
+			(at 95.25 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3506,7 +5106,7 @@
 	)
 	(symbol
 		(lib_id "easyeda2kicad:vbus")
-		(at 107.95 73.66 0)
+		(at 132.08 86.36 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3517,7 +5117,7 @@
 		(fields_autoplaced yes)
 		(uuid "75acc9d3-0532-49ef-8804-c0d7bc6ded6d")
 		(property "Reference" "#LABEL05"
-			(at 107.95 77.47 0)
+			(at 132.08 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3528,7 +5128,7 @@
 			)
 		)
 		(property "Value" "DB_VBUS"
-			(at 110.49 72.7075 0)
+			(at 134.62 85.4075 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3539,7 +5139,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 107.95 73.66 0)
+			(at 132.08 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3550,7 +5150,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 107.95 73.66 0)
+			(at 132.08 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3561,7 +5161,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label"
-			(at 107.95 73.66 0)
+			(at 132.08 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3585,7 +5185,7 @@
 	)
 	(symbol
 		(lib_id "easyeda2kicad:gnd")
-		(at 104.14 81.28 0)
+		(at 128.27 93.98 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3596,7 +5196,7 @@
 		(fields_autoplaced yes)
 		(uuid "8397948e-99f3-4fc4-9107-0af08d2ce95c")
 		(property "Reference" "#PWR039"
-			(at 104.14 87.63 0)
+			(at 128.27 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3607,7 +5207,7 @@
 			)
 		)
 		(property "Value" "DB_GND"
-			(at 104.14 84.074 0)
+			(at 128.27 96.774 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3618,7 +5218,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 104.14 81.28 0)
+			(at 128.27 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3629,7 +5229,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 104.14 81.28 0)
+			(at 128.27 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3640,7 +5240,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 104.14 81.28 0)
+			(at 128.27 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3664,7 +5264,7 @@
 	)
 	(symbol
 		(lib_id "easyeda2kicad:gnd")
-		(at 118.11 100.33 270)
+		(at 152.4 102.87 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3675,7 +5275,7 @@
 		(fields_autoplaced yes)
 		(uuid "e49d9043-cb24-4e71-8b45-8cc2ca6c4d39")
 		(property "Reference" "#PWR040"
-			(at 111.76 100.33 0)
+			(at 146.05 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3686,7 +5286,7 @@
 			)
 		)
 		(property "Value" "DB_GND"
-			(at 115.57 100.33 90)
+			(at 149.86 102.87 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3697,7 +5297,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 118.11 100.33 0)
+			(at 152.4 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3708,7 +5308,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 118.11 100.33 0)
+			(at 152.4 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3719,7 +5319,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 118.11 100.33 0)
+			(at 152.4 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
