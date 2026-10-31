@@ -326,7 +326,8 @@ Zasada: części JLC basic, gdzie nie tracą względem referencji Nordica (exten
 | C29, C30, C31 (10 µF 0603) | C19702, X5R 10 V | Basic | Jak w referencji nPM1300 |
 | C16 (47 nF) | C1622, X7R, 0603 | Basic | Footprint zmieniony z 0402 na 0603 |
 | R10 (470 kΩ) | C23178, 0603 | Basic | Poprzedni numer C25792 był 47 kΩ |
-| R11, R12 (4,7 kΩ), R1, R2 (0 Ω) | C25900, C17168, 0402 | Basic | R1/R2 w SCL/SDA do J3, miejsce na 33–100 Ω |
+| R11, R12 (4,7 kΩ) | C25900, 0402 | Basic | |
+| R1, R2, R3 (0 Ω) | C21189, 0603 | Basic | R1/R2 w SCL/SDA do J3, miejsce na 33–100 Ω; R3 rozcięcie szyny 3,3 V do pomiarów (A15). 0603 zamiast 0402 (2026-10-31): wygodniejsze ręczne przelutowanie |
 | C9 (DEC5) | DNP | – | Niepotrzebny od rewizji Fxx |
 | Q1 | AO3401A C15127 | Basic | |
 | SW1 | XKB TS-1187A-B-A-B C318884, 5,1 × 5,1 × 1,5 mm | – | Pady A–B i C–D zwarte parami; w footprincie numeracja 1, 1, 2, 2 |
