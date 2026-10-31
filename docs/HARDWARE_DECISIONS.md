@@ -336,6 +336,66 @@ Zasada: części JLC basic, gdzie nie tracą względem referencji Nordica (exten
 
 Extended zostają: U1, U2, U3, Y1, Y2, C3, C4, L1–L5, D1, D2, F1, J1, J4, J6, J7.
 
+## Weryfikacja prototypu: punkty pomiarowe i plan testów (2026-10-31)
+
+Zatwierdzone i naniesione w schemacie 2026-10-31. Opis funkcji TP na osobnej stronie schematu (do zrobienia).
+
+### Punkty pomiarowe
+
+| Element | Sieć | Po co | Referencja |
+| --- | --- | --- | --- |
+| R3 0 Ω 0603 (LCSC C21189) | Rozcina szynę 3,3 V: strona przetwornicy U2.32, L4.2, C29.1 (sieć bez nazwy, „VOUT2”) ↔ VDD_NRF (U1, C6–C8, C12, C14, C35, VDDIO U2.12, R11, R12, J3.2, J10.1) | Normalnie wlutowany. Wylutowany: start BUCK2 bez nRF (Z1), prąd samego nRF52840 przez PPK2 (E1), sprawność i tętnienia BUCK2 z obciążeniem zewnętrznym (Z2, Z3). Przewody wlutowane w pady R3 albo chwytaki; bez listwy i dodatkowych padów (decyzja jakuba: porządek na PCB). VOUT2 jest wejściem sprzężenia zwrotnego, więc regulacja się nie zmienia; C29 zostaje przy pinie 32 | nPM1300 PS v1.3, rys. 59, s. 161 |
+| TP1 | SHPHLD | Tryb Ship | nPM1300 PS v1.3, rozdz. 7.4, s. 121 |
+| TP2 | VDD_NRF | Napięcie szyny nRF (przy wylutowanym R3 napięcie przetwornicy mierzyć na padzie R3 od strony C29) | – |
+| TP3 | PVSS2 | Masa do pomiaru tętnień na C29 (tętnienia względem PVSS2, nie odległego GND) | nPM1300 PS v1.3, s. 52 |
+| TP4 | VBAT | Spadek na Q1 (z padem J2.1), porównanie z ADC PMIC | s. 104 |
+| TP5 | VSYS | Rozładowanie, VSYSPOF | s. 51 |
+| TP6 | VLED | LOADSW1 | – |
+| TP7, TP8, TP9 | LED_EN, PMIC_INT, RGB_DIN | Analizator logiczny | – |
+| TP10 | GND | Masa odniesienia | – |
+| TP11, TP12 | P0.16 (AC11), P0.17 (AD12) | Znaczniki czasu z firmware'u (DBG0, DBG1): skan, wykrycie klawisza, wybudzenie; synchronizacja z wejściami cyfrowymi PPK2 | nRF52840 PS v1.5, tab. 145 |
+| TP13, TP14 | COL0, ROW0 | Przebieg skanowania matrycy | – |
+
+TP: footprint `ibm_bs:TestPoint_Pad` (exclude from BOM i position files), in_bom = no.
+
+Bez shuntu w torze baterii: ADC nPM1300 mierzy IBAT 10-bitowo z pełną skalą 1,12 × limit rozładowania (przy 1 A ok. 1,1 mA na LSB) i 1,25 × prąd ładowania (nPM1300 PS v1.3, rozdz. 7.1.8, s. 104). Wystarcza do profilu ładowania, nie do prądów uśpienia (µA); te mierzy PPK2 podłączony do J2 zamiast ogniwa. Rezystor szeregowy przy J2 dokładałby tylko spadek przy 800 mA.
+
+### Plan testów
+
+Kolejność grup = kolejność uruchamiania prototypu. Warunki pomiarów prądu: J-Link odłączony od J10, moduły z J3 odłączone, DIN diody w stanie niskim, membrana podłączona.
+
+| ID | Test | Kryterium | Referencja |
+| --- | --- | --- | --- |
+| Z1 | Start BUCK2 bez nRF (R3 niewlutowany, 3,7 V z limitem 50 mA na J2) | Napięcie przetwornicy 3,3 V ±5% | nPM1300 PS v1.3, s. 51; tab. 18, s. 50 |
+| Z2 | Tętnienia na C29 (sonda na C29.1, sprężynka masy na C29.2/PVSS2), tryb histerezowy i PWM | ≤ 50 mVpp / ≤ 5 mVpp; progi trybów 90 / 40 mA | s. 52 |
+| Z3 | Sprawność BUCK2 w funkcji prądu (PPK2 na J2, obciążenie na padach R3) | Porównanie z rys. 34 (s. 62) i rys. 3 (s. 14); 93% przy 200 mA PWM | s. 52 |
+| Z4 | Odwrotna polaryzacja ogniwa; spadek na Q1 przy 400 mA (J2.1 − TP4) | Prąd ≈ 0; ≤ 34 mV | „Spadek napięcia na Q1” |
+| Z5 | LOADSW1 sterowany LED_EN (TP6, TP7) | VLED ≈ VSYS / ≈ 0 V | – |
+| Z6 | Tryb Ship, wyjście przez VBUS | ≈ 370 nA | nPM1300 PS v1.3, s. 16 |
+| Z7 | Rampa VBAT 4,2 → 2,8 V | Napięcie 3,3 V do VSYS ok. 3,4 V; odcięcie na VSYSPOF; zachowanie diody | s. 51 |
+| Ł1 | Profil ładowania CC/CV 400 mA / 4,20 V / 10% (log ADC + multimetr) | ICHG ±10%, VTERM ±1%, czas < 7 h, VBAT z ADC ±1% | s. 34–35, s. 104 |
+| Ł2 | Temperatura nPM1300 przy 400 i 800 mA | Porównanie z 19 K i 39 K | tab. 7, s. 18; s. 34 |
+| Ł3 | Detekcja źródła przez CC (różne źródła, obie orientacje) i limit VBUS | Poprawny typ źródła; ≤ 500 mA | s. 22, s. 25 |
+| Ł4 | Nadnapięcie VBUS 5 → 6 V (opcjonalnie) | Odłączenie powyżej 5,5 V | s. 22 |
+| Ł5 | Enumeracja USB HID | W obu orientacjach | – |
+| R1 | SWD, UF2, RESET, SWO | Działa; pin 3 TC2030 = nRESET | – |
+| R2 | Częstotliwość nośnej (radio_test/DTM, analizator widma na J6) | ≤ ±40 ppm | nRF52840 PS v1.5, s. 99 |
+| R3 | Moc i harmoniczne na J6 (0 i +8 dBm) | ±4 dB; harmoniczne wobec config 7 | s. 359 |
+| R4 | S11 toru RF (opcjonalnie, VNA) | Wobec config 7 | – |
+| R5 | Zasięg BLE i RSSI w obudowie (stalowa płyta) | Stabilne łącze na odległości biurka | – |
+| K1 | Wszystkie 88 klawiszy | Właściwe kody | – |
+| K2 | NKRO, test ghostingu (3 rogi prostokąta, ≥ 10 klawiszy) | Brak fantomów | – |
+| K3 | Debounce | 0 podwójnych zdarzeń na N naciśnięć | – |
+| K4 | Okres skanu i opóźnienie wewnętrzne (TP11/TP12 + TP14) | Wynik do pracy; USB vs BLE | – |
+| K5 | USB/BLE, parowanie, profile, wybudzenie | Przejścia bez resetu | – |
+| K6 | Dioda statusu przy USB i baterii | Poprawne kolory przy VSYS ≥ 3,3 V | – |
+| K7 | Procent baterii w ZMK wobec multimetru na TP4 | Liniowo 3,45–4,20 V | s. 104 |
+| E1 | Prąd w stanach pracy (PPK2 na J2: cały układ; PPK2 na padach R3: sam nRF) | System OFF 0,40 µA, System ON z RAM 2,35 µA (nRF s. 59), TX +8 dBm 14,8 mA (s. 358), IQ PMIC 800 nA (s. 16) | jw. |
+| E2 | Szacowany czas pracy na 1000 mAh z E1 i profilu użycia | Wynik do wniosków | – |
+| E3 | Prąd diody (LOADSW1 wł./wył.) | Brak prądu przy wyłączonym | „Dioda statusu” |
+
+Oznaczenie testów radiowych R1–R5 nie ma związku z rezystorami R1–R3 na schemacie.
+
 ## Otwarte kwestie
 
 - [x] Typ nowego Q1: AO3401A (C15127, basic), pinout sprawdzony z kartą (2026-10-25; wcześniej PMPB15XP)
@@ -375,6 +435,12 @@ Extended zostają: U1, U2, U3, Y1, Y2, C3, C4, L1–L5, D1, D2, F1, J1, J4, J6, 
 - [ ] Membrana FPC: jeden arkusz czy segmenty; potrzebny obrys z ogonami (limit JLC 234 × 490 mm, do 250 × 600 mm po uzgodnieniu). Bolt-mod wykonany, rysunki membrany istnieją
 - [ ] BOM sprzed audytu: brak J4 przy obecnym J7, J5 726386-2 bez opisu w dokumentach, C10 = NC a dokumenty mówią o nieobsadzonym C22
 - [ ] Harmonogram: raport wykonalności z 11.10 zakładał zamówienie rev A do 2026-11-09 i działającą SSK bez kabla do 2026-12-08; nie jest zatwierdzony
+
+### Dopisane 2026-10-31 (weryfikacja prototypu)
+
+- [ ] Strona schematu z opisem TP1–TP14 i R3
+- [ ] Zakresy PPK2 (amperomierz, źródło, wejścia cyfrowe) potwierdzone w dokumentacji Nordica
+- [ ] Dostęp do analizatora widma i VNA na PWr (testy R2–R4)
 
 ## Źródła
 
