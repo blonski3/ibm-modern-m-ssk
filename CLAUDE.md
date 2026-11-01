@@ -21,12 +21,12 @@ Odpowiadaj po polsku (terminologia i nazwy sygnałów po angielsku), konkretnie,
 
 Dokumenty w Claude Docs (Changelog_Projektu, Hardware_Decisions_Baza_Pracy) to archiwum ze stanu 11.10.2026 (rev 17 i 25). Od 17.10.2026 jedynym źródłem prawdy są pliki w `docs/`.
 
-## Architektura (stan po audycie z 11.10.2026)
+## Architektura (stan na 2026-11-01)
 
 - **MCU:** nRF52840-QIAA (aQFN-73), konfiguracja 5 bez NFC: VDD = VDDH = 3,3 V, REG1 w trybie DC/DC. Kwarc 32 MHz z CL = 8 pF (C1/C2 = 12 pF), 32,768 kHz z CL = 9 pF. Tor RF 50 Ω do U.FL, dopasowanie czteroelementowe z referencji config 7 (C3 1,0 pF, L1 4,7 nH, C4 1,2 pF, L5 2,2 nH). SWD przez Tag-Connect TC2030, reset na P0.18, SWO na P1.00.
 - **PMIC:** nPM1300-QEAA (QFN-32). BUCK1 = OFF (VSET1 do GND), BUCK2 = 3,3 V (VSET2 = 470 kΩ). VDDIO = 3,3 V. I2C z pull-upami 4,7 kΩ. GPIO0 = przerwanie do nRF, GPIO1 = włącznik LOADSW1. NTC do GND. SHPHLD wolny.
 - **Zasilanie:** Li-Po ok. 1000 mAh (klasa LP803040), PCM, dwa przewody z wtykiem JST PH 2.0 (J2), bez NTC; w drukowanym koszyku. Ładowanie ustawiane w firmware (start 400 mA, 4,20 V, limit VBUS 500 mA); sprzęt wymiarowany na 800 mA. Odwrotna polaryzacja: P-MOSFET AO3401A, dren od strony złącza baterii.
-- **Elektromechanika:** MB i DB jako jedna płytka (DB wyłamywany), membrana jako osobna płytka FPC; projekty KiCada `controller` i `membrane`, wspólna biblioteka `lib`. Na DB: USB-C, PTC i TVS ≥ 20 V, ESD. CC1/CC2 bezpośrednio do nPM1300 (wewnętrzne Rd), bez 5,1 kΩ. Łącze MB ↔ DB: goldpin 1×10, raster 1 mm; pinout 1–10: VBUS, VBUS, GND, CC1, GND, D+, D−, GND, CC2, GND. DB przykręcany do drukowanego uchwytu.
+- **Elektromechanika:** MB i DB jako jedna płytka (DB wyłamywany), membrana jako osobna płytka FPC; projekty KiCada `controller` i `membrane`, wspólna biblioteka `lib`. Na DB: USB-C, PTC i TVS ≥ 20 V, ESD. CC1/CC2 bezpośrednio do nPM1300 (wewnętrzne Rd), bez 5,1 kΩ. Łącze MB ↔ DB: goldpin 1×10, raster 1 mm; pinout 1–10 (I6): VBUS, VBUS, CC1, GND, D+, D−, GND, CC2, GND, GND. DB przykręcany do drukowanego uchwytu.
 - **Matryca:** własna membrana FPC 6 × 17 z diodą na klawisz (NKRO), col2row; na MB złącza FFC 1,0 mm J4 (18 pin) i J7 (6 pin). Brak przycisków poza RESET. Jedna WS2812B-2020-V6 na MB, zasilana z VSYS przez LOADSW1.
 - **Smart features (opcjonalnie):** haptyka i akcelerometr na osobnych płytkach; na MB tylko J3 2×3, listwa SMD 1,27 mm (VSYS, 3,3 V, GND, EXT_INT, SCL, SDA).
 - **Firmware:** ZMK na Zephyr 4.1 (HWMv2). Pomiar baterii przez nPM1300.
@@ -60,36 +60,11 @@ Na koniec sesji, w której coś się zmieniło (KiCad, firmware, mechanika, teks
 4. Nie przepisuj historii (`filter-repo`, `rebase`, `push --force`) i nie pushuj bez prośby.
 5. Linux; KiCad 10; tekst pracy w LaTeX (`thesis/`); PCB z JLC, pliki produkcyjne ręcznie (Fabrication Toolkit).
 
-## Stan migracji repo (gałąź `restructure`, tag startowy `pre-restructure`)
+## Stan repo
 
-- [x] Krok 1: `.gitignore` od nowa, usunięte śmieci, `.kicad_prl` zdjęte ze śledzenia.
-- [x] Krok 2: `git mv` plików spoza KiCada do `reference/`, `docs/`, `mechanics/`.
-- [x] `tools/check_3d_paths.py`.
-- [x] Krok 5 (część): `docs/CHANGELOG.md`, `docs/HARDWARE_DECISIONS.md`, ten plik.
-- [x] Krok 0a (2026-10-17): baseline na formacie KiCad 9 (sch 20250114, pcb 20241229):
-      ```bash
-      mkdir -p .baseline
-      kicad-cli sch erc --output .baseline/erc_k9.rpt kicad/ibm-modern-m-ssk.kicad_sch
-      kicad-cli pcb drc --output .baseline/drc_k9.rpt kicad/ibm-modern-m-ssk.kicad_pcb
-      kicad-cli sch export netlist --output .baseline/k9.net kicad/ibm-modern-m-ssk.kicad_sch
-      ```
-- [x] Krok 0b (2026-10-17, modele 3D widoczne, `${KICAD9_3DMODEL_DIR}` zostaje): właściciel otwiera projekt w KiCad 10, sprawdza okno brakujących bibliotek i podgląd 3D (C 0402/0603, FFC), zapisuje schemat i PCB. Ponownie ERC/DRC/netlista (`*_k10`), porównanie z k9 (netlistę bez linii `source`/`date`/`tool`). Równe → commit `chore: upgrade project files to KiCad 10 format`. Brak modeli z `${KICAD9_3DMODEL_DIR}` (35 odwołań w PCB) → osobny commit z `${KICAD10_3DMODEL_DIR}`.
-- [x] Krok 3 (2026-10-17): `mkdir -p hardware && git mv kicad hardware/controller`. Usuń z `.gitignore` linię `/kicad/production/`.
-- [x] Krok 4a (2026-10-17): `git mv hardware/controller/libraries hardware/lib`.
-- [x] Krok 4b (2026-10-17): ścieżki (osobny commit):
-      ```bash
-      sed -i 's|\${KIPRJMOD}/libraries/|${KIPRJMOD}/../lib/|' \
-          hardware/controller/fp-lib-table hardware/controller/sym-lib-table
-      git grep -lzF -e '${KIPRJMOD}/libraries/' -e '${EASYEDA2KICAD}/' -- \
-          'hardware/controller/*.kicad_pcb' 'hardware/lib/' \
-        | xargs -0 sed -i -e 's|\${KIPRJMOD}/libraries/|${KIPRJMOD}/../lib/|g' \
-                          -e 's|\${EASYEDA2KICAD}/|${KIPRJMOD}/../lib/|g'
-      python3 tools/check_3d_paths.py hardware/controller hardware/lib
-      ```
-      Oczekiwane: 0 nierozwiązanych zmiennych, tylko 4 znane brakujące modele; ERC/DRC/netlista = baseline.
-- [x] Podział na projekty (2026-10-17, gałąź `kicad-split`): projekt przemianowany na `controller` (`hardware/controller/controller.kicad_pro`), nowy `hardware/membrane/` z zawartością arkusza `matrix`, arkusz `matrix` usunięty z controllera. Netlista controllera = baseline.
-- [x] Krok 5 (reszta, 2026-10-17): README z sekcją „Struktura repozytorium”.
-- [x] Krok 6 (2026-10-17): tag `restructure-done`, fast-forward `kicad-split` → `main`, push.
+Migracja repo zakończona 2026-10-17 (tag `restructure-done`; tag startowy `pre-restructure`): KiCad 10, projekty `hardware/controller` i `hardware/membrane`, wspólna biblioteka `hardware/lib`, ścieżki `${KIPRJMOD}/../lib/`. Szczegóły kroków w historii gita i w CHANGELOG (A9).
+
+Sprawdzenie po zmianach w KiCadzie: `tools/kicad-check.sh` (ERC, DRC z parity, netlista i PDF do `.baseline/`; kicad-cli tylko na maszynie właściciela). Modele 3D: `python3 tools/check_3d_paths.py hardware/controller hardware/lib`.
 
 ## Docelowe drzewo
 
@@ -107,13 +82,11 @@ tools/                   skrypty pomocnicze
 
 Ustalenia porządkowe: `lib` to zwykły katalog (nie submoduł, nie zmienna środowiskowa), nicków bibliotek nie zmieniamy; firmware w osobnym repo `zmk-config` (jeszcze nie założone); Git LFS na razie nie (największy plik ok. 12 MB).
 
-## Znane problemy (nie naprawiać przy migracji)
+## Znane problemy
 
-- 4 footprinty wskazują nieistniejące modele 3D: `FC-135R_L3.2-W1.5`, `LED0603-RD`, `SOD-723_L1.0-W0.6-P1.4-RD`, `SW-SMD_L3.9-W3.0-P4.45`.
+- 4 footprinty w `easyeda2kicad.pretty` wskazują nieistniejące modele 3D (`FC-135R_L3.2-W1.5`, `LED0603-RD`, `SOD-723_L1.0-W0.6-P1.4-RD`, `SW-SMD_L3.9-W3.0-P4.45`); na płytce controllera używany jest tylko `FC-135R` (stan 2026-11-01).
 - Footprinty Nordica w `lib` różnią się od oryginałów w `reference/nordic/` (wersja robocza vs oryginał).
 
-## Faza 2 (praca właściciela, audyt po każdym kroku)
+## Bieżący etap (2026-11-01)
 
-- Naniesienie wpisów „Do naniesienia” z `docs/CHANGELOG.md` w schemacie.
-- Łącze MB ↔ DB: w schemacie od 2026-10-17 (A10): J9 = strona MB, J8 = strona DB (poza BOM/CPL), sieci DB z prefiksem `DB_`. Do zrobienia: footprint krawędziowy J8, drugi obrys DB z mouse bites, sprawdzenie numeracji na modelu 3D.
-- Membrana: ogony 18 i 6 styków (pinout lustrzany do J4/J7, 24. styk GND wg I5), stackup i reguły FPC, obrys z Onshape. Schemat matrycy już jest w projekcie.
+Schemat controllera kompletny (CHANGELOG A1–A15), BOM pod JLC zamknięty (A14), plan testów w HARDWARE_DECISIONS. Teraz PCB: Board Setup pod JLC, obrys MB i DB, rozmieszczenie, routing. Membrana: ogony 18 i 6 styków (pinout lustrzany do J4/J7, 24. styk GND wg I5), stackup i reguły FPC, obrys z Onshape.

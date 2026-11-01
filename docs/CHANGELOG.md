@@ -1,6 +1,6 @@
 # Changelog projektu: IBM Model M SSK
 
-Dziennik zatwierdzonych decyzji i zmian na schemacie kontrolera. Wpisy z 11.10.2026 obejmują ramy architektury oraz bloki PMIC, MCU, interfejsów, złącze rozszerzeń i ustawienia firmware'u; żadna z tych zmian nie jest jeszcze naniesiona w KiCadzie. Od 2026-10-17 źródłem prawdy jest ten plik w repo; dokument w Claude Docs to archiwum ze stanu 11.10 (rev 17).
+Dziennik zatwierdzonych decyzji i zmian na schemacie kontrolera. Wpisy z 11.10.2026 obejmują ramy architektury oraz bloki PMIC, MCU, interfejsów, złącze rozszerzeń i ustawienia firmware'u; wszystkie zostały naniesione w schemacie do 2026-10-26 (statusy w tabeli). Od 2026-10-17 źródłem prawdy jest ten plik w repo; dokument w Claude Docs to archiwum ze stanu 11.10 (rev 17).
 
 Status „Do naniesienia" oznacza decyzję zatwierdzoną, której nie ma jeszcze w plikach KiCada. Oznaczenia elementów według netlisty z 11.10.2026.
 

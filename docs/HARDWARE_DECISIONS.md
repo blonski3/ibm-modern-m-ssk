@@ -50,7 +50,7 @@ Układ pracuje w konfiguracji 1 z datasheetu ograniczonej do jednej przetwornicy
 | 7 GPIO0, 8 GPIO1 | GPIO0 do nRF52840 jako przerwanie; GPIO1 z nRF52840 jako włącznik LOADSW1 | Tryb GPOIRQ zgłasza zdarzenia VBUS, CC i ładowarki | Rozdz. 6.6, s. 89–92 |
 | 15 SHPHLD | Niepodłączony, punkt testowy | Wewnętrzny pull-up 50 kΩ; bez przycisku z trybu Ship wychodzi się przez podłączenie VBUS | Rozdz. 7.4, s. 121; tab. 32, s. 122 |
 | 28 LSIN1 | VSYS | Wejście przełącznika obciążenia, do 100 mA | Tab. 22, s. 75 |
-| 29 LSOUT1 | C33 1 µF do GND, przełączane zasilanie diody WS2812C-2020 na MB | Firmware może odciąć zasilanie diody | Rys. 61 (C14), s. 162 |
+| 29 LSOUT1 | C33 1 µF do GND, przełączane zasilanie diody WS2812B-2020-V6 (D2) na MB | Firmware może odciąć zasilanie diody | Rys. 61 (C14), s. 162 |
 | 30 LSIN2, 31 LSOUT2 | Do GND | Nieużywany przełącznik | Rys. 61, s. 162 |
 | 25–27 LED0–LED2 | Niepodłączone | Wolne wyjścia 5 mA, wysoka impedancja w stanie wyłączonym | Rozdz. 6.2.7, s. 31 |
 | 33 AVSS | GND | Pad termiczny i masa analogowa | Tab. 34, s. 155 |
@@ -67,9 +67,9 @@ Wszystkie elementy spełniają wymagania datasheetu.
 | C32 (VBUSOUT) | 1 µF, 50 V, X7R | 1,0 µF, wymagany także przy nieużywanym pinie | Tab. 39 (C5); rozdz. 6.1.5 | Spełnia |
 | C28 (VBAT) | Yageo CC0603KRX5R8BB225: 2,2 µF ±10%, 25 V, X5R | 2,2 µF | Tab. 39 (C6) | Spełnia |
 | C33 (LSOUT1) | 1 µF, 50 V, X7R | 1,0 µF w trybie przełącznika | Tab. 40 (C14), s. 163 | Spełnia |
-| Kondensator VDDIO | 100 nF, nowy element | 100 nF | Tab. 39 (C13) | Do dodania |
-| Pull-upy SDA/SCL | 2× 4,7 kΩ, nowe elementy | Zależne od prędkości i pojemności magistrali; referencja 10 kΩ | Tab. 39 (R1, R2) | Do dodania |
-| R10 (VSET2) | 470 kΩ, 0402 | 250–500 kΩ, tolerancja ≤ 5% | Tab. 18, s. 50 | Spełnia |
+| C35 (VDDIO) | 100 nF | 100 nF | Tab. 39 (C13) | Spełnia |
+| R11, R12 (pull-upy SDA/SCL) | 2× 4,7 kΩ | Zależne od prędkości i pojemności magistrali; referencja 10 kΩ | Tab. 39 (R1, R2) | Spełnia (od 2026-10-20, S2) |
+| R10 (VSET2) | 470 kΩ, 0603 (C23178) | 250–500 kΩ, tolerancja ≤ 5% | Tab. 18, s. 50 | Spełnia |
 | Q1 | Alpha & Omega AO3401A (LCSC C15127, JLC basic): P-MOSFET −30 V, VGS ±12 V, SOT-23; RDS(on) maks. 85 mΩ przy VGS = −2,5 V | Zabezpieczenie przed odwróconą baterią; dren od strony złącza, RDS(on) ≤ 100 mΩ przy VGS = −2,5 V, prąd ≥ 1 A | Wymaganie własne projektu | Spełnia; dren (pin 3) do J2.1, źródło (2) do VBAT, bramka (1) do GND; symbol `ibm_m:AO3401A`. W schemacie tymczasowo Q2 |
 | J2 | JST PH `S2B-PH-SM4-TB`, 2,0 mm, SMD poziome | Decyzja 2026-10-25: ogniwo kupowane z wtykiem JST PH 2.0 zamiast PicoBlade z LP803040 | Karta JST PH | Spełnia; biegunowość wtyku względem J2.1 (plus) do sprawdzenia przy zakupie ogniwa |
 | BT1 | Akyga LP803040: 1000 mAh, 3,7 V, ładowanie do 4,2 V, standardowo 0,2 C, maks. 1 C, 0–45 °C, PCM (4,30 V / 2,5 V) | Prąd ładowania w zakresie 32–800 mA układu | Karta LP803040; rozdz. 6.2.3, s. 28 | Założenie robocze |
@@ -300,7 +300,7 @@ Wartości dla ogniwa LP803040 i portu USB 2.0; zmienia się je w konfiguracji p�
 | BUCK2 | `regulator-always-on` | Błąd w tym miejscu odcina zasilanie nRF52840 |
 | REG1 nRF52840 | Tryb DC/DC | Na płytce są L2 i L3 |
 | Matryca | `zmk,kscan-gpio-matrix`, `col2row`, 17 kolumn, 6 wierszy | Katody diod na liniach ROW |
-| Reset | P0.18 jako nRESET | Przycisk SW90 i złącze J10 |
+| Reset | P0.18 jako nRESET | Przycisk SW1 i złącze J10 |
 | Zegar LF | Kwarc 32,768 kHz, 20 ppm | Y2 |
 
 ### Ograniczenia
@@ -408,9 +408,9 @@ Oznaczenie testów radiowych R1–R5 nie ma związku z rezystorami R1–R3 na sc
 - [ ] Złącza matrycy: wersja bez zatrzasku czy z zatrzaskiem
 - [x] Dopasowanie RF: czteroelementowe z konfiguracji 7 (2026-10-25, M5)
 - [ ] Karta WS2812B-2020-V6: próg VIH, prąd spoczynkowy, minimalne VDD
-- [ ] Footprint NT1 (net-tie PVSS2 → GND) do narysowania przy PCB
+- [ ] Footprint NT1 (net-tie PVSS2 → GND) do narysowania przy PCB (teraz `NetTie-2_THT_Pad0.3mm`)
 - [ ] Linia 50 Ω od dopasowania do złącza U.FL policzona dla docelowego stackupu; pomiar toru analizatorem
-- [ ] Numery pinów nRF52840 dla matrycy, SDA, SCL, przerwania i diody (przy routingu)
+- [ ] Numery pinów nRF52840 dla COL/ROW: ewentualne przetasowanie pod J4/J7 przy routingu (SDA, SCL, PMIC_INT, LED_EN, RGB_DIN przypisane 2026-10-21: P5, F1, F2, I2)
 - [ ] Pinout kabla Tag-Connect: potwierdzenie, że pin 3 to nRESET
 - [ ] Czy wewnętrzne Rd na CC działa przy całkowicie rozładowanej baterii (pytanie do Nordica)
 - [ ] Obsługa detekcji CC i braku NTC (`thermistor-ohms = 0`) w sterowniku Zephyra używanym przez ZMK (blok Firmware)
@@ -429,12 +429,12 @@ Oznaczenie testów radiowych R1–R5 nie ma związku z rezystorami R1–R3 na sc
 ### Dopisane 2026-10-17 (porządki, do rozstrzygnięcia)
 
 - [ ] Ładowanie bez NTC: nPM1300_PS_v1.3 rozdz. 3.4 wymaga wtedy bezpiecznika termicznego w pakiecie; karta LP803040 wymienia tylko PCM (4,30 V / 2,5 V). Potwierdzić bezpiecznik w ogniwie albo wrócić do NTC 10 kΩ przy ogniwie (dotyczy P7)
-- [x] WS2812C-2020 z LSOUT1/VSYS: VSYS nie jest regulowane i przy VBUS ma ok. 5 V (nPM1300_PS_v1.3 rozdz. 6.1.1); przy VIH = 0,7·VDD próg ok. 3,5 V > 3,3 V z nRF. Sprawdzić VIH w karcie WS2812C-2020; ewentualnie translator lub inne zasilanie diody (dotyczy I2). Rozstrzygnięte: karta podaje VIH min. 2,7 V niezależnie od VDD, translator niepotrzebny (tabela „Dioda statusu”)
+- [x] WS2812C-2020 z LSOUT1/VSYS: VSYS nie jest regulowane i przy VBUS ma ok. 5 V (nPM1300_PS_v1.3 rozdz. 6.1.1); przy VIH = 0,7·VDD próg ok. 3,5 V > 3,3 V z nRF. Sprawdzić VIH w karcie WS2812C-2020; ewentualnie translator lub inne zasilanie diody (dotyczy I2). Rozstrzygnięte: karta podaje VIH min. 2,7 V niezależnie od VDD, translator niepotrzebny (tabela „Dioda statusu”). Dotyczy karty WS2812C; dla zamontowanej WS2812B-2020-V6 sprawdzenie w pozycji „Karta WS2812B-2020-V6” wyżej
 - [ ] Tętnienia BUCK2: obliczenie ΔI_L dotyczy trybu PWM, a przy obciążeniu ok. 16 mA przetwornica pracuje w trybie histerezowym (PWM od ok. 90 mA wg raportu wykonalności z 11.10, do potwierdzenia w datasheecie); przeliczyć lub zmierzyć do rozdziału pracy
 - [ ] VSET2: zostaje 3,3 V czy 3,0 V (sugestia z raportu wykonalności z 11.10)
 - [ ] Zakres pracy: czy haptyka i akcelerometr powstają w ramach pracy, czy tylko złącze J3 jako kierunek rozwoju
 - [ ] Membrana FPC: jeden arkusz czy segmenty; potrzebny obrys z ogonami (limit JLC 234 × 490 mm, do 250 × 600 mm po uzgodnieniu). Bolt-mod wykonany, rysunki membrany istnieją
-- [ ] BOM sprzed audytu: brak J4 przy obecnym J7, J5 726386-2 bez opisu w dokumentach, C10 = NC a dokumenty mówią o nieobsadzonym C22
+- [x] BOM sprzed audytu: brak J4 przy obecnym J7, J5 726386-2 bez opisu w dokumentach, C10 = NC a dokumenty mówią o nieobsadzonym C22. Rozstrzygnięte: J4 i J7 w schemacie, J5 jako „Backplate GND”, C10 i C13 usunięte, C22 usunięty przy config 7 (A12, M5, A14)
 - [ ] Harmonogram: raport wykonalności z 11.10 zakładał zamówienie rev A do 2026-11-09 i działającą SSK bez kabla do 2026-12-08; nie jest zatwierdzony
 
 ### Dopisane 2026-10-31 (weryfikacja prototypu)
