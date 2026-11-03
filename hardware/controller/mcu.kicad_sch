@@ -11774,13 +11774,13 @@
 				)
 			)
 		)
-		(property "Value" "VDD_NRF"
+		(property "Value" "+3V3_NRF"
 			(at 120.65 62.23 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 0.889 0.889)
+					(size 0.635 0.635)
 				)
 			)
 		)

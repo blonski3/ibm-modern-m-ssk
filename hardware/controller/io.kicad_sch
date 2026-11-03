@@ -7070,13 +7070,15 @@
 				)
 			)
 		)
-		(property "Value" "VDD_NRF"
+		(property "Value" "+3V3_NRF"
 			(at 22.86 176.8475 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 0.889 0.889)
+					(thickness 0.1778)
+					(bold yes)
 				)
 				(justify right)
 			)
@@ -10465,7 +10467,7 @@
 				)
 			)
 		)
-		(property "Value" "VDD_NRF"
+		(property "Value" "+3V3_NRF"
 			(at 102.87 176.8475 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10545,7 +10547,7 @@
 				)
 			)
 		)
-		(property "Value" "VDD_NRF"
+		(property "Value" "+3V3_NRF"
 			(at 105.41 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14566,7 +14568,7 @@
 				)
 			)
 		)
-		(property "Value" "VDD_NRF"
+		(property "Value" "+3V3_NRF"
 			(at 99.06 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)

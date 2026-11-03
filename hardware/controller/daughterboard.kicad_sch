@@ -3093,7 +3093,7 @@
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 0.889 0.889)
+					(size 0.635 0.635)
 				)
 			)
 		)
@@ -3626,7 +3626,7 @@
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 0.889 0.889)
+					(size 0.635 0.635)
 				)
 			)
 		)
@@ -3681,9 +3681,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "397b9069-e64e-4cba-badc-254662d672d6")
@@ -4976,7 +4976,7 @@
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 0.889 0.889)
+					(size 0.635 0.635)
 				)
 				(justify right)
 			)
@@ -5055,7 +5055,7 @@
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 0.889 0.889)
+					(size 0.635 0.635)
 				)
 			)
 		)
@@ -5128,14 +5128,13 @@
 			)
 		)
 		(property "Value" "DB_VBUS"
-			(at 134.62 85.4075 0)
+			(at 132.08 82.55 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 0.889 0.889)
+					(size 0.635 0.635)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" ""
