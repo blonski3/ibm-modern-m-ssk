@@ -5221,9 +5221,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(in_pos_files no)
+		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1a6b6e4c-4655-4cd8-b961-18ea48aa90ad")
@@ -5237,7 +5237,7 @@
 				)
 			)
 		)
-		(property "Value" "JST-PH-1x02_P2.00mm"
+		(property "Value" "MOLEX 532610271"
 			(at 83.82 60.96 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5247,7 +5247,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ibm_bs:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal"
+		(property "Footprint" "ibm_bs:Molex_PicoBlade_53261-0271_1x02-1MP_P1.25mm_Horizontal"
 			(at 83.82 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -5467,7 +5467,7 @@
 				)
 			)
 		)
-		(property "PART NUMBER" ""
+		(property "PART NUMBER" "MOLEX 532610271"
 			(at 83.82 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -5589,6 +5589,17 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 83.82 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C177225"
 			(at 83.82 64.77 0)
 			(hide yes)
 			(show_name no)

@@ -763,26 +763,20 @@
         },
         {
           "group_by": false,
-          "label": "#",
-          "name": "${ITEM_NUMBER}",
+          "label": "COMPONENT CLASS",
+          "name": "COMPONENT CLASS",
           "show": false
         },
         {
           "group_by": false,
-          "label": "Sim.Pins",
-          "name": "Sim.Pins",
+          "label": "COMPONENT STATUS",
+          "name": "COMPONENT STATUS",
           "show": false
         },
         {
           "group_by": false,
-          "label": "Sim.Device",
-          "name": "Sim.Device",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Sim.Pin",
-          "name": "Sim.Pin",
+          "label": "COMPONENTLINK1DESCRIPTION",
+          "name": "COMPONENTLINK1DESCRIPTION",
           "show": false
         },
         {
@@ -823,8 +817,8 @@
         },
         {
           "group_by": false,
-          "label": "ARTIKKELNR NOCA",
-          "name": "ARTIKKELNR NOCA",
+          "label": "ASSEMBLY",
+          "name": "ASSEMBLY",
           "show": false
         },
         {
@@ -849,6 +843,12 @@
           "group_by": false,
           "label": "PAD COUNT",
           "name": "PAD COUNT",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "AUTHOR",
+          "name": "AUTHOR",
           "show": false
         },
         {
@@ -907,20 +907,26 @@
         },
         {
           "group_by": false,
-          "label": "COMPONENT STATUS",
-          "name": "COMPONENT STATUS",
+          "label": "Sim.Device",
+          "name": "Sim.Device",
           "show": false
         },
         {
           "group_by": false,
-          "label": "COMPONENT CLASS",
-          "name": "COMPONENT CLASS",
+          "label": "Sim.Pin",
+          "name": "Sim.Pin",
           "show": false
         },
         {
           "group_by": false,
-          "label": "ASSEMBLY",
-          "name": "ASSEMBLY",
+          "label": "Sim.Pins",
+          "name": "Sim.Pins",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
           "show": false
         },
         {
@@ -931,18 +937,12 @@
         },
         {
           "group_by": false,
-          "label": "AUTHOR",
-          "name": "AUTHOR",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "COMPONENTLINK1DESCRIPTION",
-          "name": "COMPONENTLINK1DESCRIPTION",
+          "label": "ARTIKKELNR NOCA",
+          "name": "ARTIKKELNR NOCA",
           "show": false
         }
       ],
-      "filter_string": "R",
+      "filter_string": "H",
       "group_symbols": true,
       "include_excluded_from_bom": true,
       "name": "",
@@ -1006,7 +1006,7 @@
         "uuid": "17f6a4a5-fbff-4e30-a1cc-9481373e4968"
       }
     ],
-    "used_designators": "S1,F2-3,R1-4,R10-15,TP1-14,#LABEL1-2,#LABEL6,#LABEL28-46,#LABEL48-62,Q2-3,#PWR2,#PWR7,#PWR12-17,#PWR19-37,#PWR41-116,Y1-4,#FLG1-5,J2-7,J9-18,NT1-2,SW1-2,L1,L4-8,C1-4,C10,C13,C17-19,C22-56,U2,U4-5,D2-3",
+    "used_designators": "#LABEL1-2,#LABEL6,#LABEL28-46,#LABEL48-62,Q2-3,F2-3,TP1-14,R1-4,R10-15,S1,H1-6,#PWR2,#PWR7,#PWR12-17,#PWR19-37,#PWR41-116,Y1-4,J2-7,J9-18,#FLG1-5,L1,L4-8,SW1-2,NT1-2,C1-4,C10,C13,C17-19,C22-56,U2,U4-5,D2-3",
     "variants": []
   },
   "sheets": [

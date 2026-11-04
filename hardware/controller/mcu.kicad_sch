@@ -16319,7 +16319,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+		(property "Footprint" "Inductor_SMD:L_0603_1608Metric"
 			(at 165.1 127 0)
 			(hide yes)
 			(show_name no)
@@ -17531,23 +17531,22 @@
 		(dnp no)
 		(uuid "fad19a52-421e-421d-8ce0-bd8dd1bd8b9d")
 		(property "Reference" "J6"
-			(at 246.38 108.712 0)
+			(at 246.38 107.696 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 0.889 0.889)
 				)
 			)
 		)
-		(property "Value" ""
-			(at 245.8604 107.95 0)
-			(hide yes)
+		(property "Value" "U.FL"
+			(at 246.38 109.22 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 0.635 0.635)
 				)
 			)
 		)
