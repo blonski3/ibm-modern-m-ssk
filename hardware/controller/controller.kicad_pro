@@ -39,9 +39,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.0,
-          "height": 0.8,
-          "width": 0.9
+          "drill": 0.85,
+          "height": 1.1,
+          "width": 1.35
         },
         "silk_line_width": 0.15,
         "silk_text_italic": false,
@@ -50,22 +50,22 @@
         "silk_text_thickness": 0.15,
         "silk_text_upright": false,
         "zones": {
-          "border_display_style": 2,
+          "border_display_style": 0,
           "border_hatch_pitch": 0.5,
-          "corner_radius": 0.0,
-          "corner_smoothing": 0,
+          "corner_radius": 0.5,
+          "corner_smoothing": 2,
           "fill_mode": 0,
           "hatch_gap": 1.5,
           "hatch_orientation": 0.0,
           "hatch_smoothing_level": 0,
           "hatch_smoothing_value": 0.1,
           "hatch_thickness": 1.0,
-          "min_clearance": 0.1,
+          "min_clearance": 0.2,
           "min_island_area": 10.0,
-          "min_thickness": 0.25,
+          "min_thickness": 0.2,
           "pad_connection": 1,
           "remove_islands": 0,
-          "thermal_relief_gap": 0.5,
+          "thermal_relief_gap": 0.125,
           "thermal_relief_spoke_width": 0.5
         }
       },
@@ -178,6 +178,7 @@
         {
           "td_allow_use_two_tracks": true,
           "td_curve_segcount": 0,
+          "td_enabled": false,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
@@ -189,6 +190,7 @@
         {
           "td_allow_use_two_tracks": true,
           "td_curve_segcount": 0,
+          "td_enabled": false,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
@@ -200,6 +202,7 @@
         {
           "td_allow_use_two_tracks": true,
           "td_curve_segcount": 0,
+          "td_enabled": false,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
@@ -212,6 +215,7 @@
       "track_widths": [
         0.0,
         0.15,
+        0.25,
         0.4,
         0.5
       ],
@@ -235,7 +239,7 @@
         "single_track_defaults": {
           "corner_radius_percentage": 80,
           "corner_style": 1,
-          "max_amplitude": 1.0,
+          "max_amplitude": 0.25,
           "min_amplitude": 0.1,
           "single_sided": false,
           "spacing": 0.1
@@ -515,7 +519,8 @@
   },
   "libraries": {
     "pinned_footprint_libs": [
-      "easyeda2kicad"
+      "easyeda2kicad",
+      "ibm_bs"
     ],
     "pinned_symbol_libs": [
       "easyeda2kicad",
@@ -587,8 +592,8 @@
     "meta": {
       "version": 5
     },
-    "net_colors": null,
-    "netclass_assignments": null,
+    "net_colors": {},
+    "netclass_assignments": {},
     "netclass_patterns": [
       {
         "netclass": "USB",
@@ -942,12 +947,12 @@
           "show": false
         }
       ],
-      "filter_string": "H",
+      "filter_string": "J4",
       "group_symbols": true,
       "include_excluded_from_bom": true,
       "name": "",
       "sort_asc": false,
-      "sort_field": "${EXCLUDE_FROM_BOM}"
+      "sort_field": "LCSC Part"
     },
     "bus_aliases": {},
     "connection_grid_size": 50.0,
@@ -1006,7 +1011,7 @@
         "uuid": "17f6a4a5-fbff-4e30-a1cc-9481373e4968"
       }
     ],
-    "used_designators": "#LABEL1-2,#LABEL6,#LABEL28-46,#LABEL48-62,Q2-3,F2-3,TP1-14,R1-4,R10-15,S1,H1-6,#PWR2,#PWR7,#PWR12-17,#PWR19-37,#PWR41-116,Y1-4,J2-7,J9-18,#FLG1-5,L1,L4-8,SW1-2,NT1-2,C1-4,C10,C13,C17-19,C22-56,U2,U4-5,D2-3",
+    "used_designators": "Y1-4,#PWR2,#PWR7,#PWR12-17,#PWR19-37,#PWR41-116,H1-6,S1-2,SW1-2,NT1-2,L1,L4-8,#FLG1-5,J2-7,J9-18,C1-4,C10,C13,C17-19,C22-56,D2-3,U2,U4-5,F2-3,TP1-14,R1-4,R10-15,Q2-3,#LABEL1-2,#LABEL6,#LABEL28-46,#LABEL48-62",
     "variants": []
   },
   "sheets": [
