@@ -45,8 +45,8 @@ Układ pracuje w konfiguracji 1 z datasheetu ograniczonej do jednej przetwornicy
 | 16 VSET2 | R10 470 kΩ do GND | Zakres 250–500 kΩ ustawia 3,3 V przy starcie; pin czytany tylko przy włączeniu | Tab. 18, s. 50 |
 | 17 VSET1 | Do GND | Poniżej 100 Ω BUCK1 jest wyłączony | Tab. 17, s. 50 |
 | 1 VOUT1, 3 SW1, 2 PVSS1 | VOUT1 do VSYS, SW1 niepodłączony, PVSS1 do GND | Zakończenie nieużywanej przetwornicy; wniosek przez symetrię, datasheet pokazuje tylko nieużywany BUCK2 | Rys. 61, s. 162 |
-| 12 VDDIO | VDD_NRF, kondensator 100 nF do GND | Zasila TWI i GPIO; musi być obecny poza trybami Ship i Hibernate | Rozdz. 7.6, s. 125; rys. 59 (C13) |
-| 13 SDA, 14 SCL | Do GPIO nRF52840 i złącza J3, pull-upy 4,7 kΩ do VDDIO | Magistrala konfiguracji i pomiarów, adres 7-bitowy 110 1011 | Rozdz. 7.6, s. 125; rys. 59 (R1, R2) |
+| 12 VDDIO | Wyjście BUCK2 przed R3 (`+3V3_BUCK`), kondensator 100 nF (C35) do GND | Zasila TWI i GPIO; musi być obecny poza trybami Ship i Hibernate; Nordic zaleca zasilanie z wyjścia BUCK/VOUT, dzięki czemu TWI działa też przy wylutowanym R3 (A17) | Rozdz. 7.6, s. 125; rys. 59 (C13) |
+| 13 SDA, 14 SCL | Do GPIO nRF52840 i złącza J3, pull-upy 4,7 kΩ (R11, R12) do VDDIO (`+3V3_BUCK`, A17) | Magistrala konfiguracji i pomiarów, adres 7-bitowy 110 1011 | Rozdz. 7.6, s. 125; rys. 59 (R1, R2) |
 | 7 GPIO0, 8 GPIO1 | GPIO0 do nRF52840 jako przerwanie; GPIO1 z nRF52840 jako włącznik LOADSW1 | Tryb GPOIRQ zgłasza zdarzenia VBUS, CC i ładowarki | Rozdz. 6.6, s. 89–92 |
 | 15 SHPHLD | Niepodłączony, punkt testowy | Wewnętrzny pull-up 50 kΩ; bez przycisku z trybu Ship wychodzi się przez podłączenie VBUS | Rozdz. 7.4, s. 121; tab. 32, s. 122 |
 | 28 LSIN1 | VSYS | Wejście przełącznika obciążenia, do 100 mA | Tab. 22, s. 75 |
@@ -346,7 +346,7 @@ Zatwierdzone i naniesione w schemacie 2026-10-31. Opis funkcji TP na osobnej str
 
 | Element | Sieć | Po co | Referencja |
 | --- | --- | --- | --- |
-| R3 0 Ω 0603 (LCSC C21189) | Rozcina szynę 3,3 V: strona przetwornicy U2.32, L4.2, C29.1 (sieć bez nazwy, „VOUT2”) ↔ VDD_NRF (U1, C6–C8, C12, C14, C35, VDDIO U2.12, R11, R12, J3.2, J10.1) | Normalnie wlutowany. Wylutowany: start BUCK2 bez nRF (Z1), prąd samego nRF52840 przez PPK2 (E1), sprawność i tętnienia BUCK2 z obciążeniem zewnętrznym (Z2, Z3). Przewody wlutowane w pady R3 albo chwytaki; bez listwy i dodatkowych padów (decyzja jakuba: porządek na PCB). VOUT2 jest wejściem sprzężenia zwrotnego, więc regulacja się nie zmienia; C29 zostaje przy pinie 32 | nPM1300 PS v1.3, rys. 59, s. 161 |
+| R3 0 Ω 0603 (LCSC C21189) | Rozcina szynę 3,3 V: strona przetwornicy U2.32, L4.2, C29.1, VDDIO U2.12, C35, R11, R12 (`+3V3_BUCK`, A17) ↔ VDD_NRF `+3V3_NRF` (U1, C6–C8, C12, C14, J3.2, J10.1) | Normalnie wlutowany. Wylutowany: start BUCK2 bez nRF (Z1), prąd samego nRF52840 przez PPK2 (E1), sprawność i tętnienia BUCK2 z obciążeniem zewnętrznym (Z2, Z3). Przewody wlutowane w pady R3 albo chwytaki; bez listwy i dodatkowych padów (decyzja jakuba: porządek na PCB). VOUT2 jest wejściem sprzężenia zwrotnego, więc regulacja się nie zmienia; C29 zostaje przy pinie 32 | nPM1300 PS v1.3, rys. 59, s. 161 |
 | TP1 | SHPHLD | Tryb Ship | nPM1300 PS v1.3, rozdz. 7.4, s. 121 |
 | TP2 | VDD_NRF | Napięcie szyny nRF (przy wylutowanym R3 napięcie przetwornicy mierzyć na padzie R3 od strony C29) | – |
 | TP3 | PVSS2 | Masa do pomiaru tętnień na C29 (tętnienia względem PVSS2, nie odległego GND) | nPM1300 PS v1.3, s. 52 |
