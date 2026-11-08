@@ -494,10 +494,12 @@ class ViaOTronic(pcbnew.ActionPlugin):
                    ncv=[netclass_values(it, board, proj) for it in pads + tracks])
 
         first = sel["ncv"][0]
-        defaults = dict(pitch=round(first["via_d"] + first["clearance"], 3))
+        defaults = dict(pitch=round(first["via_d"] + first["clearance"], 3),
+                        nc=dict(width=first["width"], via_d=first["via_d"],
+                                via_drill=first["via_drill"]))
 
         def key_of(v):
-            return (tuple(sorted((k, str(x)) for k, x in v.items() if k not in ("live", "pos"))),
+            return (tuple(sorted((k, str(x)) for k, x in v.items() if k not in ("live", "pos", "nudge", "more", "nc"))),
                     tuple(_uuid(p) for p in sel["pads"]) + tuple(_uuid(t) for t in sel["tracks"]))
 
         def clear_preview():

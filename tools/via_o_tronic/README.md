@@ -32,6 +32,12 @@ Wymiary wpisuje się na rysunku (rysunek dla kierunku →, opisy w podpowiedziac
 „Bends at pads”: ścieżki, które potrzebują mniej długości, dostają nadmiar na odcinku B
 (załamania w jednej linii przy padach, typowy fanout aQFN); „Bends at vias”: na odcinku A.
 
+Sterowanie bez wpisywania: kółko myszy albo ↑/↓ (PgUp/PgDn = ×10) na dowolnym polu
+zmienia wartość o wybrany krok (0,01–1 mm, wybór obok „Move vias”); Shift = ×10, Ctrl = ÷10.
+Puste pole (auto) startuje od wartości z netclassu. Przyciski „Move vias”: ← → przesuwają
+rząd przelotek bliżej/dalej (B albo D), ↑ ↓ w bok (S). Na polu Angle kółko zmienia kąt o 5°
+(Shift: 45°).
+
 More (zwinięte): linia przelotek, pomiar D, wyrównanie rzędu, własny kąt, profil długości,
 kilka przelotek na pad, parametry autoroute. ↻ wczytuje bieżące zaznaczenie.
 Okno jest niemodalne, podgląd na żywo, OK zostawia wynik, Cancel usuwa; całość to jeden

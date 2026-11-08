@@ -11,7 +11,7 @@ import wx
 from . import geometry as g
 
 NAME = "via-o-tronic"
-VERSION = "2.1"
+VERSION = "2.2"
 
 # direction buttons: label, angle (0 = right, 90 = up)
 DIRS = [("→", 0), ("↗", 45), ("↑", 90), ("↖", 135),
@@ -33,7 +33,12 @@ DEFAULTS = dict(dir=0, angle="", ref=0, line=0, align=0, route=0, slack=0, pitch
                 profile=0, step=0.5, custom="0; 0.5; 1.0",
                 vias_per=1, group_mode=0, group_spacing=0, ar_grid=0.05, ar_margin=1.5,
                 dist=0.3, lead_pad=0.3, lead_via=0.5, shift=0.0, pitch=0.8,
-                via_d=0, via_drill=0, width=0, more=False, live=True)
+                via_d=0, via_drill=0, width=0, more=False, live=True, nudge=2, nc={})
+STEPS = [0.01, 0.05, 0.1, 0.25, 0.5, 1.0]      # mm per wheel notch / arrow click
+# field -> minimum value when stepping (None = no limit)
+MINIMUM = dict(lead_pad=0.0, lead_via=0.0, dist=0.0, pitch=0.05, shift=None, width=0.05,
+               via_d=0.1, via_drill=0.05, step=None, group_spacing=0.0, ar_grid=0.01,
+               ar_margin=0.0)
 
 _last = {}   # last used settings, kept for this KiCad session
 
@@ -253,6 +258,20 @@ class Pictogram(wx.Panel):
         label(self.pitch_mode, "P")
 
 
+class _Mods:
+    """Keyboard modifiers at the time of a button click (Shift = x10, Ctrl = /10)."""
+
+    def __init__(self):
+        st = wx.GetMouseState()
+        self._s, self._c = st.ShiftDown(), st.ControlDown()
+
+    def ShiftDown(self):
+        return self._s
+
+    def ControlDown(self):
+        return self._c
+
+
 # ---------------------------------------------------------------- dialog
 
 class ViaDialog(wx.Dialog):
@@ -317,7 +336,29 @@ class ViaDialog(wx.Dialog):
         box.Add(row, 0, wx.ALL, 8)
 
         self.pic = Pictogram(self, v, self.on_change)
-        box.Add(self.pic, 0, wx.LEFT | wx.RIGHT, 8)
+        box.Add(self.pic, 0, wx.LEFT | wx.RIGHT | wx.ALIGN_CENTER_HORIZONTAL, 8)
+
+        # moving the via row by clicking, and the step used by clicks and the mouse wheel
+        nud = wx.BoxSizer(wx.HORIZONTAL)
+        lab = wx.StaticText(self, label="Move vias")
+        lab.SetForegroundColour(wx.Colour(140, 140, 140))
+        nud.Add(lab, 0, wx.ALIGN_CENTER_VERTICAL | wx.RIGHT, 6)
+        self.nudge_btn = []
+        for ang, tip, key, sign in ((180, "Vias closer (B / D \u2212 step)", "far", -1),
+                                    (90, "Via row up (S + step)", "shift", 1),
+                                    (270, "Via row down (S \u2212 step)", "shift", -1),
+                                    (0, "Vias farther (B / D + step)", "far", 1)):
+            b = wx.BitmapButton(self, bitmap=arrow_bitmap(ang, fg), style=wx.BU_EXACTFIT)
+            b.SetToolTip(tip)
+            b.Bind(wx.EVT_BUTTON, lambda e, k=key, sg=sign: self.nudge(k, sg))
+            nud.Add(b, 0, wx.RIGHT, 1)
+            self.nudge_btn.append(b)
+        self.step_ch = wx.Choice(self, choices=["%g mm" % st for st in STEPS])
+        self.step_ch.SetSelection(min(v.get("nudge", 2), len(STEPS) - 1))
+        self.step_ch.SetToolTip("Step for the arrows and for the mouse wheel / \u2191\u2193 keys on any value.\n"
+                                "Shift = \u00d710, Ctrl = \u00f710")
+        nud.Add(self.step_ch, 0, wx.ALIGN_CENTER_VERTICAL | wx.LEFT, 6)
+        box.Add(nud, 0, wx.TOP | wx.ALIGN_CENTER_HORIZONTAL, 4)
 
         # rarely used options
         self.more = wx.CollapsiblePane(self, label="More",
@@ -363,11 +404,11 @@ class ViaDialog(wx.Dialog):
             ar_grid=num("ar_grid", "Autoroute grid [mm]"),
             ar_margin=num("ar_margin", "Autoroute search margin [mm]"),
         )
-        rows = [("Via line", "line", "D from", "ref", "Align", "align", "Angle", "angle"),
-                ("Length", "profile", "Step", "step", "List", "custom", None, None),
-                ("Vias/pad", "vias_per", "Layout", "group_mode", "Spacing", "group_spacing", None, None),
-                ("Route grid", "ar_grid", "Margin", "ar_margin", None, None, None, None)]
-        grid = wx.FlexGridSizer(cols=8, vgap=4, hgap=4)
+        rows = [("Via line", "line", "D from", "ref", "Align", "align"),
+                ("Length", "profile", "Step", "step", "List", "custom"),
+                ("Vias/pad", "vias_per", "Layout", "group_mode", "Spacing", "group_spacing"),
+                ("Angle", "angle", "Route grid", "ar_grid", "Margin", "ar_margin")]
+        grid = wx.FlexGridSizer(cols=6, vgap=4, hgap=4)
         for r in rows:
             for lab, key in zip(r[0::2], r[1::2]):
                 if key is None:
@@ -406,6 +447,13 @@ class ViaDialog(wx.Dialog):
         self.Bind(wx.EVT_BUTTON, lambda e: self.finish(True), id=wx.ID_OK)
         self.Bind(wx.EVT_BUTTON, lambda e: self.finish(False), id=wx.ID_CANCEL)
         self.Bind(wx.EVT_CLOSE, lambda e: self.finish(False))
+        self.nc = dict(v.get("nc") or {})
+        for key, t in self.pic.ctrl.items():
+            self.spinnable(t, key)
+        for key in ("step", "group_spacing", "ar_grid", "ar_margin"):
+            self.spinnable(self.c[key], key)
+        self.spinnable(self.c["vias_per"], "vias_per", integer=True)
+        self.spinnable(self.c["angle"], "angle", angle=True)
         self.update_enabled()
 
     # -- running without blocking the PCB Editor
@@ -453,6 +501,72 @@ class ViaDialog(wx.Dialog):
         self.dir = k
         self.c["angle"].ChangeValue("")
         self.on_change()
+
+    # -- stepping values with the mouse wheel, arrow keys and the nudge buttons
+    def step_size(self, evt=None):
+        st = STEPS[self.step_ch.GetSelection()]
+        if evt is not None:
+            if evt.ShiftDown():
+                st *= 10
+            elif evt.ControlDown():
+                st /= 10.0
+        return st
+
+    def bump(self, ctrl, key, n, evt=None, integer=False, angle=False):
+        """Add n steps to the value in ctrl (an empty optional field starts from the
+        netclass value, an empty angle from the selected arrow)."""
+        s = ctrl.GetValue().strip().replace(",", ".")
+        try:
+            if s in ("", "auto"):
+                val = DIRS[self.dir][1] if angle else float(self.nc.get(key, 0.0))
+            else:
+                val = float(s)
+        except ValueError:
+            return
+        if integer:
+            val = max(1, int(round(val)) + n)
+            txt = "%d" % val
+        elif angle:
+            val = (val + n * (45.0 if evt is not None and evt.ShiftDown() else 5.0)) % 360
+            txt = "%g" % val
+        else:
+            st = self.step_size(evt)
+            val = round(val + n * st, 4)
+            lo = MINIMUM.get(key)
+            if lo is not None:
+                val = max(lo, val)
+            txt = "%g" % val
+        ctrl.SetValue(txt)            # fires EVT_TEXT -> preview
+        ctrl.SetInsertionPointEnd()
+
+    def spinnable(self, ctrl, key, integer=False, angle=False):
+        def wheel(evt):
+            if not ctrl.IsEnabled():
+                return
+            n = 1 if evt.GetWheelRotation() > 0 else -1
+            self.bump(ctrl, key, n, evt, integer, angle)
+
+        def keys(evt):
+            k = evt.GetKeyCode()
+            n = {wx.WXK_UP: 1, wx.WXK_DOWN: -1, wx.WXK_PAGEUP: 10, wx.WXK_PAGEDOWN: -10}.get(k)
+            if n is None:
+                evt.Skip()
+                return
+            self.bump(ctrl, key, n, evt, integer, angle)
+        ctrl.Bind(wx.EVT_MOUSEWHEEL, wheel)
+        ctrl.Bind(wx.EVT_KEY_DOWN, keys)
+        tip = ctrl.GetToolTipText() if hasattr(ctrl, "GetToolTipText") else ""
+        ctrl.SetToolTip((tip + "\n" if tip else "") + "Scroll or \u2191\u2193 to change")
+
+    def nudge(self, what, sign):
+        """Arrow buttons: move the whole via row by one step."""
+        if what == "shift":
+            ctrl, key = self.pic.ctrl["shift"], "shift"
+        elif ROUTES[self.route.GetSelection()][1] == g.ROUTE_OFFSET:
+            ctrl, key = self.pic.ctrl["lead_via"], "lead_via"
+        else:
+            ctrl, key = self.pic.ctrl["dist"], "dist"
+        self.bump(ctrl, key, sign, _Mods())
 
     def on_more(self, _evt=None):
         _last["more"] = self.more.IsExpanded()
@@ -540,7 +654,7 @@ class ViaDialog(wx.Dialog):
                    group_spacing=fc("group_spacing", True),
                    ar_grid=fc("ar_grid"), ar_margin=fc("ar_margin"),
                    custom=self.c["custom"].GetValue(),
-                   live=self.live.GetValue())
+                   live=self.live.GetValue(), nudge=self.step_ch.GetSelection())
         if raw["vias_per"] < 1 or raw["group_spacing"] < 0:
             raise ValueError("vias/pad")
         if raw["ar_grid"] < 0.01 or raw["ar_margin"] < 0:
