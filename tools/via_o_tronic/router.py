@@ -87,7 +87,7 @@ def segment_clear(obstacles, a, b, half_width, clearance, step):
 # ---------------------------------------------------------------- router
 
 def route(start, goal, obstacles, width, clearance, res=0.05, margin=1.5,
-          max_cells=90000, turn_penalty=0.35, free_radius=0.0):
+          max_cells=90000, turn_penalty=0.35, free_radius=0.0, grows=(1.0, 2.0, 3.5)):
     """Route from start to goal. obstacles must already exclude the track's own net.
     The grid is anchored at start; goal is snapped to the nearest grid node, the snapped
     goal is returned so the caller can move the via there (keeps 45 deg angles).
@@ -96,7 +96,7 @@ def route(start, goal, obstacles, width, clearance, res=0.05, margin=1.5,
     Returns (path [(x, y), ...] with only the corner points, snapped goal) or (None, goal)."""
     hw = width / 2.0
     sx, sy = start
-    for grow in (1.0, 2.0, 3.5):
+    for grow in grows:
         m = margin * grow
         x0, x1 = min(sx, goal[0]) - m, max(sx, goal[0]) + m
         y0, y1 = min(sy, goal[1]) - m, max(sy, goal[1]) + m
@@ -130,6 +130,12 @@ def route(start, goal, obstacles, width, clearance, res=0.05, margin=1.5,
 def find_free_spot(obstacles, anchor, offsets, radius, clearance, res, reach):
     """Nearest point to anchor (on a res grid, up to reach mm away) where every via of
     the group (anchor + offsets) keeps the clearance. Returns the point or None."""
+    ext = reach + radius + max([clearance] + [o.clearance for o in obstacles]) + \
+        max([math.hypot(dx, dy) for dx, dy in offsets] + [0.0])
+    ax, ay = anchor
+    obstacles = [o for o in obstacles if not (o.bbox[2] < ax - ext or o.bbox[0] > ax + ext or
+                                              o.bbox[3] < ay - ext or o.bbox[1] > ay + ext)]
+
     def ok(x, y):
         return all(clear_of(obstacles, x + dx, y + dy, radius, clearance) for dx, dy in offsets)
     if ok(*anchor):
@@ -184,27 +190,90 @@ def _smooth(corners, blocked, W, H):
     return out
 
 
+def _circle_span(cx, cy, r, y):
+    d = r * r - (y - cy) ** 2
+    if d < 0:
+        return None
+    h = math.sqrt(d)
+    return (cx - h, cx + h)
+
+
+def _poly_span(pts, y):
+    """x-interval of a convex polygon on the horizontal line y (or None)."""
+    xs = []
+    n = len(pts)
+    for k in range(n):
+        (x0, y0), (x1, y1) = pts[k], pts[(k + 1) % n]
+        if (y0 <= y <= y1) or (y1 <= y <= y0):
+            if y1 == y0:
+                xs += [x0, x1]
+            else:
+                xs.append(x0 + (x1 - x0) * (y - y0) / (y1 - y0))
+    return (min(xs), max(xs)) if xs else None
+
+
+def _shapes(o, need):
+    """The obstacle grown by `need`, as a list of convex pieces (circles and polygons)
+    whose union is the blocked area."""
+    k, d = o.kind, o.d
+    if k == "circle":
+        return [("c", (d[0], d[1], d[2] + need))]
+    if k == "seg":
+        ax, ay, bx, by, hw = d
+        r = hw + need
+        L = math.hypot(bx - ax, by - ay)
+        out = [("c", (ax, ay, r)), ("c", (bx, by, r))]
+        if L > 1e-9:
+            nx, ny = -(by - ay) / L * r, (bx - ax) / L * r
+            out.append(("p", [(ax + nx, ay + ny), (bx + nx, by + ny), (bx - nx, by - ny), (ax - nx, ay - ny)]))
+        return out
+    cx, cy, hw, hh, _ang = d
+    c, s = o._cs
+
+    def corner(u, v):          # local (u, v) -> board, same rotation as Obstacle.dist
+        return (cx + u * c + v * s, cy - u * s + v * c)
+    out = []
+    for w, h in ((hw + need, hh), (hw, hh + need)):
+        out.append(("p", [corner(-w, -h), corner(w, -h), corner(w, h), corner(-w, h)]))
+    for u in (-hw, hw):
+        for v in (-hh, hh):
+            px, py = corner(u, v)
+            out.append(("c", (px, py, need)))
+    return out
+
+
 def _rasterize(obstacles, sx, sy, r, i0, j0, W, H, hw, clearance):
+    """Grid of blocked cells: a cell is blocked when a track of half width hw centred
+    there would come closer than the clearance to an obstacle. Row spans are computed
+    analytically per convex piece (much faster than a distance test per cell)."""
     blocked = bytearray(W * H)
     wx0, wy0 = sx + i0 * r, sy + j0 * r
     wx1, wy1 = sx + (i0 + W - 1) * r, sy + (j0 + H - 1) * r
+    eps = 1e-6
     for o in obstacles:
-        need = hw + max(clearance, o.clearance)
+        need = hw + max(clearance, o.clearance) - eps
         b = o.bbox
         bx0, by0, bx1, by1 = b[0] - need, b[1] - need, b[2] + need, b[3] + need
         if bx1 < wx0 or bx0 > wx1 or by1 < wy0 or by0 > wy1:
             continue
-        ia = max(0, int(math.floor((bx0 - sx) / r)) - i0)
-        ib = min(W - 1, int(math.ceil((bx1 - sx) / r)) - i0)
+        pieces = _shapes(o, need)
         ja = max(0, int(math.floor((by0 - sy) / r)) - j0)
         jb = min(H - 1, int(math.ceil((by1 - sy) / r)) - j0)
-        dist, lim = o.dist, need - 1e-6
         for jj in range(ja, jb + 1):
             y = sy + (jj + j0) * r
-            row = jj * W
-            for ii in range(ia, ib + 1):
-                if not blocked[row + ii] and dist(sx + (ii + i0) * r, y) < lim:
-                    blocked[row + ii] = 1
+            lo, hi = None, None
+            for kind, data in pieces:
+                sp = _circle_span(data[0], data[1], data[2], y) if kind == "c" else _poly_span(data, y)
+                if sp is not None:
+                    lo = sp[0] if lo is None else min(lo, sp[0])
+                    hi = sp[1] if hi is None else max(hi, sp[1])
+            if lo is None:
+                continue
+            ia = max(0, int(math.ceil((lo - sx) / r - 1e-9)) - i0)
+            ib = min(W - 1, int(math.floor((hi - sx) / r + 1e-9)) - i0)
+            if ia <= ib:
+                row = jj * W
+                blocked[row + ia:row + ib + 1] = b"\x01" * (ib - ia + 1)
     return blocked
 
 

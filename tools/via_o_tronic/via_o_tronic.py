@@ -280,50 +280,102 @@ def _shift(r, dx, dy):
     r["bars"] = [(mv(a), mv(b)) for a, b in r["bars"]]
 
 
-def autoroute(board, result, sources, meta, sizes, ncv, v, skip, warnings):
-    """Replace the planned paths by routed ones; moves each via group onto the router grid."""
+class ObstacleCache:
+    """Obstacles per copper layer, collected once for a window and reused by every
+    preview while the dialog is open (the board is not edited meanwhile; our own preview
+    items are skipped). A request outside the cached window collects again, larger."""
+
+    def __init__(self, board):
+        self.board = board
+        self.data = {}             # layer -> (window, obstacles)
+
+    def get(self, layer, window, skip):
+        w = self.data.get(layer)
+        if w is not None:
+            (x0, y0, x1, y1), obs = w
+            if x0 <= window[0] and y0 <= window[1] and x1 >= window[2] and y1 >= window[3]:
+                return obs
+        big = (window[0] - 3, window[1] - 3, window[2] + 3, window[3] + 3)
+        obs = collect_obstacles(self.board, layer, big, skip)
+        self.data[layer] = (big, obs)
+        return obs
+
+
+def _near(obs, pts, pad):
+    """Obstacles whose bounding box comes within pad of the bounding box of pts."""
+    x0 = min(q[0] for q in pts) - pad
+    y0 = min(q[1] for q in pts) - pad
+    x1 = max(q[0] for q in pts) + pad
+    y1 = max(q[1] for q in pts) + pad
+    return [o for o in obs if not (o.bbox[2] < x0 or o.bbox[0] > x1 or o.bbox[3] < y0 or o.bbox[1] > y1)]
+
+
+def _clear_path(obs, r, width, via_d, clr, res):
+    pts = list(r["path"]) + list(r["vias"])
+    local = _near(obs, pts, max(width, via_d) + clr + 0.5)
+    step = max(0.01, min(res, width / 2.0))
+    for a, b in list(zip(r["path"], r["path"][1:])) + list(r["bars"]):
+        if not rt.segment_clear(local, a, b, width / 2.0, clr, step):
+            return False
+    return all(rt.clear_of(local, q[0], q[1], via_d / 2.0, clr) for q in r["vias"])
+
+
+def route_around(board, result, sources, meta, sizes, ncv, v, skip, warnings, cache,
+                 only_colliding):
+    """Autoroute (only_colliding=False) or obstacle avoidance (True): a planned track
+    that would hit copper of another net (pads, tracks, vias, NPTH, board edge, the other
+    planned vias) is rerouted on the grid router, and a colliding via is moved to the
+    nearest free spot. Tracks that are clear keep their planned shape."""
     pts = [(s["x"], s["y"]) for s in sources] + [q for r in result for q in r["vias"]]
     m = v["ar_margin"] * 3.5 + 1.0
     window = (min(q[0] for q in pts) - m, min(q[1] for q in pts) - m,
               max(q[0] for q in pts) + m, max(q[1] for q in pts) + m)
-    cache = {}
     order = sorted(range(len(result)), key=lambda k: math.dist(
         (sources[k]["x"], sources[k]["y"]), result[k]["via"]))     # shortest first
     added = {}                  # layer -> obstacles created by this run
+    rerouted = []
     for k in order:
         r, (net, layer), (via_d, _drill, width), n = result[k], meta[k], sizes[k], ncv[k]
-        if layer not in cache:
-            cache[layer] = collect_obstacles(board, layer, window, skip)
+        base = cache.get(layer, window, skip)
         code = net.GetNetCode()
-        obs = rt.blocking(cache[layer] + added.get(layer, []), code)
-        start = (sources[k]["x"], sources[k]["y"])
-        offs = [(q[0] - r["via"][0], q[1] - r["via"][1]) for q in r["vias"]]
-        spot = rt.find_free_spot(obs, r["via"], offs, via_d / 2.0, n["clearance"],
-                                 v["ar_grid"], v["ar_margin"])
-        if spot is None:
-            warnings.append("Item %d: no free place for the via within the search margin." % (k + 1))
-        elif spot != r["via"]:
-            _shift(r, spot[0] - r["via"][0], spot[1] - r["via"][1])
-        path, snap = rt.route(start, r["via"], obs, width, n["clearance"], res=v["ar_grid"],
-                              margin=v["ar_margin"])
-        if path is None:
-            warnings.append("Item %d: autoroute found no path, used the 45 deg route." % (k + 1))
+        # vias planned for the other items count as obstacles too
+        planned = [rt.Obstacle("circle", (q[0], q[1], sizes[j][0] / 2.0), meta[j][0].GetNetCode())
+                   for j in range(len(result)) if j != k for q in result[j]["vias"]]
+        obs = rt.blocking(base + added.get(layer, []) + planned, code)
+        if only_colliding and _clear_path(obs, r, width, via_d, n["clearance"], v["ar_grid"]):
+            pass
         else:
-            _shift(r, snap[0] - r["via"][0], snap[1] - r["via"][1])
-            r["path"] = path
-        for q in r["vias"]:
-            if not rt.clear_of(rt.blocking(cache[layer], code), q[0], q[1], via_d / 2.0, n["clearance"]):
-                warnings.append("Item %d: a via is closer than the clearance to another net (check DRC)." % (k + 1))
-                break
+            start = (sources[k]["x"], sources[k]["y"])
+            offs = [(q[0] - r["via"][0], q[1] - r["via"][1]) for q in r["vias"]]
+            spot = rt.find_free_spot(obs, r["via"], offs, via_d / 2.0, n["clearance"],
+                                     v["ar_grid"], v["ar_margin"])
+            if spot is None:
+                warnings.append("Item %d: no free place for the via within the search margin." % (k + 1))
+            elif spot != r["via"]:
+                _shift(r, spot[0] - r["via"][0], spot[1] - r["via"][1])
+            path, snap = rt.route(start, r["via"], obs, width, n["clearance"], res=v["ar_grid"],
+                                  grows=(1.0,) if only_colliding else (1.0, 2.0, 3.5),
+                                  margin=v["ar_margin"])
+            if path is None:
+                warnings.append("Item %d: no way around the obstacles, kept the planned track." % (k + 1))
+            else:
+                _shift(r, snap[0] - r["via"][0], snap[1] - r["via"][1])
+                r["path"] = path
+                rerouted.append(k + 1)
+            for q in r["vias"]:
+                if not rt.clear_of(rt.blocking(base, code), q[0], q[1], via_d / 2.0, n["clearance"]):
+                    warnings.append("Item %d: a via is closer than the clearance to another net (check DRC)." % (k + 1))
+                    break
         new = added.setdefault(layer, [])
         for a, b in list(zip(r["path"], r["path"][1:])) + list(r["bars"]):
             new.append(rt.Obstacle("seg", (a[0], a[1], b[0], b[1], width / 2.0), code))
         for q in r["vias"]:
             for L in set(list(added.keys()) + [pcbnew.F_Cu, pcbnew.B_Cu]):
                 added.setdefault(L, []).append(rt.Obstacle("circle", (q[0], q[1], via_d / 2.0), code))
+    return sorted(rerouted)
 
 
-def build(board, pads, tracks, ncv, v, skip=frozenset()):
+def build(board, pads, tracks, ncv, v, skip=frozenset(), cache=None):
     """Create (but do not keep) tracks and vias for settings v. Returns (items, warnings)."""
     # 0 (empty field) = take the value from the item's netclass
     sizes = [(v["via_d"] or n["via_d"], v["via_drill"] or n["via_drill"], v["width"] or n["width"])
@@ -367,8 +419,12 @@ def build(board, pads, tracks, ncv, v, skip=frozenset()):
                               vias_per=count, group_spacing=gspace, group_mode=gmode,
                               lead_pad=v["lead_pad"], lead_via=v["lead_via"],
                               slack=v["slack_id"], shift=v["shift"])
-    if v["route"] == g.ROUTE_AUTO:
-        autoroute(board, result, sources, meta, sizes, ncv, v, skip, warnings)
+    rerouted = []
+    if v["route"] == g.ROUTE_AUTO or v.get("avoid"):
+        if cache is None:
+            cache = ObstacleCache(board)
+        rerouted = route_around(board, result, sources, meta, sizes, ncv, v, skip, warnings,
+                                cache, only_colliding=v["route"] != g.ROUTE_AUTO)
 
     P = lambda xy: pcbnew.VECTOR2I(pcbnew.FromMM(xy[0]), pcbnew.FromMM(xy[1]))
     created = []
@@ -398,6 +454,11 @@ def build(board, pads, tracks, ncv, v, skip=frozenset()):
                                   "/".join("%g" % w for w in widths))
     if count > 1:
         info += ", group %g mm" % gspace
+    lengths = [sum(math.dist(a, b) for a, b in zip(r["path"], r["path"][1:])) for r in result]
+    lo, hi = min(lengths), max(lengths)
+    info += (", L %.2f mm" % lo) if hi - lo < 0.005 else (", L %.2f\u2013%.2f mm" % (lo, hi))
+    if rerouted and v["route"] != g.ROUTE_AUTO:
+        info += ", avoided: %s" % ",".join(str(k) for k in rerouted)
     return created, warnings, info
 
 
@@ -483,7 +544,7 @@ class ViaOTronic(pcbnew.ActionPlugin):
 
     def _run(self):
         board = pcbnew.GetBoard()
-        state = dict(items=[], warnings=[], key=None, skip=set())
+        state = dict(items=[], warnings=[], key=None, skip=set(), cache=ObstacleCache(board))
         pads, tracks = selection(board, state["skip"])
         if not pads and not tracks:
             wx.MessageBox("Select pads or track segments that have a net.", NAME)
@@ -510,7 +571,7 @@ class ViaOTronic(pcbnew.ActionPlugin):
         def make(v):
             clear_preview()
             state["items"], state["warnings"], info = build(
-                board, sel["pads"], sel["tracks"], sel["ncv"], v)
+                board, sel["pads"], sel["tracks"], sel["ncv"], v, cache=state["cache"])
             state["skip"] = set(_uuid(it) for it in state["items"])
             state["key"] = key_of(v)
             return info

@@ -17,25 +17,32 @@ Tools → External Plugins → Refresh Plugins.
 ## Okno
 
 Na górze: strzałki kierunku, tryb prowadzenia i (dla A / 45° / B) gdzie wyrównać załamania.
-Wymiary wpisuje się na rysunku (rysunek dla kierunku →, opisy w podpowiedziach):
+Rysunek (zawsze dla kierunku →) pokazuje wymiary literami, wartości wpisuje się w kolumnie
+obok; najechanie na pole podświetla jego wymiar.
 
 | Pole | Znaczenie |
 |---|---|
-| A | prosty odcinek od krawędzi pada do załamania 45° |
-| B | prosty odcinek od załamania do środka przelotki |
-| D | odległość pad → rząd przelotek (tryby bez A/B; sposób pomiaru w More) |
-| P | raster przelotek: Auto (via + clearance z netclassu), As pins, Custom |
+| D | odległość pad → rząd przelotek (sposób pomiaru: More → D from) |
+| A | „Bends at pads”: prosty odcinek od krawędzi pada do załamania 45° |
+| B | „Bends at vias”: prosty odcinek od załamania do środka przelotki |
 | S | przesunięcie rzędu przelotek w bok; + = w lewo od kierunku (dla → w górę) |
+| P | raster przelotek: Auto (via + clearance z netclassu), As pins, Custom |
 | W | szerokość ścieżki; puste = z netclassu |
 | ⌀ / ○ | średnica / wiercenie przelotki; puste = z netclassu |
+| L | odczyt: długość ścieżek pad → via (najkrótsza–najdłuższa) |
 
-„Bends at pads”: ścieżki, które potrzebują mniej długości, dostają nadmiar na odcinku B
-(załamania w jednej linii przy padach, typowy fanout aQFN); „Bends at vias”: na odcinku A.
+D i S ustawiają położenie busa; skos 45° dopasowuje się sam (zmiana S nie odsuwa rzędu).
+Gdy S jest za duże względem D, ścieżka nie zmieści się w 45° i jest ostrzeżenie.
+
+„Avoid” (domyślnie włączone): ścieżka, która wpadłaby na pad, ścieżkę albo przelotkę innej
+sieci (także planowane przelotki sąsiadów, NPTH, krawędź płytki), jest prowadzona routerem
+dookoła, a kolidująca przelotka przesuwana na najbliższe wolne miejsce. Numery takich
+ścieżek pokazuje status („avoided: …”). Przeszkody są zbierane raz na otwarcie okna.
 
 Sterowanie bez wpisywania: kółko myszy albo ↑/↓ (PgUp/PgDn = ×10) na dowolnym polu
 zmienia wartość o wybrany krok (0,01–1 mm, wybór obok „Move vias”); Shift = ×10, Ctrl = ÷10.
 Puste pole (auto) startuje od wartości z netclassu. Przyciski „Move vias”: ← → przesuwają
-rząd przelotek bliżej/dalej (B albo D), ↑ ↓ w bok (S). Na polu Angle kółko zmienia kąt o 5°
+rząd przelotek bliżej/dalej (D), ↑ ↓ w bok (S). Na polu Angle kółko zmienia kąt o 5°
 (Shift: 45°).
 
 More (zwinięte): linia przelotek, pomiar D, wyrównanie rzędu, własny kąt, profil długości,

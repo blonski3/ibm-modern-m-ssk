@@ -96,10 +96,10 @@ def plan(sources, angle_deg, dist, pitch, via_d,
     profile/step/custom: per-item extra track length, see profile_offsets().
     vias_per/group_spacing/group_mode: several vias per item, see group_offsets();
     the track from the pad ends at the group anchor, bars join the vias of the group.
-    route=ROUTE_OFFSET: pad -> straight lead_pad (from the pad edge) -> 45 deg jog ->
-    straight lead_via (into the via centre). The via line is placed by the leads, `dist`
-    and `ref` are ignored; on a common line the items that need less length get the
-    difference on the lead named by `slack`.
+    route=ROUTE_OFFSET: the via row is placed like in the other modes (dist, ref, shift);
+    each track is pad -> straight lead -> 45 deg jog -> straight lead -> via. With
+    slack=SLACK_VIA the bends start lead_pad after the pad edge (lead into the via takes
+    the rest); with SLACK_PAD the jog ends lead_via before the via centre.
     shift: moves the whole via row sideways [mm], + = to the left of the fanout direction
     (for "Right" that is up on the screen).
     Returns (list of dict(path=[(x,y),...], via=(x,y), vias=[(x,y),...],
@@ -134,15 +134,9 @@ def plan(sources, angle_deg, dist, pitch, via_d,
         it["sv"] -= shift
 
     # distance along the fanout direction
-    if route == ROUTE_OFFSET:
-        # pad edge + lead from the pad + 45 deg jog (as long as the sideways shift) + lead
-        base = [it["tE"] + max(0.0, lead_pad) + abs(it["sv"] - it["s"]) + max(0.0, lead_via)
-                for it in items]
-        k = 0.0
-    else:
-        # pad edge to via edge (copper gap), pad edge to via centre, or centre to centre
-        k = dist + (via_d / 2.0 if ref == REF_EDGE else 0.0)
-        base = [(it["t0"] if ref == REF_CENTER else it["tE"]) for it in items]
+    # pad edge to via edge (copper gap), pad edge to via centre, or centre to centre
+    k = dist + (via_d / 2.0 if ref == REF_EDGE else 0.0)
+    base = [(it["t0"] if ref == REF_CENTER else it["tE"]) for it in items]
     if line == LINE_COMMON:
         t_line = max(base) + k
         for it in items:
@@ -150,8 +144,6 @@ def plan(sources, angle_deg, dist, pitch, via_d,
     else:
         for it, b in zip(items, base):
             it["tv"] = b + k
-    for it, b in zip(items, base):
-        it["need"] = b + k
 
     # variable via placement: extra length per item, in row order
     for it, extra in zip(order, profile_offsets(n, profile, step, custom)):
@@ -183,14 +175,22 @@ def plan(sources, angle_deg, dist, pitch, via_d,
         if abs(dl) < 1e-6:
             mode = ROUTE_STRAIGHT
         if mode == ROUTE_OFFSET:
-            spare = it["tv"] - it["need"]       # >= 0 unless a profile step is negative
-            lp = max(0.0, lead_pad) + (spare if slack == SLACK_PAD else 0.0)
-            if spare < -1e-6:
-                lp = max(0.0, lp + spare)
-                warnings.append("Item %d: negative profile step shortens the leads." % (it["i"] + 1))
-            t1 = it["tE"] + lp
-            if t1 + abs(dl) > it["tv"] + 1e-6:
-                t1 = max(it["t0"], it["tv"] - abs(dl))
+            jog = abs(dl)
+            if jog > it["tv"] - it["tE"] + 1e-6:
+                warnings.append("Item %d: S too large for D (no room for 45 deg), track is steeper."
+                                % (it["i"] + 1))
+                path = [S, to_xy(it["tE"], it["s"]), V]
+                clean = [path[0]]
+                for q in path[1:]:
+                    if math.dist(q, clean[-1]) > 1e-6:
+                        clean.append(q)
+                out[it["i"]] = dict(path=clean, via=V, vias=it["vias"], bars=it["bars"])
+                continue
+            if slack == SLACK_PAD:
+                t1 = it["tv"] - max(0.0, lead_via) - jog
+            else:
+                t1 = it["tE"] + max(0.0, lead_pad)
+            t1 = min(max(t1, it["tE"]), it["tv"] - jog)
             path = [S, to_xy(t1, it["s"]), to_xy(t1 + abs(dl), it["sv"]), V]
             clean = [path[0]]
             for q in path[1:]:
