@@ -1,4 +1,4 @@
-# Small grid router for the Fanout Vias plugin (no KiCad dependency, testable on its own).
+# Small grid router for the via-o-tronic plugin (no KiCad dependency, testable on its own).
 # Routes one track from a start point to a goal point on a square grid with 0/45/90 deg
 # moves (A* with a turn penalty), keeping a clearance to obstacles of other nets.
 # All values in mm, Y axis points down (as in KiCad).
