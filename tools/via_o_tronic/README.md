@@ -29,7 +29,16 @@ obok; najechanie na pole podświetla jego wymiar.
 | P | raster przelotek: Auto (via + clearance z netclassu), As pins, Custom |
 | W | szerokość ścieżki; puste = z netclassu |
 | ⌀ / ○ | średnica / wiercenie przelotki; puste = z netclassu |
+| Z | Zigzag: o ile dalej stoi co druga przelotka; puste = auto |
 | L | odczyt: długość ścieżek pad → via (najkrótsza–najdłuższa) |
+
+**Vias: Zigzag** — co druga przelotka stoi dalej o **Z**, więc ścieżki mogą mieć gęsty raster P
+(Auto w zygzaku = (via + 2·clearance + ścieżka)/2, żeby ścieżka do dalszej via mieściła się
+między bliższymi). Puste Z = najmniejsze, przy którym sąsiednie via trzymają clearance.
+
+**Log**: problemy są grupowane („Items 1–6: …”) z podpowiedzią, co zmienić („→ raise D by at
+least 0.40 mm”). Przycisk ⚠ N obok statusu otwiera okno logu (Copy kopiuje). Po OK wpis
+(ustawienia, wynik, problemy) dopisuje się do `via_o_tronic.log` obok pliku płytki.
 
 D i S ustawiają położenie busa; skos 45° dopasowuje się sam (zmiana S nie odsuwa rzędu).
 Gdy S jest za duże względem D, ścieżka nie zmieści się w 45° i jest ostrzeżenie.

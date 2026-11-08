@@ -34,14 +34,14 @@ DEFAULTS = dict(dir=0, angle="", ref=0, line=0, align=0, route=0, slack=0, pitch
                 profile=0, step=0.5, custom="0; 0.5; 1.0",
                 vias_per=1, group_mode=0, group_spacing=0, ar_grid=0.05, ar_margin=1.5,
                 dist=1.5, lead_pad=0.3, lead_via=0.3, avoid=True, shift=0.0, pitch=0.8,
-                via_d=0, via_drill=0, width=0, more=False, live=True, nudge=2, nc={})
+                via_d=0, via_drill=0, width=0, zigzag=0, zig=0, more=False, live=True, nudge=2, nc={})
 STEPS = [0.01, 0.05, 0.1, 0.25, 0.5, 1.0]      # mm per wheel notch / arrow click
 # field -> minimum value when stepping (None = no limit)
-MINIMUM = dict(lead_pad=0.0, lead_via=0.0, dist=0.0, pitch=0.05, shift=None, width=0.05,
+MINIMUM = dict(zig=0.0, lead_pad=0.0, lead_via=0.0, dist=0.0, pitch=0.05, shift=None, width=0.05,
                via_d=0.1, via_drill=0.05, step=None, group_spacing=0.0, ar_grid=0.01,
                ar_margin=0.0)
 
-OPTIONAL = ("width", "via_d", "via_drill")   # empty = netclass
+OPTIONAL = ("width", "via_d", "via_drill", "zig")   # empty = netclass / auto
 
 _last = {}   # last used settings, kept for this KiCad session
 
@@ -92,9 +92,11 @@ VIA_X = 240
 LEAD_A = 26                        # A / B in px
 VIA_R, DRILL_R = 9, 4
 TRACK_W = 5
-DRAW_W, DRAW_H = 300, 216
+DRAW_W, DRAW_H = 318, 216
 Y_D, Y_A, Y_B = 204, 184, 26
-X_PS = 272
+X_PS = 290
+ZIG_PX = 22                        # zigzag: far vias this much farther (px)
+VIA_LAYOUTS = ["Row", "Zigzag"]
 
 COL_CU = wx.Colour(200, 52, 52)
 COL_VIA = wx.Colour(226, 186, 40)
@@ -110,10 +112,13 @@ class Drawing(wx.Panel):
         self.SetBackgroundStyle(wx.BG_STYLE_PAINT)
         self.mode = g.ROUTE_OFFSET
         self.slack = g.SLACK_VIA
+        self.zig = False
         self.hl = None
         self.Bind(wx.EVT_PAINT, self.on_paint)
 
-    def set_state(self, mode=None, slack=None, hl=False):
+    def set_state(self, mode=None, slack=None, hl=False, zig=None):
+        if zig is not None:
+            self.zig = zig
         if mode is not None:
             self.mode = mode
         if slack is not None:
@@ -122,27 +127,31 @@ class Drawing(wx.Panel):
             self.hl = hl
         self.Refresh()
 
+    def vx(self, k):
+        return VIA_X + (ZIG_PX if self.zig and k % 2 else 0)
+
     def _paths(self):
         out = []
         for k, (py, vy) in enumerate(zip(PADS_Y, VIAS_Y)):
             jog = py - vy
+            X = self.vx(k)
             s = (PAD_X1 - 10, py)
             if self.mode == g.ROUTE_OFFSET:
                 if self.slack == g.SLACK_PAD:
-                    b2 = VIA_X - LEAD_A
-                    out.append([s, (b2 - jog, py), (b2, vy), (VIA_X, vy)])
+                    b2 = X - LEAD_A
+                    out.append([s, (b2 - jog, py), (b2, vy), (X, vy)])
                 else:
                     b1 = PAD_X1 + LEAD_A
-                    out.append([s, (b1, py), (b1 + jog, vy), (VIA_X, vy)])
+                    out.append([s, (b1, py), (b1 + jog, vy), (X, vy)])
             elif self.mode == g.ROUTE_45_PAD:
-                out.append([s, (PAD_X1, py), (PAD_X1 + jog, vy), (VIA_X, vy)])
+                out.append([s, (PAD_X1, py), (PAD_X1 + jog, vy), (X, vy)])
             elif self.mode == g.ROUTE_STRAIGHT:
-                out.append([s, (VIA_X, vy)])
+                out.append([s, (X, vy)])
             elif self.mode == g.ROUTE_AUTO:
                 m = 120 + 14 * k
-                out.append([s, (m, py), (m + jog, vy), (VIA_X, vy)])
+                out.append([s, (m, py), (m + jog, vy), (X, vy)])
             else:
-                out.append([s, (VIA_X - jog, py), (VIA_X, vy)])
+                out.append([s, (X - jog, py), (X, vy)])
         return out
 
     def on_paint(self, _evt):
@@ -209,15 +218,20 @@ class Drawing(wx.Panel):
         for k, vy in enumerate(VIAS_Y):
             ring = COL_HL if (hl == "via_d" and k == len(VIAS_Y) - 1) else COL_VIA
             gc.SetBrush(wx.Brush(ring))
-            gc.DrawEllipse(VIA_X - VIA_R, vy - VIA_R, 2 * VIA_R, 2 * VIA_R)
+            X = self.vx(k)
+            gc.DrawEllipse(X - VIA_R, vy - VIA_R, 2 * VIA_R, 2 * VIA_R)
             hole = COL_HL if (hl == "via_drill" and k == len(VIAS_Y) - 1) else bg
             gc.SetBrush(wx.Brush(hole))
-            gc.DrawEllipse(VIA_X - DRILL_R, vy - DRILL_R, 2 * DRILL_R, 2 * DRILL_R)
+            gc.DrawEllipse(X - DRILL_R, vy - DRILL_R, 2 * DRILL_R, 2 * DRILL_R)
 
         # D: pad edge -> via centre
         dash(PAD_X1, PADS_Y[-1] + 7, PAD_X1, Y_D + 5)
         dash(VIA_X, VIAS_Y[-1] + VIA_R, VIA_X, Y_D + 5)
         arrow(PAD_X1, Y_D, VIA_X, Y_D, "dist", "D", (PAD_X1 + VIA_X) / 2.0, Y_D)
+        if self.zig:                               # Z: near -> far via column
+            xf = self.vx(1)
+            dash(xf, VIAS_Y[1] + VIA_R, xf, Y_D + 5)
+            arrow(VIA_X, Y_D, xf, Y_D, "zig", "Z", (VIA_X + xf) / 2.0, Y_D - 12)
         last = paths[-1]
         if self.mode == g.ROUTE_OFFSET:
             if self.slack == g.SLACK_PAD:          # B: second bend -> via centre (top track)
@@ -230,8 +244,8 @@ class Drawing(wx.Panel):
                 dash(b1, PADS_Y[-1] + 4, b1, Y_A + 5)
                 arrow(PAD_X1, Y_A, b1, Y_A, "lead_pad", "A", (PAD_X1 + b1) / 2.0, Y_A - 11)
         # P and S on one vertical line right of the vias
-        dash(VIA_X + VIA_R, VIAS_Y[0], X_PS + 5, VIAS_Y[0])
-        dash(VIA_X + VIA_R, VIAS_Y[1], X_PS + 5, VIAS_Y[1])
+        dash(self.vx(0) + VIA_R, VIAS_Y[0], X_PS + 5, VIAS_Y[0])
+        dash(self.vx(1) + VIA_R, VIAS_Y[1], X_PS + 5, VIAS_Y[1])
         dash(PAD_X1 + 4, PADS_Y[1], X_PS + 5, PADS_Y[1])
         arrow(X_PS, VIAS_Y[0], X_PS, VIAS_Y[1], "pitch", "P", X_PS + 14, (VIAS_Y[0] + VIAS_Y[1]) / 2.0)
         arrow(X_PS, VIAS_Y[1], X_PS, PADS_Y[1], "shift", "S", X_PS + 14, (VIAS_Y[1] + PADS_Y[1]) / 2.0)
@@ -245,6 +259,33 @@ class Drawing(wx.Panel):
         gc.SetPen(wx.Pen(col(key), 1))
         gc.StrokeLine(VIA_X + 6, VIAS_Y[-1] + 7, VIA_X + 16, VIAS_Y[-1] + 24)
         letter("⌀", VIA_X + 22, VIAS_Y[-1] + 30, key)
+
+
+class LogWindow(wx.Frame):
+    """Small live log of the current problems with hints; Copy puts it on the clipboard."""
+
+    def __init__(self, parent):
+        super().__init__(parent, title=NAME + " \u2013 log", size=(520, 240),
+                         style=wx.DEFAULT_FRAME_STYLE | wx.FRAME_FLOAT_ON_PARENT | wx.FRAME_TOOL_WINDOW)
+        pnl = wx.Panel(self)
+        self.txt = wx.TextCtrl(pnl, style=wx.TE_MULTILINE | wx.TE_READONLY | wx.TE_DONTWRAP)
+        copy = wx.Button(pnl, label="Copy")
+        copy.Bind(wx.EVT_BUTTON, self.on_copy)
+        bs = wx.BoxSizer(wx.VERTICAL)
+        bs.Add(self.txt, 1, wx.ALL | wx.EXPAND, 6)
+        bs.Add(copy, 0, wx.RIGHT | wx.BOTTOM | wx.ALIGN_RIGHT, 6)
+        pnl.SetSizer(bs)
+        p = parent.GetScreenRect()
+        self.SetPosition((p.GetLeft(), p.GetBottom() + 4))
+
+    def update(self, text):
+        if self.txt.GetValue() != text:
+            self.txt.SetValue(text)
+
+    def on_copy(self, _evt):
+        if wx.TheClipboard.Open():
+            wx.TheClipboard.SetData(wx.TextDataObject(self.txt.GetValue()))
+            wx.TheClipboard.Close()
 
 
 class _Mods:
@@ -275,6 +316,8 @@ class ViaDialog(wx.Dialog):
         self.preview_cb = preview_cb
         self.reselect_cb = reselect_cb
         self.result = False
+        self.log_win = None
+        self.last_msg = ""
         self._loop = None
         self._timer = None
         v = dict(DEFAULTS, **defaults)
@@ -331,7 +374,26 @@ class ViaDialog(wx.Dialog):
         FW = 62
         dimc = wx.Colour(110, 190, 255) if dark else wx.Colour(0, 90, 190)
 
-        def field(key, lab, tip, extra=None):
+        def sub(key, tip, lbl):
+            val = v.get(key, 0)
+            t = wx.TextCtrl(self, value="" if key in OPTIONAL and not val else "%g" % val,
+                            size=(FW, -1))
+            t.SetToolTip(tip)
+            if key in OPTIONAL:
+                try:
+                    t.SetHint("auto")
+                except Exception:
+                    pass
+            t.Bind(wx.EVT_TEXT, self.on_change)
+            self.f[key] = t
+            self.rows[key] = (lbl, t)
+            for w in (t, lbl):
+                w.Bind(wx.EVT_ENTER_WINDOW, lambda e, k=key: (self.draw.set_state(hl=k), e.Skip()))
+                w.Bind(wx.EVT_LEAVE_WINDOW, lambda e: (self.draw.set_state(hl=self._focus_key()), e.Skip()))
+            t.Bind(wx.EVT_SET_FOCUS, lambda e, k=key: (self.draw.set_state(hl=k), e.Skip()))
+            return t
+
+        def field(key, lab, tip, extra=None, tail=None):
             val = v.get(key, 0)
             t = wx.TextCtrl(self, value="" if key in OPTIONAL and not val else "%g" % val,
                             size=(FW, -1))
@@ -346,13 +408,23 @@ class ViaDialog(wx.Dialog):
             lbl.SetForegroundColour(dimc)
             lbl.SetFont(lbl.GetFont().Bold())
             fgs.Add(lbl, 0, wx.ALIGN_CENTER_VERTICAL | wx.ALIGN_RIGHT)
-            if extra is None:
+            if extra is None and tail is None:
                 fgs.Add(t, 0)
             else:
                 h = wx.BoxSizer(wx.HORIZONTAL)
-                h.Add(extra, 0, wx.RIGHT, 3)
+                if extra is not None:
+                    h.Add(extra, 0, wx.RIGHT, 3)
                 h.Add(t, 0)
-                fgs.Add(h, 0)
+                if tail is not None:          # (label, key, tip) of a second field on this row
+                    tl, tk, tt = tail
+                    l2 = wx.StaticText(self, label=tl)
+                    l2.SetForegroundColour(dimc)
+                    l2.SetFont(l2.GetFont().Bold())
+                    h.Add(l2, 0, wx.LEFT | wx.RIGHT | wx.ALIGN_CENTER_VERTICAL, 5)
+                    fgs.Add(h, 0)
+                    h.Add(sub(tk, tt, l2), 0)
+                else:
+                    fgs.Add(h, 0)
             self.f[key] = t
             self.rows[key] = (lbl, t)
             for w in (t, lbl):
@@ -363,16 +435,27 @@ class ViaDialog(wx.Dialog):
 
         self.pitch_mode = wx.Choice(self, choices=PITCHES)
         self.pitch_mode.SetSelection(min(v.get("pitch_mode", 0), len(PITCHES) - 1))
-        self.pitch_mode.SetToolTip("Via pitch: Auto = via + clearance, As pins, Custom")
+        self.pitch_mode.SetToolTip("Via pitch. Auto = via + clearance (Zigzag: (via + 2 clearance + track) / 2), "
+                                   "As pins, Custom")
         self.pitch_mode.Bind(wx.EVT_CHOICE, self.on_change)
+        self.layout = wx.Choice(self, choices=VIA_LAYOUTS)
+        self.layout.SetSelection(min(v.get("zigzag", 0), 1))
+        self.layout.SetToolTip("Row: all vias on one line.\nZigzag: every second via farther by Z, so the "
+                               "tracks can keep a tight pitch P")
+        self.layout.Bind(wx.EVT_CHOICE, self.on_change)
+        vl = wx.StaticText(self, label="Vias")
+        fgs.Add(vl, 0, wx.ALIGN_CENTER_VERTICAL | wx.ALIGN_RIGHT)
+        fgs.Add(self.layout, 0, wx.EXPAND)
         field("dist", "D", "Pad \u2192 via row distance [mm] (how it is measured: More \u2192 D from)")
         field("lead_pad", "A", "Straight lead from the pad edge to the 45\u00b0 bend [mm]")
         field("lead_via", "B", "Straight lead from the 45\u00b0 bend into the via [mm]")
+        field("zig", "Z", "Zigzag: how much farther every second via is [mm]; "
+                          "empty = smallest that keeps the via clearance at pitch P")
         field("shift", "S", "Sideways shift of the via row [mm], + = to the left of the direction")
         field("pitch", "P", "Via pitch [mm] (Custom)", extra=self.pitch_mode)
         field("width", "W", "Track width [mm], empty = netclass")
-        field("via_d", "\u2300", "Via diameter [mm], empty = netclass")
-        field("via_drill", "\u25cb", "Via drill [mm], empty = netclass")
+        field("via_d", "\u2300", "Via diameter [mm], empty = netclass",
+              tail=("\u25cb", "via_drill", "Via drill [mm], empty = netclass"))
         lbl = wx.StaticText(self, label="L")
         lbl.SetFont(lbl.GetFont().Bold())
         lbl.SetForegroundColour(dimc)
@@ -482,6 +565,11 @@ class ViaDialog(wx.Dialog):
         self.avoid.SetToolTip("Reroute tracks and move vias that would hit pads, tracks or vias of other nets")
         bottom.Add(self.live, 0, wx.ALIGN_CENTER_VERTICAL)
         bottom.Add(self.avoid, 0, wx.LEFT | wx.ALIGN_CENTER_VERTICAL, 8)
+        self.warn = wx.Button(self, label="\u26a0 0", style=wx.BU_EXACTFIT)
+        self.warn.SetToolTip("Show the log: what failed and what to change")
+        self.warn.Bind(wx.EVT_BUTTON, lambda e: self.show_log())
+        self.warn.Hide()
+        bottom.Add(self.warn, 0, wx.LEFT | wx.ALIGN_CENTER_VERTICAL, 8)
         bottom.Add(self.status, 1, wx.LEFT | wx.RIGHT | wx.ALIGN_CENTER_VERTICAL, 8)
         bottom.Add(wx.Button(self, wx.ID_CANCEL), 0, wx.RIGHT, 4)
         ok = wx.Button(self, wx.ID_OK)
@@ -528,6 +616,9 @@ class ViaDialog(wx.Dialog):
             self._timer.Stop()
         self.result = ok
         self.remember()
+        if self.log_win:
+            self.log_win.Destroy()
+            self.log_win = None
         if self.IsModal():
             self.EndModal(wx.ID_OK if ok else wx.ID_CANCEL)
             return
@@ -634,9 +725,11 @@ class ViaDialog(wx.Dialog):
         route = ROUTES[self.route.GetSelection()][1]
         slack = SLACKS[self.slack.GetSelection()][1]
         off = route == g.ROUTE_OFFSET
-        self.draw.set_state(mode=route, slack=slack)
+        zig = self.layout.GetSelection() == 1
+        self.draw.set_state(mode=route, slack=slack, zig=zig)
         self.slack.Enable(off)
-        shown = {"lead_pad": off and slack == g.SLACK_VIA, "lead_via": off and slack == g.SLACK_PAD}
+        shown = {"lead_pad": off and slack == g.SLACK_VIA, "lead_via": off and slack == g.SLACK_PAD,
+                 "zig": zig}
         changed = False
         for key, show in shown.items():
             for w in self.rows[key]:
@@ -688,17 +781,43 @@ class ViaDialog(wx.Dialog):
         self.set_status(msg)
 
     def set_status(self, msg):
-        """Short text on the dialog (warning count if any), the full text in the tooltip."""
-        lines = [l for l in (msg or "").split("\n") if l.strip()]
-        warn = [l for l in lines if "Item" in l or "too close" in l]
-        if warn:
-            text = "⚠ %d warning%s" % (len(warn), "s" if len(warn) > 1 else "")
-        else:
-            text = re.sub(r",? ?L [0-9.\u2013]+ mm", "", lines[0]) if lines else ""
+        """Info line on the dialog; problems (lines with a hint) behind the warning button."""
+        self.last_msg = msg or ""
+        lines = [l for l in self.last_msg.split("\n") if l.strip()]
+        warn = [l for l in lines if "\u2192" in l]
+        info = [l for l in lines if "\u2192" not in l]
+        text = re.sub(r",? ?L [0-9.\u2013]+ mm", "", info[0]) if info else ""
         self.status.SetLabel(text)
-        self.status.SetToolTip("\n".join(lines))
-        m = re.search(r"L ([0-9.]+(?:\u2013[0-9.]+)?) mm", msg or "")
+        self.status.SetToolTip("\n".join(info))
+        if warn:
+            self.warn.SetLabel("\u26a0 %d" % len(warn))
+        if self.warn.IsShown() != bool(warn):
+            self.warn.Show(bool(warn))
+            self.Layout()
+        m = re.search(r"L ([0-9.]+(?:\u2013[0-9.]+)?) mm", self.last_msg)
         self.length.SetLabel(m.group(1) + " mm" if m else "\u2013")
+        if self.log_win:
+            self.log_win.update(self.log_text())
+
+    def log_text(self):
+        lines = [l for l in self.last_msg.split("\n") if l.strip()]
+        warn = [l for l in lines if "\u2192" in l]
+        info = [l for l in lines if "\u2192" not in l]
+        out = info[:1] + [""]
+        out += ["\u26a0 " + w for w in warn] if warn else ["No problems."]
+        return "\n".join(out)
+
+    def show_log(self):
+        if not self.log_win:
+            self.log_win = LogWindow(self)
+            self.log_win.Bind(wx.EVT_CLOSE, self._log_closed)
+        self.log_win.update(self.log_text())
+        self.log_win.Show()
+        self.log_win.Raise()
+
+    def _log_closed(self, _evt):
+        self.log_win.Destroy()
+        self.log_win = None
 
     def values(self):
         def f(ctrl, optional=False):
@@ -722,11 +841,14 @@ class ViaDialog(wx.Dialog):
                    ar_grid=fc("ar_grid"), ar_margin=fc("ar_margin"),
                    custom=self.c["custom"].GetValue(),
                    live=self.live.GetValue(), nudge=self.step_ch.GetSelection(),
-                   avoid=self.avoid.GetValue())
+                   avoid=self.avoid.GetValue(), zigzag=self.layout.GetSelection(),
+                   zig=fp("zig"))
         if raw["vias_per"] < 1 or raw["group_spacing"] < 0:
             raise ValueError("vias/pad")
         if raw["ar_grid"] < 0.01 or raw["ar_margin"] < 0:
             raise ValueError("route grid")
+        if raw["zig"] < 0:
+            raise ValueError("Z")
         if raw["lead_pad"] < 0 or raw["lead_via"] < 0:
             raise ValueError("A, B")
         if min(raw["via_d"], raw["via_drill"], raw["width"]) < 0:

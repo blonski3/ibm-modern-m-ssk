@@ -15,6 +15,63 @@ PROF_CONST, PROF_INC, PROF_DEC, PROF_V, PROF_A, PROF_ZIGZAG, PROF_CUSTOM = (
 GROUP_ACROSS, GROUP_ALONG, GROUP_GRID = "across", "along", "grid"
 
 
+class Issues:
+    """Problems found while planning/routing, grouped per kind with a hint what to change.
+    add(code, item, value): item = 1-based item number or None, value = a number used by
+    the hint (the worst one is kept). text() -> list of lines."""
+
+    TEXT = {
+        "vias_close": ("vias too close to each other (gap {v:.3f} mm short)",
+                       "raise P, or switch Vias to Zigzag / raise Z"),
+        "zig_track": ("track to a far via passes too close to the near vias ({v:.3f} mm short)",
+                      "raise P (zigzag needs P >= (via + 2 clearance + track) / 2)"),
+        "via_on_pad": ("via overlaps its own pad", "raise D by at least {v:.2f} mm"),
+        "s_too_large": ("S too large for D, no room for the 45\u00b0 jog (track is steeper)",
+                        "raise D by at least {v:.2f} mm or make |S| smaller"),
+        "bend_moved": ("no room for the bend at the via, bent at the pad", "raise D"),
+        "straight": ("no room for a 45\u00b0 bend, routed straight", "raise D by at least {v:.2f} mm"),
+        "neg_profile": ("negative profile step shortens the leads", "use a positive Step"),
+        "no_spot": ("no free place for the via near its position",
+                    "move the row (D / S) or raise Margin in More"),
+        "no_route": ("no way around the obstacles, planned track kept (collides)",
+                     "change D / S, raise Margin in More, or turn Avoid off to see the plan"),
+        "via_clr": ("via closer than the clearance to another net", "check DRC there"),
+    }
+
+    def __init__(self):
+        self.d = {}
+
+    def add(self, code, item=None, value=None):
+        e = self.d.setdefault(code, [set(), None])
+        if item is not None:
+            e[0].add(item)
+        if value is not None:
+            e[1] = value if e[1] is None else max(e[1], value)
+
+    def __len__(self):
+        return len(self.d)
+
+    @staticmethod
+    def _items(items):
+        if not items:
+            return ""
+        xs = sorted(items)
+        runs, a = [], xs[0]
+        for p_, q in zip(xs, xs[1:] + [None]):
+            if q != p_ + 1:
+                runs.append(str(a) if a == p_ else "%d\u2013%d" % (a, p_))
+                a = q
+        return ("Item " if len(xs) == 1 else "Items ") + ", ".join(runs) + ": "
+
+    def text(self):
+        out = []
+        for code, (items, v) in self.d.items():
+            msg, hint = self.TEXT[code]
+            v = v or 0.0
+            out.append(self._items(items) + msg.format(v=v) + " \u2192 " + hint.format(v=v))
+        return out
+
+
 def group_offsets(count, spacing, mode):
     """Via positions of one item's group as (dt, ds) offsets from the group anchor:
     dt along the fanout direction, ds along the via row. The anchor is where the single
@@ -88,7 +145,8 @@ def plan(sources, angle_deg, dist, pitch, via_d,
          align=ALIGN_CENTER, ref=REF_EDGE, line=LINE_COMMON, route=ROUTE_45_VIA, min_gap=0.0,
          profile=PROF_CONST, step=0.0, custom=None,
          vias_per=1, group_spacing=0.0, group_mode=GROUP_ACROSS,
-         lead_pad=0.3, lead_via=0.3, slack=SLACK_VIA, shift=0.0):
+         lead_pad=0.3, lead_via=0.3, slack=SLACK_VIA, shift=0.0,
+         stagger=0.0, track_w=0.0, issues=None):
     """sources: list of dict(x, y, edge): start point, and 'edge' = how far the item (pad)
     extends from the start point in the fanout direction, in mm (>= 0).
     pitch <= 0 keeps the pins' own positions along the row.
@@ -100,6 +158,9 @@ def plan(sources, angle_deg, dist, pitch, via_d,
     each track is pad -> straight lead -> 45 deg jog -> straight lead -> via. With
     slack=SLACK_VIA the bends start lead_pad after the pad edge (lead into the via takes
     the rest); with SLACK_PAD the jog ends lead_via before the via centre.
+    stagger: zigzag, every second via (in row order) is placed this much farther [mm].
+    track_w: track width, only for the zigzag check (track passing the near vias).
+    issues: an Issues object to collect problems into (a new one if None).
     shift: moves the whole via row sideways [mm], + = to the left of the fanout direction
     (for "Right" that is up on the screen).
     Returns (list of dict(path=[(x,y),...], via=(x,y), vias=[(x,y),...],
@@ -149,26 +210,41 @@ def plan(sources, angle_deg, dist, pitch, via_d,
     for it, extra in zip(order, profile_offsets(n, profile, step, custom)):
         it["tv"] += extra
 
+    # zigzag: every second via farther out
+    if stagger:
+        for j, it in enumerate(order):
+            if j % 2:
+                it["tv"] += stagger
+
     to_xy = lambda t, s: (t * d[0] + s * p[0], t * d[1] + s * p[1])
     offs = group_offsets(max(1, int(vias_per)), group_spacing, group_mode)
     for it in items:
         it["vias"] = [to_xy(it["tv"] + dt, it["sv"] + ds) for dt, ds in offs]
         it["bars"] = [(to_xy(it["tv"] + a[0], it["sv"] + a[1]), to_xy(it["tv"] + b[0], it["sv"] + b[1]))
                       for a, b in group_bars(offs)]
-    warnings, out = [], [None] * n
+    iss = issues if issues is not None else Issues()
+    out = [None] * n
     for ia in range(n):
         for ib in range(ia + 1, n):
             a_, b_ = order[ia], order[ib]
             gap = min(math.dist(va, vb) for va in a_["vias"] for vb in b_["vias"])
             if gap < via_d + min_gap - 1e-6:
-                warnings.append("Vias of items %d and %d too close: centre distance %.3f mm < via %.3f + clearance %.3f mm."
-                                % (a_["i"] + 1, b_["i"] + 1, gap, via_d, min_gap))
+                iss.add("vias_close", a_["i"] + 1, via_d + min_gap - gap)
+                iss.add("vias_close", b_["i"] + 1)
+            if stagger and track_w:
+                # the lead into the farther via runs past the nearer one at its row position
+                far, near = (a_, b_) if a_["tv"] > b_["tv"] + 1e-6 else (b_, a_)
+                if far["tv"] > near["tv"] + 1e-6:
+                    need = via_d / 2.0 + min_gap + track_w / 2.0
+                    gap2 = abs(far["sv"] - near["sv"])
+                    if gap2 < need - 1e-6:
+                        iss.add("zig_track", far["i"] + 1, need - gap2)
     for it in items:
         L = it["tv"] - it["t0"]
         dl = it["sv"] - it["s"]
         a = it["tE"] - it["t0"]           # length needed to leave the pad outline
         if L < a + via_d / 2.0 - 1e-6:
-            warnings.append("Item %d: via overlaps its pad (track too short); increase distance or step." % (it["i"] + 1))
+            iss.add("via_on_pad", it["i"] + 1, a + via_d / 2.0 - L)
         S = to_xy(it["t0"], it["s"])
         V = to_xy(it["tv"], it["sv"])
         mode = route
@@ -177,8 +253,7 @@ def plan(sources, angle_deg, dist, pitch, via_d,
         if mode == ROUTE_OFFSET:
             jog = abs(dl)
             if jog > it["tv"] - it["tE"] + 1e-6:
-                warnings.append("Item %d: S too large for D (no room for 45 deg), track is steeper."
-                                % (it["i"] + 1))
+                iss.add("s_too_large", it["i"] + 1, jog - (it["tv"] - it["tE"]))
                 path = [S, to_xy(it["tE"], it["s"]), V]
                 clean = [path[0]]
                 for q in path[1:]:
@@ -200,11 +275,11 @@ def plan(sources, angle_deg, dist, pitch, via_d,
             continue
         if mode == ROUTE_45_VIA and L - abs(dl) < a - 1e-6:
             if not quiet:
-                warnings.append("Item %d: not enough room for the 45 deg bend at the via, bending at the pad instead." % (it["i"] + 1))
+                iss.add("bend_moved", it["i"] + 1)
             mode = ROUTE_45_PAD
         if mode == ROUTE_45_PAD and a + abs(dl) > L + 1e-6:
             if not quiet:
-                warnings.append("Item %d: not enough room for a 45 deg bend (increase the distance), routed straight." % (it["i"] + 1))
+                iss.add("straight", it["i"] + 1, a + abs(dl) - L)
             mode = ROUTE_STRAIGHT
         if mode == ROUTE_45_VIA:
             path = [S, to_xy(it["tv"] - abs(dl), it["s"]), V]
@@ -217,4 +292,4 @@ def plan(sources, angle_deg, dist, pitch, via_d,
             if math.dist(q, clean[-1]) > 1e-6:
                 clean.append(q)
         out[it["i"]] = dict(path=clean, via=V, vias=it["vias"], bars=it["bars"])
-    return out, warnings
+    return out, iss.text()

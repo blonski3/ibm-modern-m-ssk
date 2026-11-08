@@ -320,7 +320,7 @@ def _clear_path(obs, r, width, via_d, clr, res):
     return all(rt.clear_of(local, q[0], q[1], via_d / 2.0, clr) for q in r["vias"])
 
 
-def route_around(board, result, sources, meta, sizes, ncv, v, skip, warnings, cache,
+def route_around(board, result, sources, meta, sizes, ncv, v, skip, issues, cache,
                  only_colliding):
     """Autoroute (only_colliding=False) or obstacle avoidance (True): a planned track
     that would hit copper of another net (pads, tracks, vias, NPTH, board edge, the other
@@ -350,21 +350,21 @@ def route_around(board, result, sources, meta, sizes, ncv, v, skip, warnings, ca
             spot = rt.find_free_spot(obs, r["via"], offs, via_d / 2.0, n["clearance"],
                                      v["ar_grid"], v["ar_margin"])
             if spot is None:
-                warnings.append("Item %d: no free place for the via within the search margin." % (k + 1))
+                issues.add("no_spot", k + 1)
             elif spot != r["via"]:
                 _shift(r, spot[0] - r["via"][0], spot[1] - r["via"][1])
             path, snap = rt.route(start, r["via"], obs, width, n["clearance"], res=v["ar_grid"],
                                   grows=(1.0,) if only_colliding else (1.0, 2.0, 3.5),
                                   margin=v["ar_margin"])
             if path is None:
-                warnings.append("Item %d: no way around the obstacles, kept the planned track." % (k + 1))
+                issues.add("no_route", k + 1)
             else:
                 _shift(r, snap[0] - r["via"][0], snap[1] - r["via"][1])
                 r["path"] = path
                 rerouted.append(k + 1)
             for q in r["vias"]:
                 if not rt.clear_of(rt.blocking(base, code), q[0], q[1], via_d / 2.0, n["clearance"]):
-                    warnings.append("Item %d: a via is closer than the clearance to another net (check DRC)." % (k + 1))
+                    issues.add("via_clr", k + 1)
                     break
         new = added.setdefault(layer, [])
         for a, b in list(zip(r["path"], r["path"][1:])) + list(r["bars"]):
@@ -392,8 +392,14 @@ def build(board, pads, tracks, ncv, v, skip=frozenset(), cache=None):
         gspace = math.ceil(max(max_via, max_drill + hole_to_hole(board)) * 100 - 1e-6) / 100.0
     gwidth = g.group_width(count, gspace, gmode)
 
-    if v["pitch_mode"] == 0:      # auto: smallest legal pitch, rounded up to 0.01 mm
-        pitch = math.ceil((gwidth + max_via + max_clr) * 100 - 1e-6) / 100.0
+    max_w = max(s[2] for s in sizes)
+    up = lambda x: math.ceil(x * 100 - 1e-6) / 100.0          # round up to 0.01 mm
+    zig = bool(v.get("zigzag"))
+    if v["pitch_mode"] == 0:      # auto: smallest legal pitch
+        if zig:                   # a track must pass between two near vias
+            pitch = up(max(gwidth + max_via + 2 * max_clr + max_w, 0) / 2.0)
+        else:
+            pitch = up(gwidth + max_via + max_clr)
     elif v["pitch_mode"] == 1:    # same as pins
         pitch = 0.0
     else:
@@ -412,19 +418,34 @@ def build(board, pads, tracks, ncv, v, skip=frozenset(), cache=None):
         sources.append(dict(x=mm(e.x), y=mm(e.y), edge=0.0))
         meta.append((t.GetNet(), t.GetLayer()))
 
-    result, warnings = g.plan(sources, v["angle"], v["dist"], pitch, max_via,
+    stagger = 0.0
+    if zig:
+        if v.get("zig"):
+            stagger = v["zig"]
+        else:                     # auto: neighbouring vias just keep the clearance
+            p_eff = pitch
+            if p_eff <= 0:        # as pins: smallest spacing of the pins along the row
+                _, pv = g.axes(v["angle"])
+                ss = sorted(s_["x"] * pv[0] + s_["y"] * pv[1] for s_ in sources)
+                p_eff = min([b - a for a, b in zip(ss, ss[1:]) if b - a > 1e-6] or [0.0])
+            need = gwidth + max_via + max_clr
+            stagger = up(math.sqrt(max(0.0, need * need - p_eff * p_eff)))
+    issues = g.Issues()
+    result, _w = g.plan(sources, v["angle"], v["dist"], pitch, max_via,
                               align=v["align"], ref=v["ref"], line=v["line"],
                               route=v["route"], min_gap=max_clr,
                               profile=v["profile_id"], step=v["step"], custom=v["custom_list"],
                               vias_per=count, group_spacing=gspace, group_mode=gmode,
                               lead_pad=v["lead_pad"], lead_via=v["lead_via"],
-                              slack=v["slack_id"], shift=v["shift"])
+                              slack=v["slack_id"], shift=v["shift"],
+                              stagger=stagger, track_w=max_w, issues=issues)
     rerouted = []
     if v["route"] == g.ROUTE_AUTO or v.get("avoid"):
         if cache is None:
             cache = ObstacleCache(board)
-        rerouted = route_around(board, result, sources, meta, sizes, ncv, v, skip, warnings,
+        rerouted = route_around(board, result, sources, meta, sizes, ncv, v, skip, issues,
                                 cache, only_colliding=v["route"] != g.ROUTE_AUTO)
+    warnings = issues.text()
 
     P = lambda xy: pcbnew.VECTOR2I(pcbnew.FromMM(xy[0]), pcbnew.FromMM(xy[1]))
     created = []
@@ -452,6 +473,8 @@ def build(board, pads, tracks, ncv, v, skip=frozenset(), cache=None):
     widths = sorted(set(round(z[2], 3) for z in sizes))
     info = "P %s, track %s mm" % ("as pins" if pitch == 0 else "%g" % pitch,
                                   "/".join("%g" % w for w in widths))
+    if zig:
+        info += ", Z %g mm%s" % (stagger, "" if v.get("zig") else " (auto)")
     if count > 1:
         info += ", group %g mm" % gspace
     lengths = [sum(math.dist(a, b) for a, b in zip(r["path"], r["path"][1:])) for r in result]
@@ -471,6 +494,23 @@ def hole_to_hole(board):
     except Exception:
         pass
     return 0.25
+
+
+def write_log(board, v, info, warnings):
+    """Append what was placed and what failed to via_o_tronic.log next to the board file."""
+    try:
+        import datetime
+        path = os.path.join(os.path.dirname(board.GetFileName()) or ".", "via_o_tronic.log")
+        keys = ("route", "slack_id", "zigzag", "zig", "dist", "lead_pad", "lead_via", "shift",
+                "pitch_mode", "pitch", "width", "via_d", "via_drill", "angle", "avoid")
+        with open(path, "a", encoding="utf-8") as f:
+            f.write("%s  %s\n" % (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                                   ", ".join("%s=%s" % (k, v.get(k)) for k in keys)))
+            f.write("  %s\n" % info.split("\n")[0])
+            for w in warnings:
+                f.write("  ! %s\n" % w)
+    except Exception:
+        pass
 
 
 def remove(board, items):
@@ -574,6 +614,7 @@ class ViaOTronic(pcbnew.ActionPlugin):
                 board, sel["pads"], sel["tracks"], sel["ncv"], v, cache=state["cache"])
             state["skip"] = set(_uuid(it) for it in state["items"])
             state["key"] = key_of(v)
+            state["last_info"] = info
             return info
 
         def preview(v):
@@ -608,8 +649,10 @@ class ViaOTronic(pcbnew.ActionPlugin):
         if ok and v is not None:
             if state["key"] != key_of(v):            # preview off or stale: build once now
                 make(v)
+            write_log(board, v, state.get("last_info", ""), state["warnings"])
             if state["warnings"]:
-                wx.MessageBox("\n".join(state["warnings"]), NAME + " - warnings")
+                wx.MessageBox("\n".join(state["warnings"]) + "\n\n(also in via_o_tronic.log next to the board)",
+                              NAME + " - problems")
         else:
             clear_preview()
             if ok:
