@@ -1,6 +1,7 @@
-# Dialog of the via-o-tronic plugin: a pictogram with every editable dimension drawn on
-# it, a short list of the remaining options below, and the Win95-style logo on top.
-# No pcbnew import here, so the window can be opened and tested without KiCad.
+# Dialog of the via-o-tronic plugin. Built around the common case (fan out a row of
+# aQFN/QFN pins to a row of vias): direction arrows and routing mode on top, the main
+# dimensions as fields on a small pictogram, rarely used options folded under "More".
+# Colours follow the system theme. No pcbnew import here, so it runs without KiCad.
 
 import math
 import os
@@ -10,76 +11,98 @@ import wx
 from . import geometry as g
 
 NAME = "via-o-tronic"
-VERSION = "2.0"
+VERSION = "2.1"
 
-DIRS = [("Right", 0), ("Up-right 45", 45), ("Up", 90), ("Up-left 45", 135),
-        ("Left", 180), ("Down-left 45", 225), ("Down", 270), ("Down-right 45", 315)]
-ALIGNS = [("Centre of selection", g.ALIGN_CENTER), ("From first item", g.ALIGN_FIRST),
-          ("From last item", g.ALIGN_LAST)]
-REFS = [("Pad edge to via centre", g.REF_EDGE_CENTER),
-        ("Pad edge to via edge (copper gap)", g.REF_EDGE),
-        ("Pad centre to via centre", g.REF_CENTER)]
-LINES = [("Common line (from farthest item)", g.LINE_COMMON), ("Separate for each item", g.LINE_EACH)]
-ROUTES = [("Lead / 45 deg / lead (A, B)", g.ROUTE_OFFSET),
-          ("45 deg bend at via", g.ROUTE_45_VIA), ("45 deg bend at pad", g.ROUTE_45_PAD),
-          ("Straight (any angle)", g.ROUTE_STRAIGHT),
-          ("Autoroute (avoid pads, tracks, vias, board edge)", g.ROUTE_AUTO)]
-SLACKS = [("Lead into via (B), bends line up at the pads", g.SLACK_VIA),
-          ("Lead from pad (A), bends line up at the vias", g.SLACK_PAD)]
+# direction buttons: label, angle (0 = right, 90 = up)
+DIRS = [("→", 0), ("↗", 45), ("↑", 90), ("↖", 135),
+        ("←", 180), ("↙", 225), ("↓", 270), ("↘", 315)]
+ROUTES = [("A / 45° / B", g.ROUTE_OFFSET), ("45° at via", g.ROUTE_45_VIA),
+          ("45° at pad", g.ROUTE_45_PAD), ("Straight", g.ROUTE_STRAIGHT),
+          ("Autoroute", g.ROUTE_AUTO)]
+SLACKS = [("Bends at pads", g.SLACK_VIA), ("Bends at vias", g.SLACK_PAD)]
 PITCHES = ["Auto", "As pins", "Custom"]
+LINES = [("Common", g.LINE_COMMON), ("Per item", g.LINE_EACH)]
+REFS = [("Edge → centre", g.REF_EDGE_CENTER), ("Edge → edge", g.REF_EDGE),
+        ("Centre → centre", g.REF_CENTER)]
+ALIGNS = [("Centre", g.ALIGN_CENTER), ("First", g.ALIGN_FIRST), ("Last", g.ALIGN_LAST)]
 PROFILES = [("Constant", g.PROF_CONST), ("Increasing", g.PROF_INC), ("Decreasing", g.PROF_DEC),
-            ("V: centre shortest", g.PROF_V), ("A: centre longest", g.PROF_A),
-            ("Zigzag (every 2nd)", g.PROF_ZIGZAG), ("Custom list", g.PROF_CUSTOM)]
-GROUPS = [("Side by side (across)", g.GROUP_ACROSS), ("One behind another (along)", g.GROUP_ALONG),
-          ("Grid, 2 rows", g.GROUP_GRID)]
+            ("V", g.PROF_V), ("A", g.PROF_A), ("Zigzag", g.PROF_ZIGZAG), ("List", g.PROF_CUSTOM)]
+GROUPS = [("Across", g.GROUP_ACROSS), ("Along", g.GROUP_ALONG), ("Grid 2×", g.GROUP_GRID)]
 
-DEFAULTS = dict(dir=0, angle=0, ref=0, line=0, align=0, route=0, slack=0, pitch_mode=0,
+DEFAULTS = dict(dir=0, angle="", ref=0, line=0, align=0, route=0, slack=0, pitch_mode=0,
                 profile=0, step=0.5, custom="0; 0.5; 1.0",
                 vias_per=1, group_mode=0, group_spacing=0, ar_grid=0.05, ar_margin=1.5,
                 dist=0.3, lead_pad=0.3, lead_via=0.5, shift=0.0, pitch=0.8,
-                via_d=0, via_drill=0, width=0)
+                via_d=0, via_drill=0, width=0, more=False, live=True)
 
 _last = {}   # last used settings, kept for this KiCad session
 
 
+def is_dark(colour):
+    return (0.299 * colour.Red() + 0.587 * colour.Green() + 0.114 * colour.Blue()) < 128
+
+
+def arrow_bitmap(angle, colour, size=16):
+    """Small arrow pointing at angle (0 = right, 90 = up) for the direction buttons."""
+    img = wx.Image(size, size)
+    img.InitAlpha()
+    for x in range(size):
+        for y in range(size):
+            img.SetAlpha(x, y, 0)
+    bmp = wx.Bitmap(img)
+    dc = wx.MemoryDC(bmp)
+    gc = wx.GraphicsContext.Create(dc)
+    c = size / 2.0
+    a = math.radians(angle)
+    ux, uy = math.cos(a), -math.sin(a)
+    tip = (c + 6 * ux, c + 6 * uy)
+    gc.SetPen(wx.Pen(colour, 2))
+    gc.StrokeLine(c - 6 * ux, c - 6 * uy, c + 2 * ux, c + 2 * uy)
+    gc.SetPen(wx.TRANSPARENT_PEN)
+    gc.SetBrush(wx.Brush(colour))
+    p = gc.CreatePath()
+    p.MoveToPoint(*tip)
+    p.AddLineToPoint(tip[0] - 6 * ux - 4 * uy, tip[1] - 6 * uy + 4 * ux)
+    p.AddLineToPoint(tip[0] - 6 * ux + 4 * uy, tip[1] - 6 * uy - 4 * ux)
+    p.CloseSubpath()
+    gc.FillPath(p)
+    del gc
+    dc.SelectObject(wx.NullBitmap)
+    return bmp
+
+
 # ---------------------------------------------------------------- pictogram
 
-# picture coordinates (px) - drawn for the direction "Right"
-PADS_Y = (170, 235, 300)
-PAD_X0, PAD_X1 = 40, 80            # pad outline, the edge faces the vias at x = 80
-VIAS_Y = (95, 170, 245)            # via row: pitch 75, shifted up (S) by 65
-VIA_X = 470
-BEND1_X = 140                      # end of lead A
-VIA_R, DRILL_R = 15, 7
-TRACK_W = 9
-PIC_W, PIC_H = 700, 420
-FIELD_W = 80
-X_DIM = 530                        # vertical dimension line for P and S
-X_FLD = 560                        # column of fields right of the vias
+# picture coordinates (px), drawn for the direction "Right"
+PADS_Y = (120, 160, 200)
+PAD_X0, PAD_X1 = 18, 42
+VIAS_Y = (70, 115, 160)            # via pitch 45, row shifted up (S) by 45
+VIA_X = 296
+BEND1_X = 80
+VIA_R, DRILL_R = 10, 4.5
+TRACK_W = 6
+X_DIM = 322                        # vertical P/S dimension line
+X_FLD = 350                        # field column right of the vias
+FIELD_W = 58
+PIC_W, PIC_H = X_FLD + 96, 250
 
-COL_BG = wx.Colour(0, 16, 35)
 COL_CU = wx.Colour(200, 52, 52)
-COL_VIA = wx.Colour(236, 200, 60)
-COL_DIM = wx.Colour(120, 220, 255)
-COL_TXT = wx.Colour(235, 235, 235)
-COL_EXT = wx.Colour(90, 110, 140)
+COL_VIA = wx.Colour(226, 186, 40)
 
 
 class Pictogram(wx.Panel):
-    """Fanout drawing with editable dimension fields placed on it."""
+    """Fanout drawing with the editable dimensions placed on it."""
 
-    # key -> (label, x of the field's left edge, y of its centre, tooltip)
+    # key -> (label, x of the field, y of its centre, tooltip)
     FIELDS = {
-        "lead_pad": ("A", 70, 378, "A: straight lead from the pad edge to the 45 deg jog [mm]"),
-        "lead_via": ("B", 302, 36, "B: straight lead from the 45 deg jog into the via centre [mm]\n"
-                                   "(on a common via line the other tracks get more, see 'Extra length goes to')"),
-        "dist": ("D", 235, 378, "D: distance from the pad to the via row [mm] (see 'D measured')"),
-        "pitch": ("", X_FLD, 150, "P: via pitch [mm] (Custom)"),
-        "shift": ("S", X_FLD, 205, "S: sideways shift of the via row [mm], pad row centre to via row centre;\n"
-                                   "+ = to the left of the direction (for Right: up)"),
-        "via_d": ("⌀", X_FLD, 275, "Via diameter [mm]; empty = from the netclass of each net"),
-        "via_drill": ("drill", X_FLD, 318, "Via drill [mm]; empty = from the netclass of each net"),
-        "width": ("W", 112, 110, "W: track width [mm]; empty = from the netclass of each net"),
+        "lead_via": ("B", 186, 20, "B: straight lead into the via centre [mm]"),
+        "width": ("W", 26, 72, "Track width [mm], empty = netclass"),
+        "pitch": ("", X_FLD, 110, "P: via pitch [mm]"),
+        "shift": ("S", X_FLD, 150, "S: shift of the via row [mm], + = to the left of the direction"),
+        "via_d": ("⌀", X_FLD, 192, "Via diameter [mm], empty = netclass"),
+        "via_drill": ("○", X_FLD, 230, "Via drill [mm], empty = netclass"),
+        "lead_pad": ("A", 100, 230, "A: straight lead from the pad edge [mm]"),
+        "dist": ("D", 186, 230, "D: pad to via row [mm] (measured as set in More)"),
     }
     OPTIONAL = ("width", "via_d", "via_drill")   # empty = netclass
 
@@ -93,8 +116,7 @@ class Pictogram(wx.Panel):
             val = v.get(key, 0)
             txt = "" if key in self.OPTIONAL and not val else "%g" % val
             t = wx.TextCtrl(self, value=txt, size=(FIELD_W, -1))
-            h = t.GetBestSize().height
-            t.SetPosition((x, int(yc - h / 2)))
+            t.SetPosition((x, int(yc - t.GetBestSize().height / 2)))
             t.SetToolTip(tip)
             if key in self.OPTIONAL:
                 try:
@@ -103,11 +125,10 @@ class Pictogram(wx.Panel):
                     pass
             t.Bind(wx.EVT_TEXT, on_change)
             self.ctrl[key] = t
-        self.pitch_mode = wx.Choice(self, choices=PITCHES, size=(FIELD_W + 40, -1))
-        h = self.pitch_mode.GetBestSize().height
-        self.pitch_mode.SetPosition((X_FLD, int(110 - h / 2)))
+        self.pitch_mode = wx.Choice(self, choices=PITCHES, size=(FIELD_W + 28, -1))
+        self.pitch_mode.SetPosition((X_FLD, int(70 - self.pitch_mode.GetBestSize().height / 2)))
         self.pitch_mode.SetSelection(min(v.get("pitch_mode", 0), len(PITCHES) - 1))
-        self.pitch_mode.SetToolTip("P: via pitch along the row. Auto = via + clearance from the netclass")
+        self.pitch_mode.SetToolTip("P: via pitch. Auto = via + clearance")
         self.pitch_mode.Bind(wx.EVT_CHOICE, on_change)
         self.Bind(wx.EVT_PAINT, self.on_paint)
 
@@ -120,9 +141,8 @@ class Pictogram(wx.Panel):
         self.ctrl["pitch"].Enable(self.pitch_mode.GetSelection() == 2)
         self.Refresh()
 
-    # -- drawing helpers
     @staticmethod
-    def _arrow(gc, x0, y0, x1, y1, col=COL_DIM):
+    def _arrow(gc, x0, y0, x1, y1, col):
         gc.SetPen(wx.Pen(col, 1))
         gc.StrokeLine(x0, y0, x1, y1)
         gc.SetBrush(wx.Brush(col))
@@ -131,22 +151,16 @@ class Pictogram(wx.Panel):
             ux, uy = (bx - ax) / L, (by - ay) / L
             p = gc.CreatePath()
             p.MoveToPoint(ax, ay)
-            p.AddLineToPoint(ax + 8 * ux - 3.5 * uy, ay + 8 * uy + 3.5 * ux)
-            p.AddLineToPoint(ax + 8 * ux + 3.5 * uy, ay + 8 * uy - 3.5 * ux)
+            p.AddLineToPoint(ax + 6 * ux - 2.5 * uy, ay + 6 * uy + 2.5 * ux)
+            p.AddLineToPoint(ax + 6 * ux + 2.5 * uy, ay + 6 * uy - 2.5 * ux)
             p.CloseSubpath()
             gc.FillPath(p)
 
-    @staticmethod
-    def _dash(gc, x0, y0, x1, y1):
-        gc.SetPen(wx.Pen(COL_EXT, 1, wx.PENSTYLE_SHORT_DASH))
-        gc.StrokeLine(x0, y0, x1, y1)
-
     def _paths(self):
-        """Track polylines for the current mode (picture coordinates)."""
         out = []
         for k, (py, vy) in enumerate(zip(PADS_Y, VIAS_Y)):
             dl = py - vy
-            s = (PAD_X1 - 20, py)
+            s = (PAD_X1 - 12, py)
             if self.mode == g.ROUTE_OFFSET:
                 out.append([s, (BEND1_X, py), (BEND1_X + dl, vy), (VIA_X, vy)])
             elif self.mode == g.ROUTE_45_PAD:
@@ -154,31 +168,27 @@ class Pictogram(wx.Panel):
             elif self.mode == g.ROUTE_STRAIGHT:
                 out.append([s, (VIA_X, vy)])
             elif self.mode == g.ROUTE_AUTO:
-                m = 250 + 30 * k
+                m = 150 + 20 * k
                 out.append([s, (m, py), (m + dl, vy), (VIA_X, vy)])
-            else:   # 45 deg bend at the via
+            else:
                 out.append([s, (VIA_X - dl, py), (VIA_X, vy)])
         return out
 
-    def _label(self, gc, key, lab):
-        t = self.ctrl[key]
-        if not lab or not t.IsShown():
-            return
-        x, y = t.GetPosition()
-        h = t.GetSize().height
-        w, th = gc.GetTextExtent(lab)
-        gc.DrawText(lab, x - w - 6, y + (h - th) / 2.0)
-
     def on_paint(self, _evt):
         dc = wx.AutoBufferedPaintDC(self)
-        dc.SetBackground(wx.Brush(COL_BG))
+        bg = self.GetParent().GetBackgroundColour()
+        dark = is_dark(bg)
+        dim = wx.Colour(110, 190, 255) if dark else wx.Colour(0, 90, 190)
+        ext = wx.Colour(110, 110, 110) if dark else wx.Colour(170, 170, 170)
+        dc.SetBackground(wx.Brush(bg))
         dc.Clear()
         gc = wx.GraphicsContext.Create(dc)
-        bold = wx.Font(10, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD)
-        small = wx.Font(8, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL)
         off = self.mode == g.ROUTE_OFFSET
 
-        # tracks, pads, vias
+        def dash(x0, y0, x1, y1):
+            gc.SetPen(wx.Pen(ext, 1, wx.PENSTYLE_SHORT_DASH))
+            gc.StrokeLine(x0, y0, x1, y1)
+
         paths = self._paths()
         gc.SetPen(wx.Pen(COL_CU, TRACK_W))
         for pts in paths:
@@ -190,100 +200,70 @@ class Pictogram(wx.Panel):
         gc.SetPen(wx.TRANSPARENT_PEN)
         gc.SetBrush(wx.Brush(COL_CU))
         for py in PADS_Y:
-            gc.DrawRoundedRectangle(PAD_X0, py - 11, PAD_X1 - PAD_X0, 22, 6)
+            gc.DrawRoundedRectangle(PAD_X0, py - 7, PAD_X1 - PAD_X0, 14, 4)
         for vy in VIAS_Y:
             gc.SetBrush(wx.Brush(COL_VIA))
             gc.DrawEllipse(VIA_X - VIA_R, vy - VIA_R, 2 * VIA_R, 2 * VIA_R)
-            gc.SetBrush(wx.Brush(COL_BG))
+            gc.SetBrush(wx.Brush(bg))
             gc.DrawEllipse(VIA_X - DRILL_R, vy - DRILL_R, 2 * DRILL_R, 2 * DRILL_R)
 
-        gc.SetFont(small, COL_EXT)
-        gc.DrawText("drawn for direction: Right", 8, 6)
-        gc.DrawText("pads", PAD_X0, PADS_Y[-1] + 16)
-
-        # A / D along the bottom, B along the top
-        y_low = PADS_Y[-1] + 45
+        y_low = 230
         if off:
-            self._dash(gc, PAD_X1, PADS_Y[-1] + 12, PAD_X1, y_low + 6)
-            self._dash(gc, BEND1_X, PADS_Y[-1] + 6, BEND1_X, y_low + 6)
-            self._arrow(gc, PAD_X1, y_low, BEND1_X, y_low)
+            dash(PAD_X1, PADS_Y[-1] + 8, PAD_X1, y_low + 5)
+            dash(BEND1_X, PADS_Y[-1] + 4, BEND1_X, y_low + 5)
+            self._arrow(gc, PAD_X1, y_low, BEND1_X, y_low, dim)
             b2 = BEND1_X + PADS_Y[0] - VIAS_Y[0]
-            y_top = VIAS_Y[0] - 30
-            self._dash(gc, b2, VIAS_Y[0] - 6, b2, y_top - 6)
-            self._dash(gc, VIA_X, VIAS_Y[0] - VIA_R, VIA_X, y_top - 6)
-            self._arrow(gc, b2, y_top, VIA_X, y_top)
+            y_top = 42
+            dash(b2, VIAS_Y[0] - 4, b2, y_top - 5)
+            dash(VIA_X, VIAS_Y[0] - VIA_R, VIA_X, y_top - 5)
+            self._arrow(gc, b2, y_top, VIA_X, y_top, dim)
         else:
-            self._dash(gc, PAD_X1, PADS_Y[-1] + 12, PAD_X1, y_low + 6)
-            self._dash(gc, VIA_X, VIAS_Y[-1] + VIA_R, VIA_X, y_low + 6)
-            self._arrow(gc, PAD_X1, y_low, VIA_X, y_low)
-        # P and S as a chain on one vertical line
-        self._dash(gc, VIA_X + VIA_R, VIAS_Y[0], X_DIM + 8, VIAS_Y[0])
-        self._dash(gc, VIA_X + VIA_R, VIAS_Y[1], X_DIM + 8, VIAS_Y[1])
-        self._dash(gc, PAD_X1 + 4, PADS_Y[1], X_DIM + 8, PADS_Y[1])
-        self._arrow(gc, X_DIM, VIAS_Y[0], X_DIM, VIAS_Y[1])
-        self._arrow(gc, X_DIM, VIAS_Y[1], X_DIM, PADS_Y[1])
-        # W callout from the first (horizontal) part of the top track, via callouts
-        wx_, wy_ = self.ctrl["width"].GetPosition()
-        wh = self.ctrl["width"].GetSize().height
-        gc.SetPen(wx.Pen(COL_DIM, 1))
-        gc.StrokeLine(PAD_X1 + 30, PADS_Y[0] - 4, wx_ + 20, wy_ + wh)
-        for key, r in (("via_d", VIA_R - 2), ("via_drill", DRILL_R - 2)):
-            fx, fy = self.ctrl[key].GetPosition()
-            fh = self.ctrl[key].GetSize().height
-            a = math.radians(40)
+            dash(PAD_X1, PADS_Y[-1] + 8, PAD_X1, y_low + 5)
+            dash(VIA_X, VIAS_Y[-1] + VIA_R, VIA_X, y_low + 5)
+            self._arrow(gc, PAD_X1, y_low, 170, y_low, dim)
+            dash(170, y_low, VIA_X, y_low)
+        dash(VIA_X + VIA_R, VIAS_Y[0], X_DIM + 5, VIAS_Y[0])
+        dash(VIA_X + VIA_R, VIAS_Y[1], X_DIM + 5, VIAS_Y[1])
+        dash(PAD_X1 + 4, PADS_Y[1], X_DIM + 5, PADS_Y[1])
+        self._arrow(gc, X_DIM, VIAS_Y[0], X_DIM, VIAS_Y[1], dim)
+        self._arrow(gc, X_DIM, VIAS_Y[1], X_DIM, PADS_Y[1], dim)
+
+        gc.SetPen(wx.Pen(dim, 1))
+        w = self.ctrl["width"]
+        wx_, wy_ = w.GetPosition()
+        gc.StrokeLine(PAD_X1 + 22, PADS_Y[0] - 3, wx_ + 14, wy_ + w.GetSize().height)
+        for key, r in (("via_d", VIA_R - 1), ("via_drill", DRILL_R - 1)):
+            f = self.ctrl[key]
+            fx, fy = f.GetPosition()
+            a = math.radians(50)
             gc.StrokeLine(VIA_X + r * math.cos(a), VIAS_Y[-1] + r * math.sin(a),
-                          fx - (40 if key == "via_drill" else 22), fy + fh / 2.0)
+                          fx - 16, fy + f.GetSize().height / 2.0)
 
-        gc.SetFont(bold, COL_DIM)
+        gc.SetFont(wx.Font(9, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD), dim)
+
+        def label(ctrl, lab):
+            if not ctrl.IsShown():
+                return
+            x, y = ctrl.GetPosition()
+            tw, th = gc.GetTextExtent(lab)
+            gc.DrawText(lab, x - tw - 4, y + (ctrl.GetSize().height - th) / 2.0)
         for key, (lab, _x, _y, _tip) in self.FIELDS.items():
-            self._label(gc, key, lab)
-        px, py = self.pitch_mode.GetPosition()
-        ph = self.pitch_mode.GetSize().height
-        w, th = gc.GetTextExtent("P")
-        gc.DrawText("P", px - w - 6, py + (ph - th) / 2.0)
-        gc.SetFont(small, COL_EXT)
-        sx, sy = self.ctrl["shift"].GetPosition()
-        gc.DrawText("+ = up", sx + FIELD_W + 6, sy + 8)
-        dx, dy = self.ctrl["via_drill"].GetPosition()
-        gc.DrawText("empty = from netclass", dx, dy + self.ctrl["via_drill"].GetSize().height + 4)
-
-
-class LogoPanel(wx.Panel):
-    """Win95-style banner: grey 3D panel across the whole dialog with the logo on it."""
-
-    def __init__(self, parent, path):
-        self.bmp = wx.Bitmap(path, wx.BITMAP_TYPE_PNG)
-        super().__init__(parent, size=(-1, self.bmp.GetHeight() + 4))
-        self.SetMinSize((self.bmp.GetWidth(), self.bmp.GetHeight() + 4))
-        self.SetBackgroundStyle(wx.BG_STYLE_PAINT)
-        self.Bind(wx.EVT_PAINT, self.on_paint)
-        self.Bind(wx.EVT_SIZE, lambda e: (self.Refresh(), e.Skip()))
-
-    def on_paint(self, _evt):
-        dc = wx.AutoBufferedPaintDC(self)
-        w, h = self.GetClientSize()
-        dc.SetBackground(wx.Brush(wx.Colour(192, 192, 192)))
-        dc.Clear()
-        dc.DrawBitmap(self.bmp, 2, 2, True)
-        for col, y in ((wx.WHITE, 0), (wx.Colour(223, 223, 223), 1),
-                       (wx.Colour(128, 128, 128), h - 2), (wx.BLACK, h - 1)):
-            dc.SetPen(wx.Pen(col))
-            dc.DrawLine(0, y, w, y)
+            if lab:
+                label(self.ctrl[key], lab)
+        label(self.pitch_mode, "P")
 
 
 # ---------------------------------------------------------------- dialog
 
 class ViaDialog(wx.Dialog):
     """Modeless while it is open: the PCB Editor underneath stays usable (zoom, pan,
-    selecting pads), and "Use current selection" re-reads what is selected."""
+    selecting pads), and the reselect button re-reads what is selected."""
 
     def __init__(self, frame, defaults, summary, preview_cb, reselect_cb, here):
         # No parent on purpose: GNOME/Mutter attaches child dialogs to the parent window
-        # (cannot be moved, parent dimmed). A parentless dialog stays movable and the
-        # board stays visible; STAY_ON_TOP keeps it above the PCB Editor.
+        # (cannot be moved, parent dimmed). STAY_ON_TOP keeps it above the PCB Editor.
         super().__init__(None, title=NAME,
-                         style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER
-                         | wx.STAY_ON_TOP | wx.DIALOG_NO_PARENT)
+                         style=wx.DEFAULT_DIALOG_STYLE | wx.STAY_ON_TOP | wx.DIALOG_NO_PARENT)
         self.preview_cb = preview_cb
         self.reselect_cb = reselect_cb
         self.result = False
@@ -291,93 +271,137 @@ class ViaDialog(wx.Dialog):
         self._timer = None
         v = dict(DEFAULTS, **defaults)
         v.update(_last)
+        dark = is_dark(self.GetBackgroundColour())
         try:
             self.SetIcon(wx.Icon(os.path.join(here, "via_o_tronic.png"), wx.BITMAP_TYPE_PNG))
         except Exception:
             pass
 
         box = wx.BoxSizer(wx.VERTICAL)
-        logo = os.path.join(here, "via_o_tronic_logo.png")
-        if os.path.exists(logo):
-            box.Add(LogoPanel(self, logo), 0, wx.EXPAND)
 
-        self.summary = wx.StaticText(self, label="Netclasses of the selection:\n" + summary)
-        self.reselect = wx.Button(self, label="Use current selection")
-        top = wx.BoxSizer(wx.HORIZONTAL)
-        top.Add(self.summary, 1, wx.ALIGN_CENTER_VERTICAL)
-        top.Add(self.reselect, 0, wx.LEFT | wx.ALIGN_CENTER_VERTICAL, 10)
-        box.Add(top, 0, wx.ALL | wx.EXPAND, 10)
+        # logo, netclass summary and reselect
+        head = wx.BoxSizer(wx.HORIZONTAL)
+        logo = os.path.join(here, "via_o_tronic_logo_dark.png" if dark else "via_o_tronic_logo.png")
+        if os.path.exists(logo):
+            head.Add(wx.StaticBitmap(self, bitmap=wx.Bitmap(logo, wx.BITMAP_TYPE_PNG)),
+                     0, wx.ALIGN_CENTER_VERTICAL)
+        head.AddStretchSpacer()
+        self.reselect = wx.Button(self, label="↻", style=wx.BU_EXACTFIT)
+        self.reselect.SetToolTip("Use the pads/tracks selected now")
+        head.Add(self.reselect, 0, wx.ALIGN_CENTER_VERTICAL)
+        box.Add(head, 0, wx.LEFT | wx.RIGHT | wx.TOP | wx.EXPAND, 8)
+        self.summary = wx.StaticText(self, label=summary)
+        self.summary.SetForegroundColour(wx.Colour(140, 140, 140))
+        box.Add(self.summary, 0, wx.LEFT | wx.RIGHT | wx.TOP, 8)
+
+        # direction + mode
+        row = wx.BoxSizer(wx.HORIZONTAL)
+        self.dirs = []
+        fg = self.GetForegroundColour()
+        for k, (lab, ang) in enumerate(DIRS):
+            b = wx.ToggleButton(self, label="", style=wx.BU_EXACTFIT)
+            b.SetBitmap(arrow_bitmap(ang, fg))
+            b.SetToolTip("%d°" % ang)
+            b.Bind(wx.EVT_TOGGLEBUTTON, lambda e, k=k: self.on_dir(k))
+            self.dirs.append(b)
+            row.Add(b, 0, wx.RIGHT, 1)
+        self.dir = min(v.get("dir", 0), len(DIRS) - 1)
+        self.route = wx.Choice(self, choices=[r[0] for r in ROUTES])
+        self.route.SetSelection(min(v.get("route", 0), len(ROUTES) - 1))
+        self.route.SetToolTip("Track routing")
+        self.slack = wx.Choice(self, choices=[s[0] for s in SLACKS])
+        self.slack.SetSelection(min(v.get("slack", 0), len(SLACKS) - 1))
+        self.slack.SetToolTip("Where the bends line up when the tracks need different lengths")
+        row.Add(self.route, 0, wx.LEFT | wx.ALIGN_CENTER_VERTICAL, 6)
+        row.Add(self.slack, 0, wx.LEFT | wx.ALIGN_CENTER_VERTICAL, 4)
+        box.Add(row, 0, wx.ALL, 8)
 
         self.pic = Pictogram(self, v, self.on_change)
-        box.Add(self.pic, 0, wx.LEFT | wx.RIGHT | wx.ALIGN_CENTER_HORIZONTAL, 10)
+        box.Add(self.pic, 0, wx.LEFT | wx.RIGHT, 8)
 
-        # remaining options: two label/control pairs per row
-        def choice(opts, key):
-            c = wx.Choice(self, choices=[o if isinstance(o, str) else o[0] for o in opts])
+        # rarely used options
+        self.more = wx.CollapsiblePane(self, label="More",
+                                       style=wx.CP_DEFAULT_STYLE | wx.CP_NO_TLW_RESIZE)
+        mp = self.more.GetPane()
+
+        def choice(opts, key, tip):
+            c = wx.Choice(mp, choices=[o[0] for o in opts])
             c.SetSelection(min(v.get(key, 0), len(opts) - 1))
+            c.SetToolTip(tip)
             c.Bind(wx.EVT_CHOICE, self.on_change)
             return c
 
-        def num(key, width=70):
-            t = wx.TextCtrl(self, value="%g" % v[key], size=(width, -1))
+        def num(key, tip, hint=None):
+            val = v.get(key, "")
+            if isinstance(val, str):
+                txt = val
+            elif hint and not val:
+                txt = ""
+            else:
+                txt = "%g" % val
+            t = wx.TextCtrl(mp, value=txt, size=(64, -1))
+            t.SetToolTip(tip)
+            if hint:
+                try:
+                    t.SetHint(hint)
+                except Exception:
+                    pass
             t.Bind(wx.EVT_TEXT, self.on_change)
             return t
 
         self.c = dict(
-            dir=choice(DIRS + [("Custom angle", None)], "dir"),
-            angle=num("angle"),
-            route=choice(ROUTES, "route"),
-            slack=choice(SLACKS, "slack"),
-            line=choice(LINES, "line"),
-            ref=choice(REFS, "ref"),
-            align=choice(ALIGNS, "align"),
-            profile=choice(PROFILES, "profile"),
-            step=num("step"),
-            custom=wx.TextCtrl(self, value=v.get("custom", "0; 0.5; 1.0")),
-            vias_per=num("vias_per"),
-            group_mode=choice(GROUPS, "group_mode"),
-            group_spacing=num("group_spacing"),
-            ar_grid=num("ar_grid"),
-            ar_margin=num("ar_margin"),
+            line=choice(LINES, "line", "Vias on one common line, or each at its own distance"),
+            ref=choice(REFS, "ref", "How D is measured (pad → via)"),
+            align=choice(ALIGNS, "align", "Where the via row starts along the pads"),
+            angle=num("angle", "Custom direction [deg], overrides the arrows", "°"),
+            profile=choice(PROFILES, "profile", "Extra length per track"),
+            step=num("step", "Profile step [mm]"),
+            custom=num("custom", "Extra lengths [mm], separated with ;"),
+            vias_per=num("vias_per", "Vias per pad"),
+            group_mode=choice(GROUPS, "group_mode", "Layout of several vias per pad"),
+            group_spacing=num("group_spacing", "Via spacing in a group [mm]", "auto"),
+            ar_grid=num("ar_grid", "Autoroute grid [mm]"),
+            ar_margin=num("ar_margin", "Autoroute search margin [mm]"),
         )
-        self.c["custom"].Bind(wx.EVT_TEXT, self.on_change)
-        rows = [
-            ("Direction", "dir", "Custom angle [deg]", "angle"),
-            ("Track routing", "route", "Extra length goes to", "slack"),
-            ("Via line", "line", "D measured", "ref"),
-            ("Row alignment", "align", "Length profile", "profile"),
-            ("Profile step [mm]", "step", "Custom lengths [mm] (;)", "custom"),
-            ("Vias per item", "vias_per", "Via group layout", "group_mode"),
-            ("Group spacing [mm] (0 = auto)", "group_spacing", "Autoroute grid [mm]", "ar_grid"),
-            ("Autoroute margin [mm]", "ar_margin", None, None),
-        ]
-        grid = wx.FlexGridSizer(cols=4, vgap=5, hgap=8)
-        for l1, k1, l2, k2 in rows:
-            for lab, key in ((l1, k1), (l2, k2)):
+        rows = [("Via line", "line", "D from", "ref", "Align", "align", "Angle", "angle"),
+                ("Length", "profile", "Step", "step", "List", "custom", None, None),
+                ("Vias/pad", "vias_per", "Layout", "group_mode", "Spacing", "group_spacing", None, None),
+                ("Route grid", "ar_grid", "Margin", "ar_margin", None, None, None, None)]
+        grid = wx.FlexGridSizer(cols=8, vgap=4, hgap=4)
+        for r in rows:
+            for lab, key in zip(r[0::2], r[1::2]):
                 if key is None:
                     grid.AddMany([(0, 0), (0, 0)])
                     continue
-                grid.Add(wx.StaticText(self, label=lab), 0, wx.ALIGN_CENTER_VERTICAL)
-                grid.Add(self.c[key], 1, wx.EXPAND)
-        grid.AddGrowableCol(1)
-        grid.AddGrowableCol(3)
-        opts = wx.StaticBoxSizer(wx.VERTICAL, self, "Options")
-        opts.Add(grid, 1, wx.ALL | wx.EXPAND, 6)
-        box.Add(opts, 0, wx.ALL | wx.EXPAND, 10)
+                grid.Add(wx.StaticText(mp, label=lab), 0, wx.ALIGN_CENTER_VERTICAL | wx.LEFT, 4)
+                grid.Add(self.c[key], 0, wx.EXPAND)
+        ps = wx.BoxSizer(wx.VERTICAL)
+        ps.Add(grid, 0, wx.TOP | wx.BOTTOM, 4)
+        mp.SetSizer(ps)
+        self.more.Collapse(not v.get("more", False))
+        self.more.Bind(wx.EVT_COLLAPSIBLEPANE_CHANGED, self.on_more)
+        box.Add(self.more, 0, wx.LEFT | wx.RIGHT | wx.EXPAND, 8)
 
-        self.live = wx.CheckBox(self, label="Live preview on the board")
+        # preview, status, buttons on one line
+        bottom = wx.BoxSizer(wx.HORIZONTAL)
+        self.live = wx.CheckBox(self, label="Preview")
         self.live.SetValue(v.get("live", True))
-        self.live.Bind(wx.EVT_CHECKBOX, self.on_change)
-        self.status = wx.StaticText(self, label="")
-        note = wx.StaticText(self, label="The board stays usable while this window is open: zoom, pan, select "
-                                         "other pads.\nDo not edit the board until you press OK/Cancel.")
-        box.Add(self.live, 0, wx.LEFT | wx.RIGHT, 10)
-        box.Add(self.status, 0, wx.LEFT | wx.RIGHT | wx.TOP | wx.EXPAND, 10)
-        box.Add(note, 0, wx.LEFT | wx.RIGHT | wx.TOP, 10)
-        box.Add(self.CreateButtonSizer(wx.OK | wx.CANCEL), 0, wx.ALL | wx.ALIGN_RIGHT, 10)
+        self.status = wx.StaticText(self, label="", size=(150, -1),
+                                    style=wx.ST_ELLIPSIZE_END | wx.ST_NO_AUTORESIZE)
+        bottom.Add(self.live, 0, wx.ALIGN_CENTER_VERTICAL)
+        bottom.Add(self.status, 1, wx.LEFT | wx.RIGHT | wx.ALIGN_CENTER_VERTICAL, 8)
+        bottom.Add(wx.Button(self, wx.ID_CANCEL), 0, wx.RIGHT, 4)
+        ok = wx.Button(self, wx.ID_OK)
+        ok.SetDefault()
+        bottom.Add(ok, 0)
+        box.Add(bottom, 0, wx.ALL | wx.EXPAND, 8)
+
         self.SetSizerAndFit(box)
         self.place(frame)
 
+        self.route.Bind(wx.EVT_CHOICE, self.on_change)
+        self.slack.Bind(wx.EVT_CHOICE, self.on_change)
+        self.live.Bind(wx.EVT_CHECKBOX, self.on_change)
         self.reselect.Bind(wx.EVT_BUTTON, self.on_reselect)
         self.Bind(wx.EVT_BUTTON, lambda e: self.finish(True), id=wx.ID_OK)
         self.Bind(wx.EVT_BUTTON, lambda e: self.finish(False), id=wx.ID_CANCEL)
@@ -411,26 +435,39 @@ class ViaDialog(wx.Dialog):
             self._loop.Exit()
 
     def place(self, frame):
-        """Last position if known, otherwise the right edge of the PCB Editor window."""
+        """Last position if known, otherwise the top right corner of the PCB Editor."""
         pos = _last.get("pos")
         if pos is None and frame is not None:
             r = frame.GetScreenRect()
             w, _h = self.GetSize()
-            pos = (r.GetRight() - w - 40, r.GetTop() + 80)
+            pos = (r.GetRight() - w - 30, r.GetTop() + 110)
         if pos is not None:
             self.SetPosition(wx.Point(*pos))
 
     def remember(self):
         p = self.GetPosition()
         _last["pos"] = (p.x, p.y)
+        _last["more"] = self.more.IsExpanded()
+
+    def on_dir(self, k):
+        self.dir = k
+        self.c["angle"].ChangeValue("")
+        self.on_change()
+
+    def on_more(self, _evt=None):
+        _last["more"] = self.more.IsExpanded()
+        self.Layout()
+        self.Fit()
 
     def update_enabled(self):
-        route = ROUTES[self.c["route"].GetSelection()][1]
+        custom_angle = bool(self.c["angle"].GetValue().strip())
+        for k, b in enumerate(self.dirs):
+            b.SetValue(k == self.dir and not custom_angle)
+        route = ROUTES[self.route.GetSelection()][1]
         self.pic.set_mode(route)
-        self.c["angle"].Enable(self.c["dir"].GetSelection() == len(DIRS))
-        self.c["align"].Enable(self.pic.pitch_mode.GetSelection() != 1)
-        self.c["slack"].Enable(route == g.ROUTE_OFFSET)
+        self.slack.Enable(route == g.ROUTE_OFFSET)
         self.c["ref"].Enable(route != g.ROUTE_OFFSET)
+        self.c["align"].Enable(self.pic.pitch_mode.GetSelection() != 1)
         auto = route == g.ROUTE_AUTO
         self.c["ar_grid"].Enable(auto)
         self.c["ar_margin"].Enable(auto)
@@ -453,7 +490,7 @@ class ViaDialog(wx.Dialog):
     def on_reselect(self, _evt=None):
         msg = self.reselect_cb()
         if msg is not None:
-            self.summary.SetLabel("Netclasses of the selection:\n" + msg)
+            self.summary.SetLabel(msg)
         self.refresh_preview()
 
     def refresh_preview(self):
@@ -461,52 +498,62 @@ class ViaDialog(wx.Dialog):
             return
         try:
             v = self.values()
-        except ValueError:
-            self.status.SetLabel("Invalid number.")
+        except ValueError as e:
+            self.set_status("Invalid value" + (": %s" % e if str(e) else ""))
             return
         wx.BeginBusyCursor()
         try:
             msg = self.preview_cb(v if self.live.GetValue() else None)
         finally:
             wx.EndBusyCursor()
-        self.status.SetLabel(msg)
-        self.Layout()
-        self.Fit()
+        self.set_status(msg)
+
+    def set_status(self, msg):
+        """Short text on the dialog (warning count if any), the full text in the tooltip."""
+        lines = [l for l in (msg or "").split("\n") if l.strip()]
+        warn = [l for l in lines if "Item" in l or "too close" in l]
+        if warn:
+            text = "⚠ %d warning%s" % (len(warn), "s" if len(warn) > 1 else "")
+        else:
+            text = lines[0] if lines else ""
+        self.status.SetLabel(text)
+        self.status.SetToolTip("\n".join(lines))
 
     def values(self):
         def f(ctrl, optional=False):
             s = ctrl.GetValue().strip().replace(",", ".")
-            if optional and s in ("", "auto", "nc", "netclass"):
+            if optional and s in ("", "auto"):
                 return 0.0
             return float(s)
-        fc = lambda k: f(self.c[k])
+        fc = lambda k, opt=False: f(self.c[k], opt)
         fp = lambda k: f(self.pic.ctrl[k], k in Pictogram.OPTIONAL)
         sel = lambda k: self.c[k].GetSelection()
-        raw = dict(dir=sel("dir"), ref=sel("ref"), line=sel("line"), align=sel("align"),
-                   route=sel("route"), slack=sel("slack"),
+        ang_txt = self.c["angle"].GetValue().strip().replace(",", ".")
+        raw = dict(dir=self.dir, angle=ang_txt, ref=sel("ref"), line=sel("line"), align=sel("align"),
+                   route=self.route.GetSelection(), slack=self.slack.GetSelection(),
                    pitch_mode=self.pic.pitch_mode.GetSelection(),
-                   angle=fc("angle"), dist=fp("dist"), pitch=fp("pitch"),
+                   dist=fp("dist"), pitch=fp("pitch"),
                    lead_pad=fp("lead_pad"), lead_via=fp("lead_via"), shift=fp("shift"),
                    via_d=fp("via_d"), via_drill=fp("via_drill"), width=fp("width"),
                    profile=sel("profile"), step=fc("step"),
                    vias_per=int(fc("vias_per")), group_mode=sel("group_mode"),
-                   group_spacing=fc("group_spacing"),
+                   group_spacing=fc("group_spacing", True),
                    ar_grid=fc("ar_grid"), ar_margin=fc("ar_margin"),
                    custom=self.c["custom"].GetValue(),
                    live=self.live.GetValue())
         if raw["vias_per"] < 1 or raw["group_spacing"] < 0:
-            raise ValueError("vias per item >= 1, spacing >= 0")
+            raise ValueError("vias/pad")
         if raw["ar_grid"] < 0.01 or raw["ar_margin"] < 0:
-            raise ValueError("autoroute grid >= 0.01 mm, margin >= 0")
+            raise ValueError("route grid")
         if raw["lead_pad"] < 0 or raw["lead_via"] < 0:
-            raise ValueError("leads >= 0")
+            raise ValueError("A, B")
         if min(raw["via_d"], raw["via_drill"], raw["width"]) < 0:
-            raise ValueError("sizes >= 0")
+            raise ValueError("sizes")
         if raw["via_d"] and raw["via_drill"] and raw["via_drill"] >= raw["via_d"]:
-            raise ValueError("drill < via diameter")
+            raise ValueError("drill ≥ via")
+        angle = float(ang_txt) if ang_txt else DIRS[raw["dir"]][1]
         custom = [float(x) for x in raw["custom"].replace(",", ".").replace(";", " ").split()]
         _last.update(raw)
-        angle = DIRS[raw["dir"]][1] if raw["dir"] < len(DIRS) else raw["angle"]
         return dict(raw, angle=angle, ref=REFS[raw["ref"]][1], line=LINES[raw["line"]][1],
                     align=ALIGNS[raw["align"]][1], route=ROUTES[raw["route"]][1],
                     slack_id=SLACKS[raw["slack"]][1],

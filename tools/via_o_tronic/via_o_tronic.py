@@ -394,12 +394,10 @@ def build(board, pads, tracks, ncv, v, skip=frozenset()):
             board.Add(via)
             created.append(via)
     widths = sorted(set(round(z[2], 3) for z in sizes))
-    info = "Pitch: %s, via %.3f mm, track %s mm, clearance %.3f mm" % (
-        "as pins" if pitch == 0 else "%.3f mm" % pitch, max_via,
-        " / ".join("%.3f" % w for w in widths), max_clr)
+    info = "P %s, track %s mm" % ("as pins" if pitch == 0 else "%g" % pitch,
+                                  "/".join("%g" % w for w in widths))
     if count > 1:
-        info += "\n%d vias per item, spacing %.3f mm%s" % (
-            count, gspace, "" if v["group_spacing"] > 0 else " (auto)")
+        info += ", group %g mm" % gspace
     return created, warnings, info
 
 
@@ -454,9 +452,8 @@ def summarize(ncv):
     for n in ncv:
         if n["name"] not in seen:
             seen.add(n["name"])
-            lines.append("  %s: via %.3f / drill %.3f, track %.3f, clearance %.3f mm  [%s]"
-                         % (n["name"], n["via_d"], n["via_drill"], n["width"],
-                            n["clearance"], n["src"]))
+            lines.append("%s: via %g/%g, track %g, clr %g mm"
+                         % (n["name"], n["via_d"], n["via_drill"], n["width"], n["clearance"]))
     return "\n".join(lines)
 
 
@@ -531,7 +528,7 @@ class ViaOTronic(pcbnew.ActionPlugin):
         def reselect():
             p, t = selection(board, state["skip"])
             if not p and not t:
-                return "  (nothing with a net selected, keeping the previous selection)"
+                return "(nothing with a net selected, kept the previous selection)"
             sel.update(pads=p, tracks=t, ncv=[netclass_values(it, board, proj) for it in p + t])
             state["key"] = None
             return summarize(sel["ncv"])
