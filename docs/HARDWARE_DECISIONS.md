@@ -317,7 +317,8 @@ Zasada: części JLC basic, gdzie nie tracą względem referencji Nordica (exten
 
 | Elementy | Część (LCSC) | Typ | Uwagi |
 | --- | --- | --- | --- |
-| C5, C7, C8, C12, C19, C35 (100 nF 0402) | C1525 CL05B104KO5NNNC, X7R | Basic | |
+| C5, C7, C8, C12, C19 (100 nF 0402) | C1525 CL05B104KO5NNNC, X7R | Basic | |
+| C35 (100 nF 0603, VDDIO) | C14663 CC0603KRX7R9BB104, X7R 50 V | Basic | 0603 jak reszta bloku nPM1300 (A16) |
 | C1, C2, C17, C18 (12 pF 0402) | C1547 0402CG120J500NT, C0G ±5% | Basic | ±5% przesuwa CL o ok. 0,3 pF, mieści się w budżecie ±40 ppm |
 | C11 (100 pF 0402) | C1546, C0G ±5% | Basic | |
 | C6, C20, C21 (4,7 µF 0603) | C19666, X5R 16 V | Basic | |
