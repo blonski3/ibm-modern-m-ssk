@@ -114,6 +114,7 @@
 		)
 		(capping no)
 		(filling no)
+		(zone_defaults)
 		(grid_origin 167.83332 114.35132)
 		(pcbplotparams
 			(layerselection 0x00000000_00000000_55555555_5755f5ff)
@@ -26218,7 +26219,7 @@
 			(at 0 -1.43 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "3c6af0fb-e4c2-4256-aaca-1008b4f3106e")
+			(uuid "406149fc-0462-45e3-9292-74830cb98401")
 			(effects
 				(font
 					(size 1 1)
@@ -26230,7 +26231,7 @@
 			(at 0 1.43 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "d9605ef8-b2a4-4c59-82d8-0ee6e077bd7c")
+			(uuid "345f5fdd-a75d-494c-958f-b81fa0e700d2")
 			(effects
 				(font
 					(size 1 1)
@@ -26242,7 +26243,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "53a22a57-94b1-422b-b591-31f2a242d3ae")
+			(uuid "b0c566b3-26a1-459f-9735-cbe6649e92a6")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26253,7 +26254,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "0e92a5d4-fa10-4f56-9a57-3c6a82c9f09d")
+			(uuid "7195a879-8217-4e3b-9388-a07e7226d9b4")
 			(effects
 				(font
 					(size 1.27 1.27)

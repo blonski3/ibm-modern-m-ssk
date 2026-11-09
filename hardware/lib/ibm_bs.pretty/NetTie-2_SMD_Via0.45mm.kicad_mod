@@ -9,58 +9,74 @@
 		(at 0 -0.9 0)
 		(layer "F.SilkS")
 		(hide yes)
-		(uuid "997ca83b-e0d9-4c44-97ac-d55d90753ec5")
-		(effects (font (size 0.5 0.5) (thickness 0.1)))
+		(uuid "ba9a4259-755d-495e-8035-1920806b8b3a")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.1)
+			)
+		)
 	)
 	(property "Value" "NetTie_SMD_Via"
 		(at 0 0.9 0)
 		(layer "F.Fab")
-		(uuid "966d5cb1-b995-40c5-9842-e2eb4739b5cb")
-		(effects (font (size 0.5 0.5) (thickness 0.1)))
+		(uuid "518c3a2d-416c-4403-a6b5-6e5f1f68161a")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.1)
+			)
+		)
 	)
 	(property "Datasheet" ""
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "95c3d988-70b2-4aa5-a983-e50abaeb9aed")
-		(effects (font (size 1.27 1.27)))
+		(uuid "1bc0e17b-afe6-4329-996f-bba8bfbc56ad")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
 	)
 	(property "Description" "Net tie SMD pad to plated via"
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "2e261a6f-4f1a-4532-a3be-c389bf741699")
-		(effects (font (size 1.27 1.27)))
+		(uuid "3e3da1da-f298-438f-b1e0-fb6c0cff84ec")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
 	)
 	(attr exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
 	(net_tie_pad_groups "1, 2")
-	(fp_rect
-		(start -0.5 -0.5) (end 0.5 0.5)
-		(stroke (width 0.05) (type solid))
-		(fill no)
-		(layer "F.CrtYd")
-		(uuid "e64c96a6-80ca-479d-9aee-3b34e5bf2f6a")
-	)
+	(duplicate_pad_numbers_are_jumpers no)
 	(fp_text user "${REFERENCE}"
 		(at 0 0 0)
 		(layer "F.Fab")
-		(uuid "845eae70-17b6-407d-a43e-6a8e251821e4")
-		(effects (font (size 0.25 0.25) (thickness 0.04)))
+		(uuid "78354934-256b-4f84-adc5-b9b9b9305f26")
+		(effects
+			(font
+				(size 0.25 0.25)
+				(thickness 0.04)
+			)
+		)
 	)
 	(pad "1" thru_hole circle
 		(at 0 0)
-		(size 0.45 0.45)
-		(drill 0.2)
+		(size 0.6 0.6)
+		(drill 0.3)
 		(layers "*.Cu")
 		(remove_unused_layers no)
-		(uuid "1e0b5182-8c55-4f40-9176-d18990e45090")
+		(uuid "f4a4cd0f-a386-4378-a68e-f2a37596607b")
 	)
-	(pad "2" smd roundrect
+	(pad "2" smd circle
 		(at 0 0)
 		(size 0.6 0.6)
 		(layers "F.Cu")
-		(roundrect_rratio 0.15)
-		(uuid "ae496bd6-2f08-4a41-959a-a40eb1027cae")
+		(uuid "27b373cb-98bb-4ae2-9357-0b9ef0f70489")
 	)
 	(embedded_fonts no)
 )

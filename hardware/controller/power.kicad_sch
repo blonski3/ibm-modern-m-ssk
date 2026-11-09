@@ -6644,7 +6644,7 @@
 				)
 			)
 		)
-		(property "Value" "+3V3_NRF"
+		(property "Value" "+3V3_BUCK"
 			(at 111.76 114.3 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6735,7 +6735,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 111.76 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -6911,7 +6911,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C1525"
+		(property "LCSC Part" "C14663"
 			(at 111.76 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -6966,7 +6966,7 @@
 				)
 			)
 		)
-		(property "PART NUMBER" "CL05B104KO5NNNC"
+		(property "PART NUMBER" "CC0603KRX7R9BB104 "
 			(at 111.76 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -14582,7 +14582,7 @@
 				)
 			)
 		)
-		(property "Footprint" "NetTie:NetTie-2_THT_Pad0.3mm"
+		(property "Footprint" "ibm_bs:NetTie-2_SMD_Via0.45mm"
 			(at 158.75 157.48 0)
 			(hide yes)
 			(show_name no)
