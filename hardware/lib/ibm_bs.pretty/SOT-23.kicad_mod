@@ -49,18 +49,6 @@
 			)
 		)
 	)
-	(property "KiLib_Generator" "package/gullwing"
-		(at 0 0 0)
-		(layer "F.SilkS")
-		(hide yes)
-		(uuid "0a07376e-005b-416e-aab3-bd7e59aa1be7")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
 	(attr smd)
 	(duplicate_pad_numbers_are_jumpers no)
 	(fp_line

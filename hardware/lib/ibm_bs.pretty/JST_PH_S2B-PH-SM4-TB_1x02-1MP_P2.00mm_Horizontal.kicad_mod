@@ -49,18 +49,6 @@
 			)
 		)
 	)
-	(property "KiLib_Generator" "connector/SMD_single_row_plus_mounting_pad"
-		(at 0 0 0)
-		(layer "F.SilkS")
-		(hide yes)
-		(uuid "33e176cf-33ee-41f7-9237-65324b5faab6")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
 	(attr smd)
 	(duplicate_pad_numbers_are_jumpers no)
 	(fp_line

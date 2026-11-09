@@ -3331,17 +3331,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 237.49 135.89 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "8f909c7c-265a-4a7b-9f42-0d99ee97413e")
 		)
@@ -3416,17 +3405,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 237.49 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 237.49 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -3519,40 +3497,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 105.41 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 105.41 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 105.41 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 105.41 62.23 90)
 			(hide yes)
 			(show_name no)
@@ -3647,17 +3592,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 262.89 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "ac3a99a5-8c31-4fb7-8655-95d239462264")
 		)
@@ -3740,40 +3674,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 207.01 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 207.01 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 207.01 125.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 207.01 125.73 90)
 			(hide yes)
 			(show_name no)
@@ -3868,17 +3769,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 46.99 135.89 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "6882cee1-45b8-4b42-9c1e-a6e76c92cf5a")
 		)
@@ -3961,40 +3851,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 168.91 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 168.91 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 168.91 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 168.91 62.23 90)
 			(hide yes)
 			(show_name no)
@@ -4089,17 +3946,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 72.39 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "fde0e651-8991-46db-8fc5-6258747fe14b")
 		)
@@ -4174,17 +4020,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 135.89 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 135.89 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -4277,40 +4112,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 245.11 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 245.11 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 245.11 87.63 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 245.11 87.63 90)
 			(hide yes)
 			(show_name no)
@@ -4403,40 +4205,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 67.31 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 67.31 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 67.31 125.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 67.31 125.73 90)
 			(hide yes)
 			(show_name no)
@@ -4531,17 +4300,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 85.09 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "3ada39b0-4a37-450b-b01f-52f45f6c1dcb")
 		)
@@ -4624,40 +4382,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 194.31 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 194.31 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 194.31 87.63 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 194.31 87.63 90)
 			(hide yes)
 			(show_name no)
@@ -4752,17 +4477,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 250.19 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "387331dc-6a1d-44dc-a68b-da0d572f8522")
 		)
@@ -4845,40 +4559,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 257.81 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 257.81 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 257.81 87.63 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 257.81 87.63 90)
 			(hide yes)
 			(show_name no)
@@ -4973,17 +4654,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 173.99 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "fc2d5487-5d2a-48d1-8d4c-3b1e6e385329")
 		)
@@ -5066,40 +4736,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 143.51 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 143.51 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 143.51 87.63 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 143.51 87.63 90)
 			(hide yes)
 			(show_name no)
@@ -5194,17 +4831,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 148.59 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "3c12977e-9ccc-4f5b-a9bb-52e21db0334f")
 		)
@@ -5279,17 +4905,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 85.09 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 85.09 123.19 0)
 			(hide yes)
 			(show_name no)
@@ -5382,40 +4997,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 105.41 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 105.41 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 105.41 87.63 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 105.41 87.63 90)
 			(hide yes)
 			(show_name no)
@@ -5508,40 +5090,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 181.61 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 181.61 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 181.61 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 181.61 62.23 90)
 			(hide yes)
 			(show_name no)
@@ -5634,40 +5183,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 41.91 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 41.91 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 41.91 113.03 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 41.91 113.03 90)
 			(hide yes)
 			(show_name no)
@@ -5760,40 +5276,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 92.71 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 92.71 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 92.71 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 92.71 62.23 90)
 			(hide yes)
 			(show_name no)
@@ -5888,17 +5371,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 72.39 135.89 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "56746cac-e8a2-4242-9d8b-68c2f60061b0")
 		)
@@ -5981,40 +5453,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 143.51 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 143.51 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 143.51 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 143.51 62.23 90)
 			(hide yes)
 			(show_name no)
@@ -6107,40 +5546,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 130.81 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 130.81 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 130.81 100.33 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 130.81 100.33 90)
 			(hide yes)
 			(show_name no)
@@ -6233,40 +5639,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 54.61 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 54.61 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 54.61 113.03 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 54.61 113.03 90)
 			(hide yes)
 			(show_name no)
@@ -6359,40 +5732,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 156.21 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 156.21 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 156.21 113.03 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 156.21 113.03 90)
 			(hide yes)
 			(show_name no)
@@ -6485,40 +5825,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 232.41 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 232.41 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 232.41 100.33 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 232.41 100.33 90)
 			(hide yes)
 			(show_name no)
@@ -6611,40 +5918,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 257.81 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 257.81 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 257.81 138.43 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 257.81 138.43 90)
 			(hide yes)
 			(show_name no)
@@ -6739,17 +6013,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 110.49 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "b03704b9-a8ba-4ed4-a730-f04ded654a3a")
 		)
@@ -6824,17 +6087,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 46.99 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 46.99 97.79 0)
 			(hide yes)
 			(show_name no)
@@ -6927,40 +6179,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 92.71 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 92.71 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 92.71 87.63 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 92.71 87.63 90)
 			(hide yes)
 			(show_name no)
@@ -7055,17 +6274,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 135.89 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "8d62afa9-0512-4a19-ab25-0e9a846e1bb3")
 		)
@@ -7140,17 +6348,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 161.29 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 161.29 97.79 0)
 			(hide yes)
 			(show_name no)
@@ -7243,40 +6440,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 194.31 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 194.31 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 194.31 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 194.31 62.23 90)
 			(hide yes)
 			(show_name no)
@@ -7371,17 +6535,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 72.39 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "a7285b3c-e82b-4132-ac41-a3c61a552b6b")
 		)
@@ -7464,40 +6617,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 54.61 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 54.61 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 54.61 100.33 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 54.61 100.33 90)
 			(hide yes)
 			(show_name no)
@@ -7590,40 +6710,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 80.01 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 80.01 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 80.01 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 80.01 62.23 90)
 			(hide yes)
 			(show_name no)
@@ -7718,17 +6805,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 59.69 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "e459f545-65dc-4d9f-ae9a-a01706c17234")
 		)
@@ -7803,17 +6879,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 46.99 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 46.99 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -7908,17 +6973,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 186.69 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "e5476ca5-c979-4ab0-b287-9efd79ee3889")
 		)
@@ -8001,40 +7055,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 67.31 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 67.31 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 67.31 113.03 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 67.31 113.03 90)
 			(hide yes)
 			(show_name no)
@@ -8127,40 +7148,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 67.31 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 67.31 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 67.31 138.43 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 67.31 138.43 90)
 			(hide yes)
 			(show_name no)
@@ -8253,40 +7241,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 130.81 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 130.81 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 130.81 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 130.81 62.23 90)
 			(hide yes)
 			(show_name no)
@@ -8381,17 +7336,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 212.09 135.89 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "98c0557b-4760-4fa3-9c48-d76023ec2eeb")
 		)
@@ -8474,40 +7418,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 156.21 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 156.21 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 156.21 100.33 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 156.21 100.33 90)
 			(hide yes)
 			(show_name no)
@@ -8600,40 +7511,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 118.11 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 118.11 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 118.11 113.03 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 118.11 113.03 90)
 			(hide yes)
 			(show_name no)
@@ -8728,17 +7606,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 110.49 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "582988f9-3fb6-4326-a39b-258d2c6ea17d")
 		)
@@ -8821,40 +7688,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 92.71 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 92.71 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 92.71 113.03 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 92.71 113.03 90)
 			(hide yes)
 			(show_name no)
@@ -8947,40 +7781,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 207.01 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 207.01 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 207.01 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 207.01 62.23 90)
 			(hide yes)
 			(show_name no)
@@ -9073,40 +7874,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 194.31 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 194.31 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 194.31 125.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 194.31 125.73 90)
 			(hide yes)
 			(show_name no)
@@ -9201,17 +7969,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 135.89 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "b02cbea9-21ee-4a78-9714-1361f48ad353")
 		)
@@ -9294,40 +8051,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 257.81 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 257.81 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 257.81 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 257.81 62.23 90)
 			(hide yes)
 			(show_name no)
@@ -9420,40 +8144,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 207.01 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 207.01 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 207.01 100.33 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 207.01 100.33 90)
 			(hide yes)
 			(show_name no)
@@ -9548,17 +8239,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 212.09 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "19308b81-e0e2-484e-ae52-829bb37e2f02")
 		)
@@ -9633,17 +8313,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 123.19 135.89 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 123.19 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -9738,17 +8407,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 250.19 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "99131b33-585d-4907-b3bf-e9bd6158b898")
 		)
@@ -9823,17 +8481,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 173.99 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 173.99 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -9928,17 +8575,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 250.19 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "00fb735a-d004-4150-bac2-0159a8c4640b")
 		)
@@ -10021,40 +8657,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 105.41 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 105.41 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 105.41 125.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 105.41 125.73 90)
 			(hide yes)
 			(show_name no)
@@ -10149,17 +8752,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 123.19 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "7ab78e5f-ceab-44e7-b74d-761c83cebc3c")
 		)
@@ -10242,40 +8834,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 67.31 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 67.31 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 67.31 87.63 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 67.31 87.63 90)
 			(hide yes)
 			(show_name no)
@@ -10368,40 +8927,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 181.61 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 181.61 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 181.61 125.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 181.61 125.73 90)
 			(hide yes)
 			(show_name no)
@@ -10496,17 +9022,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 173.99 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "e1de50d7-d500-4ae0-a2d0-6dd3ca79180b")
 		)
@@ -10581,17 +9096,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 212.09 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 212.09 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -10684,40 +9188,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 67.31 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 67.31 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 67.31 100.33 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 67.31 100.33 90)
 			(hide yes)
 			(show_name no)
@@ -10812,17 +9283,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 262.89 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "720f7ac6-3a64-494c-8ef9-e7a33bed9fd0")
 		)
@@ -10905,40 +9365,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 232.41 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 232.41 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 232.41 138.43 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 232.41 138.43 90)
 			(hide yes)
 			(show_name no)
@@ -11033,17 +9460,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 123.19 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "0dd044b8-d75e-49d0-983c-eefdfaab1cc4")
 		)
@@ -11126,40 +9542,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 92.71 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 92.71 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 92.71 100.33 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 92.71 100.33 90)
 			(hide yes)
 			(show_name no)
@@ -11254,17 +9637,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 85.09 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "fd3019e7-9e2d-4513-927d-beb36ae3c13d")
 		)
@@ -11339,17 +9711,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 199.39 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 199.39 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -11444,17 +9805,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 97.79 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "e7f9964a-4a65-462c-8056-49e24c66efe5")
 		)
@@ -11529,17 +9879,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 110.49 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 110.49 97.79 0)
 			(hide yes)
 			(show_name no)
@@ -11632,40 +9971,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 118.11 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 118.11 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 118.11 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 118.11 62.23 90)
 			(hide yes)
 			(show_name no)
@@ -11758,40 +10064,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 41.91 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 41.91 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 41.91 138.43 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 41.91 138.43 90)
 			(hide yes)
 			(show_name no)
@@ -11886,17 +10159,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 212.09 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "dbdecebe-3880-495b-911a-9ecd519b2d2e")
 		)
@@ -11971,17 +10233,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 72.39 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 72.39 97.79 0)
 			(hide yes)
 			(show_name no)
@@ -12074,40 +10325,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 105.41 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 105.41 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 105.41 100.33 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 105.41 100.33 90)
 			(hide yes)
 			(show_name no)
@@ -12202,17 +10420,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 250.19 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "654e6e04-6455-4c5b-9dda-f46ae837a13a")
 		)
@@ -12295,40 +10502,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 143.51 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 143.51 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 143.51 113.03 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 143.51 113.03 90)
 			(hide yes)
 			(show_name no)
@@ -12423,17 +10597,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 237.49 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "4f11c242-e62d-433c-b3fb-23e338a1990e")
 		)
@@ -12508,17 +10671,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 237.49 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 237.49 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -12611,40 +10763,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 257.81 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 257.81 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 257.81 100.33 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 257.81 100.33 90)
 			(hide yes)
 			(show_name no)
@@ -12739,17 +10858,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 72.39 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "2470ce0e-03d8-4575-b7b9-cb125036366e")
 		)
@@ -12824,17 +10932,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 85.09 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 85.09 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -12927,40 +11024,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 143.51 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 143.51 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 143.51 125.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 143.51 125.73 90)
 			(hide yes)
 			(show_name no)
@@ -13053,40 +11117,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 41.91 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 41.91 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 41.91 87.63 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 41.91 87.63 90)
 			(hide yes)
 			(show_name no)
@@ -13181,17 +11212,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 148.59 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "a53757bc-d1d0-4fb5-8437-a65a9962ed51")
 		)
@@ -13274,40 +11294,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 232.41 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 232.41 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 232.41 87.63 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 232.41 87.63 90)
 			(hide yes)
 			(show_name no)
@@ -13400,40 +11387,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 207.01 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 207.01 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 207.01 87.63 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 207.01 87.63 90)
 			(hide yes)
 			(show_name no)
@@ -13528,17 +11482,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 135.89 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "0eab227b-ef60-4d51-81f7-f035c0999f53")
 		)
@@ -13621,40 +11564,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 168.91 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 168.91 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 168.91 100.33 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 168.91 100.33 90)
 			(hide yes)
 			(show_name no)
@@ -13747,40 +11657,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 207.01 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 207.01 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 207.01 113.03 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 207.01 113.03 90)
 			(hide yes)
 			(show_name no)
@@ -13875,17 +11752,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 186.69 135.89 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "2bc97b61-3175-4621-9ff6-c8b7b3dd4588")
 		)
@@ -13968,40 +11834,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 156.21 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 156.21 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 156.21 87.63 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 156.21 87.63 90)
 			(hide yes)
 			(show_name no)
@@ -14094,40 +11927,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 194.31 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 194.31 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 194.31 100.33 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 194.31 100.33 90)
 			(hide yes)
 			(show_name no)
@@ -14222,17 +12022,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 199.39 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "5e45a187-7fa2-4fc4-9575-62cf66d645c7")
 		)
@@ -14307,17 +12096,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 123.19 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 123.19 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -14410,40 +12188,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 118.11 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 118.11 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 118.11 87.63 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 118.11 87.63 90)
 			(hide yes)
 			(show_name no)
@@ -14536,40 +12281,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 105.41 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 105.41 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 105.41 113.03 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 105.41 113.03 90)
 			(hide yes)
 			(show_name no)
@@ -14664,17 +12376,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 148.59 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "c75d0550-6522-4c03-ba5b-270caf60779b")
 		)
@@ -14749,17 +12450,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 123.19 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 123.19 97.79 0)
 			(hide yes)
 			(show_name no)
@@ -14854,17 +12544,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 46.99 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "c6e06e86-04ad-4007-b6e1-e54d1f3cbf62")
 		)
@@ -14947,40 +12626,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 156.21 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 156.21 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 156.21 125.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 156.21 125.73 90)
 			(hide yes)
 			(show_name no)
@@ -15073,40 +12719,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 181.61 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 181.61 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 181.61 87.63 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 181.61 87.63 90)
 			(hide yes)
 			(show_name no)
@@ -15201,17 +12814,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 97.79 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "ed747a40-2715-4e98-a435-0afcd453b467")
 		)
@@ -15286,17 +12888,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 148.59 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 148.59 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -15391,17 +12982,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 212.09 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "4904570c-34fe-427e-a13d-07597a08bdd2")
 		)
@@ -15484,40 +13064,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 181.61 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 181.61 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 181.61 100.33 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 181.61 100.33 90)
 			(hide yes)
 			(show_name no)
@@ -15612,17 +13159,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 199.39 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "1611039c-315d-440d-a911-80dfc86fe485")
 		)
@@ -15705,40 +13241,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 245.11 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 245.11 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 245.11 125.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 245.11 125.73 90)
 			(hide yes)
 			(show_name no)
@@ -15833,17 +13336,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 250.19 135.89 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "26cdc056-53a7-41b0-95ba-24b5ad0c09ce")
 		)
@@ -15918,17 +13410,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 59.69 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 59.69 123.19 0)
 			(hide yes)
 			(show_name no)
@@ -16021,40 +13502,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 80.01 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 80.01 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 80.01 100.33 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 80.01 100.33 90)
 			(hide yes)
 			(show_name no)
@@ -16149,17 +13597,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 110.49 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "53015478-ddbd-4d94-9245-b3cea099ebdd")
 		)
@@ -16234,17 +13671,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 46.99 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 46.99 123.19 0)
 			(hide yes)
 			(show_name no)
@@ -16339,17 +13765,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 186.69 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "4c5db5e7-53e4-48f9-94ee-17896cd80923")
 		)
@@ -16424,17 +13839,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 123.19 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 123.19 123.19 0)
 			(hide yes)
 			(show_name no)
@@ -16529,17 +13933,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 85.09 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "2190a7e3-7232-4edb-aab7-e51876a07f31")
 		)
@@ -16622,40 +14015,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 118.11 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 118.11 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 118.11 125.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 118.11 125.73 90)
 			(hide yes)
 			(show_name no)
@@ -16750,17 +14110,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 148.59 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "78368196-04ec-4107-800a-50cbad441e85")
 		)
@@ -16843,40 +14192,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 245.11 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 245.11 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 245.11 100.33 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 245.11 100.33 90)
 			(hide yes)
 			(show_name no)
@@ -16969,40 +14285,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 54.61 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 54.61 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 54.61 125.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 54.61 125.73 90)
 			(hide yes)
 			(show_name no)
@@ -17097,17 +14380,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 173.99 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "b969f1a4-9950-43a9-b978-40a24a041779")
 		)
@@ -17182,17 +14454,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 59.69 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 59.69 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -17285,40 +14546,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 181.61 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 181.61 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 181.61 138.43 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 181.61 138.43 90)
 			(hide yes)
 			(show_name no)
@@ -17413,17 +14641,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 199.39 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "5b411c23-1cfe-47b5-8371-f35b6616d085")
 		)
@@ -17498,17 +14715,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 161.29 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 161.29 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -17601,40 +14807,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 168.91 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 168.91 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 168.91 87.63 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 168.91 87.63 90)
 			(hide yes)
 			(show_name no)
@@ -17727,40 +14900,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 80.01 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 80.01 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 80.01 125.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 80.01 125.73 90)
 			(hide yes)
 			(show_name no)
@@ -17853,40 +14993,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 41.91 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 41.91 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 41.91 100.33 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 41.91 100.33 90)
 			(hide yes)
 			(show_name no)
@@ -17981,17 +15088,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 59.69 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "6a6143c8-ce74-406f-a28b-1eade4abbd3a")
 		)
@@ -18074,40 +15170,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 130.81 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 130.81 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 130.81 113.03 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 130.81 113.03 90)
 			(hide yes)
 			(show_name no)
@@ -18202,17 +15265,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 110.49 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "0b1c2f86-da7a-4b9f-b333-787d47a4aa19")
 		)
@@ -18287,17 +15339,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 97.79 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 97.79 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -18392,17 +15433,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 186.69 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "770f5577-9c0e-44e4-b762-1f91a1244891")
 		)
@@ -18485,40 +15515,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 130.81 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 130.81 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 130.81 87.63 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 130.81 87.63 90)
 			(hide yes)
 			(show_name no)
@@ -18611,40 +15608,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 130.81 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 130.81 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 130.81 125.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 130.81 125.73 90)
 			(hide yes)
 			(show_name no)
@@ -18737,40 +15701,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 41.91 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 41.91 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 41.91 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 41.91 62.23 90)
 			(hide yes)
 			(show_name no)
@@ -18865,17 +15796,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 59.69 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "a234379c-95fd-4a45-8192-0f0057c1999d")
 		)
@@ -18949,17 +15869,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 212.09 76.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 212.09 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -19052,40 +15961,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 54.61 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 54.61 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 54.61 87.63 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 54.61 87.63 90)
 			(hide yes)
 			(show_name no)
@@ -19178,40 +16054,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 181.61 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 181.61 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 181.61 113.03 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 181.61 113.03 90)
 			(hide yes)
 			(show_name no)
@@ -19304,40 +16147,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 80.01 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 80.01 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 80.01 113.03 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 80.01 113.03 90)
 			(hide yes)
 			(show_name no)
@@ -19430,40 +16240,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 143.51 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 143.51 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 143.51 100.33 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 143.51 100.33 90)
 			(hide yes)
 			(show_name no)
@@ -19558,17 +16335,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 186.69 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "824cd833-5b6d-439a-9eed-9ffb45c3a377")
 		)
@@ -19651,40 +16417,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 41.91 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 41.91 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 41.91 125.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 41.91 125.73 90)
 			(hide yes)
 			(show_name no)
@@ -19777,40 +16510,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 92.71 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 92.71 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 92.71 125.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 92.71 125.73 90)
 			(hide yes)
 			(show_name no)
@@ -19903,40 +16603,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 245.11 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 245.11 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 245.11 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 245.11 62.23 90)
 			(hide yes)
 			(show_name no)
@@ -20031,17 +16698,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 161.29 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "566279fa-62cd-4cee-92f3-22cf01f5615f")
 		)
@@ -20116,17 +16772,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 212.09 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 212.09 97.79 0)
 			(hide yes)
 			(show_name no)
@@ -20221,17 +16866,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 97.79 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "a4f2a982-de0c-4d60-95b6-9b7e802fa4ad")
 		)
@@ -20306,17 +16940,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 262.89 135.89 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 262.89 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -20411,17 +17034,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 173.99 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "35ca7f6e-a16d-4e0d-8763-16ad874c36e0")
 		)
@@ -20504,40 +17116,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 194.31 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 194.31 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 194.31 113.03 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 194.31 113.03 90)
 			(hide yes)
 			(show_name no)
@@ -20632,17 +17211,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 199.39 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "101e33b0-4077-40fb-814a-87eaf7ae5f62")
 		)
@@ -20717,17 +17285,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 186.69 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 186.69 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -20822,17 +17379,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 161.29 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "4e65020a-8f1c-43c9-b054-1a5cf50676f6")
 		)
@@ -20915,40 +17461,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 118.11 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 118.11 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 118.11 138.43 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 118.11 138.43 90)
 			(hide yes)
 			(show_name no)
@@ -21041,40 +17554,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 54.61 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 54.61 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 54.61 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 54.61 62.23 90)
 			(hide yes)
 			(show_name no)
@@ -21158,8 +17638,8 @@
 				)
 			)
 		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 46.99 59.69 0)
+		(property "PART NUMBER" "TS-1187A-B-A-B"
+			(at 46.99 54.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21169,7 +17649,7 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
+		(property "Description" "Push button switch, generic, two pins"
 			(at 46.99 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -21262,40 +17742,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 168.91 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 168.91 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 168.91 125.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 168.91 125.73 90)
 			(hide yes)
 			(show_name no)
@@ -21390,17 +17837,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 97.79 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "2d813ae2-60fd-4ee1-ab5f-d1e0487f05ac")
 		)
@@ -21483,40 +17919,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 245.11 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 245.11 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 245.11 138.43 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 245.11 138.43 90)
 			(hide yes)
 			(show_name no)
@@ -21609,40 +18012,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 207.01 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 207.01 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 207.01 138.43 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 207.01 138.43 90)
 			(hide yes)
 			(show_name no)
@@ -21735,40 +18105,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 232.41 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 232.41 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 232.41 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 232.41 62.23 90)
 			(hide yes)
 			(show_name no)
@@ -21861,40 +18198,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 118.11 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 118.11 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 118.11 100.33 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 118.11 100.33 90)
 			(hide yes)
 			(show_name no)
@@ -21987,40 +18291,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 67.31 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 67.31 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 67.31 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 67.31 62.23 90)
 			(hide yes)
 			(show_name no)
@@ -22113,40 +18384,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 168.91 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 168.91 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 168.91 113.03 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 168.91 113.03 90)
 			(hide yes)
 			(show_name no)
@@ -22241,17 +18479,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 135.89 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "b0340cdf-a7a1-4798-a27d-f741f5c2a22f")
 		)
@@ -22334,40 +18561,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 80.01 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 80.01 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part" "C2288"
-			(at 80.01 87.63 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 80.01 87.63 90)
 			(hide yes)
 			(show_name no)
@@ -22462,17 +18656,6 @@
 				)
 			)
 		)
-		(property "Sim.Pin" ""
-			(at 72.39 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "736485cb-46d2-4455-85bb-6823baa214a1")
 		)
@@ -22547,17 +18730,6 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 262.89 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pin" ""
 			(at 262.89 97.79 0)
 			(hide yes)
 			(show_name no)

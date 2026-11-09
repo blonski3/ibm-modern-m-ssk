@@ -49,18 +49,6 @@
 			)
 		)
 	)
-	(property "KiLib_Generator" "connector/pin_header_socket"
-		(at 0 0 0)
-		(layer "F.SilkS")
-		(hide yes)
-		(uuid "1df64593-ffa8-4b3e-a42f-a3609340e3e6")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
 	(attr smd)
 	(duplicate_pad_numbers_are_jumpers no)
 	(fp_line

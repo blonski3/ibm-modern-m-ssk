@@ -48,17 +48,6 @@
 			)
 		)
 	)
-	(property "LCSC Part" "C53433123"
-		(at 0 0 0)
-		(layer "F.Fab")
-		(hide yes)
-		(uuid "af243edd-453a-46ba-90ab-a0c319fd95e1")
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-	)
 	(attr smd)
 	(duplicate_pad_numbers_are_jumpers no)
 	(fp_poly

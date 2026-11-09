@@ -49,30 +49,6 @@
 			)
 		)
 	)
-	(property "KiLib_Generator" "connector/SMD_single_row_plus_mounting_pad"
-		(at 0 0 0)
-		(layer "F.SilkS")
-		(hide yes)
-		(uuid "dadaedae-36d6-4c77-abc6-2ac1fd2659f2")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(property "LCSC Part" "C177225"
-		(at 0 0 0)
-		(layer "F.SilkS")
-		(hide yes)
-		(uuid "b7f6d49d-7c58-4627-be6d-6704d38c0767")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.1)
-			)
-		)
-	)
 	(attr smd)
 	(duplicate_pad_numbers_are_jumpers no)
 	(fp_line
