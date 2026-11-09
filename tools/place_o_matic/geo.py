@@ -258,6 +258,10 @@ def circle_clear(grid, c, r, net, layer, clr, skip=()):
         if o.id in skip or (o.layer is not None and layer is not None and o.layer != layer):
             continue
         need = max(clr, o.clr)
+        m = r + need
+        bb = o.bbox
+        if bb[0] > c[0] + m or bb[2] < c[0] - m or bb[1] > c[1] + m or bb[3] < c[1] - m:
+            continue
         short = need - (o.dist_pt(c) - r)
         if short > worst:
             worst = short
@@ -268,12 +272,18 @@ def seg_clear(grid, a, b, w, net, layer, clr, skip=()):
     """Shortfall [mm] of a track ab of width w to copper of other nets (0 = clear)."""
     worst = 0.0
     r = w / 2.0 + clr + 0.5
+    x0, x1 = min(a[0], b[0]), max(a[0], b[0])
+    y0, y1 = min(a[1], b[1]), max(a[1], b[1])
     for o in grid.near_seg(a, b, r):
         if o.net == net and net is not None and net >= 0:
             continue
         if o.id in skip or (o.layer is not None and layer is not None and o.layer != layer):
             continue
         need = max(clr, o.clr)
+        m = w / 2.0 + need
+        bb = o.bbox
+        if bb[0] > x1 + m or bb[2] < x0 - m or bb[1] > y1 + m or bb[3] < y0 - m:
+            continue
         short = need - (o.dist_seg(a, b) - w / 2.0)
         if short > worst:
             worst = short
@@ -344,3 +354,35 @@ def natural_key(s):
     """'R10' after 'R9': split digits for sorting references."""
     import re
     return [int(t) if t.isdigit() else t.lower() for t in re.split(r"(\d+)", s or "")]
+
+
+def outline_polys(segs):
+    """Closed loops from outline segments [(a, b)] in any order / direction."""
+    ends = {}
+    for i, (a, b) in enumerate(segs):
+        ends.setdefault(key(a), []).append((i, 0))
+        ends.setdefault(key(b), []).append((i, 1))
+    used = [False] * len(segs)
+    out = []
+    for i in range(len(segs)):
+        if used[i]:
+            continue
+        used[i] = True
+        a, b = segs[i]
+        loop = [a]
+        cur = b
+        ok = False
+        for _ in range(len(segs)):
+            if key(cur) == key(loop[0]):
+                ok = True
+                break
+            loop.append(cur)
+            nxt = [(j, e) for j, e in ends.get(key(cur), ()) if not used[j]]
+            if not nxt:
+                break
+            j, e = nxt[0]
+            used[j] = True
+            cur = segs[j][1 - e]
+        if ok and len(loop) >= 3:
+            out.append(loop)
+    return out

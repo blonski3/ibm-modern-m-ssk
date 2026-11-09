@@ -64,6 +64,8 @@ def footprint(b, ref, pos, ang=0.0, pads=(((-0.8, 0), (0.8, 0.9)), ((0.8, 0), (0
             ls.AddLayer(pcbnew.F_Paste)
         p.SetLayerSet(ls)
         p.SetPosition(V((x, y)))
+        if hasattr(p, "SetPos0"):          # KiCad 7: the position inside the footprint
+            p.SetPos0(V((x, y)))
         p.SetNumber(str(k + 1))
         if nets and nets[k] is not None:
             p.SetNet(nets[k])

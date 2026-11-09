@@ -354,3 +354,35 @@ def natural_key(s):
     """'R10' after 'R9': split digits for sorting references."""
     import re
     return [int(t) if t.isdigit() else t.lower() for t in re.split(r"(\d+)", s or "")]
+
+
+def outline_polys(segs):
+    """Closed loops from outline segments [(a, b)] in any order / direction."""
+    ends = {}
+    for i, (a, b) in enumerate(segs):
+        ends.setdefault(key(a), []).append((i, 0))
+        ends.setdefault(key(b), []).append((i, 1))
+    used = [False] * len(segs)
+    out = []
+    for i in range(len(segs)):
+        if used[i]:
+            continue
+        used[i] = True
+        a, b = segs[i]
+        loop = [a]
+        cur = b
+        ok = False
+        for _ in range(len(segs)):
+            if key(cur) == key(loop[0]):
+                ok = True
+                break
+            loop.append(cur)
+            nxt = [(j, e) for j, e in ends.get(key(cur), ()) if not used[j]]
+            if not nxt:
+                break
+            j, e = nxt[0]
+            used[j] = True
+            cur = segs[j][1 - e]
+        if ok and len(loop) >= 3:
+            out.append(loop)
+    return out
