@@ -5327,7 +5327,7 @@
 		(uuid "04f55069-1969-4f2e-8ef1-8c3d65443818")
 	)
 	(label "SWO"
-		(at 173.99 64.77 0)
+		(at 173.99 69.85 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5367,7 +5367,7 @@
 		(uuid "0cbfd1d2-1e54-4ca8-81f4-757e14c25348")
 	)
 	(label "LED_EN"
-		(at 173.99 69.85 0)
+		(at 186.69 60.96 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9524,6 +9524,17 @@
 				(justify left top)
 			)
 		)
+		(property "Description" "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA"
+			(at 128.27 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "PART NUMBER" "WS2812B-2020-V6"
 			(at 130.81 189.865 0)
 			(hide yes)
@@ -9534,17 +9545,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
-			)
-		)
-		(property "Description" "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA"
-			(at 128.27 180.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(property "LCSC Part" "C52917434"

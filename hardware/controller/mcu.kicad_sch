@@ -9256,7 +9256,7 @@
 				)
 			)
 		)
-		(property "PART NUMBER" "U.FL-IPEX-1"
+		(property "Description" "small coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
 			(at 246.38 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -9267,7 +9267,7 @@
 				)
 			)
 		)
-		(property "Description" "small coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+		(property "PART NUMBER" "U.FL-IPEX-1"
 			(at 246.38 111.76 0)
 			(hide yes)
 			(show_name no)
