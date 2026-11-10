@@ -8881,7 +8881,7 @@
 				)
 			)
 		)
-		(property "Description" "Goldpin 1x10, raster 1,00 mm; lacze MB-DB, pinout wg I1: VBUS, VBUS, GND, CC1, GND, D+, D-, GND, CC2, GND. Strona MB: otwory THT"
+		(property "Description" "Goldpin 1x10, raster 1,00 mm; lacze MB-DB, pinout wg I6: VBUS, VBUS, CC1, GND, D+, D-, GND, CC2, GND, GND. Strona MB: otwory THT"
 			(at 45.72 54.61 0)
 			(hide yes)
 			(show_name no)
