@@ -124,7 +124,7 @@ def test_angle_modes():
     wide = T.footprint(b, "R1", (40, 50), 0.0, courtyard=(1.6, 0.9))
     tall = T.footprint(b, "R2", (50, 50), 90.0, courtyard=(1.6, 0.9))
     odd = T.footprint(b, "R3", (60, 50), 30.0, courtyard=(1.6, 0.9))
-    odd.Reference().SetTextAngleDegrees(0)          # follows the part: 30 on the board
+    sm.set_abs_angle(odd.Reference(), odd, 30.0)    # along the part: 30 on the board
     m = model_for(b, [wide, tall, odd])
     m.apply(S(angle=g.ANG_ALONG, side=g.TOP))
     check(abs(sm.draw_angle(wide.Reference())) < 1e-6, "along: wide part 0")
@@ -206,6 +206,7 @@ def test_value_and_hidden():
     b = pcbnew.BOARD()
     fp = T.footprint(b, "R1", (50, 50))
     fp.Value().SetVisible(True)
+    fp.Value().SetLayer(pcbnew.F_SilkS)             # KiCad 9/10 put a new value on F.Fab
     r0 = T.xy(fp.Reference().GetPosition())
     m = model_for(b, [fp])
     res = m.apply(S(which=sm.VALUE, side=g.BOTTOM, h=0.8))
@@ -376,7 +377,7 @@ def gui(shots=None):
         H["shot"](d, shots and os.path.join(shots, "silk_auto.png"))
         check(T.snapshot(b) != before, "applied on open")
         check("5 placed" in d.status.GetLabel(), "status %r" % d.status.GetLabel())
-        check(d.ro["now"].GetLabel() == "1.27 / 0.15 mm", "now %r" % d.ro["now"].GetLabel())
+        check(d.ro["now"].GetLabel() in ("1.27 / 0.15 mm", "1.27 / 0 mm"), "now %r" % d.ro["now"].GetLabel())   # KiCad 10: new text thickness 0
 
     def s_values(d):
         d._toggle("side", 0)

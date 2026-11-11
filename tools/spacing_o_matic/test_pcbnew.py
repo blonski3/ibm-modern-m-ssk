@@ -305,11 +305,15 @@ def drc_track_nets(b):
                     "import pcbnew,sys; b=pcbnew.LoadBoard(sys.argv[1]); "
                     "u=getattr(pcbnew, 'EDA_UNITS_MILLIMETRES', None) or pcbnew.EDA_UNITS_MM; "
                     "pcbnew.WriteDRCReport(b, sys.argv[2], u, True)",
-                    fn, rpt], check=True, capture_output=True)
+                    fn, rpt], check=False, capture_output=True)
+    if not os.path.exists(rpt):          # KiCad 9/10 standalone WriteDRCReport can crash
+        subprocess.run(["kicad-cli", "pcb", "drc", "--units", "mm", "--all-track-errors",
+                        "-o", rpt, fn], check=True, capture_output=True)
     nets, block = set(), None
     for line in open(rpt, encoding="utf-8"):
         if line.startswith("["):
-            block = line.startswith("[clearance]")
+            # KiCad 10 reports copper overlapping a via as hole_clearance / shorting_items
+            block = line.startswith(("[clearance]", "[hole_clearance]", "[shorting_items]"))
             continue
         if block:
             m = re.search(r"Track \[([^\]]+)\]", line)

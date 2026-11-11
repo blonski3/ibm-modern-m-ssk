@@ -34,6 +34,16 @@ def kind_of(item):
     return None
 
 
+def pad_ref(pad):
+    """'U3' of a pad (KiCad 9/10 GetParent() returns a plain container)."""
+    for get in (lambda: pad.GetParentFootprint(), lambda: pad.GetParent().Cast(), lambda: pad.GetParent()):
+        try:
+            return str(get().GetReference())
+        except Exception:
+            pass
+    return "?"
+
+
 def is_rule_area(z):
     try:
         return z.GetIsRuleArea()
@@ -292,7 +302,7 @@ class Model:
         net = self.net_name(self.cur.get(u))
         if k == "pad":
             try:
-                return "%s pad %s (%s)" % (it.GetParent().GetReference(), it.GetNumber(), net)
+                return "%s pad %s (%s)" % (pad_ref(it), it.GetNumber(), net)
             except Exception:
                 return "pad (%s)" % net
         return "%s (%s)" % (k or "item", net)
@@ -343,7 +353,7 @@ class Model:
             if k == "zone":
                 iss.add("zone", None)
             elif k == "pad":
-                iss.add("pad", "%s.%s" % (it.GetParent().GetReference(), it.GetNumber()))
+                iss.add("pad", "%s.%s" % (pad_ref(it), it.GetNumber()))
         for u, o in N.contacts(self.grid, self.by_id, ids, self.cur.get):
             iss.add("short", self.describe(o))
         return iss

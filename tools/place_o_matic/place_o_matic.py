@@ -46,6 +46,40 @@ def _bbox_local(fp, pos, ang):
     return [(b[0], b[1]), (b[2], b[1]), (b[2], b[3]), (b[0], b[3])]
 
 
+def _courtyard_fix(fp, layer, pos, ang, poly):
+    """KiCad 9/10 build the courtyard polygon a few um inside the drawn lines; scale it
+    back to the line centres (what you see and measure), only for such tiny offsets."""
+    pts = []
+    for gi in fp.GraphicalItems():
+        try:
+            if gi.GetLayer() != layer or "TEXT" in gi.GetClass().upper():
+                continue
+            if gi.GetShape() in (pcbnew.SHAPE_T_SEGMENT, pcbnew.SHAPE_T_RECT):
+                pts += [kc.xy(gi.GetStart()), kc.xy(gi.GetEnd())]
+            elif gi.GetShape() == pcbnew.SHAPE_T_POLY:
+                ol = gi.GetPolyShape().Outline(0)
+                pts += [kc.xy(ol.CPoint(k)) for k in range(ol.PointCount())]
+            else:
+                return lambda q: q
+        except Exception:
+            return lambda q: q
+    if len(pts) < 2:
+        return lambda q: q
+    lines = geo.bbox([g.kr(geo.sub(p, pos), -ang) for p in pts])
+
+    def fix(q):
+        if len(q) < 3:
+            return q
+        b = geo.bbox(q)
+        w0, h0, w1, h1 = b[2] - b[0], b[3] - b[1], lines[2] - lines[0], lines[3] - lines[1]
+        if w0 <= 0 or h0 <= 0 or not (0 <= w1 - w0 < 0.02 and 0 <= h1 - h0 < 0.02):
+            return q
+        cx, cy = (lines[0] + lines[2]) / 2.0, (lines[1] + lines[3]) / 2.0
+        bx, by = (b[0] + b[2]) / 2.0, (b[1] + b[3]) / 2.0
+        return [(cx + (x - bx) * w1 / w0, cy + (y - by) * h1 / h0) for x, y in q]
+    return fix
+
+
 def body_local(fp):
     """Courtyard (or pads + graphics box) relative to the origin, at angle 0."""
     pos = kc.xy(fp.GetPosition())
@@ -57,17 +91,18 @@ def body_local(fp):
         except Exception:
             pass
         poly = fp.GetCourtyard(layer)
+        fix = _courtyard_fix(fp, layer, pos, ang, poly)
         if poly.OutlineCount() == 1:
             ol = poly.Outline(0)
             pts = [kc.xy(ol.CPoint(k)) for k in range(ol.PointCount())]
             if len(pts) >= 3:
-                return [g.kr(geo.sub(p, pos), -ang) for p in pts], "courtyard"
+                return fix([g.kr(geo.sub(p, pos), -ang) for p in pts]), "courtyard"
         elif poly.OutlineCount() > 1:
             pts = []
             for i in range(poly.OutlineCount()):
                 ol = poly.Outline(i)
                 pts += [g.kr(geo.sub(kc.xy(ol.CPoint(k)), pos), -ang) for k in range(ol.PointCount())]
-            b = geo.bbox(pts)
+            b = geo.bbox(fix(pts))
             return [(b[0], b[1]), (b[2], b[1]), (b[2], b[3]), (b[0], b[3])], "courtyard"
     except Exception:
         pass

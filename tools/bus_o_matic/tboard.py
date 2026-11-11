@@ -155,6 +155,14 @@ def zone(b, pts, nt, layer=pcbnew.F_Cu):
     return z
 
 
+def via_width(v):
+    """KiCad 9/10 want a layer (without one it asserts when a wx.App runs)."""
+    try:
+        return v.GetWidth(pcbnew.F_Cu)
+    except TypeError:
+        return v.GetWidth()
+
+
 def tracks(b):
     return [t for t in b.GetTracks() if t.GetClass() in ("PCB_TRACK", "PCB_ARC")]
 
@@ -166,7 +174,7 @@ def snapshot(b):
         u = t.m_Uuid.AsString()
         if t.GetClass() == "PCB_VIA":
             p = t.GetPosition()
-            out[u] = ("via", p.x, p.y, t.GetWidth())
+            out[u] = ("via", p.x, p.y, via_width(t))
         else:
             s, e = t.GetStart(), t.GetEnd()
             m = t.GetMid() if t.GetClass() == "PCB_ARC" else s
@@ -199,7 +207,10 @@ def drc(b, kinds=("clearance",)):
                     "import pcbnew,sys; b=pcbnew.LoadBoard(sys.argv[1]); "
                     "u=getattr(pcbnew, 'EDA_UNITS_MILLIMETRES', None) or pcbnew.EDA_UNITS_MM; "
                     "pcbnew.WriteDRCReport(b, sys.argv[2], u, True)",
-                    fn, rpt], check=True, capture_output=True)
+                    fn, rpt], check=False, capture_output=True)
+    if not os.path.exists(rpt):          # KiCad 9/10 standalone WriteDRCReport can crash
+        subprocess.run(["kicad-cli", "pcb", "drc", "--units", "mm", "--all-track-errors",
+                        "-o", rpt, fn], check=True, capture_output=True)
     out, cur = [], None
     for line in open(rpt, encoding="utf-8"):
         if line.startswith("["):

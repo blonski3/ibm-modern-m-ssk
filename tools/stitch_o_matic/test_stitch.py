@@ -355,7 +355,7 @@ def gui(shots=None):
         check(d.f["offset"].GetValue() == "0.9", "offset nudge %r" % d.f["offset"].GetValue())
         d.f["d"].SetValue("0.5")
         H["settle"](d)
-        check(all(abs(v.GetWidth() - 500000) < 2 for v in vias(b)), "via D 0.5")
+        check(all(abs(T.via_width(v) - 500000) < 2 for v in vias(b)), "via D 0.5")
         d.f["d"].SetValue("")
         d._toggle("mode", 2)
         H["settle"](d)

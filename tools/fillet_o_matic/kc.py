@@ -106,7 +106,13 @@ class Edits:
             return dict(pos=pcbnew.VECTOR2I(item.GetPosition().x, item.GetPosition().y))
         if cls == "FOOTPRINT":
             p = item.GetPosition()
-            return dict(pos=pcbnew.VECTOR2I(p.x, p.y), angle=item.GetOrientationDegrees())
+            # children too: KiCad 9/10 rotate them in nm steps, so a rotate + rotate back
+            # leaves texts and pads a nm or two off; set them back exactly
+            kids = []
+            for k in Edits._children(item):
+                q = k.GetPosition()
+                kids.append((k, pcbnew.VECTOR2I(q.x, q.y)))
+            return dict(pos=pcbnew.VECTOR2I(p.x, p.y), angle=item.GetOrientationDegrees(), kids=kids)
         # texts / fields
         p = item.GetPosition()
         s = dict(pos=pcbnew.VECTOR2I(p.x, p.y))
@@ -140,6 +146,12 @@ class Edits:
         if cls == "FOOTPRINT":
             item.SetOrientationDegrees(s["angle"])
             item.SetPosition(s["pos"])
+            for k, q in s.get("kids", ()):
+                try:
+                    if k.GetPosition() != q:
+                        k.SetPosition(q)
+                except Exception:
+                    pass
             return
         item.SetPosition(s["pos"])
         for k, setter in (("angle", item.SetTextAngleDegrees), ("size", item.SetTextSize),
@@ -150,6 +162,24 @@ class Edits:
                     setter(s[k])
                 except Exception:
                     pass
+
+    @staticmethod
+    def _children(fp):
+        out = []
+        for get in (fp.Reference, fp.Value):
+            try:
+                out.append(get())
+            except Exception:
+                pass
+        try:
+            out += [g for g in fp.GraphicalItems() if "TEXT" in g.GetClass().upper()]
+        except Exception:
+            pass
+        try:
+            out += list(fp.Pads())
+        except Exception:
+            pass
+        return out
 
     def save(self, item):
         u = uuid(item)
