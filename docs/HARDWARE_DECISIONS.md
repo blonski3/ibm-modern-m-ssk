@@ -346,7 +346,7 @@ Zatwierdzone i naniesione w schemacie 2026-10-31. Opis funkcji TP na osobnej str
 
 | Element | Sieć | Po co | Referencja |
 | --- | --- | --- | --- |
-| R3 0 Ω 0603 (LCSC C21189) | Rozcina szynę 3,3 V: strona przetwornicy U2.32, L4.2, C29.1, VDDIO U2.12, C35, R11, R12 (`+3V3_BUCK`, A17) ↔ VDD_NRF `+3V3_NRF` (U1, C6–C8, C12, C14, J3.2, J10.1) | Normalnie wlutowany. Wylutowany: start BUCK2 bez nRF (Z1), prąd samego nRF52840 przez PPK2 (E1), sprawność i tętnienia BUCK2 z obciążeniem zewnętrznym (Z2, Z3). Przewody wlutowane w pady R3 albo chwytaki; bez listwy i dodatkowych padów (decyzja jakuba: porządek na PCB). VOUT2 jest wejściem sprzężenia zwrotnego, więc regulacja się nie zmienia; C29 zostaje przy pinie 32 | nPM1300 PS v1.3, rys. 59, s. 161 |
+| R3 0 Ω 0603 (LCSC C21189) | Rozcina szynę 3,3 V: strona przetwornicy U2.32, L4.2, C29.1, VDDIO U2.12, C35, R11, R12, J10.1 (`+3V3_BUCK`, A17, I7) ↔ VDD_NRF `+3V3_NRF` (U1, C6–C8, C12, C14, J3.2) | Normalnie wlutowany. Wylutowany: start BUCK2 bez nRF (Z1), prąd samego nRF52840 przez PPK2 (E1), sprawność i tętnienia BUCK2 z obciążeniem zewnętrznym (Z2, Z3). Przewody wlutowane w pady R3 albo chwytaki; bez listwy i dodatkowych padów (decyzja jakuba: porządek na PCB). VOUT2 jest wejściem sprzężenia zwrotnego, więc regulacja się nie zmienia; C29 zostaje przy pinie 32 | nPM1300 PS v1.3, rys. 59, s. 161 |
 | TP1 | SHPHLD | Tryb Ship | nPM1300 PS v1.3, rozdz. 7.4, s. 121 |
 | TP2 | VDD_NRF | Napięcie szyny nRF (przy wylutowanym R3 napięcie przetwornicy mierzyć na padzie R3 od strony C29) | – |
 | TP3 | PVSS2 | Masa do pomiaru tętnień na C29 (tętnienia względem PVSS2, nie odległego GND) | nPM1300 PS v1.3, s. 52 |
