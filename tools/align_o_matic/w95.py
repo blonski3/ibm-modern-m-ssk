@@ -6,6 +6,7 @@
 
 import math
 import os
+import time
 
 import wx
 
@@ -326,6 +327,7 @@ class OMatic(wx.Dialog):
         self.last = {}
         self._loop = None
         self._timer = None
+        self.delay = self.DELAY
         defaults = defaults or {}
         v = dict(self.DEFAULTS)
         v.update({k: x for k, x in self.LAST.items() if k not in self.NOT_REMEMBERED})
@@ -665,7 +667,14 @@ class OMatic(wx.Dialog):
         self.update_enabled()
         if self._timer is not None:
             self._timer.Stop()
-        self._timer = wx.CallLater(self.DELAY, self.refresh)
+        self._timer = wx.CallLater(self.delay, self.refresh)
+
+    def adapt(self, seconds):
+        """KiCad 9/10 rebuild the whole view on every change (pcbnew.Refresh): on a big
+        board one change can take a few hundred ms. While values keep moving (wheel, typing)
+        wait about as long as the last change took, so the board is not redrawn for every
+        step in between."""
+        self.delay = int(max(self.DELAY, min(700, seconds * 1000 * 1.2)))
 
     def on_reselect(self, _evt=None):
         res = self.reselect_cb()
@@ -690,6 +699,7 @@ class OMatic(wx.Dialog):
             self.set_status(dict(info="Invalid value" + (": %s" % e if str(e) else ""), warnings=[]))
             return
         wx.BeginBusyCursor()
+        t0 = time.time()
         try:
             res = self.apply_cb(v)
         except Exception as e:                      # never leave the dialog in a broken state
@@ -699,6 +709,7 @@ class OMatic(wx.Dialog):
                                                        "Cancel restores the board" % e])
         finally:
             wx.EndBusyCursor()
+            self.adapt(time.time() - t0)
         self.set_status(res)
 
     def set_status(self, res):

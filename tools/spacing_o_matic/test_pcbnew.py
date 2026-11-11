@@ -303,7 +303,8 @@ def drc_track_nets(b):
     import subprocess
     subprocess.run([sys.executable, "-c",
                     "import pcbnew,sys; b=pcbnew.LoadBoard(sys.argv[1]); "
-                    "pcbnew.WriteDRCReport(b, sys.argv[2], pcbnew.EDA_UNITS_MILLIMETRES, True)",
+                    "u=getattr(pcbnew, 'EDA_UNITS_MILLIMETRES', None) or pcbnew.EDA_UNITS_MM; "
+                    "pcbnew.WriteDRCReport(b, sys.argv[2], u, True)",
                     fn, rpt], check=True, capture_output=True)
     nets, block = set(), None
     for line in open(rpt, encoding="utf-8"):

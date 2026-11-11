@@ -548,7 +548,8 @@ class SpacingOMatic(pcbnew.ActionPlugin):
             model.restore()
             if ok:
                 wx.MessageBox("Invalid number in the dialog, nothing was changed.", NAME)
-        pcbnew.Refresh()
+        # no Refresh here: KiCad rebuilds the view and the connectivity itself right after
+        # Run() returns (RebuildAndRefresh), a second full rebuild only costs time
 
 
 def _last_tol():

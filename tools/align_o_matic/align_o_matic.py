@@ -330,4 +330,5 @@ class AlignOMatic(pcbnew.ActionPlugin):
             model.restore_all()
             if ok:
                 wx.MessageBox("Invalid number in the dialog, nothing was changed.", NAME)
-        kc.refresh()
+        # no Refresh here: KiCad rebuilds the view and the connectivity itself right after
+        # Run() returns (RebuildAndRefresh), a second full rebuild only costs time

@@ -6,6 +6,8 @@
 import math
 import os
 
+import time
+
 import wx
 
 from . import geometry as g
@@ -660,7 +662,7 @@ class SpacingDialog(wx.Dialog):
         self.update_enabled()
         if self._timer is not None:
             self._timer.Stop()
-        self._timer = wx.CallLater(120, self.refresh_preview)
+        self._timer = wx.CallLater(getattr(self, "_delay", 120), self.refresh_preview)
 
     def on_reselect(self, _evt=None):
         res = self.reselect_cb()
@@ -682,10 +684,13 @@ class SpacingDialog(wx.Dialog):
             self.set_status(dict(info="Invalid value" + (": %s" % e if str(e) else ""), warnings=[]))
             return
         wx.BeginBusyCursor()
+        t0 = time.time()
         try:
             res = self.preview_cb(v)
         finally:
             wx.EndBusyCursor()
+            # KiCad 9/10 rebuild the whole view per change: wait about as long as it took
+            self._delay = int(max(120, min(700, (time.time() - t0) * 1200)))
         self.set_status(res)
 
     def set_status(self, res):

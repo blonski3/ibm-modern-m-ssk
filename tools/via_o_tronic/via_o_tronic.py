@@ -657,4 +657,5 @@ class ViaOTronic(pcbnew.ActionPlugin):
             clear_preview()
             if ok:
                 wx.MessageBox("Invalid number in the dialog, nothing was added.", NAME)
-        pcbnew.Refresh()
+        # no Refresh here: KiCad rebuilds the view and the connectivity itself right after
+        # Run() returns (RebuildAndRefresh), a second full rebuild only costs time
