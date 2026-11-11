@@ -3323,6 +3323,16 @@
 	)
 	(wire
 		(pts
+			(xy 189.23 80.01) (xy 187.96 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "75c99b89-c3b2-49f7-9af3-0cd26fbfe30a")
+	)
+	(wire
+		(pts
 			(xy 187.96 44.45) (xy 187.96 45.72)
 		)
 		(stroke
@@ -6045,7 +6055,7 @@
 	)
 	(symbol
 		(lib_id "ibm_m:TestPoint")
-		(at 187.96 80.01 270)
+		(at 189.23 80.01 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6056,7 +6066,7 @@
 		(fields_autoplaced yes)
 		(uuid "6d9a17c7-ec18-4040-ac23-8b7de2752a2c")
 		(property "Reference" "TP2"
-			(at 190.5 80.01 90)
+			(at 191.77 80.01 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6067,7 +6077,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 189.9921 82.55 0)
+			(at 191.2621 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6079,7 +6089,7 @@
 			)
 		)
 		(property "Footprint" "ibm_bs:TestPoint_Pad"
-			(at 187.96 85.09 0)
+			(at 189.23 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6090,7 +6100,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 187.96 85.09 0)
+			(at 189.23 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6101,7 +6111,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 187.96 80.01 0)
+			(at 189.23 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6112,7 +6122,7 @@
 			)
 		)
 		(property "PART NUMBER" ""
-			(at 187.96 80.01 0)
+			(at 189.23 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
