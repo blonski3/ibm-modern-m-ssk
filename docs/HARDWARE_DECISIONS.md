@@ -398,6 +398,15 @@ Kolejność grup = kolejność uruchamiania prototypu. Warunki pomiarów prądu:
 
 Oznaczenie testów radiowych R1–R5 nie ma związku z rezystorami R1–R3 na schemacie.
 
+## PCB: przelotki w padach (2026-11-12, A18)
+
+| Parametr | Wartość | Uzasadnienie | Referencja |
+| --- | --- | --- | --- |
+| Przelotki w padach U1 (aQFN73) | 0,25 mm / otwór 0,15 mm, pierścień 0,05 mm; stan 12.11: 17 szt. | Pad aQFN73 ma ok. 0,275 mm, raster 0,5 mm; wyprowadzenie wewnętrznego pierścienia bez przelotki w padzie wymaga ścieżki 0,1 mm między padami zewnętrznego pierścienia i przebudowy routingu | Referencja Nordica nRF52840-QIAA config 5 (`reference/nordic`): 22 przelotki 0,35/0,15 mm w padach wewnętrznego pierścienia |
+| Przelotka w padzie U3.3 | 0,45 / 0,2 mm, DB_GND | Najkrótsza droga masy układu ESD do płaszczyzny DB | – |
+| Technologia w JLC | Wypełnienie żywicą i zakrycie miedzią (POFV) | Niewypełniona przelotka w padzie odsysa cynę przy rozpływie, lut pada BGA/aQFN jest wadliwy | JLCPCB PCB Capabilities (odczyt 2026-11-02): wypełnienie dla otworów 0,15–0,55 mm, na 4 warstwach opcja dodatkowa; nazwa opcji i dopłata do potwierdzenia przy zamówieniu |
+| Reguła DRC | min. annular 0,05 mm, min. otwór 0,15 mm | Minimum JLC dla przelotek (zalecane 0,075 mm) | jw. |
+
 ## Otwarte kwestie
 
 - [x] Typ nowego Q1: AO3401A (C15127, basic), pinout sprawdzony z kartą (2026-10-25; wcześniej PMPB15XP)
