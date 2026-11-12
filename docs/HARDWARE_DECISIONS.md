@@ -361,7 +361,7 @@ Zasada: części JLC basic, gdzie nie tracą względem referencji Nordica (exten
 | SW1 | XKB TS-1187A-B-A-B C318884, 5,1 × 5,1 × 1,5 mm | – | Pady A–B i C–D zwarte parami; w footprincie numeracja 1, 1, 2, 2 |
 | D2 | WS2812B-2020-V6 C52917434 | Extended | WS2812C-2020 niedostępna |
 | J6 | XUNPU U.FL-IPEX-1 C53433123 | Extended | Montaż JLC; sygnał na dolnym małym padzie (1), pozostałe 3 pady GND (2) |
-| J2, J8, J9 | – | – | Lutowane ręcznie; na PCB „Exclude from position files” |
+| J5, J8, J9 | – | – | Lutowane ręcznie; na PCB „Exclude from BOM” i „Exclude from position files” (A20; J2 montuje JLC) |
 
 Extended zostają: U1, U2, U3, Y1, Y2, C3, C4, L1–L5, D1, D2, F1, J1, J4, J6, J7.
 
