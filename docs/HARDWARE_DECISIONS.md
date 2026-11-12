@@ -158,9 +158,9 @@ Przydział sygnałów poza matrycą (M6, 2026-11-12):
 | SDA | P0.13 | AD8 | do U2.13, J3.6 (przez R2), pull-up R12 |
 | SCL | P0.14 | AC9 | do U2.14, J3.5 (przez R1), pull-up R11 |
 | LED_EN | P0.15 | AD10 | do U2.8 (GPIO1, LOADSW1), TP7 |
+| RGB_DIN | P0.16 | AC11 | do D2.3, TP9 |
 | PMIC_INT | P0.17 | AD12 | z U2.7 (GPIO0), TP8 |
 | RESET | P0.18 | AC13 | jedyny pin nRESET; SW1, J10.3 |
-| RGB_DIN | P0.19 | AC15 | do D2.3, TP9 |
 | TP11, TP12 | P0.22, P0.24 | AD18, AD20 | wolne GPIO testowe (DBG0, DBG1) |
 | SWO | P1.00 | AD22 | jedyny pin SWO (TRACEDATA[0]); J10.6 |
 | EXT_INT | P1.02 | W24 | z J3.4; pin „low frequency I/O only”, wystarcza dla przerwania |
