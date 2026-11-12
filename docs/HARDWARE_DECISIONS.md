@@ -142,12 +142,12 @@ Układ pracuje w konfiguracji 5 z datasheetu bez NFC: VDD = VDDH (tryb Normal Vo
 
 ### Przydział GPIO
 
-Potrzeba 27 linii: 17 kolumn, 6 wierszy, SDA, SCL, przerwanie PMIC i dane diody RGB. Piny oznaczone w tab. 145 jako „standard drive, low frequency I/O only" przyjmują sygnały do 10 kHz; matryca skanowana około 1 kHz się w tym mieści, I2C i dioda RGB nie. Numery pinów zostaną ustalone przy routingu.
+Potrzeba 27 linii: 17 kolumn, 6 wierszy, SDA, SCL, przerwanie PMIC i dane diody RGB. Piny oznaczone w tab. 145 jako „standard drive, low frequency I/O only" przyjmują sygnały do 10 kHz; matryca skanowana około 1 kHz się w tym mieści, I2C i dioda RGB nie. Numery pinów ustalone przy routingu (M6, M7).
 
 | Strona układu | Piny | Ograniczenie | Przeznaczenie |
 | --- | --- | --- | --- |
-| Górna | P0.02, P0.03, P0.28–P0.31, P1.10–P1.15 (12) | Tylko sygnały do 10 kHz | 12 kolumn matrycy |
-| Lewa | P0.04–P0.08, P0.11, P0.12, P0.26, P0.27, P1.08, P1.09 (11) | Brak | 5 kolumn i 6 wierszy matrycy |
+| Górna | P0.02, P0.03, P0.28–P0.31, P1.10–P1.15 (12) | Tylko sygnały do 10 kHz | ROW0–ROW5 i COL11–COL16 (M7) |
+| Lewa | P0.04–P0.08, P0.11, P0.12, P0.26, P0.27, P1.08, P1.09 (11) | Brak | COL0–COL10 (M7) |
 | Dolna | P0.13–P0.17, P0.19–P0.25, P1.00 (13) | Brak | SDA, SCL, LED_EN, PMIC_INT, dane diody, SWO, TP11, TP12 (M6, 2026-11-12) |
 | Prawa | P1.01–P1.07, P0.09, P0.10 | Tylko sygnały do 10 kHz, sąsiedztwo anteny | Tylko sygnały wolne: przerwanie EXT_INT złącza J3 (P1.02, M6) |
 
@@ -164,6 +164,19 @@ Przydział sygnałów poza matrycą (M6, 2026-11-12):
 | TP11, TP12 | P0.22, P0.24 | AD18, AD20 | wolne GPIO testowe (DBG0, DBG1) |
 | SWO | P1.00 | AD22 | jedyny pin SWO (TRACEDATA[0]); J10.6 |
 | EXT_INT | P1.02 | W24 | z J3.4; pin „low frequency I/O only”, wystarcza dla przerwania |
+
+Mapa matrycy (M7, 2026-11-12). COLn idzie na pin n+1 złącza J4, ROWn na pin n+1 złącza J7:
+
+| Linia | Pin (pad) | Linia | Pin (pad) | Linia | Pin (pad) |
+| --- | --- | --- | --- | --- | --- |
+| COL0 | P0.12 (U1) | COL6 | P0.11 (T2) | COL12 | P0.28 (B11) |
+| COL1 | P1.09 (R1) | COL7 | P1.08 (P2) | COL13 | P0.03 (B13) |
+| COL2 | P0.08 (N1) | COL8 | P0.07 (M2) | COL14 | P1.14 (B15) |
+| COL3 | P0.06 (L1) | COL9 | P0.05 (K2) | COL15 | P1.12 (B17) |
+| COL4 | P0.04 (J1) | COL10 | P0.27 (H2) | COL16 | P1.11 (B19) |
+| COL5 | P0.26 (G1) | COL11 | P0.30 (B9) | | |
+| ROW0 | P1.10 (A20) | ROW2 | P1.15 (A14) | ROW4 | P0.29 (A10) |
+| ROW1 | P1.13 (A16) | ROW3 | P0.02 (A12) | ROW5 | P0.31 (A8) |
 
 Diody matrycy mają katody na liniach ROW, więc kolumny są wyjściami, a wiersze wejściami (w ZMK kierunek `col2row`).
 
@@ -265,7 +278,7 @@ Haptyka i akcelerometr nie są na motherboardzie; MB wyprowadza zasilanie, I2C i
 
 | Pin | Sygnał | Pin | Sygnał |
 | --- | --- | --- | --- |
-| 1 | VSYS (3,0–5 V, nieregulowane) | 2 | 3,3 V z BUCK2 (VDD_NRF) |
+| 1 | VSYS (3,0–5 V, nieregulowane) | 2 | 3,3 V z BUCK2 (`+3V3_BUCK`, przed R3; S4) |
 | 3 | GND | 4 | EXT_INT: przerwanie akcelerometru, P1.02 (M6) |
 | 5 | SCL | 6 | SDA |
 
@@ -360,7 +373,7 @@ Zatwierdzone i naniesione w schemacie 2026-10-31. Opis funkcji TP na osobnej str
 
 | Element | Sieć | Po co | Referencja |
 | --- | --- | --- | --- |
-| R3 0 Ω 0603 (LCSC C21189) | Rozcina szynę 3,3 V: strona przetwornicy U2.32, L4.2, C29.1, VDDIO U2.12, C35, R11, R12, J10.1 (`+3V3_BUCK`, A17, I7) ↔ VDD_NRF `+3V3_NRF` (U1, C6–C8, C12, C14, J3.2) | Normalnie wlutowany. Wylutowany: start BUCK2 bez nRF (Z1), prąd samego nRF52840 przez PPK2 (E1), sprawność i tętnienia BUCK2 z obciążeniem zewnętrznym (Z2, Z3). Przewody wlutowane w pady R3 albo chwytaki; bez listwy i dodatkowych padów (decyzja jakuba: porządek na PCB). VOUT2 jest wejściem sprzężenia zwrotnego, więc regulacja się nie zmienia; C29 zostaje przy pinie 32 | nPM1300 PS v1.3, rys. 59, s. 161 |
+| R3 0 Ω 0603 (LCSC C21189) | Rozcina szynę 3,3 V: strona przetwornicy U2.32, L4.2, C29.1, VDDIO U2.12, C35, R11, R12, J10.1, J3.2 (`+3V3_BUCK`, A17, I7, S4) ↔ VDD_NRF `+3V3_NRF` (U1, C6–C8, C12, C14) | Normalnie wlutowany. Wylutowany: start BUCK2 bez nRF (Z1), prąd samego nRF52840 przez PPK2 (E1), sprawność i tętnienia BUCK2 z obciążeniem zewnętrznym (Z2, Z3). Przewody wlutowane w pady R3 albo chwytaki; bez listwy i dodatkowych padów (decyzja jakuba: porządek na PCB). VOUT2 jest wejściem sprzężenia zwrotnego, więc regulacja się nie zmienia; C29 zostaje przy pinie 32 | nPM1300 PS v1.3, rys. 59, s. 161 |
 | TP1 | SHPHLD | Tryb Ship | nPM1300 PS v1.3, rozdz. 7.4, s. 121 |
 | TP2 | VDD_NRF | Napięcie szyny nRF (przy wylutowanym R3 napięcie przetwornicy mierzyć na padzie R3 od strony C29) | – |
 | TP3 | PVSS2 | Masa do pomiaru tętnień na C29 (tętnienia względem PVSS2, nie odległego GND) | nPM1300 PS v1.3, s. 52 |
@@ -434,7 +447,7 @@ Oznaczenie testów radiowych R1–R5 nie ma związku z rezystorami R1–R3 na sc
 - [ ] Karta WS2812B-2020-V6: próg VIH, prąd spoczynkowy, minimalne VDD
 - [ ] Footprint NT1 (net-tie PVSS2 → GND) do narysowania przy PCB (teraz `NetTie-2_THT_Pad0.3mm`)
 - [ ] Linia 50 Ω od dopasowania do złącza U.FL policzona dla docelowego stackupu; pomiar toru analizatorem
-- [ ] Numery pinów nRF52840 dla COL/ROW: ewentualne przetasowanie pod J4/J7 przy routingu (SDA, SCL, PMIC_INT, LED_EN, RGB_DIN przypisane 2026-10-21: P5, F1, F2, I2)
+- [x] Numery pinów nRF52840 dla COL/ROW: ustalone 2026-11-12 (M6, M7); wcześniej (SDA, SCL, PMIC_INT, LED_EN, RGB_DIN przypisane 2026-10-21: P5, F1, F2, I2)
 - [ ] Pinout kabla Tag-Connect: potwierdzenie, że pin 3 to nRESET
 - [ ] Czy wewnętrzne Rd na CC działa przy całkowicie rozładowanej baterii (pytanie do Nordica)
 - [ ] Obsługa detekcji CC i braku NTC (`thermistor-ohms = 0`) w sterowniku Zephyra używanym przez ZMK (blok Firmware)
