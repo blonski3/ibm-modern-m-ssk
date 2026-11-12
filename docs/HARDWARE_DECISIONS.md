@@ -187,7 +187,7 @@ Diody matrycy mają katody na liniach ROW, więc kolumny są wyjściami, a wiers
 | Y1 | NDK NX2016SA-32MHZ-EXS00A-CS06654 (LCSC C5441424): 32 MHz, CL 8 pF, ESR ≤ 60 Ω, 2016 | 32 MHz, CL = 8 pF, ±40 ppm; CL ≤ 12 pF, ESR ≤ 60 Ω (s. 99) | Spełnia; tolerancja i stabilność do potwierdzenia w karcie NDK. Zastąpił Epson Q22FA12800018 (CL 12 pF) |
 | Y2 | Epson Q13FC13500003: 32,768 kHz, CL 9 pF, ±20 ppm, ESR 70 kΩ, 3215 | CL = 9 pF, ±50 ppm; ESR ≤ 100 kΩ (s. 100) | Spełnia |
 | C1, C2, C17, C18 | Yageo CC0402GRNPO9BN120: 12 pF ±2%, NP0, 50 V | 12 pF, NP0, ±2% | Spełnia |
-| L1 | Tai-Tech HCI1005LF-4N7S: 4,7 nH ±5%, SRF 4 GHz, 0402 | 4,7 nH ±5%, wysokoczęstotliwościowa | Spełnia; brak w magazynie LCSC |
+| L1 | Murata LQG15HS4N7C02D (LCSC C2041409, A19): 4,7 nH ±0,2 nH, SRF 6 GHz, DCR 160 mΩ, 0402; wcześniej Tai-Tech HCI1005LF-4N7S (C304335, SRF 4 GHz, mały stan LCSC) | 4,7 nH ±5%, wysokoczęstotliwościowa, SRF wyraźnie powyżej 2,44 GHz | Spełnia |
 | L2 | Murata LQM18FN100M00D: 10 µH ±20%, 50 mA, DCR 1,17 Ω, 0603 | 10 µH ±20%, prąd min. 50 mA | Spełnia bez zapasu |
 | L3 | FH VHF100505H15NKT: 15 nH ±10%, SRF 2,3 GHz, 0402 | 15 nH ±10%, wysokoczęstotliwościowa | Spełnia |
 | C6, C20, C21 | Yageo CC0603KRX5R7BB475: 4,7 µF ±10%, X5R, 16 V | 4,7 µF ±10%, X7R lub X7S | Odstępstwo: X5R zamiast X7R, akceptowalne do 85 °C |
@@ -504,7 +504,8 @@ Karty elementów bloku MCU:
 - [Epson Q22FA12800018, LCSC C255896](https://www.lcsc.com/product-detail/C255896.html)
 - [Epson Q13FC13500003, LCSC C99010](https://www.lcsc.com/product-detail/C99010.html)
 - [Murata LQM18FN100M00D, LCSC C86083](https://www.lcsc.com/product-detail/C86083.html)
-- [Tai-Tech HCI1005LF-4N7S, LCSC C304335](https://www.lcsc.com/product-detail/C304335.html)
+- [Murata LQG15HS4N7C02D, LCSC C2041409](https://www.lcsc.com/product-detail/C2041409.html) (A19)
+- [Tai-Tech HCI1005LF-4N7S, LCSC C304335](https://www.lcsc.com/product-detail/C304335.html) (do 2026-11-12)
 - [FH VHF100505H15NKT, LCSC C381880](https://www.lcsc.com/product-detail/C381880.html)
 - [Yageo CC0402GRNPO9BN120, LCSC C526985](https://www.lcsc.com/product-detail/C526985.html)
 - [Yageo CC0603KRX5R7BB475, LCSC C277476](https://www.lcsc.com/product-detail/C277476.html)
