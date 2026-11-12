@@ -19,7 +19,7 @@ Ramy zatwierdzone 11.10.2026.
 | USB-C | Gniazdo, bezpiecznik PTC i ESD na DB; CC1/CC2 bezpośrednio do nPM1300 (wewnętrzne Rd 5,1 kΩ), bez zewnętrznych rezystorów |
 | Łącze MB ↔ DB | Listwa goldpin 1×10, raster 1 mm, piny lutowane do krawędzi DB i wchodzące pionowo w MB: 2× VBUS, 4× GND, D+, D−, CC1, CC2 |
 | Matryca | Własna membrana FPC, 6 wierszy × 17 kolumn, 88 przełączników, dioda na klawisz (87 diod: Backspace ma dwa styki SW17 i SW31 równolegle na D34, jak w oryginale); złącza FFC 1,0 mm: J4 (18 pinów) i J7 (6 pinów) |
-| Bateria | Li-Po ok. 1000 mAh (wymiary klasy LP803040), 4,2 V, z PCM, dwa przewody z wtykiem JST PH 2.0 (J2), bez NTC; w drukowanym koszyku, nieklejona do PCB |
+| Bateria | Li-Po ok. 1000 mAh (wymiary klasy LP803040), 4,2 V, z PCM, dwa przewody z wtykiem Molex PicoBlade 1,25 mm (J2, A21), bez NTC; w drukowanym koszyku, nieklejona do PCB |
 | Ładowanie | Prąd i napięcie końcowe ustawiane przez firmware; sprzęt wymiarowany na 800 mA |
 | Przyciski | Tylko RESET na MB; BT_PAIR i SHPHLD usunięte |
 | Dioda RGB | Jedna WS2812B-2020-V6 na motherboardzie, zasilana z VSYS przez LOADSW1 |
@@ -71,7 +71,7 @@ Wszystkie elementy spełniają wymagania datasheetu.
 | R11, R12 (pull-upy SDA/SCL) | 2× 4,7 kΩ | Zależne od prędkości i pojemności magistrali; referencja 10 kΩ | Tab. 39 (R1, R2) | Spełnia (od 2026-10-20, S2) |
 | R10 (VSET2) | 470 kΩ, 0603 (C23178) | 250–500 kΩ, tolerancja ≤ 5% | Tab. 18, s. 50 | Spełnia |
 | Q1 | Alpha & Omega AO3401A (LCSC C15127, JLC basic): P-MOSFET −30 V, VGS ±12 V, SOT-23; RDS(on) maks. 85 mΩ przy VGS = −2,5 V | Zabezpieczenie przed odwróconą baterią; dren od strony złącza, RDS(on) ≤ 100 mΩ przy VGS = −2,5 V, prąd ≥ 1 A | Wymaganie własne projektu | Spełnia; dren (pin 3) do J2.1, źródło (2) do VBAT, bramka (1) do GND; symbol `ibm_m:AO3401A`. W schemacie tymczasowo Q2 |
-| J2 | JST PH `S2B-PH-SM4-TB`, 2,0 mm, SMD poziome | Decyzja 2026-10-25: ogniwo kupowane z wtykiem JST PH 2.0 zamiast PicoBlade z LP803040 | Karta JST PH | Spełnia; biegunowość wtyku względem J2.1 (plus) do sprawdzenia przy zakupie ogniwa |
+| J2 | Molex PicoBlade 53261-0271 (LCSC C177225, extended): 1,25 mm, 2 piny, SMD poziome, 2 pady mocujące do GND; montaż JLC (A20, A21) | Wtyk zgodny z typowym przewodem ogniw LP803040 (PicoBlade 51021-0200); wcześniej JST PH 2,0 (decyzja 2026-10-25, zmieniona 04.11) | Karta Molex 53261 | Spełnia; biegunowość wtyku ogniwa względem J2.1 (plus) do sprawdzenia przy zakupie |
 | BT1 | Akyga LP803040: 1000 mAh, 3,7 V, ładowanie do 4,2 V, standardowo 0,2 C, maks. 1 C, 0–45 °C, PCM (4,30 V / 2,5 V) | Prąd ładowania w zakresie 32–800 mA układu | Karta LP803040; rozdz. 6.2.3, s. 28 | Założenie robocze |
 
 ## Blok PMIC: obliczenia
