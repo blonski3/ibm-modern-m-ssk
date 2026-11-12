@@ -4105,7 +4105,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C304335"
+		(property "LCSC Part" "C2041409"
 			(at 232.41 111.76 90)
 			(hide yes)
 			(show_name no)
@@ -4116,7 +4116,7 @@
 				)
 			)
 		)
-		(property "PART NUMBER" ""
+		(property "PART NUMBER" "LQG15HS4N7C02D"
 			(at 232.41 111.76 90)
 			(hide yes)
 			(show_name no)
