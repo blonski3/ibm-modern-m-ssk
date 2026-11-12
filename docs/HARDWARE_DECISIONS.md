@@ -445,7 +445,7 @@ Oznaczenie testów radiowych R1–R5 nie ma związku z rezystorami R1–R3 na sc
 - [ ] Złącza matrycy: wersja bez zatrzasku czy z zatrzaskiem
 - [x] Dopasowanie RF: czteroelementowe z konfiguracji 7 (2026-10-25, M5)
 - [ ] Karta WS2812B-2020-V6: próg VIH, prąd spoczynkowy, minimalne VDD
-- [ ] Footprint NT1 (net-tie PVSS2 → GND) do narysowania przy PCB (teraz `NetTie-2_THT_Pad0.3mm`)
+- [x] Footprint NT1 (net-tie PVSS2 → GND): `ibm_bs:NetTie-2_SMD_Via0.45mm`, naruszenia DRC przy NT1 wyłączone z komentarzem (A22, 2026-11-12)
 - [ ] Linia 50 Ω od dopasowania do złącza U.FL policzona dla docelowego stackupu; pomiar toru analizatorem
 - [x] Numery pinów nRF52840 dla COL/ROW: ustalone 2026-11-12 (M6, M7); wcześniej (SDA, SCL, PMIC_INT, LED_EN, RGB_DIN przypisane 2026-10-21: P5, F1, F2, I2)
 - [ ] Pinout kabla Tag-Connect: potwierdzenie, że pin 3 to nRESET
