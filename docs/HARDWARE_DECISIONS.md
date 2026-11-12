@@ -148,8 +148,22 @@ Potrzeba 27 linii: 17 kolumn, 6 wierszy, SDA, SCL, przerwanie PMIC i dane diody 
 | --- | --- | --- | --- |
 | Górna | P0.02, P0.03, P0.28–P0.31, P1.10–P1.15 (12) | Tylko sygnały do 10 kHz | 12 kolumn matrycy |
 | Lewa | P0.04–P0.08, P0.11, P0.12, P0.26, P0.27, P1.08, P1.09 (11) | Brak | 5 kolumn i 6 wierszy matrycy |
-| Dolna | P0.13–P0.17, P0.19–P0.25, P1.00 (13) | Brak | SDA, SCL, dane diody, SWO, przerwanie EXT_INT złącza J3 (P0.19); 8 wolnych |
-| Prawa | P1.01–P1.07, P0.09, P0.10 | Tylko sygnały do 10 kHz, sąsiedztwo anteny | Tylko sygnały statyczne: przerwanie PMIC (GPIO0) i włącznik diody (GPIO1) |
+| Dolna | P0.13–P0.17, P0.19–P0.25, P1.00 (13) | Brak | SDA, SCL, LED_EN, PMIC_INT, dane diody, SWO, TP11, TP12 (M6, 2026-11-12) |
+| Prawa | P1.01–P1.07, P0.09, P0.10 | Tylko sygnały do 10 kHz, sąsiedztwo anteny | Tylko sygnały wolne: przerwanie EXT_INT złącza J3 (P1.02, M6) |
+
+Przydział sygnałów poza matrycą (M6, 2026-11-12):
+
+| Sygnał | Pin | Pad aQFN73 | Uwagi |
+| --- | --- | --- | --- |
+| SDA | P0.13 | AD8 | do U2.13, J3.6 (przez R2), pull-up R12 |
+| SCL | P0.14 | AC9 | do U2.14, J3.5 (przez R1), pull-up R11 |
+| LED_EN | P0.15 | AD10 | do U2.8 (GPIO1, LOADSW1), TP7 |
+| PMIC_INT | P0.17 | AD12 | z U2.7 (GPIO0), TP8 |
+| RESET | P0.18 | AC13 | jedyny pin nRESET; SW1, J10.3 |
+| RGB_DIN | P0.19 | AC15 | do D2.3, TP9 |
+| TP11, TP12 | P0.22, P0.24 | AD18, AD20 | wolne GPIO testowe (DBG0, DBG1) |
+| SWO | P1.00 | AD22 | jedyny pin SWO (TRACEDATA[0]); J10.6 |
+| EXT_INT | P1.02 | W24 | z J3.4; pin „low frequency I/O only”, wystarcza dla przerwania |
 
 Diody matrycy mają katody na liniach ROW, więc kolumny są wyjściami, a wiersze wejściami (w ZMK kierunek `col2row`).
 
@@ -252,14 +266,14 @@ Haptyka i akcelerometr nie są na motherboardzie; MB wyprowadza zasilanie, I2C i
 | Pin | Sygnał | Pin | Sygnał |
 | --- | --- | --- | --- |
 | 1 | VSYS (3,0–5 V, nieregulowane) | 2 | 3,3 V z BUCK2 (VDD_NRF) |
-| 3 | GND | 4 | EXT_INT: przerwanie akcelerometru, P0.19 |
+| 3 | GND | 4 | EXT_INT: przerwanie akcelerometru, P1.02 (M6) |
 | 5 | SCL | 6 | SDA |
 
 | Decyzja | Uzasadnienie | Referencja |
 | --- | --- | --- |
 | Dwa zasilania: VSYS i 3,3 V | Sterownik haptyki pobiera prąd silnika z VSYS; BUCK2 ma 200 mA na cały układ, więc dla modułów na 3,3 V przyjęto budżet 100 mA | nPM1300 PS v1.3, tab. na s. 51; tab. 3, s. 16 |
 | I2C wspólne z nPM1300 | Jedna magistrala; nPM1300 ma adres 7-bitowy 110 1011 (0x6B); adresy modułów do sprawdzenia w ich kartach | nPM1300 PS v1.3, rozdz. 7.6, s. 125 |
-| Jedna linia przerwania (P0.19, dolna strona nRF52840); bez linii EN haptyki | Pin bez ograniczenia częstotliwości, może budzić układ, co wystarcza dla wake-on-motion. Sterownik haptyki usypiany przez I2C (tryb standby) zamiast osobnej linii EN; prąd uśpienia do sprawdzenia w karcie wybranego sterownika. Zmniejszenie z 2×6 do 2×3 na prośbę jakuba (2026-10-25) | nRF52840 PS v1.5, rozdz. 6.9, s. 152; tab. 145, s. 579–580 |
+| Jedna linia przerwania (P1.02, M6; wcześniej P0.19); bez linii EN haptyki | Przerwanie jest sygnałem rzadkim, więc pin „low frequency I/O only” wystarcza; GPIO portu 1 też może budzić układ (SENSE/GPIOTE), co wystarcza dla wake-on-motion. Sterownik haptyki usypiany przez I2C (tryb standby) zamiast osobnej linii EN; prąd uśpienia do sprawdzenia w karcie wybranego sterownika. Zmniejszenie z 2×6 do 2×3 na prośbę jakuba (2026-10-25) | nRF52840 PS v1.5, rozdz. 6.9, s. 152; tab. 145, s. 579–580 |
 | Pull-upy I2C 4,7 kΩ | Magistrala wychodzi przewodem poza płytkę, więc jej pojemność rośnie | Obliczenie poniżej |
 
 ### Obliczenie: pull-upy I2C
@@ -355,7 +369,7 @@ Zatwierdzone i naniesione w schemacie 2026-10-31. Opis funkcji TP na osobnej str
 | TP6 | VLED | LOADSW1 | – |
 | TP7, TP8, TP9 | LED_EN, PMIC_INT, RGB_DIN | Analizator logiczny | – |
 | TP10 | GND | Masa odniesienia | – |
-| TP11, TP12 | P0.16 (AC11), P0.17 (AD12) | Znaczniki czasu z firmware'u (DBG0, DBG1): skan, wykrycie klawisza, wybudzenie; synchronizacja z wejściami cyfrowymi PPK2 | nRF52840 PS v1.5, tab. 145 |
+| TP11, TP12 | P0.22 (AD18), P0.24 (AD20) (M6) | Znaczniki czasu z firmware'u (DBG0, DBG1): skan, wykrycie klawisza, wybudzenie; synchronizacja z wejściami cyfrowymi PPK2 | nRF52840 PS v1.5, tab. 145 |
 | TP13, TP14 | COL0, ROW0 | Przebieg skanowania matrycy | – |
 
 TP: footprint `ibm_bs:TestPoint_Pad` (exclude from BOM i position files), in_bom = no.
