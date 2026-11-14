@@ -463,6 +463,7 @@ Porównanie z innymi stackupami JLC dla obecnych geometrii (microstrip nad In1, 
 | Przelotka w padzie U3.3 | 0,45 / 0,2 mm, DB_GND | Najkrótsza droga masy układu ESD do płaszczyzny DB | – |
 | Technologia w JLC | Wypełnienie żywicą i zakrycie miedzią (POFV) | Niewypełniona przelotka w padzie odsysa cynę przy rozpływie, lut pada BGA/aQFN jest wadliwy | JLCPCB PCB Capabilities (odczyt 2026-11-02): wypełnienie dla otworów 0,15–0,55 mm, na 4 warstwach opcja dodatkowa; nazwa opcji i dopłata do potwierdzenia przy zamówieniu |
 | Reguła DRC | min. annular 0,05 mm, min. otwór 0,15 mm | Minimum JLC dla przelotek (zalecane 0,075 mm) | jw. |
+| Uwaga do zamówienia (A25) | `Fill and cap all vias 0.15, 0.20 and 0.30 mm, including the 0.30 mm holes in the thermal pads of U1 and U2. Do not fill 0.50 mm holes (J9) and 1.6 mm holes (J5), these are component holes.` | JLC wypełnia otwory do 0,5 mm i przy zamówieniu z Gerberów prosi o wskazanie, które; otwory J9 (0,5 mm) są stykami listwy lutowanej ręcznie i nie mogą zostać zatkane | [JLCPCB: PCB via covering](https://jlcpcb.com/help/article/pcb-via-covering) (odczyt 2026-11-13) |
 
 ## Otwarte kwestie
 
