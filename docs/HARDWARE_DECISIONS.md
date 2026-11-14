@@ -426,6 +426,35 @@ Kolejność grup = kolejność uruchamiania prototypu. Warunki pomiarów prądu:
 
 Oznaczenie testów radiowych R1–R5 nie ma związku z rezystorami R1–R3 na schemacie.
 
+## PCB: stackup (2026-11-14, A24)
+
+4 warstwy, grubość 1,2 mm, ENIG, miedź zewnętrzna 1 oz (35 µm), wewnętrzna 0,5 oz (15,2 µm), stackup JLC04121H-3313. W formularzu JLC wybierany po „Impedance Control = Yes”.
+
+| Warstwa | Grubość | εr | Funkcja |
+| --- | --- | --- | --- |
+| F.Cu | 0,035 mm | | Sygnały, elementy, tor RF, wylewka GND |
+| Prepreg 3313 | 0,0994 mm | 4,1 | |
+| In1.Cu | 0,0152 mm | | GND (płaszczyzna odniesienia RF i USB) |
+| Rdzeń | 0,865 mm | 4,6 | |
+| In2.Cu | 0,0152 mm | | Zasilania (VBUS, VSYS, +3V3), DEC4, wylewka GND |
+| Prepreg 3313 | 0,0994 mm | 4,1 | |
+| B.Cu | 0,035 mm | | Magistrala matrycy, I2C, TP, wylewka GND |
+
+Porównanie z innymi stackupami JLC dla obecnych geometrii (microstrip nad In1, wzór Hammerstada–Jensena z poprawką na grubość miedzi, bez maski; dokładność kilka Ω):
+
+| Prepreg F.Cu–In1 | Tor RF 0,2 mm | Szerokość 50 Ω | Para USB 0,16 / 0,13 mm | Pad 0402 do masy |
+| --- | --- | --- | --- | --- |
+| **3313, 0,0994 mm, εr 4,1 (wybrany)** | 46,5 Ω | 0,175 mm | 90 Ω | ok. 0,15 pF |
+| 7628, 0,2104 mm, εr 4,4 (domyślny JLC) | 68 Ω | 0,37 mm | 110 Ω | ok. 0,07 pF |
+| 2116, 0,1164 mm, εr 4,16 | 51 Ω | 0,21 mm | 95 Ω | ok. 0,13 pF |
+| 1080, 0,0764 mm, εr 3,91 | 40 Ω | 0,14 mm | 83 Ω | ok. 0,18 pF |
+
+| Decyzja | Uzasadnienie | Referencja |
+| --- | --- | --- |
+| Prepreg 3313 | Obecny routing trafia w 50 Ω (RF) i 90 Ω (USB) bez przeróbek; masa 0,1 mm pod F.Cu daje ok. 3× mniejsze przesłuchy niż 7628 przy gęstej magistrali matrycy obok kwarców | JLCPCB, Controlled Impedance PCB Layer Stackup (odczyt 2026-11-14) |
+| 1,2 mm zamiast 1,6 mm | Prepreg ten sam, więc impedancje bez zmian; krótsze otwory 0,15 mm | jw. |
+| Wycięcie In1 pod dopasowaniem RF (zalecane) | Cienki prepreg dokłada ok. 0,15 pF na pad 0402 (ok. +0,3 pF przy C3, +0,45 pF przy C4); referencja Nordica ma wycięcia w warstwach wewnętrznych pod dopasowaniem | `reference/nordic/nrf52840-qiaa-config5` |
+
 ## PCB: przelotki w padach (2026-11-12, A18)
 
 | Parametr | Wartość | Uzasadnienie | Referencja |
@@ -447,7 +476,7 @@ Oznaczenie testów radiowych R1–R5 nie ma związku z rezystorami R1–R3 na sc
 - [x] Dopasowanie RF: czteroelementowe z konfiguracji 7 (2026-10-25, M5)
 - [ ] Karta WS2812B-2020-V6: próg VIH, prąd spoczynkowy, minimalne VDD
 - [x] Footprint NT1 (net-tie PVSS2 → GND): `ibm_bs:NetTie-2_SMD_Via0.45mm`, naruszenia DRC przy NT1 wyłączone z komentarzem (A22, 2026-11-12)
-- [ ] Linia 50 Ω od dopasowania do złącza U.FL policzona dla docelowego stackupu; pomiar toru analizatorem
+- [ ] Linia 50 Ω od dopasowania do złącza U.FL: policzona dla stackupu JLC04121H-3313 (A24, 0,2 mm ≈ 46,5 Ω); pomiar toru analizatorem otwarty
 - [x] Numery pinów nRF52840 dla COL/ROW: ustalone 2026-11-12 (M6, M7); wcześniej (SDA, SCL, PMIC_INT, LED_EN, RGB_DIN przypisane 2026-10-21: P5, F1, F2, I2)
 - [ ] Pinout kabla Tag-Connect: potwierdzenie, że pin 3 to nRESET
 - [ ] Czy wewnętrzne Rd na CC działa przy całkowicie rozładowanej baterii (pytanie do Nordica)

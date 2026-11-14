@@ -30,7 +30,7 @@ Dokumenty w Claude Docs (Changelog_Projektu, Hardware_Decisions_Baza_Pracy) to a
 - **Matryca:** własna membrana FPC 6 × 17 z diodą na klawisz (NKRO), col2row; na MB złącza FFC 1,0 mm J4 (18 pin) i J7 (6 pin). Brak przycisków poza RESET. Jedna WS2812B-2020-V6 na MB, zasilana z VSYS przez LOADSW1.
 - **Smart features (opcjonalnie):** haptyka i akcelerometr na osobnych płytkach; na MB tylko J3 2×3, listwa SMD 1,27 mm (VSYS, 3,3 V, GND, EXT_INT, SCL, SDA).
 - **Firmware:** ZMK na Zephyr 4.1 (HWMv2). Pomiar baterii przez nPM1300.
-- **PCB:** 4 warstwy (DO USTALENIA). Mechanika w Onshape.
+- **PCB:** 4 warstwy, 1,2 mm, ENIG, stackup JLC04121H-3313 (A24): F.Cu sygnały, In1 GND, In2 i B.Cu sygnały/zasilanie z wylewką GND. Mechanika w Onshape.
 
 ## Zasady audytu
 
