@@ -362,6 +362,7 @@ Zasada: części JLC basic, gdzie nie tracą względem referencji Nordica (exten
 | D2 | WS2812B-2020-V6 C52917434 | Extended | WS2812C-2020 niedostępna |
 | J6 | XUNPU U.FL-IPEX-1 C53433123 | Extended | Montaż JLC; sygnał na dolnym małym padzie (1), pozostałe 3 pady GND (2) |
 | J5, J8, J9 | – | – | Lutowane ręcznie; na PCB „Exclude from BOM” i „Exclude from position files” (A20; J2 montuje JLC) |
+| J3 (2×3, 1,27 mm, SMD) | – (do kupienia w LCSC, np. DEALON DZ127S-22-06-55, C5160759) | – | Lutowany ręcznie (A23); w schemacie i na PCB „Exclude from BOM” i „Exclude from position files” |
 
 Extended zostają: U1, U2, U3, Y1, Y2, C3, C4, L1–L5, D1, D2, F1, J1, J4, J6, J7.
 
