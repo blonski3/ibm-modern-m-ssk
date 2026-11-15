@@ -299,7 +299,8 @@ def ring(polys, s):
 def fill(areas, s, radius):
     """Grid points inside areas [(outline, holes)] at least margin + via radius from
     their edges. The grid is centred in the area's bounding box (equal margins left/right
-    and top/bottom), so the same zone gives the same points every time."""
+    and top/bottom), so the same zone gives the same points every time. fit: the pitch is
+    adjusted (nearest to P) so the outer vias sit exactly M from the sides."""
     P = s["pitch"]
     out = []
     hexa = s.get("stagger")
@@ -317,18 +318,34 @@ def fill(areas, s, radius):
         H = bb[3] - bb[1] - 2 * m
         if W < 0 or H < 0:
             continue
-        n = int(math.floor(W / P + 1e-9))
-        span = n * P + (P / 2.0 if hexa and W - n * P >= P / 2.0 - 1e-9 else 0.0)
-        x0 = bb[0] + m + (W - span) / 2.0
-        nr = int(math.floor(H / dy + 1e-9))
-        y0 = bb[1] + m + (H - nr * dy) / 2.0
-        for j in range(nr + 1):
-            y = y0 + j * dy
-            sh = P / 2.0 if hexa and j % 2 else 0.0
-            for i in range(n + 1):
-                p = (x0 + sh + i * P, y)
-                if p[0] > bb[2] - m + 1e-9:
-                    continue
+        if s.get("fit"):
+            # pitch nearest to P that puts the outer vias exactly M from every side;
+            # hex: odd rows sit between, plus a via at each end so both sides stay lined
+            n = max(1, int(round(W / P)))
+            nr = max(1, int(round(H / dy)))
+            px, py = W / n, H / nr
+            x0, y0 = bb[0] + m, bb[1] + m
+            rows = []
+            for j in range(nr + 1):
+                if hexa and j % 2:
+                    xs = [x0] + [x0 + px / 2.0 + i * px for i in range(n)] + [x0 + W]
+                else:
+                    xs = [x0 + i * px for i in range(n + 1)]
+                rows.append((y0 + j * py, xs))
+        else:
+            n = int(math.floor(W / P + 1e-9))
+            span = n * P + (P / 2.0 if hexa and W - n * P >= P / 2.0 - 1e-9 else 0.0)
+            x0 = bb[0] + m + (W - span) / 2.0
+            nr = int(math.floor(H / dy + 1e-9))
+            y0 = bb[1] + m + (H - nr * dy) / 2.0
+            rows = []
+            for j in range(nr + 1):
+                sh = P / 2.0 if hexa and j % 2 else 0.0
+                rows.append((y0 + j * dy, [x0 + sh + i * P for i in range(n + 1)
+                                           if x0 + sh + i * P <= bb[2] - m + 1e-9]))
+        for y, xs in rows:
+            for x in xs:
+                p = (x, y)
                 if not geo.inside(p, outline) or any(geo.inside(p, h) for h in holes):
                     continue
                 if dist_to(edges, p, m + 0.01) < m - 1e-9:

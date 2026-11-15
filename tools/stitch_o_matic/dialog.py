@@ -165,8 +165,9 @@ class StitchDialog(w95.OMatic):
         grid.Add(wx.StaticText(mp, label="Ends"), 0, wx.ALIGN_CENTER_VERTICAL | wx.LEFT, 4)
         grid.Add(self.num(mp, "end", "Fence: no vias this close to the ends of the tracks [mm]"), 0)
         grid.Add((0, 0))
-        grid.Add(self.checkbox(mp, "fit", "Fit", "Fence: spread the vias evenly from end to end "
-                                                "(pitch ≤ P)"), 0)
+        grid.Add(self.checkbox(mp, "fit", "Fit", "Fence: spread the vias evenly from end to end. "
+                                                "Fill: pitch nearest to P so the outer vias sit exactly M "
+                                                "from every side"), 0)
         grid.Add((0, 0))
         grid.Add(self.checkbox(mp, "stagger", "Stagger", "Fence: the other side / row shifted by P/2"), 0)
         grid.Add((0, 0))
@@ -203,8 +204,8 @@ class StitchDialog(w95.OMatic):
         self.ch["side"].Enable(m == g.FENCE)
         for k in ("rows", "row_gap", "end"):
             self.c[k].Enable(m == g.FENCE)
-        for k in ("fit", "stagger"):
-            self.cb[k].Enable(m == g.FENCE)
+        self.cb["fit"].Enable(m in (g.FENCE, g.FILL))
+        self.cb["stagger"].Enable(m == g.FENCE)
         self.cb["hexa"].Enable(m == g.FILL)
 
     def set_status(self, res):
