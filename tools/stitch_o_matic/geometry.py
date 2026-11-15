@@ -298,7 +298,8 @@ def ring(polys, s):
 
 def fill(areas, s, radius):
     """Grid points inside areas [(outline, holes)] at least margin + via radius from
-    their edges. The grid is on absolute multiples of the pitch (same points every time)."""
+    their edges. The grid is centred in the area's bounding box (equal margins left/right
+    and top/bottom), so the same zone gives the same points every time."""
     P = s["pitch"]
     out = []
     hexa = s.get("stagger")
@@ -312,15 +313,22 @@ def fill(areas, s, radius):
         for poly in [outline] + list(holes):
             for a, b in zip(poly, poly[1:] + poly[:1]):
                 edges.add(geo.Obstacle("seg", (a, b, 0.0), 0, None))
-        j0 = int(math.floor(bb[1] / dy))
-        j1 = int(math.ceil(bb[3] / dy))
-        for j in range(j0, j1 + 1):
-            y = j * dy
+        W = bb[2] - bb[0] - 2 * m
+        H = bb[3] - bb[1] - 2 * m
+        if W < 0 or H < 0:
+            continue
+        n = int(math.floor(W / P + 1e-9))
+        span = n * P + (P / 2.0 if hexa and W - n * P >= P / 2.0 - 1e-9 else 0.0)
+        x0 = bb[0] + m + (W - span) / 2.0
+        nr = int(math.floor(H / dy + 1e-9))
+        y0 = bb[1] + m + (H - nr * dy) / 2.0
+        for j in range(nr + 1):
+            y = y0 + j * dy
             sh = P / 2.0 if hexa and j % 2 else 0.0
-            i0 = int(math.floor((bb[0] - sh) / P))
-            i1 = int(math.ceil((bb[2] - sh) / P))
-            for i in range(i0, i1 + 1):
-                p = (i * P + sh, y)
+            for i in range(n + 1):
+                p = (x0 + sh + i * P, y)
+                if p[0] > bb[2] - m + 1e-9:
+                    continue
                 if not geo.inside(p, outline) or any(geo.inside(p, h) for h in holes):
                     continue
                 if dist_to(edges, p, m + 0.01) < m - 1e-9:

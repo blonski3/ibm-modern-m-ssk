@@ -21,7 +21,7 @@ Tryb wybiera się sam po zaznaczeniu:
   po jednej, w odległości O od osi ścieżki, co P. Na zewnątrz zakrętów via idą po łuku,
   w środku zakrętu nie wchodzą bliżej niż O.
 * **Fill** (zaznaczona strefa): siatka via co P (kwadratowa albo heksagonalna), M od krawędzi
-  strefy; siatka na pełnych wielokrotnościach P, więc ponowne uruchomienie daje te same miejsca.
+  strefy; siatka wyśrodkowana w obrysie strefy (równe marginesy po bokach i u góry/dołu), więc ponowne uruchomienie daje te same miejsca.
 * **Ring** (nic nie zaznaczone albo jedna strefa): via wzdłuż krawędzi płytki (Edge.Cuts,
   także zaokrąglone rogi) albo strefy, O od krawędzi, rozłożone równo dookoła.
 
