@@ -4966,7 +4966,7 @@
 				)
 			)
 		)
-		(property "Value" "MOLEX 532610271"
+		(property "Value" "PicoBlade 53261-0371"
 			(at 78.74 60.96 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5009,7 +5009,7 @@
 				)
 			)
 		)
-		(property "PART NUMBER" "53261-0271"
+		(property "PART NUMBER" "53261-0371"
 			(at 78.74 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -5020,7 +5020,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C177225"
+		(property "LCSC Part" "C293630"
 			(at 78.74 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -7435,17 +7435,6 @@
 				)
 			)
 		)
-		(property "ALTIUM_VALUE" ""
-			(at 50.8 184.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "ARTIKKELNR NOCA" ""
 			(at 50.8 184.15 0)
 			(hide yes)
@@ -7786,7 +7775,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "DNP"
+		(property "Value" "0"
 			(at 93.98 73.6599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7830,7 +7819,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C23178"
+		(property "LCSC Part" "C21189"
 			(at 63.5 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -7841,7 +7830,7 @@
 				)
 			)
 		)
-		(property "PART NUMBER" "0603WAF4703T5E"
+		(property "PART NUMBER" "0603WAF0000T5E"
 			(at 91.44 72.39 0)
 			(hide yes)
 			(show_name no)

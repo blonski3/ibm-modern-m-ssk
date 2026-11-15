@@ -8115,7 +8115,7 @@
 				)
 			)
 		)
-		(property "Value" "DNP"
+		(property "Value" "0"
 			(at 0 1.43 90)
 			(layer "F.Fab")
 			(uuid "fb698bac-a34a-47c4-8260-ec6c69c6911c")
@@ -8148,7 +8148,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C23178"
+		(property "LCSC Part" "C21189"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8161,7 +8161,7 @@
 				)
 			)
 		)
-		(property "PART NUMBER" "0603WAF4703T5E"
+		(property "PART NUMBER" "0603WAF0000T5E"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -26395,7 +26395,7 @@
 				)
 			)
 		)
-		(property "Value" "MOLEX 532610271"
+		(property "Value" "PicoBlade 53261-0371"
 			(at 0 3.8 0)
 			(layer "F.Fab")
 			(uuid "b879d624-a7f7-48b1-beb9-0ed2d7b579a7")
@@ -26428,7 +26428,7 @@
 				)
 			)
 		)
-		(property "PART NUMBER" "53261-0271"
+		(property "PART NUMBER" "53261-0371"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -26441,7 +26441,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C177225"
+		(property "LCSC Part" "C293630"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
