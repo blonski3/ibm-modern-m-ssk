@@ -1,0 +1,17 @@
+(version 1)
+(rule "Zone to edge 0.5"
+  (constraint edge_clearance (min 0.5 mm))
+  (condition "A.Type == 'Zone'"))
+(rule "Zone to NPTH 0.5"
+  (constraint hole_clearance (min 0.5 mm))
+  (condition "A.Type == 'Zone' && B.Pad_Type == 'NPTH, mechanical'"))
+# Odstepy w matrycy przy U1 ponizej netclassy, ale w granicach JLC (min 0,09 / otwor 0,18); jakub 15.11
+(rule "COL4-COL5 0.09"
+  (constraint clearance (min 0.09 mm))
+  (condition "(A.NetName == '/MCU IO/COL4' && B.NetName == '/MCU IO/COL5') || (A.NetName == '/MCU IO/COL5' && B.NetName == '/MCU IO/COL4')"))
+(rule "COL15-3V3_NRF 0.14"
+  (constraint clearance (min 0.14 mm))
+  (condition "(A.NetName == '/MCU IO/COL15' && B.NetName == '+3V3_NRF') || (A.NetName == '+3V3_NRF' && B.NetName == '/MCU IO/COL15')"))
+(rule "COL12-COL11 hole 0.18"
+  (constraint hole_clearance (min 0.18 mm))
+  (condition "(A.NetName == '/MCU IO/COL12' && B.NetName == '/MCU IO/COL11') || (A.NetName == '/MCU IO/COL11' && B.NetName == '/MCU IO/COL12')"))
