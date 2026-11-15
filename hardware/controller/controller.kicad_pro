@@ -76,7 +76,68 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "clearance|164026378|97398484|042709e0-a9cc-4fe1-a304-6f40e686e6e0|89492458-378f-43ab-84b2-49adc10073a1",
+          "SCL / via SDA 0,0985 mm; JLC min 0,09"
+        ],
+        [
+          "clearance|174199716|124121383|597209e1-4656-42ae-9231-bcc5731c0bb4|b90a2b55-e968-4a97-861e-bf626563c25c",
+          "ROW0 / ROW1 0,092-0,098 mm; JLC min 0,09"
+        ],
+        [
+          "clearance|174250000|124412500|0d31bab9-4e26-4618-be23-fe7cc0853293|b90a2b55-e968-4a97-861e-bf626563c25c",
+          "ROW0 / ROW1 0,092-0,098 mm; JLC min 0,09"
+        ],
+        [
+          "clearance|178109801|120241513|2b233d41-ed14-41d3-8ee2-f87cf35cf3a6|612835d0-b3c3-4994-9a74-43d21e90cc66",
+          "COL15 / via +3V3_NRF 0,146 mm (Power 0,15); JLC min 0,09"
+        ],
+        [
+          "clearance|180457560|116766513|4108fed4-bfeb-4d2b-ab15-2ddadf116449|f458b2cf-515a-4e20-94af-64b657251199",
+          "COL4 / via COL5 0,092 mm; JLC min 0,09"
+        ],
+        [
+          "clearance|185640767|94135217|68229839-e12c-4280-8b22-3f0c552f003a|8a7d5d69-015c-4d37-bf66-80b27b6afba1",
+          "VSYS (In2) / via +3V3_BUCK 0,136 mm (Power 0,15); JLC min 0,09"
+        ],
+        [
+          "clearance|228300001|108399999|5357adce-6e2c-44e4-bfd7-cbe02cd9fae5|92463bdf-72ec-40df-8506-afae4dc29ec5",
+          "USB 0,125 mm (netclass 0,13) przy J1/U3; JLC min 0,09"
+        ],
+        [
+          "clearance|228550001|111858749|803ece5b-a107-48a9-9876-6695ba3e41db|a64071b2-9c0e-447f-a281-801abbec7a65",
+          "USB 0,125 mm (netclass 0,13) przy J1/U3; JLC min 0,09"
+        ],
+        [
+          "clearance|228800001|110124999|e591b972-2318-4c3d-b95f-0d30958048b9|fe4e015b-67c7-41ee-95a6-3abee21ff17f",
+          "USB 0,125 mm (netclass 0,13) przy J1/U3; JLC min 0,09"
+        ],
+        [
+          "hole_clearance|175629218|120567288|db17ecfa-5a3d-4c71-9563-bedb55541f33|feb0edec-c834-4a7a-9728-92b7020c8263",
+          "COL12 / otwor via COL11 0,19 mm; JLC 0,2, akceptowane (jakub 15.11)"
+        ],
+        [
+          "hole_clearance|182999992|100250000|65774936-06b8-49af-83ab-4ce6729791bf|9c989e19-2409-41d7-9284-2e0980cb9ea6",
+          "NT1 net tie PVSS2-GND, P3 (A22)"
+        ],
+        [
+          "hole_clearance|183000000|100250000|1b3bd598-a53f-4ab5-bb1b-8fda438bd43c|9c989e19-2409-41d7-9284-2e0980cb9ea6",
+          "NT1 net tie PVSS2-GND, P3 (A22)"
+        ],
+        [
+          "hole_clearance|183000000|100250000|bcdeb345-0cf1-451f-8b23-c06cbca9f55d|9c989e19-2409-41d7-9284-2e0980cb9ea6",
+          "NT1 net tie PVSS2-GND, P3 (A22)"
+        ],
+        [
+          "shorting_items|183000000|100750000|31edf232-f84b-4a52-b920-ee2022beb1af|9c989e19-2409-41d7-9284-2e0980cb9ea6",
+          "NT1 net tie PVSS2-GND, P3 (A22)"
+        ],
+        [
+          "shorting_items|183000000|99750001|9c989e19-2409-41d7-9284-2e0980cb9ea6|e930cf1c-0d35-46ba-b01c-fbb4caa5bbb9",
+          "NT1 net tie PVSS2-GND, P3 (A22)"
+        ]
+      ],
       "meta": {
         "version": 2
       },
