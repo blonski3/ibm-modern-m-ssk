@@ -174,4 +174,15 @@
 		(uuid "3fb85d81-ea58-4bf5-846c-a25840350aa4")
 	)
 	(embedded_fonts no)
+	(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/SMD_COAX_4MM.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
 )

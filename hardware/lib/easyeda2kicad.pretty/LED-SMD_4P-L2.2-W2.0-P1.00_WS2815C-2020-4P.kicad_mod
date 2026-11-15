@@ -140,4 +140,15 @@
 		(uuid "7f0d2670-9056-4903-a206-b71894a93f75")
 	)
 	(embedded_fonts no)
+	(model "${KIPRJMOD}/../lib/easyeda2kicad.3dshapes/LED-SMD_4P-L2.0-W2.0-H0.8-TL_WS2812B-2020.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
 )
