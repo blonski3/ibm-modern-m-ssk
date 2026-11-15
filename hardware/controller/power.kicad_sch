@@ -4976,7 +4976,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_Molex:Molex_PicoBlade_53261-0371_1x03-1MP_P1.25mm_Horizontal"
+		(property "Footprint" "ibm_bs:Molex_PicoBlade_53261-0371_1x03-1MP_P1.25mm_Horizontal"
 			(at 78.74 67.31 0)
 			(hide yes)
 			(show_name no)
