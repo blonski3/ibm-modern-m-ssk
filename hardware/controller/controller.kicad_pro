@@ -50,9 +50,9 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "border_display_style": 0,
+          "border_display_style": 2,
           "border_hatch_pitch": 0.5,
-          "corner_radius": 0.25,
+          "corner_radius": 0.5,
           "corner_smoothing": 2,
           "fill_mode": 0,
           "hatch_gap": 1.5,
@@ -60,13 +60,13 @@
           "hatch_smoothing_level": 0,
           "hatch_smoothing_value": 0.1,
           "hatch_thickness": 1.0,
-          "min_clearance": 0.1,
+          "min_clearance": 0.15,
           "min_island_area": 10.0,
-          "min_thickness": 0.1,
-          "pad_connection": 3,
-          "remove_islands": 1,
-          "thermal_relief_gap": 0.125,
-          "thermal_relief_spoke_width": 0.5
+          "min_thickness": 0.15,
+          "pad_connection": 2,
+          "remove_islands": 0,
+          "thermal_relief_gap": 0.25,
+          "thermal_relief_spoke_width": 0.4
         }
       },
       "diff_pair_dimensions": [
@@ -666,6 +666,10 @@
       {
         "netclass": "Power",
         "pattern": "VLED"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "Net-(J2-Pin_1)"
       }
     ]
   },
@@ -951,7 +955,7 @@
           "show": false
         }
       ],
-      "filter_string": "J4",
+      "filter_string": "tp",
       "group_symbols": true,
       "include_excluded_from_bom": true,
       "name": "",
@@ -1015,7 +1019,7 @@
         "uuid": "17f6a4a5-fbff-4e30-a1cc-9481373e4968"
       }
     ],
-    "used_designators": "#FLG1-5,#LABEL1-2,#LABEL6,#LABEL28-46,#LABEL48-62,#PWR2,#PWR7,#PWR12-17,#PWR19-37,#PWR41-116,C1-4,C10,C13,C17-19,C22-56,D2-3,F2-3,H1-6,J2-7,J9-18,L1,L4-8,NT1-2,Q2-3,R1-4,R10-15,S1-2,SW1-2,TP1-14,U2,U4-5,Y1-4",
+    "used_designators": "#FLG1-5,#LABEL1-2,#LABEL6,#LABEL28-46,#LABEL48-62,#PWR2,#PWR7,#PWR12-17,#PWR19-37,#PWR41-116,C1-4,C10,C13,C17-19,C22-56,D2-3,F2-3,H1-6,J2-7,J9-18,L1,L4-8,NT1-2,Q2-3,R1-4,R10-15,S1-3,SW1-2,TP1-14,U2,U4-5,Y1-4",
     "variants": []
   },
   "sheets": [
