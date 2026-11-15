@@ -29083,7 +29083,7 @@
 		(path "/c9a46136-57a3-45fc-88ce-38da53378f82/fd4243cd-f00c-4204-a7c4-f2bbca2878bc")
 		(sheetname "/Daughterboard/")
 		(sheetfile "daughterboard.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start 15 -5.2375)
