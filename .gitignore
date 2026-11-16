@@ -7,6 +7,9 @@ fp-info-cache
 .history/
 *_missing3Dmodels.txt
 *.bak
+# logi wlasnych wtyczek (tools/*_o_matic, via_o_tronic) zapisywane w katalogu projektu
+*_o_matic.log
+via_o_tronic.log
 
 # --- KiCad Fabrication Toolkit: wyjscie w katalogu projektu (regenerowane) ---
 # Zamrozone paczki zamowien trzymamy w /production/ na gorze repo.
