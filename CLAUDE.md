@@ -88,7 +88,7 @@ Ustalenia porządkowe: `lib` to zwykły katalog (nie submoduł, nie zmienna śro
 
 ## Znane problemy
 
-- 4 footprinty w `easyeda2kicad.pretty` wskazują nieistniejące modele 3D (`FC-135R_L3.2-W1.5`, `LED0603-RD`, `SOD-723_L1.0-W0.6-P1.4-RD`, `SW-SMD_L3.9-W3.0-P4.45`); na płytce controllera używany jest tylko `FC-135R` (stan 2026-11-01).
+- 4 footprinty w `easyeda2kicad.pretty` wskazują nieistniejące modele 3D (`FC-135R_L3.2-W1.5`, `LED0603-RD`, `SOD-723_L1.0-W0.6-P1.4-RD`, `SW-SMD_L3.9-W3.0-P4.45`); controller rev A nie używa żadnego z nich; `SOD-723` jest przypisany diodom w schemacie membrany, więc model 3D trzeba dodać przed PCB membrany (stan 2026-11-16).
 - Footprinty Nordica w `lib` różnią się od oryginałów w `reference/nordic/` (wersja robocza vs oryginał).
 
 ## Bieżący etap (2026-11-16)
