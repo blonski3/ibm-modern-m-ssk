@@ -7,10 +7,11 @@
 hardware/controller/   projekt KiCad 10: motherboard + daughterboard (jedna PCB, DB wyłamywany)
 hardware/membrane/     projekt KiCad 10: membrana FPC, matryca 6 × 17
 hardware/lib/          wspólna biblioteka: symbole, footprinty, modele 3D
+production/            zamrożone paczki zamówień (np. controller/revA-2026-11-16: Gerbery, BOM, CPL)
 docs/                  CHANGELOG.md, HARDWARE_DECISIONS.md, datasheets/, diagrams/
 mechanics/             pomiary i eksporty z Onshape
 reference/             projekty referencyjne (Nordic, FSSK v1.00)
-tools/                 skrypty pomocnicze (np. check_3d_paths.py)
+tools/                 własne wtyczki KiCada (*-o-matic, via-o-tronic) i skrypty (kicad-check.sh, check_3d_paths.py); indeks w tools/README.md
 ```
 
 Decyzje projektowe i ich uzasadnienia: `docs/HARDWARE_DECISIONS.md`; historia zmian: `docs/CHANGELOG.md`.

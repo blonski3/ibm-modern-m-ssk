@@ -21,16 +21,16 @@ Odpowiadaj po polsku (terminologia i nazwy sygnałów po angielsku), konkretnie,
 
 Dokumenty w Claude Docs (Changelog_Projektu, Hardware_Decisions_Baza_Pracy) to archiwum ze stanu 11.10.2026 (rev 17 i 25). Od 17.10.2026 jedynym źródłem prawdy są pliki w `docs/`.
 
-## Architektura (stan na 2026-11-01)
+## Architektura (stan na 2026-11-16)
 
 - **MCU:** nRF52840-QIAA (aQFN-73), konfiguracja 5 bez NFC: VDD = VDDH = 3,3 V, REG1 w trybie DC/DC. Kwarc 32 MHz z CL = 8 pF (C1/C2 = 12 pF), 32,768 kHz z CL = 9 pF. Tor RF 50 Ω do U.FL, dopasowanie czteroelementowe z referencji config 7 (C3 1,0 pF, L1 4,7 nH, C4 1,2 pF, L5 2,2 nH). SWD przez Tag-Connect TC2030, reset na P0.18, SWO na P1.00.
-- **PMIC:** nPM1300-QEAA (QFN-32). BUCK1 = OFF (VSET1 do GND), BUCK2 = 3,3 V (VSET2 = 470 kΩ). VDDIO = 3,3 V. I2C z pull-upami 4,7 kΩ. GPIO0 = przerwanie do nRF, GPIO1 = włącznik LOADSW1. NTC do GND. SHPHLD wolny.
-- **Zasilanie:** Li-Po ok. 1000 mAh (klasa LP803040), PCM, dwa przewody z wtykiem Molex PicoBlade 1,25 mm (J2, A21), bez NTC; w drukowanym koszyku. Ładowanie ustawiane w firmware (start 400 mA, 4,20 V, limit VBUS 500 mA); sprzęt wymiarowany na 800 mA. Odwrotna polaryzacja: P-MOSFET AO3401A, dren od strony złącza baterii.
+- **PMIC:** nPM1300-QEAA (QFN-32). BUCK1 = OFF (VSET1 do GND), BUCK2 = 3,3 V (VSET2 = 470 kΩ). VDDIO i pull-upy I2C 4,7 kΩ na `+3V3_BUCK` (A17). GPIO0 = przerwanie do nRF, GPIO1 = włącznik LOADSW1. NTC na J2.2 (P11). SHPHLD wolny (TP1).
+- **Zasilanie:** Li-Po ok. 1000 mAh z PCM i NTC 10 kΩ, trzy przewody z wtykiem Molex PicoBlade 1,25 mm (J2 53261-0371: 1 +, 2 NTC, 3 GND; A26, P11), R13 0 Ω DNP NTC → GND dla ogniwa bez NTC; w drukowanym koszyku S3 (A27). Ładowanie ustawiane w firmware (start 400 mA, 4,20 V, limit VBUS 500 mA); sprzęt wymiarowany na 800 mA. Odwrotna polaryzacja: P-MOSFET AO3401A, dren od strony złącza baterii.
 - **Elektromechanika:** MB i DB jako jedna płytka (DB wyłamywany), membrana jako osobna płytka FPC; projekty KiCada `controller` i `membrane`, wspólna biblioteka `lib`. Na DB: USB-C, PTC i TVS ≥ 20 V, ESD. CC1/CC2 bezpośrednio do nPM1300 (wewnętrzne Rd), bez 5,1 kΩ. Łącze MB ↔ DB: goldpin 1×10, raster 1 mm; pinout 1–10 (I6): VBUS, VBUS, CC1, GND, D+, D−, GND, CC2, GND, GND. DB przykręcany do drukowanego uchwytu.
 - **Matryca:** własna membrana FPC 6 × 17 z diodą na klawisz (NKRO), col2row; na MB złącza FFC 1,0 mm J4 (18 pin) i J7 (6 pin). Brak przycisków poza RESET. Jedna WS2812B-2020-V6 na MB, zasilana z VSYS przez LOADSW1.
 - **Smart features (opcjonalnie):** haptyka i akcelerometr na osobnych płytkach; na MB tylko J3 2×3, listwa SMD 1,27 mm (VSYS, 3,3 V, GND, EXT_INT, SCL, SDA).
 - **Firmware:** ZMK na Zephyr 4.1 (HWMv2). Pomiar baterii przez nPM1300.
-- **PCB:** 4 warstwy, 1,2 mm, ENIG, stackup JLC04121H-3313 (A24): F.Cu sygnały, In1 GND, In2 i B.Cu sygnały/zasilanie z wylewką GND. Mechanika w Onshape.
+- **PCB:** 4 warstwy, 1,2 mm, ENIG, stackup JLC04121H-3313 (A24): F.Cu sygnały, In1 GND, In2 i B.Cu sygnały/zasilanie z wylewką GND. Tor RF CPWG 0,135 / 0,15 mm (A30), przelotki w padach U1 z POFV (A18). Rev A zamówiony w JLC 2026-11-16 (A31). Mechanika w Onshape.
 
 ## Zasady audytu
 
@@ -64,7 +64,11 @@ Na koniec sesji, w której coś się zmieniło (KiCad, firmware, mechanika, teks
 
 Migracja repo zakończona 2026-10-17 (tag `restructure-done`; tag startowy `pre-restructure`): KiCad 10, projekty `hardware/controller` i `hardware/membrane`, wspólna biblioteka `hardware/lib`, ścieżki `${KIPRJMOD}/../lib/`. Szczegóły kroków w historii gita i w CHANGELOG (A9).
 
-Sprawdzenie po zmianach w KiCadzie: `tools/kicad-check.sh` (ERC, DRC z parity, netlista i PDF do `.baseline/`; kicad-cli tylko na maszynie właściciela). Modele 3D: `python3 tools/check_3d_paths.py hardware/controller hardware/lib`.
+Sprawdzenie po zmianach w KiCadzie: `tools/kicad-check.sh` (ERC, DRC z parity, netlista i PDF do `.baseline/`; kicad-cli tylko na maszynie właściciela, KiCad 10 z Flatpaka). Modele 3D: `python3 tools/check_3d_paths.py hardware/controller hardware/lib`.
+
+Pliki produkcyjne: Fabrication Toolkit generuje je w `hardware/controller/production/` (ignorowane); paczka wysłana do JLC jest zamrażana w `production/controller/<rev>-<data>/` z `README.md` (parametry zamówienia). Raporty `hardware/controller/DRC.rpt` i `ERC.rpt` są w repo jako stan z dnia zamówienia rev A.
+
+Własne wtyczki KiCada (`tools/*_o_matic`, `tools/via_o_tronic`, indeks w `tools/README.md`): działają z kopii w folderze wtyczek KiCada; po zmianie w repo skopiować pliki i zrestartować KiCad.
 
 ## Docelowe drzewo
 
@@ -87,6 +91,6 @@ Ustalenia porządkowe: `lib` to zwykły katalog (nie submoduł, nie zmienna śro
 - 4 footprinty w `easyeda2kicad.pretty` wskazują nieistniejące modele 3D (`FC-135R_L3.2-W1.5`, `LED0603-RD`, `SOD-723_L1.0-W0.6-P1.4-RD`, `SW-SMD_L3.9-W3.0-P4.45`); na płytce controllera używany jest tylko `FC-135R` (stan 2026-11-01).
 - Footprinty Nordica w `lib` różnią się od oryginałów w `reference/nordic/` (wersja robocza vs oryginał).
 
-## Bieżący etap (2026-11-01)
+## Bieżący etap (2026-11-16)
 
-Schemat controllera kompletny (CHANGELOG A1–A15), BOM pod JLC zamknięty (A14), plan testów w HARDWARE_DECISIONS. Teraz PCB: Board Setup pod JLC, obrys MB i DB, rozmieszczenie, routing. Membrana: ogony 18 i 6 styków (pinout lustrzany do J4/J7, 24. styk GND wg I5), stackup i reguły FPC, obrys z Onshape.
+Controller rev A zamówiony w JLC 2026-11-16 (CHANGELOG A31; PCBA 5 szt., U2 nPM1300 lutowany ręcznie). Następne: membrana FPC (projekt i zamówienie; pinout J4/J7 wg M7, 24. styk GND wg I5), koszyk ogniwa i uchwyt DB w Onshape, wybór ogniwa z NTC, po dostawie uruchomienie według planu testów w HARDWARE_DECISIONS, `zmk-config`, tekst pracy (`thesis/`).
