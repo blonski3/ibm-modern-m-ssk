@@ -1,0 +1,43 @@
+\chapter{Projekt układu elektronicznego}\label{ch:elektronika}
+% Ok. 18-22 stron. Rytm każdej sekcji: wymagania bloku -> wycinek schematu -> dobór elementów
+% -> obliczenia ze wzorem i referencją do datasheetu -> co weryfikuje rozdz. 7.
+
+\section{PMIC nPM1300}\label{sec:pmic}
+% - BUCK2 = 3,3 V (VSET2 470k), BUCK1 off, VDDIO, I2C, GPIO0 przerwanie, GPIO1 LOADSW1.
+% - Ładowarka CC/CV, NTC w ogniwie (P11, R13 DNP), tryb Ship, ochrona przed odwrotną polaryzacją.
+% - Obliczenia: HD 'Blok PMIC: obliczenia' (tętnienia cewki, zakres regulacji, straty ładowarki, spadek na Q1).
+% - Tabela połączeń: HD 'Blok PMIC: połączenia'.
+\todo{Napisać.}
+
+\section{MCU nRF52840}\label{sec:mcu}
+% - Konfiguracja 5 (VDD = VDDH, REG1 DC/DC), odsprzęganie, HFXO/LFXO, SWD TC2030, RESET, SWO.
+% - Obliczenia: HD 'Obliczenia: obciążenie kwarców' (historia błędnego CL, CL M1).
+% - Przydział GPIO: HD 'Przydział GPIO', CL M7.
+\todo{Napisać.}
+
+\section{Tor RF}\label{sec:rf}
+% - Dopasowanie 4-elementowe z config 7, U.FL, antena w obudowie ze stalową płytą.
+% - CPWG 50 Ohm na JLC04121H-3313: 0,135/0,15 mm (CL A30, HD 'PCB: stackup'); L1 Murata (CL A19).
+\todo{Napisać.}
+
+\section{Interfejsy}\label{sec:interfejsy}
+% - USB-C bez 5,1k, ESD, koordynacja zabezpieczeń VBUS (HD).
+% - Łącze MB-DB 1x10 i pinout; I2C pull-upy (HD 'Obliczenie: pull-upy I2C').
+% - J3 (HD 'Smart features'), dioda WS2812B przez LOADSW1 (HD 'Dioda statusu').
+\todo{Napisać.}
+
+\section{Matryca klawiszy i membrana FPC}\label{sec:membrana}
+% - Matryca 6x17, col2row, dioda na klawisz, J4 (18) i J7 (6) (HD 'Złącza matrycy').
+% - Koncepcja membrany (wariant A, 16.11), stan na dzień złożenia; makieta do pomiarów.
+\todo{Napisać.}
+
+\section{Projekt PCB}\label{sec:pcb}
+% - Stackup 4L 1,2 mm (CL A24), rozmieszczenie, pętla BUCK2 i NT1 (CL A22), via-in-pad POFV (A18, A25).
+% - Reguły DRC (A29), TP i R3 (A15, A28), DB wyłamywany. Widoki warstw, render 3D.
+\todo{Napisać.}
+
+\section{BOM, koszt i produkcja}\label{sec:bom}
+% - JLC Basic vs Extended (HD 'BOM pod montaż JLC'), części lutowane ręcznie (U2, J3, J5).
+% - Zamówienie rev A (CL A31), tabela kosztów.
+\todo{Napisać.}
+

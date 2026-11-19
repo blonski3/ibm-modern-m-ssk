@@ -1,0 +1,7 @@
+# latexmk: pdflatex + biber, pliki pośrednie i PDF w build/
+$pdf_mode = 1;
+$out_dir = 'build';
+$aux_dir = 'build';
+$bibtex_use = 2;
+$pdflatex = 'pdflatex -interaction=nonstopmode -synctex=1 -file-line-error %O %S';
+@default_files = ('main.tex');

@@ -1,0 +1,80 @@
+% Praca inżynierska: Opracowanie i wykonanie układu sterującego klawiaturą mechaniczną
+% Kompilacja: latexmk (konfiguracja w latexmkrc), wynik w build/main.pdf
+%
+% UWAGA: format strony, czcionka i strona tytułowa są TYMCZASOWE.
+% Po pobraniu szablonu WEFiM PWr podmienić preambułę i title.tex.
+
+\documentclass[a4paper,12pt,oneside]{report}
+
+% --- Język i kodowanie ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage[autostyle]{csquotes}
+
+% --- Układ strony (tymczasowo, do zgodności z szablonem) ---
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,inner=3.5cm,outer=2.5cm]{geometry}
+\usepackage[onehalfspacing]{setspace}
+\usepackage{microtype}
+
+% --- Matematyka, jednostki, tabele, rysunki ---
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,}, group-separator={\,}, per-mode=symbol, range-phrase={\,--\,}}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{booktabs,tabularx,multirow}
+\usepackage{caption,subcaption}
+\captionsetup{font=small,labelfont=bf}
+\usepackage{enumitem}
+\setlist{itemsep=0.2em}
+\usepackage{xcolor}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,frame=single,columns=fullflexible}
+
+% --- Notatki robocze (przed złożeniem: \usepackage[disable]{todonotes}) ---
+\usepackage[colorinlistoftodos,textsize=footnotesize]{todonotes}
+\setuptodonotes{inline}
+
+% --- Bibliografia ---
+\usepackage[backend=biber,style=ieee,sorting=none]{biblatex}
+\addbibresource{bib/bibliografia.bib}
+
+% --- Odnośniki (zawsze na końcu preambuły) ---
+\usepackage[hidelinks,unicode]{hyperref}
+
+% --- Skróty projektu ---
+\newcommand{\nrf}{nRF52840}
+\newcommand{\npm}{nPM1300}
+\newcommand{\zmk}{ZMK}
+
+\begin{document}
+
+\input{title}
+
+\pagenumbering{roman}
+\input{chapters/00-streszczenie}
+\tableofcontents
+\listoftodos[Do zrobienia (lista robocza, usunąć przed złożeniem)]
+\cleardoublepage
+\pagenumbering{arabic}
+
+\input{chapters/01-wstep}
+\input{chapters/02-analiza}
+\input{chapters/03-wymagania}
+\input{chapters/04-elektronika}
+\input{chapters/05-mechanika}
+\input{chapters/06-oprogramowanie}
+\input{chapters/07-badania}
+\input{chapters/08-podsumowanie}
+
+\nocite{*} % tymczasowo: pokazuje całą bazę; usunąć, gdy pojawią się cytowania
+\printbibliography[heading=bibintoc,title={Bibliografia}]
+\listoffigures
+\listoftables
+
+\appendix
+\input{chapters/zalaczniki}
+
+\end{document}

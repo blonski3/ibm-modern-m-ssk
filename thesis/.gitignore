@@ -1,0 +1,17 @@
+build/
+*.aux
+*.log
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+*.toc
+*.out
+*.lof
+*.lot
+*.tdo
+*.pdf
+!figures/**/*.pdf

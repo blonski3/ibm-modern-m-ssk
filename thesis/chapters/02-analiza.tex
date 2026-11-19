@@ -1,0 +1,29 @@
+\chapter{Analiza problemu i przegląd rozwiązań}\label{ch:analiza}
+% Ok. 8-10 stron. Wymaga zebrania źródeł i zdjęć z rozbiórki.
+
+\section{Konstrukcja IBM Model M SSK}\label{sec:modelm}
+% - Buckling spring over membrane, stalowa płyta, układ SSK, oryginalny kontroler.
+% - Membrana: dwie warstwy przewodzące + spacer; ogony; bolt-mod. Zdjęcia własne.
+% - Źródło: patent IBM US 4,118,611 (buckling spring).
+\todo{Napisać.}
+
+\section{Matryca membranowa: ghosting, masking, NKRO}\label{sec:matryca}
+% - Skanowanie wiersz/kolumna: 6 + 17 = 23 GPIO zamiast 88 wejść.
+% - Rysunek prostokąta 2x2: ghosting, masking; dioda na klawisz daje NKRO.
+% - Oryginalna membrana bez diod -> decyzja o własnej membranie.
+\todo{Napisać.}
+
+\section{Istniejące kontrolery zastępcze i ich porównanie}\label{sec:kontrolery}
+% - Oryginalny kontroler, otwarte zamienniki (Teensy/ATmega32U4), FSSK (reference/fssk-v1.00).
+% - Tabela: MCU, przewód/bezprzewodowo, NKRO, ingerencja w obudowę, otwartość.
+% - Wniosek: brak bezprzewodowego drop-in z NKRO.
+\todo{Napisać.}
+
+\section{Łączność bezprzewodowa w klawiaturach}\label{sec:ble}
+% - BLE HID over GATT, interwał połączenia vs opóźnienie vs prąd; USB HID; dongle 2,4 GHz krótko.
+\todo{Napisać.}
+
+\section{Oprogramowanie klawiatur: QMK, ZMK}\label{sec:qmkzmk}
+% - QMK vs ZMK (Zephyr, BLE, devicetree, MIT); uzasadnienie wyboru: HD 'Firmware: ZMK na Zephyr 4.1'.
+\todo{Napisać.}
+
