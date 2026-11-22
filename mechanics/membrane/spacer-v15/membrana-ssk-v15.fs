@@ -184,21 +184,21 @@ export const membraneSSKv15 = defineFeature(function(context is Context, id is I
                 const cy = SLOTS[i][1] + hdy;
                 const rs = (SLOTS[i][3] + grow) / 2;
                 const hl = (SLOTS[i][2] - SLOTS[i][3]) / 2;
-                const n = SLOT_NAMES[i];
-                skLineSegment(sk, "stop_" ~ n, { "start" : mmv(cx - hl, cy + rs), "end" : mmv(cx + hl, cy + rs) });
-                skLineSegment(sk, "sbot_" ~ n, { "start" : mmv(cx - hl, cy - rs), "end" : mmv(cx + hl, cy - rs) });
-                skArc(sk, "sl_" ~ n, { "start" : mmv(cx - hl, cy + rs), "mid" : mmv(cx - hl - rs, cy), "end" : mmv(cx - hl, cy - rs) });
-                skArc(sk, "sr_" ~ n, { "start" : mmv(cx + hl, cy - rs), "mid" : mmv(cx + hl + rs, cy), "end" : mmv(cx + hl, cy + rs) });
+                const sn = SLOT_NAMES[i];
+                skLineSegment(sk, "stop_" ~ sn, { "start" : mmv(cx - hl, cy + rs), "end" : mmv(cx + hl, cy + rs) });
+                skLineSegment(sk, "sbot_" ~ sn, { "start" : mmv(cx - hl, cy - rs), "end" : mmv(cx + hl, cy - rs) });
+                skArc(sk, "sl_" ~ sn, { "start" : mmv(cx - hl, cy + rs), "mid" : mmv(cx - hl - rs, cy), "end" : mmv(cx - hl, cy - rs) });
+                skArc(sk, "sr_" ~ sn, { "start" : mmv(cx + hl, cy - rs), "mid" : mmv(cx + hl + rs, cy), "end" : mmv(cx + hl, cy + rs) });
             }
         }
 
         if (definition.drawOutline)
         {
-            const n = size(OUTLINE);
-            for (var i = 0; i < n; i += 1)
+            const nOut = size(OUTLINE);
+            for (var i = 0; i < nOut; i += 1)
             {
                 const a = OUTLINE[i];
-                const b = OUTLINE[(i + 1) % n];
+                const b = (i == nOut - 1) ? OUTLINE[0] : OUTLINE[i + 1];
                 skLineSegment(sk, "out_" ~ i, { "start" : mmv(a[0], a[1]), "end" : mmv(b[0], b[1]) });
             }
         }
