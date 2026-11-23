@@ -1,5 +1,11 @@
 \chapter{Oprogramowanie}\label{ch:firmware}
-% Ok. 5-7 stron. Repo zmk-config (do założenia).
+% Ok. 5-7 stron. Repo zmk-config (CL F5): płytka ibm_m_ssk, boards/blonski3/ibm_m_ssk.
+\begin{zawartosc}
+  \item Firmware ZMK na Zephyrze 4.1: własna definicja płytki (HWMv2), devicetree, skanowanie matrycy col2row 17 x 6, tryby USB i BLE.
+  \item Obsługa nPM1300: parametry ładowania, regulator, LOADSW1, przerwanie; praca bez NTC.
+  \item Raportowanie stanu baterii i sterowanie diodą statusu.
+  \item Wgrywanie firmware'u (SWD, ewentualnie bootloader UF2) i sposób aktualizacji.
+\end{zawartosc}
 
 \section{ZMK na Zephyr 4.1}\label{sec:zmk}
 % - Definicja płytki HWMv2, devicetree, kscan col2row (piny CL M7), BLE + USB, NKRO.

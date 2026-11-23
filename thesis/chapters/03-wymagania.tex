@@ -1,5 +1,11 @@
 \chapter{Wymagania i koncepcja systemu}\label{ch:wymagania}
 % Ok. 5-7 stron. Materiał: HD 'Założenia architektoniczne'.
+\begin{zawartosc}
+  \item Lista wymagań funkcjonalnych i niefunkcjonalnych w tabeli z numerami (weryfikowane w rozdz. 7).
+  \item Architektura systemu na schemacie blokowym: płytka główna (MB), daughterboard z USB-C (DB), dwie folie membrany, ogniwo Li-Po.
+  \item Wybór kluczowych układów (nRF52840, nPM1300) z porównaniem alternatyw i uzasadnieniem: bare chip zamiast modułu, PMIC zamiast osobnej ładowarki i regulatora.
+  \item Wstępne bilanse: liczba GPIO, budżet prądowy szyny 3,3 V, szacowany czas pracy z danych katalogowych.
+\end{zawartosc}
 
 \section{Wymagania funkcjonalne oraz niefunkcjonalne}\label{sec:wymagania}
 % - Tabela W1..Wn, każde wymaganie weryfikowane w sekcji 7.7.

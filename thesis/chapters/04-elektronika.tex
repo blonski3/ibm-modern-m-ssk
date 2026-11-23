@@ -1,10 +1,18 @@
 \chapter{Projekt układu elektronicznego}\label{ch:elektronika}
 % Ok. 18-22 stron. Rytm każdej sekcji: wymagania bloku -> wycinek schematu -> dobór elementów
 % -> obliczenia ze wzorem i referencją do datasheetu -> co weryfikuje rozdz. 7.
+\begin{zawartosc}
+  \item Zasilanie: nPM1300 (BUCK2 3,3 V, ładowarka CC/CV, LOADSW1, tryb Ship), ochrona przed odwrotną polaryzacją; ogniwo bez NTC (R13 0 Ω zamiast termistora) i konsekwencje tej decyzji.
+  \item Mikrokontroler nRF52840: konfiguracja zasilania, odsprzęganie, kwarce z obliczeniem pojemności obciążenia, programowanie SWD, przydział GPIO.
+  \item Tor radiowy: dopasowanie anteny, linia 50 Ω (CPWG) na wybranym stackupie, antena w obudowie ze stalową płytą.
+  \item Interfejsy: USB-C z zabezpieczeniami, łącze MB-DB, I2C, złącze rozszerzeń J3, dioda statusu.
+  \item Membrana FPC: matryca 6 x 17 col2row, folia ROW (2 warstwy, z diodami) i folia COL (1 warstwa) na oryginalnym spacerze, złącza J4/J7.
+  \item Projekt PCB (4 warstwy, rozmieszczenie, pętle prądowe, punkty pomiarowe) oraz BOM, koszt i produkcja w JLC (controller zamówiony 16.11, membrana 23.11).
+\end{zawartosc}
 
 \section{PMIC nPM1300}\label{sec:pmic}
 % - BUCK2 = 3,3 V (VSET2 470k), BUCK1 off, VDDIO, I2C, GPIO0 przerwanie, GPIO1 LOADSW1.
-% - Ładowarka CC/CV, NTC w ogniwie (P11, R13 DNP), tryb Ship, ochrona przed odwrotną polaryzacją.
+% - Ładowarka CC/CV, bez NTC (R13 0 Ω, firmware thermistor-ohms = 0), tryb Ship, ochrona przed odwrotną polaryzacją.
 % - Obliczenia: HD 'Blok PMIC: obliczenia' (tętnienia cewki, zakres regulacji, straty ładowarki, spadek na Q1).
 % - Tabela połączeń: HD 'Blok PMIC: połączenia'.
 \todo{Napisać.}
@@ -28,7 +36,7 @@
 
 \section{Matryca klawiszy i membrana FPC}\label{sec:membrana}
 % - Matryca 6x17, col2row, dioda na klawisz, J4 (18) i J7 (6) (HD 'Złącza matrycy').
-% - Koncepcja membrany (wariant A, 16.11), stan na dzień złożenia; makieta do pomiarów.
+% - Folia ROW 2L z diodami + folia COL 1L na oryginalnym spacerze (hardware/membrane, zamówione 23.11, production/membrane).
 \todo{Napisać.}
 
 \section{Projekt PCB}\label{sec:pcb}

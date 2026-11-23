@@ -10,6 +10,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
+\DeclareUnicodeCharacter{03A9}{\ensuremath{\Omega}}
+\DeclareUnicodeCharacter{00B5}{\ensuremath{\mu}}
 \usepackage{lmodern}
 \usepackage[autostyle]{csquotes}
 
@@ -36,6 +38,12 @@
 % --- Notatki robocze (przed złożeniem: \usepackage[disable]{todonotes}) ---
 \usepackage[colorinlistoftodos,textsize=footnotesize]{todonotes}
 \setuptodonotes{inline}
+
+% --- Notatki o zawartości rozdziałów (szare ramki). Ukrycie: \roboczafalse ---
+\usepackage{environ}
+\newif\ifrobocza \roboczatrue
+\NewEnviron{zawartosc}{\ifrobocza\par\noindent\fbox{\begin{minipage}{\dimexpr\linewidth-2\fboxsep-2\fboxrule}\small\color{gray!60!black}%
+  \textbf{Co opisujemy w tym rozdziale:}\begin{itemize}[leftmargin=1.5em,itemsep=0.1em,topsep=0.3em]\BODY\end{itemize}\end{minipage}}\par\medskip\fi}
 
 % --- Bibliografia ---
 \usepackage[backend=biber,style=ieee,sorting=none]{biblatex}
