@@ -9,7 +9,7 @@
 		(unlocked yes)
 		(layer "Dwgs.User")
 		(hide yes)
-		(uuid "ec37df7e-1a40-4c7e-9fc2-93f1b86c9a12")
+		(uuid "a98a7584-f1ff-4b41-af44-b05b5a858395")
 		(effects
 			(font
 				(size 1 1)
@@ -21,7 +21,7 @@
 		(at 0 -6.35 0)
 		(unlocked yes)
 		(layer "F.Fab")
-		(uuid "238ec44e-cd7f-4b0b-b583-37901be6de7b")
+		(uuid "8fea6ed7-a585-4d5d-be19-26923cb13e5c")
 		(effects
 			(font
 				(size 1 1)
@@ -34,7 +34,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "2c519eb6-1c0e-4f24-9f27-82d7b769ea23")
+		(uuid "70f98243-5d2c-4e44-9385-b3f260aa7ec1")
 		(effects
 			(font
 				(size 1 1)
@@ -47,7 +47,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "837b2f87-a12e-4e25-b3b2-78e9c8e517ff")
+		(uuid "5f5e3663-819a-44f8-b369-adf787c1e333")
 		(effects
 			(font
 				(size 1 1)
@@ -65,13 +65,13 @@
 		)
 		(fill no)
 		(layer "Dwgs.User")
-		(uuid "b144ca8a-31d9-49e1-a044-2e7ee22ea960")
+		(uuid "7b11548c-fd75-442d-a750-e5d1871be821")
 	)
 	(fp_text user "${REFERENCE}"
 		(at 0 6.35 0)
 		(unlocked yes)
 		(layer "F.Fab")
-		(uuid "5f56b27c-4cba-47ac-86d8-c891418c83ab")
+		(uuid "b27a8538-586c-4e46-ab6c-80bebf8a5753")
 		(effects
 			(font
 				(size 1 1)
@@ -79,11 +79,11 @@
 			)
 		)
 	)
-	(pad "1" smd circle
+	(pad "2" smd circle
 		(at 0 0)
 		(size 6.35 6.35)
-		(layers "B.Cu" "B.Mask")
-		(uuid "26eb79c5-43b1-4792-ab1f-bb1b23a81fbc")
+		(layers "F.Cu" "F.Mask")
+		(uuid "8cbaa968-b7ac-430f-b16a-8b4e3182ae79")
 	)
 	(embedded_fonts no)
 )

@@ -1,0 +1,811 @@
+** Drc report for membrane-row.kicad_pcb **
+** Created on 2026-11-23T02:02:32 **
+** Report includes: Errors, Warnings **
+
+** Found 0 DRC violations **
+
+** Found 0 unconnected pads **
+
+** Found 264 Footprint errors **
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(124.0165 mm, 168.0355 mm): Footprint D5
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(162.1165 mm, 168.0355 mm): Footprint D6
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(181.1665 mm, 168.0355 mm): Footprint D7
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(200.2165 mm, 168.0355 mm): Footprint D8
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(219.2665 mm, 168.0355 mm): Footprint D9
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(247.8415 mm, 168.0355 mm): Footprint D10
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(266.8915 mm, 168.0355 mm): Footprint D11
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(294.0665 mm, 168.0355 mm): Footprint D12
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(304.9915 mm, 168.0355 mm): Footprint D13
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(333.5665 mm, 168.0355 mm): Footprint D14
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(352.6165 mm, 168.0355 mm): Footprint D15
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(371.6665 mm, 168.0355 mm): Footprint D16
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(390.7165 mm, 168.0355 mm): Footprint D17
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(418.5295 mm, 168.0355 mm): Footprint D18
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(437.5795 mm, 168.0355 mm): Footprint D19
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(456.6295 mm, 168.0355 mm): Footprint D20
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(238.3165 mm, 209.7155 mm): Footprint D21
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(124.0165 mm, 209.7155 mm): Footprint D22
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(143.0665 mm, 209.7155 mm): Footprint D23
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(162.1165 mm, 209.7155 mm): Footprint D24
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(189.2920 mm, 209.7169 mm): Footprint D25
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(203.5795 mm, 209.7155 mm): Footprint D26
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(219.2665 mm, 209.7155 mm): Footprint D27
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(265.4920 mm, 209.7169 mm): Footprint D28
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(281.1795 mm, 209.7155 mm): Footprint D29
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(295.4665 mm, 209.7155 mm): Footprint D30
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(314.5165 mm, 209.7155 mm): Footprint D31
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(341.6915 mm, 209.7151 mm): Footprint D32
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(360.7420 mm, 209.7155 mm): Footprint D33
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(379.7920 mm, 209.7155 mm): Footprint D34
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(418.5295 mm, 209.7155 mm): Footprint D35
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(437.5795 mm, 209.7155 mm): Footprint D36
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(456.6295 mm, 209.7155 mm): Footprint D37
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(128.7795 mm, 230.5555 mm): Footprint D38
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(152.5915 mm, 230.5555 mm): Footprint D39
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(171.6415 mm, 230.5555 mm): Footprint D40
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(195.4540 mm, 230.5555 mm): Footprint D41
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(214.5045 mm, 230.5555 mm): Footprint D42
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(228.7915 mm, 230.5555 mm): Footprint D43
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(247.8415 mm, 230.5555 mm): Footprint D44
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(271.6540 mm, 230.5555 mm): Footprint D45
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(285.9415 mm, 230.5555 mm): Footprint D46
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(304.9915 mm, 230.5555 mm): Footprint D47
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(324.0415 mm, 230.5555 mm): Footprint D48
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(343.0915 mm, 230.5555 mm): Footprint D49
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(362.1415 mm, 230.5555 mm): Footprint D50
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(385.9545 mm, 230.5555 mm): Footprint D51
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(418.5295 mm, 230.5555 mm): Footprint D52
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(437.5795 mm, 230.5555 mm): Footprint D53
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(456.6295 mm, 230.5555 mm): Footprint D54
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(128.7795 mm, 251.3955 mm): Footprint D55
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(166.8795 mm, 251.3955 mm): Footprint D56
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(195.4545 mm, 251.3955 mm): Footprint D57
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(209.7420 mm, 251.3955 mm): Footprint D58
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(224.0295 mm, 251.3955 mm): Footprint D59
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(247.8420 mm, 251.3955 mm): Footprint D60
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(262.1295 mm, 251.3955 mm): Footprint D61
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(290.7045 mm, 251.3955 mm): Footprint D62
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(309.7545 mm, 251.3955 mm): Footprint D63
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(328.8045 mm, 251.3955 mm): Footprint D64
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(357.3795 mm, 251.3955 mm): Footprint D65
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(371.6670 mm, 251.3955 mm): Footprint D66
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(387.7005 mm, 251.3955 mm): Footprint D67
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(181.1670 mm, 251.3955 mm): Footprint D68
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(126.3975 mm, 272.2355 mm): Footprint D69
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(147.8295 mm, 272.2355 mm): Footprint D70
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(166.8795 mm, 272.2355 mm): Footprint D71
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(185.9295 mm, 272.2355 mm): Footprint D72
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(200.2170 mm, 272.2355 mm): Footprint D73
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(224.0295 mm, 272.2355 mm): Footprint D74
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(243.0795 mm, 272.2355 mm): Footprint D75
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(257.3670 mm, 272.2355 mm): Footprint D76
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(281.1795 mm, 272.2355 mm): Footprint D77
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(300.2295 mm, 272.2355 mm): Footprint D78
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(319.2795 mm, 272.2355 mm): Footprint D79
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(338.3295 mm, 272.2355 mm): Footprint D80
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(357.3795 mm, 272.2355 mm): Footprint D81
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(385.9540 mm, 272.2355 mm): Footprint D82
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(437.5795 mm, 272.2355 mm): Footprint D83
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(128.7795 mm, 293.0755 mm): Footprint D84
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(176.4045 mm, 293.0755 mm): Footprint D85
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(257.3665 mm, 293.0755 mm): Footprint D86
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(338.3295 mm, 293.0755 mm): Footprint D87
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(385.9545 mm, 293.0755 mm): Footprint D88
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(418.5295 mm, 293.0755 mm): Footprint D89
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(437.5795 mm, 293.0755 mm): Footprint D90
+[footprint_symbol_field_mismatch]: Missing symbol field 'LCSC Part' in footprint
+    Local override; warning
+    @(456.6295 mm, 293.0755 mm): Footprint D91
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)')
+    Local override; warning
+    @(285.9965 mm, 131.3155 mm): Footprint J1
+[footprint_symbol_field_mismatch]: Missing symbol field 'PART NUMBER' in footprint
+    Local override; warning
+    @(124.0165 mm, 157.6155 mm): Footprint SW1
+[net_conflict]: No pad found for pin 2 (/COL0) in schematic
+    Local override; warning
+    @(124.0165 mm, 157.6155 mm): Footprint SW1
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(162.1165 mm, 157.6155 mm): Footprint SW2
+[net_conflict]: No pad found for pin 2 (/COL1) in schematic
+    Local override; warning
+    @(162.1165 mm, 157.6155 mm): Footprint SW2
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(181.1665 mm, 157.6155 mm): Footprint SW3
+[net_conflict]: No pad found for pin 2 (/COL2) in schematic
+    Local override; warning
+    @(181.1665 mm, 157.6155 mm): Footprint SW3
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(200.2165 mm, 157.6155 mm): Footprint SW4
+[net_conflict]: No pad found for pin 2 (/COL3) in schematic
+    Local override; warning
+    @(200.2165 mm, 157.6155 mm): Footprint SW4
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(219.2665 mm, 157.6155 mm): Footprint SW5
+[net_conflict]: No pad found for pin 2 (/COL4) in schematic
+    Local override; warning
+    @(219.2665 mm, 157.6155 mm): Footprint SW5
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(247.8415 mm, 157.6155 mm): Footprint SW6
+[net_conflict]: No pad found for pin 2 (/COL5) in schematic
+    Local override; warning
+    @(247.8415 mm, 157.6155 mm): Footprint SW6
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(266.8915 mm, 157.6155 mm): Footprint SW7
+[net_conflict]: No pad found for pin 2 (/COL6) in schematic
+    Local override; warning
+    @(266.8915 mm, 157.6155 mm): Footprint SW7
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(285.9415 mm, 157.6155 mm): Footprint SW8
+[net_conflict]: No pad found for pin 2 (/COL7) in schematic
+    Local override; warning
+    @(285.9415 mm, 157.6155 mm): Footprint SW8
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(304.9915 mm, 157.6155 mm): Footprint SW9
+[net_conflict]: No pad found for pin 2 (/COL8) in schematic
+    Local override; warning
+    @(304.9915 mm, 157.6155 mm): Footprint SW9
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(333.5665 mm, 157.6155 mm): Footprint SW10
+[net_conflict]: No pad found for pin 2 (/COL10) in schematic
+    Local override; warning
+    @(333.5665 mm, 157.6155 mm): Footprint SW10
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(352.6165 mm, 157.6155 mm): Footprint SW11
+[net_conflict]: No pad found for pin 2 (/COL11) in schematic
+    Local override; warning
+    @(352.6165 mm, 157.6155 mm): Footprint SW11
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(371.6665 mm, 157.6155 mm): Footprint SW12
+[net_conflict]: No pad found for pin 2 (/COL12) in schematic
+    Local override; warning
+    @(371.6665 mm, 157.6155 mm): Footprint SW12
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(390.7165 mm, 157.6155 mm): Footprint SW13
+[net_conflict]: No pad found for pin 2 (/COL13) in schematic
+    Local override; warning
+    @(390.7165 mm, 157.6155 mm): Footprint SW13
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(418.5295 mm, 157.6155 mm): Footprint SW14
+[net_conflict]: No pad found for pin 2 (/COL14) in schematic
+    Local override; warning
+    @(418.5295 mm, 157.6155 mm): Footprint SW14
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(437.5795 mm, 157.6155 mm): Footprint SW15
+[net_conflict]: No pad found for pin 2 (/COL15) in schematic
+    Local override; warning
+    @(437.5795 mm, 157.6155 mm): Footprint SW15
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(456.6295 mm, 157.6155 mm): Footprint SW16
+[net_conflict]: No pad found for pin 2 (/COL16) in schematic
+    Local override; warning
+    @(456.6295 mm, 157.6155 mm): Footprint SW16
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(371.6665 mm, 199.2955 mm): Footprint SW17
+[net_conflict]: No pad found for pin 2 (/COL13) in schematic
+    Local override; warning
+    @(371.6665 mm, 199.2955 mm): Footprint SW17
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(124.0165 mm, 199.2955 mm): Footprint SW18
+[net_conflict]: No pad found for pin 2 (/COL0) in schematic
+    Local override; warning
+    @(124.0165 mm, 199.2955 mm): Footprint SW18
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(143.0665 mm, 199.2955 mm): Footprint SW19
+[net_conflict]: No pad found for pin 2 (/COL1) in schematic
+    Local override; warning
+    @(143.0665 mm, 199.2955 mm): Footprint SW19
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(162.1165 mm, 199.2955 mm): Footprint SW20
+[net_conflict]: No pad found for pin 2 (/COL2) in schematic
+    Local override; warning
+    @(162.1165 mm, 199.2955 mm): Footprint SW20
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(181.1665 mm, 199.2955 mm): Footprint SW21
+[net_conflict]: No pad found for pin 2 (/COL3) in schematic
+    Local override; warning
+    @(181.1665 mm, 199.2955 mm): Footprint SW21
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(200.2165 mm, 199.2955 mm): Footprint SW22
+[net_conflict]: No pad found for pin 2 (/COL4) in schematic
+    Local override; warning
+    @(200.2165 mm, 199.2955 mm): Footprint SW22
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(219.2665 mm, 199.2955 mm): Footprint SW23
+[net_conflict]: No pad found for pin 2 (/COL5) in schematic
+    Local override; warning
+    @(219.2665 mm, 199.2955 mm): Footprint SW23
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(238.3165 mm, 199.2955 mm): Footprint SW24
+[net_conflict]: No pad found for pin 2 (/COL6) in schematic
+    Local override; warning
+    @(238.3165 mm, 199.2955 mm): Footprint SW24
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(257.3665 mm, 199.2955 mm): Footprint SW25
+[net_conflict]: No pad found for pin 2 (/COL7) in schematic
+    Local override; warning
+    @(257.3665 mm, 199.2955 mm): Footprint SW25
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(276.4165 mm, 199.2955 mm): Footprint SW26
+[net_conflict]: No pad found for pin 2 (/COL8) in schematic
+    Local override; warning
+    @(276.4165 mm, 199.2955 mm): Footprint SW26
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(295.4665 mm, 199.2955 mm): Footprint SW27
+[net_conflict]: No pad found for pin 2 (/COL9) in schematic
+    Local override; warning
+    @(295.4665 mm, 199.2955 mm): Footprint SW27
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(314.5165 mm, 199.2955 mm): Footprint SW28
+[net_conflict]: No pad found for pin 2 (/COL10) in schematic
+    Local override; warning
+    @(314.5165 mm, 199.2955 mm): Footprint SW28
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(333.5665 mm, 199.2955 mm): Footprint SW29
+[net_conflict]: No pad found for pin 2 (/COL11) in schematic
+    Local override; warning
+    @(333.5665 mm, 199.2955 mm): Footprint SW29
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(352.6165 mm, 199.2955 mm): Footprint SW30
+[net_conflict]: No pad found for pin 2 (/COL12) in schematic
+    Local override; warning
+    @(352.6165 mm, 199.2955 mm): Footprint SW30
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(390.7165 mm, 199.2955 mm): Footprint SW31
+[net_conflict]: No pad found for pin 2 (/COL13) in schematic
+    Local override; warning
+    @(390.7165 mm, 199.2955 mm): Footprint SW31
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(418.5295 mm, 199.2955 mm): Footprint SW32
+[net_conflict]: No pad found for pin 2 (/COL14) in schematic
+    Local override; warning
+    @(418.5295 mm, 199.2955 mm): Footprint SW32
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(437.5795 mm, 199.2955 mm): Footprint SW33
+[net_conflict]: No pad found for pin 2 (/COL15) in schematic
+    Local override; warning
+    @(437.5795 mm, 199.2955 mm): Footprint SW33
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(456.6295 mm, 199.2955 mm): Footprint SW34
+[net_conflict]: No pad found for pin 2 (/COL16) in schematic
+    Local override; warning
+    @(456.6295 mm, 199.2955 mm): Footprint SW34
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(128.7795 mm, 220.1355 mm): Footprint SW35
+[net_conflict]: No pad found for pin 2 (/COL0) in schematic
+    Local override; warning
+    @(128.7795 mm, 220.1355 mm): Footprint SW35
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(152.5915 mm, 220.1355 mm): Footprint SW36
+[net_conflict]: No pad found for pin 2 (/COL1) in schematic
+    Local override; warning
+    @(152.5915 mm, 220.1355 mm): Footprint SW36
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(171.6415 mm, 220.1355 mm): Footprint SW37
+[net_conflict]: No pad found for pin 2 (/COL2) in schematic
+    Local override; warning
+    @(171.6415 mm, 220.1355 mm): Footprint SW37
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(190.6915 mm, 220.1355 mm): Footprint SW38
+[net_conflict]: No pad found for pin 2 (/COL3) in schematic
+    Local override; warning
+    @(190.6915 mm, 220.1355 mm): Footprint SW38
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(209.7415 mm, 220.1355 mm): Footprint SW39
+[net_conflict]: No pad found for pin 2 (/COL4) in schematic
+    Local override; warning
+    @(209.7415 mm, 220.1355 mm): Footprint SW39
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(228.7915 mm, 220.1355 mm): Footprint SW40
+[net_conflict]: No pad found for pin 2 (/COL5) in schematic
+    Local override; warning
+    @(228.7915 mm, 220.1355 mm): Footprint SW40
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(247.8415 mm, 220.1355 mm): Footprint SW41
+[net_conflict]: No pad found for pin 2 (/COL6) in schematic
+    Local override; warning
+    @(247.8415 mm, 220.1355 mm): Footprint SW41
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(266.8915 mm, 220.1355 mm): Footprint SW42
+[net_conflict]: No pad found for pin 2 (/COL7) in schematic
+    Local override; warning
+    @(266.8915 mm, 220.1355 mm): Footprint SW42
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(285.9415 mm, 220.1355 mm): Footprint SW43
+[net_conflict]: No pad found for pin 2 (/COL8) in schematic
+    Local override; warning
+    @(285.9415 mm, 220.1355 mm): Footprint SW43
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(304.9915 mm, 220.1355 mm): Footprint SW44
+[net_conflict]: No pad found for pin 2 (/COL9) in schematic
+    Local override; warning
+    @(304.9915 mm, 220.1355 mm): Footprint SW44
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(324.0415 mm, 220.1355 mm): Footprint SW45
+[net_conflict]: No pad found for pin 2 (/COL10) in schematic
+    Local override; warning
+    @(324.0415 mm, 220.1355 mm): Footprint SW45
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(343.0915 mm, 220.1355 mm): Footprint SW46
+[net_conflict]: No pad found for pin 2 (/COL11) in schematic
+    Local override; warning
+    @(343.0915 mm, 220.1355 mm): Footprint SW46
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(362.1415 mm, 220.1355 mm): Footprint SW47
+[net_conflict]: No pad found for pin 2 (/COL12) in schematic
+    Local override; warning
+    @(362.1415 mm, 220.1355 mm): Footprint SW47
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(385.9545 mm, 220.1355 mm): Footprint SW48
+[net_conflict]: No pad found for pin 2 (/COL13) in schematic
+    Local override; warning
+    @(385.9545 mm, 220.1355 mm): Footprint SW48
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(418.5295 mm, 220.1355 mm): Footprint SW49
+[net_conflict]: No pad found for pin 2 (/COL14) in schematic
+    Local override; warning
+    @(418.5295 mm, 220.1355 mm): Footprint SW49
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(437.5795 mm, 220.1355 mm): Footprint SW50
+[net_conflict]: No pad found for pin 2 (/COL15) in schematic
+    Local override; warning
+    @(437.5795 mm, 220.1355 mm): Footprint SW50
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(456.6295 mm, 220.1355 mm): Footprint SW51
+[net_conflict]: No pad found for pin 2 (/COL16) in schematic
+    Local override; warning
+    @(456.6295 mm, 220.1355 mm): Footprint SW51
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(128.7795 mm, 240.9755 mm): Footprint SW52
+[net_conflict]: No pad found for pin 2 (/COL0) in schematic
+    Local override; warning
+    @(128.7795 mm, 240.9755 mm): Footprint SW52
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(157.3545 mm, 240.9755 mm): Footprint SW53
+[net_conflict]: No pad found for pin 2 (/COL1) in schematic
+    Local override; warning
+    @(157.3545 mm, 240.9755 mm): Footprint SW53
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(176.4045 mm, 240.9755 mm): Footprint SW54
+[net_conflict]: No pad found for pin 2 (/COL2) in schematic
+    Local override; warning
+    @(176.4045 mm, 240.9755 mm): Footprint SW54
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(195.4545 mm, 240.9755 mm): Footprint SW55
+[net_conflict]: No pad found for pin 2 (/COL3) in schematic
+    Local override; warning
+    @(195.4545 mm, 240.9755 mm): Footprint SW55
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(214.5045 mm, 240.9755 mm): Footprint SW56
+[net_conflict]: No pad found for pin 2 (/COL4) in schematic
+    Local override; warning
+    @(214.5045 mm, 240.9755 mm): Footprint SW56
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(233.5545 mm, 240.9755 mm): Footprint SW57
+[net_conflict]: No pad found for pin 2 (/COL5) in schematic
+    Local override; warning
+    @(233.5545 mm, 240.9755 mm): Footprint SW57
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(252.6045 mm, 240.9755 mm): Footprint SW58
+[net_conflict]: No pad found for pin 2 (/COL6) in schematic
+    Local override; warning
+    @(252.6045 mm, 240.9755 mm): Footprint SW58
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(271.6545 mm, 240.9755 mm): Footprint SW59
+[net_conflict]: No pad found for pin 2 (/COL7) in schematic
+    Local override; warning
+    @(271.6545 mm, 240.9755 mm): Footprint SW59
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(290.7045 mm, 240.9755 mm): Footprint SW60
+[net_conflict]: No pad found for pin 2 (/COL8) in schematic
+    Local override; warning
+    @(290.7045 mm, 240.9755 mm): Footprint SW60
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(309.7545 mm, 240.9755 mm): Footprint SW61
+[net_conflict]: No pad found for pin 2 (/COL9) in schematic
+    Local override; warning
+    @(309.7545 mm, 240.9755 mm): Footprint SW61
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(328.8045 mm, 240.9755 mm): Footprint SW62
+[net_conflict]: No pad found for pin 2 (/COL10) in schematic
+    Local override; warning
+    @(328.8045 mm, 240.9755 mm): Footprint SW62
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(347.8545 mm, 240.9755 mm): Footprint SW63
+[net_conflict]: No pad found for pin 2 (/COL11) in schematic
+    Local override; warning
+    @(347.8545 mm, 240.9755 mm): Footprint SW63
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(366.9045 mm, 240.9755 mm): Footprint SW64
+[net_conflict]: No pad found for pin 2 (/COL12) in schematic
+    Local override; warning
+    @(366.9045 mm, 240.9755 mm): Footprint SW64
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(387.7005 mm, 240.9755 mm): Footprint SW65
+[net_conflict]: No pad found for pin 2 (/COL13) in schematic
+    Local override; warning
+    @(387.7005 mm, 240.9755 mm): Footprint SW65
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(126.3975 mm, 261.8155 mm): Footprint SW66
+[net_conflict]: No pad found for pin 2 (/COL0) in schematic
+    Local override; warning
+    @(126.3975 mm, 261.8155 mm): Footprint SW66
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(147.8295 mm, 261.8155 mm): Footprint SW67
+[net_conflict]: No pad found for pin 2 (/COL1) in schematic
+    Local override; warning
+    @(147.8295 mm, 261.8155 mm): Footprint SW67
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(166.8795 mm, 261.8155 mm): Footprint SW68
+[net_conflict]: No pad found for pin 2 (/COL2) in schematic
+    Local override; warning
+    @(166.8795 mm, 261.8155 mm): Footprint SW68
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(185.9295 mm, 261.8155 mm): Footprint SW69
+[net_conflict]: No pad found for pin 2 (/COL3) in schematic
+    Local override; warning
+    @(185.9295 mm, 261.8155 mm): Footprint SW69
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(204.9795 mm, 261.8155 mm): Footprint SW70
+[net_conflict]: No pad found for pin 2 (/COL4) in schematic
+    Local override; warning
+    @(204.9795 mm, 261.8155 mm): Footprint SW70
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(224.0295 mm, 261.8155 mm): Footprint SW71
+[net_conflict]: No pad found for pin 2 (/COL5) in schematic
+    Local override; warning
+    @(224.0295 mm, 261.8155 mm): Footprint SW71
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(243.0795 mm, 261.8155 mm): Footprint SW72
+[net_conflict]: No pad found for pin 2 (/COL6) in schematic
+    Local override; warning
+    @(243.0795 mm, 261.8155 mm): Footprint SW72
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(262.1295 mm, 261.8155 mm): Footprint SW73
+[net_conflict]: No pad found for pin 2 (/COL7) in schematic
+    Local override; warning
+    @(262.1295 mm, 261.8155 mm): Footprint SW73
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(281.1795 mm, 261.8155 mm): Footprint SW74
+[net_conflict]: No pad found for pin 2 (/COL8) in schematic
+    Local override; warning
+    @(281.1795 mm, 261.8155 mm): Footprint SW74
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(300.2295 mm, 261.8155 mm): Footprint SW75
+[net_conflict]: No pad found for pin 2 (/COL9) in schematic
+    Local override; warning
+    @(300.2295 mm, 261.8155 mm): Footprint SW75
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(319.2795 mm, 261.8155 mm): Footprint SW76
+[net_conflict]: No pad found for pin 2 (/COL10) in schematic
+    Local override; warning
+    @(319.2795 mm, 261.8155 mm): Footprint SW76
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(338.3295 mm, 261.8155 mm): Footprint SW77
+[net_conflict]: No pad found for pin 2 (/COL11) in schematic
+    Local override; warning
+    @(338.3295 mm, 261.8155 mm): Footprint SW77
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(357.3795 mm, 261.8155 mm): Footprint SW78
+[net_conflict]: No pad found for pin 2 (/COL12) in schematic
+    Local override; warning
+    @(357.3795 mm, 261.8155 mm): Footprint SW78
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(381.1915 mm, 261.8155 mm): Footprint SW79
+[net_conflict]: No pad found for pin 2 (/COL13) in schematic
+    Local override; warning
+    @(381.1915 mm, 261.8155 mm): Footprint SW79
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(437.5795 mm, 261.8155 mm): Footprint SW80
+[net_conflict]: No pad found for pin 2 (/COL15) in schematic
+    Local override; warning
+    @(437.5795 mm, 261.8155 mm): Footprint SW80
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(128.7795 mm, 282.6555 mm): Footprint SW81
+[net_conflict]: No pad found for pin 2 (/COL0) in schematic
+    Local override; warning
+    @(128.7795 mm, 282.6555 mm): Footprint SW81
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(176.4045 mm, 282.6555 mm): Footprint SW82
+[net_conflict]: No pad found for pin 2 (/COL2) in schematic
+    Local override; warning
+    @(176.4045 mm, 282.6555 mm): Footprint SW82
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(257.3665 mm, 282.6555 mm): Footprint SW83
+[net_conflict]: No pad found for pin 2 (/COL6) in schematic
+    Local override; warning
+    @(257.3665 mm, 282.6555 mm): Footprint SW83
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(338.3295 mm, 282.6555 mm): Footprint SW84
+[net_conflict]: No pad found for pin 2 (/COL11) in schematic
+    Local override; warning
+    @(338.3295 mm, 282.6555 mm): Footprint SW84
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(385.9545 mm, 282.6555 mm): Footprint SW85
+[net_conflict]: No pad found for pin 2 (/COL13) in schematic
+    Local override; warning
+    @(385.9545 mm, 282.6555 mm): Footprint SW85
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(418.5295 mm, 282.6555 mm): Footprint SW86
+[net_conflict]: No pad found for pin 2 (/COL14) in schematic
+    Local override; warning
+    @(418.5295 mm, 282.6555 mm): Footprint SW86
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(437.5795 mm, 282.6555 mm): Footprint SW87
+[net_conflict]: No pad found for pin 2 (/COL15) in schematic
+    Local override; warning
+    @(437.5795 mm, 282.6555 mm): Footprint SW87
+[footprint_symbol_field_mismatch]: Field 'Description' differs (PCB: '', Schematic: 'Push button switch, generic, two pins')
+    Local override; warning
+    @(456.6295 mm, 282.6555 mm): Footprint SW88
+[net_conflict]: No pad found for pin 2 (/COL16) in schematic
+    Local override; warning
+    @(456.6295 mm, 282.6555 mm): Footprint SW88
+
+** Ignored checks **
+    - Footprint has no courtyard defined
+    - Track endpoint not centered on via
+    - Tuning profile track geometries
+    - Footprint doesn't match symbol's footprint filters
+    - Silkscreen clearance
+    - Footprint component type doesn't match footprint pads
+
+** End of Report **

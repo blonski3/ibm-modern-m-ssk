@@ -1,0 +1,142 @@
+(footprint "FFC_solder_6P_P1.00"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Pady do przylutowania tasmy FFC 6P raster 1,00 mm (szer. tasmy 7.0 mm). Pad 0,6x4,5. Krawedz folii 0,5 mm za padami (linia F.Fab).")
+	(property "Reference" "REF**"
+		(at 0 -4.2 0)
+		(layer "F.SilkS")
+		(uuid "143ca8fd-6e10-4a83-8740-b24b227ee4a2")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "FFC_solder_6P_P1.00"
+		(at 0 4.2 0)
+		(layer "F.Fab")
+		(uuid "fa2ce856-7982-4daa-98d8-dd59e0db466e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "60115b73-3ad8-4b24-8655-12e6ce687b28")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "bcfb0ea6-8cfe-4d6f-be1e-a382930b3212")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -3.5 -2.75)
+		(end 3.5 -2.75)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "902fa935-78e6-46ff-833c-9409220bcb47")
+	)
+	(fp_line
+		(start -3.5 3.5)
+		(end -3.5 -2.75)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "2b0c09d2-9bd3-4aa9-b955-15f73b95b63a")
+	)
+	(fp_line
+		(start 3.5 -2.75)
+		(end 3.5 3.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "f0c0488a-4e6a-415e-a45a-e41929d66958")
+	)
+	(fp_line
+		(start 3.5 3.5)
+		(end -3.5 3.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "d64011ba-f838-4ad2-949c-a51886f1e85d")
+	)
+	(point
+		(at 0 -2.75)
+		(size 1)
+		(layer "F.SilkS")
+		(uuid "d54b557b-ba58-4687-b24e-01728918e920")
+	)
+	(pad "1" smd roundrect
+		(at 2.5 0)
+		(size 0.6 4.5)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.3333333333)
+		(uuid "78e52240-205b-4e88-9628-6d232245b58e")
+	)
+	(pad "2" smd roundrect
+		(at 1.5 0)
+		(size 0.6 4.5)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.3333333333)
+		(uuid "1ef50dd8-2957-49ac-8b9f-4c8a747651a1")
+	)
+	(pad "3" smd roundrect
+		(at 0.5 0)
+		(size 0.6 4.5)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.3333333333)
+		(uuid "3e734d39-e7ac-47aa-bbd1-259bf000fd68")
+	)
+	(pad "4" smd roundrect
+		(at -0.5 0)
+		(size 0.6 4.5)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.3333333333)
+		(uuid "284fc2c0-6945-4e6f-95ad-013744231b01")
+	)
+	(pad "5" smd roundrect
+		(at -1.5 0)
+		(size 0.6 4.5)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.3333333333)
+		(uuid "5b34494e-3f08-4e1f-8e47-50d6cf35f847")
+	)
+	(pad "6" smd roundrect
+		(at -2.5 0)
+		(size 0.6 4.5)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.3333333333)
+		(uuid "5b6ad7ef-5439-4fcf-b941-aced6ff8acd5")
+	)
+	(embedded_fonts no)
+)

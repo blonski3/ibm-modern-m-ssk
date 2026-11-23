@@ -7,6 +7,7 @@ fp-info-cache
 .history/
 *_missing3Dmodels.txt
 *.bak
+_restore_backup_*/
 # logi wlasnych wtyczek (tools/*_o_matic, via_o_tronic) zapisywane w katalogu projektu
 *_o_matic.log
 via_o_tronic.log
