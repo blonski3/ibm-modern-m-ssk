@@ -5,9 +5,11 @@
 
 ```
 hardware/controller/   projekt KiCad 10: motherboard + daughterboard (jedna PCB, DB wyłamywany)
-hardware/membrane/     projekt KiCad 10: membrana FPC, matryca 6 × 17
+hardware/membrane/     projekt KiCad 10: membrana FPC, schemat matrycy 6 × 17 i obrys bazowy
+hardware/membrane-row/ folia ROW (górna, 2 warstwy, diody), wersja zamówiona 2026-11-23
+hardware/membrane-col/ folia COL (dolna, 1 warstwa), wersja zamówiona 2026-11-23
 hardware/lib/          wspólna biblioteka: symbole, footprinty, modele 3D
-production/            zamrożone paczki zamówień (np. controller/revA-2026-11-16: Gerbery, BOM, CPL)
+production/            zamrożone paczki zamówień (controller/revA-2026-11-16: Gerbery, BOM, CPL; membrane/2026-11-23: Gerbery folii)
 docs/                  CHANGELOG.md, HARDWARE_DECISIONS.md, datasheets/, diagrams/
 mechanics/             pomiary i eksporty z Onshape
 reference/             projekty referencyjne (Nordic, FSSK v1.00)
