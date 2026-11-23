@@ -2,7 +2,7 @@
 
 2026-10-11 (treść decyzji) · od 2026-10-17 źródłem prawdy jest ten plik w repo; dokument w Claude Docs to archiwum ze stanu 11.10 (rev 25).
 
-Stan 2026-11-16: wszystkie decyzje dla controllera (PMIC, MCU i radio, interfejsy, złącze rozszerzeń, firmware, PCB) są naniesione w KiCadzie, a płytka rev A została zamówiona w JLC (CHANGELOG A31, pliki w `production/controller/revA-2026-11-16/`). W toku: membrana FPC, koszyk ogniwa i uchwyt DB (Onshape), firmware.
+Stan 2026-11-23: wszystkie decyzje dla controllera (PMIC, MCU i radio, interfejsy, złącze rozszerzeń, firmware, PCB) są naniesione w KiCadzie, a płytka rev A została zamówiona w JLC (CHANGELOG A31, pliki w `production/controller/revA-2026-11-16/`). Membrana FPC (folie ROW i COL) zamówiona w JLC 2026-11-23 (A33, `production/membrane/2026-11-23/`). Ogniwo bez NTC (P12). W toku: koszyk ogniwa i uchwyt DB (Onshape), firmware, uruchomienie po dostawie.
 
 > **Zasada prowadzenia:** wpis dla bloku/komponentu dodajemy po zatwierdzeniu: przyjęte parametry, uzasadnienie, wzór z dokumentacji, referencja ze stroną (nPM1300_PS_v1.3, nRF52840_PS_v1.5). Otwarte kwestie na końcu dokumentu.
 
@@ -13,13 +13,13 @@ Ramy zatwierdzone 11.10.2026.
 | Obszar | Ustalenie |
 | --- | --- |
 | Podział na płytki | Motherboard i daughterboard projektowane i zamawiane jako jedna płytka, DB wyłamywany; membrana jako osobna płytka FPC |
-| Projekty KiCada | `controller` (arkusze motherboard i daughterboard) oraz `membrane`; wspólna biblioteka `lib` |
+| Projekty KiCada | `controller` (arkusze motherboard i daughterboard) oraz membrana: `membrane` (schemat i obrys bazowy), `membrane-row` i `membrane-col` (folie do produkcji, A33); wspólna biblioteka `lib` |
 | MCU | nRF52840-QIAA, VDD = VDDH = 3,3 V (tryb Normal Voltage), REG1 w trybie DC/DC |
 | PMIC | nPM1300-QEAA, BUCK2 = 3,3 V, BUCK1 wyłączony, sterowanie przez I2C |
 | USB-C | Gniazdo, bezpiecznik PTC i ESD na DB; CC1/CC2 bezpośrednio do nPM1300 (wewnętrzne Rd 5,1 kΩ), bez zewnętrznych rezystorów |
 | Łącze MB ↔ DB | Listwa goldpin 1×10, raster 1 mm, piny lutowane do krawędzi DB i wchodzące pionowo w MB: 2× VBUS, 4× GND, D+, D−, CC1, CC2 |
 | Matryca | Własna membrana FPC, 6 wierszy × 17 kolumn, 88 przełączników, dioda na klawisz (87 diod: Backspace ma dwa styki SW17 i SW31 równolegle na D34, jak w oryginale); złącza FFC 1,0 mm: J4 (18 pinów) i J7 (6 pinów) |
-| Bateria | Li-Po ok. 1000 mAh, 4,2 V, z PCM i termistorem NTC 10 kΩ na trzecim przewodzie; wtyk Molex PicoBlade 1,25 mm 3-pin (J2: 1 +, 2 NTC, 3 GND; A26, P11); w drukowanym koszyku przykręcanym do MB (S3, A27), nieklejona do PCB. Kandydat: innCraft 603443 (950 mAh, 6 × 34 × 43 mm), wybór niezatwierdzony |
+| Bateria | Li-Po innCraft 603443 (950 mAh, 4,2 V, 6 × 34 × 43 mm) z PCM, **2 przewody, bez NTC** (P12); pigtail Molex PicoBlade 1,25 mm 3-pin do J2: 1 +, 2 pusty, 3 −; J2 3-pin z A26 bez zmian, R13 0 Ω obsadzony (NTC → GND); w drukowanym koszyku przykręcanym do MB (S3, A27), nieklejona do PCB |
 | Ładowanie | Prąd i napięcie końcowe ustawiane przez firmware; sprzęt wymiarowany na 800 mA |
 | Przyciski | Tylko RESET na MB; BT_PAIR i SHPHLD usunięte |
 | Dioda RGB | Jedna WS2812B-2020-V6 na motherboardzie, zasilana z VSYS przez LOADSW1 |
@@ -36,8 +36,8 @@ Układ pracuje w konfiguracji 1 z datasheetu ograniczonej do jednej przetwornicy
 | 21 VBUS | VBUS z DB, C27 1 µF do GND | Wejście zasilania, tolerancja do 22 V | Rys. 59, s. 161; tab. 4, s. 17 |
 | 23 CC1, 24 CC2 | Bezpośrednio do gniazda USB-C (przez łącze MB ↔ DB) | Piny mają wewnętrzne Rd = 5,1 kΩ i komparatory wykrywające wydajność źródła; muszą być połączone bezpośrednio z gniazdem | Rozdz. 6.1.3, s. 20–21; tab. 9, s. 22 |
 | 22 VBUSOUT | C32 1 µF do GND, pin VBUS nRF52840 z C21 4,7 µF | Chronione napięcie VBUS dla detekcji USB w nRF; kondensator wymagany | Rozdz. 6.1.5, s. 21 |
-| 19 VBAT | C28 2,2 µF do GND, przez Q1 do złącza baterii J2 | Odsprzęganie wejścia baterii | Rys. 59, s. 161 |
-| 18 NTC | Do J2.2 (termistor w ogniwie); R13 0 Ω DNP do GND jako opcja dla ogniwa bez NTC (P11, wcześniej do GND, P7) | Pomiar temperatury ogniwa przy ładowaniu (JEITA); bez NTC funkcję trzeba wyłączyć w rejestrze BCHGDISABLESET | Rozdz. 6.2.4, s. 29 |
+| 19 VBAT | C28 2,2 µF do GND, przez Q2 do złącza baterii J2 | Odsprzęganie wejścia baterii | Rys. 59, s. 161 |
+| 18 NTC | Do J2.2 i przez R13 0 Ω do GND; R13 obsadzony, bo ogniwo nie ma NTC (P12; wcześniej P11: termistor w ogniwie, R13 DNP; P7: do GND) | Pomiar temperatury ogniwa przy ładowaniu (JEITA) nieużywany; funkcja NTC wyłączona w firmware (`thermistor-ohms = 0`) | Rozdz. 6.2.4, s. 29 |
 | 20 VSYS + 4 PVDD | Połączone; C30 10 µF do PVSS2, C31 10 µF do GND | PVDD to wejście mocy przetwornic; kondensator wejściowy zamyka pętlę prądową BUCK2 | Rys. 59 (C3, C4), s. 161; rozdz. 9.3.4, s. 165 |
 | 5 SW2 | L4 2,2 µH do VOUT2 | Cewka BUCK2 | Rys. 59 (L2), s. 161 |
 | 32 VOUT2 | Szyna VDD_NRF 3,3 V, C29 10 µF do PVSS2 | Wyjście i sprzężenie zwrotne BUCK2 | Rys. 59 (C8), s. 161 |
@@ -70,10 +70,10 @@ Wszystkie elementy spełniają wymagania datasheetu.
 | C35 (VDDIO) | 100 nF | 100 nF | Tab. 39 (C13) | Spełnia |
 | R11, R12 (pull-upy SDA/SCL) | 2× 4,7 kΩ | Zależne od prędkości i pojemności magistrali; referencja 10 kΩ | Tab. 39 (R1, R2) | Spełnia (od 2026-10-20, S2) |
 | R10 (VSET2) | 470 kΩ, 0603 (C23178) | 250–500 kΩ, tolerancja ≤ 5% | Tab. 18, s. 50 | Spełnia |
-| Q1 | Alpha & Omega AO3401A (LCSC C15127, JLC basic): P-MOSFET −30 V, VGS ±12 V, SOT-23; RDS(on) maks. 85 mΩ przy VGS = −2,5 V | Zabezpieczenie przed odwróconą baterią; dren od strony złącza, RDS(on) ≤ 100 mΩ przy VGS = −2,5 V, prąd ≥ 1 A | Wymaganie własne projektu | Spełnia; dren (pin 3) do J2.1, źródło (2) do VBAT, bramka (1) do GND; symbol `ibm_m:AO3401A`. W schemacie tymczasowo Q2 |
-| J2 | Molex PicoBlade 53261-0371 (LCSC C293630, extended): 1,25 mm, 3 piny (1 +, 2 NTC, 3 GND), SMD poziome, 2 pady mocujące do GND; montaż JLC (A20, A26) | Wtyk zgodny z przewodem ogniwa z NTC (klon PicoBlade „JST 1,25 mm 3-pin”); wcześniej JST PH 2,0 (2026-10-25) i PicoBlade 2-pin 53261-0271 (A21, do 2026-11-15) | Karta Molex 53261 | Spełnia; kolejność przewodów ogniwa sprawdzić miernikiem przed wpięciem |
-| BT1 | Li-Po ok. 1000 mAh z NTC 10 kΩ (kandydat innCraft 603443: 950 mAh, 6 × 34 × 43 mm; wcześniej Akyga LP803040 bez NTC); ładowanie do 4,2 V, standardowo 0,2 C, 0–45 °C, PCM | Prąd ładowania w zakresie 32–800 mA układu; NTC do kontroli temperatury ładowania | Karta ogniwa; rozdz. 6.2.3, s. 28 | Założenie robocze; wartość i beta NTC do pomiaru |
-| R13 | 0 Ω 0603 (C21189), DNP; NTC → GND | Zwora dla ogniwa bez NTC (wtedy `thermistor-ohms = 0`) | Rozdz. 6.2.4, s. 29 | Nieobsadzony w rev A |
+| Q2 | Alpha & Omega AO3401A (LCSC C15127, JLC basic): P-MOSFET −30 V, VGS ±12 V, SOT-23; RDS(on) maks. 85 mΩ przy VGS = −2,5 V | Zabezpieczenie przed odwróconą baterią; dren od strony złącza, RDS(on) ≤ 100 mΩ przy VGS = −2,5 V, prąd ≥ 1 A | Wymaganie własne projektu | Spełnia; dren (pin 3) do J2.1, źródło (2) do VBAT, bramka (1) do GND; symbol `ibm_m:AO3401A` |
+| J2 | Molex PicoBlade 53261-0371 (LCSC C293630, extended): 1,25 mm, 3 piny (1 +, 2 NTC, 3 GND), SMD poziome, 2 pady mocujące do GND; montaż JLC (A20, A26) | Wtyk zgodny z przewodem ogniwa z NTC (klon PicoBlade „JST 1,25 mm 3-pin”); wcześniej JST PH 2,0 (2026-10-25) i PicoBlade 2-pin 53261-0271 (A21, do 2026-11-15). Od P12 ogniwo 2-przewodowe przez pigtail 3-pin: 1 +, 2 pusty, 3 − | Karta Molex 53261 | Spełnia; biegunowość pigtaila sprawdzić miernikiem przed wpięciem |
+| BT1 | innCraft 603443, 950 mAh, 2 przewody, bez NTC (P12; wersja z NTC niedostępna; wcześniej Akyga LP803040 bez NTC); ładowanie do 4,2 V, standardowo 0,2 C, 0–45 °C, PCM | Prąd ładowania w zakresie 32–800 mA układu; temperatury ogniwa nikt nie mierzy (patrz „Ograniczenia” w bloku Firmware) | Karta ogniwa; rozdz. 6.2.3, s. 28; rozdz. 3.4 | Wybrane 2026-11-23 |
+| R13 | 0 Ω 0603 (C21189); NTC → GND | Zwora dla ogniwa bez NTC (`thermistor-ohms = 0`) | Rozdz. 6.2.4, s. 29 | Obsadzony (P12); w rev A z JLC DNP, wlutowany ręcznie |
 
 ## Blok PMIC: obliczenia
 
@@ -109,12 +109,12 @@ P = (V_{BUS} - V_{BAT}) \cdot I_{CHG} = (5{,}0 - 3{,}0) \cdot 0{,}8 = 1{,}6\,\ma
 
 Ładowanie zatrzymuje się samo przy 110 °C struktury i wznawia przy 100 °C (tab. 16, s. 34–35).
 
-### Spadek napięcia na Q1
+### Spadek napięcia na Q2
 
 Pierwotny PMZB350UPE (450 mΩ) dawał 0,18 V spadku przy 400 mA i 0,36 V przy 800 mA. Ładowarka reguluje napięcie na pinie VBAT, więc ogniwo wchodziło w fazę stałego napięcia wcześniej i ładowało się dłużej. AO3401A (maks. 85 mΩ przy VGS = −2,5 V, typowo ok. 60 mΩ) daje najwyżej 34 mV przy 400 mA i 68 mV przy 800 mA. W fazie stałego napięcia prąd maleje, więc przy prądzie końcowym 40 mA różnica wynosi 3 mV i ogniwo dochodzi do 4,2 V. Przy pracy z baterii (kilkanaście mA) spadek jest poniżej 2 mV.
 
 ```latex
-\Delta V_{Q1} = I_{CHG} \cdot R_{DS(on)} = 0{,}4 \cdot 0{,}085 = 0{,}034\,\mathrm{V}
+\Delta V_{Q2} = I_{CHG} \cdot R_{DS(on)} = 0{,}4 \cdot 0{,}085 = 0{,}034\,\mathrm{V}
 ```
 
 Rozważany PMPB15XP (20 mΩ, 8 mV przy 400 mA) jest w JLC częścią extended, a AO3401A basic; różnica spadku nie ma praktycznego znaczenia, więc wybrano tańszy wariant (2026-10-25).
@@ -158,9 +158,9 @@ Przydział sygnałów poza matrycą (M6, 2026-11-12):
 | --- | --- | --- | --- |
 | SDA | P0.13 | AD8 | do U2.13, J3.6 (przez R2), pull-up R12 |
 | SCL | P0.14 | AC9 | do U2.14, J3.5 (przez R1), pull-up R11 |
-| LED_EN | P0.15 | AD10 | do U2.8 (GPIO1, LOADSW1), TP7 |
-| RGB_DIN | P0.16 | AC11 | do D2.3, TP9 |
-| PMIC_INT | P0.17 | AD12 | z U2.7 (GPIO0), TP8 |
+| LED_EN | P0.15 | AD10 | do U2.8 (GPIO1, LOADSW1) |
+| RGB_DIN | P0.16 | AC11 | do D2.3 |
+| PMIC_INT | P0.17 | AD12 | z U2.7 (GPIO0) |
 | RESET | P0.18 | AC13 | jedyny pin nRESET; SW1, J10.3 |
 | TP11, TP12 | P0.22, P0.24 | AD18, AD20 | wolne GPIO testowe (DBG0, DBG1) |
 | SWO | P1.00 | AD22 | jedyny pin SWO (TRACEDATA[0]); J10.6 |
@@ -250,7 +250,22 @@ Para D+/D− ma masę po obu stronach, VBUS ma dwa styki, GND cztery. Numeracja 
 
 ### Złącza matrycy
 
-J4 (18 styków) i J7 (6 styków) to Jushuo AFB10, raster 1,0 mm, pionowe, bez zatrzasku, ze stykami po jednej stronie, na taśmę o grubości 0,3 mm, 0,5 A na styk. Matryca zajmuje 23 styki (17 kolumn, 6 wierszy); 24. styk proponowany na GND. Membrana musi mieć ogony o grubości 0,3 mm z usztywnieniem i styki po stronie zgodnej ze złączem. Złącze trzyma taśmę tylko tarciem, więc przy drganiach od sprężyn warto rozważyć wersję z zatrzaskiem.
+J4 (18 styków) i J7 (6 styków) to Jushuo AFB10, raster 1,0 mm, pionowe, bez zatrzasku, ze stykami po jednej stronie, na taśmę o grubości 0,3 mm, 0,5 A na styk. Matryca zajmuje 23 styki (17 kolumn, 6 wierszy); 24. styk (J4.18) to GND na controllerze, na folii COL niepodłączony (I5, A33). Karta Jushuo AFB10 (`docs/datasheets/Jushuo_AFB10.pdf`) opisuje złącze jako „单面接” (kontakt jednostronny), więc taśma musi wejść stykami do strony styków złącza. Folie nie mają ogonów 0,3 mm: na ogonkach są pady pod lutowanie taśm FFC 1,0 mm (18P i 6P, 70 mm), a typ taśmy (A: styki po tej samej stronie, B: po przeciwnych) zależy od prowadzenia taśmy do J4/J7 (otwarta kwestia). Złącze trzyma taśmę tylko tarciem, więc przy drganiach od sprężyn warto rozważyć wersję z zatrzaskiem.
+
+### Membrana FPC (2026-11-23, A33)
+
+Wariant A: dwie folie jak w oryginale, rozdzielone oryginalnym spacerem (geometria otworów v15, zatwierdzona 2026-11-21). Obie folie mają wspólny obrys 373,4 × 172,1 mm (decyzja właściciela); każda ma tylko swój ogonek FFC.
+
+| Parametr | ROW (górna) | COL (dolna) |
+| --- | --- | --- |
+| Projekt | `hardware/membrane-row` | `hardware/membrane-col` |
+| Warstwy, grubość | 2L, PI 25 µm, 0,12 mm | 1L, PI 25 µm, 0,11 mm |
+| Styki | 88 × `ibm_bs_1u_row` (pad 1 na B.Cu, w stronę spacera) | 88 × `ibm_bs_1u_col` (pad 2 na F.Cu, w stronę spacera) |
+| Diody | 87 × RB520S30 (SOD-523), lutowane ręcznie; SW17 i SW31 (Backspace) na wspólnej D34 | brak |
+| Złącze | FFC 6P, ROW0–ROW5 = J7.1–6 | FFC 18P, COL0–COL16 = J4.1–17, pin 18 NC |
+| Wykończenie | ENIG, żółty coverlay | ENIG, żółty coverlay |
+
+Paczki produkcyjne i parametry zamówienia: `production/membrane/2026-11-23/README.md`. Po dostawie: test styku na spacerze miernikiem (każdy klawisz, ROW–COL), potem test matrycy na controllerze.
 
 ### Dioda statusu
 
@@ -258,8 +273,8 @@ Jedna Worldsemi WS2812B-2020-V6 (LCSC C52917434) na MB, zasilana z VSYS przez pr
 
 | Parametr | Wartość z karty | Warunek w projekcie | Ocena |
 | --- | --- | --- | --- |
-| Napięcie zasilania | 3,3–5,3 V (opis JLC; karta do potwierdzenia) | VSYS: 3,0–4,2 V z baterii, około 5 V z USB | W zakresie na USB i przy baterii powyżej 3,3 V; poniżej działanie niegwarantowane. WS2812C-2020 (3,7 V min.) zastąpiona 2026-10-26, bo niedostępna w JLC |
-| Próg VIH wejścia DIN | min. 2,7 V (karta WS2812C; dla V6 do potwierdzenia) | Logika nRF52840 3,3 V | Spełniony bez konwersji poziomów, jeśli V6 ma ten sam próg |
+| Napięcie zasilania | 3,3–5,3 V (karta WS2812B-2020-V6 v1.2, s. 3, w tabeli Absolute Maximum Ratings; osobnego zakresu pracy karta nie podaje) | VSYS: 3,0–4,2 V z baterii, około 5 V z USB | W zakresie na USB i przy baterii powyżej 3,3 V; poniżej działanie niegwarantowane. WS2812C-2020 (3,7 V min.) zastąpiona 2026-10-26, bo niedostępna w JLC |
+| Próg VIH wejścia DIN | min. 0,55·VDD (karta V6 v1.2, s. 3); przy VSYS = 5,0–5,25 V: 2,75–2,89 V | VOH nRF52840 ≥ VDD − 0,4 V przy 0,5 mA (nRF52840 PS v1.5, s. 159); wejście DIN pobiera µA | Spełniony bez konwersji poziomów, margines ok. 0,4 V |
 | Prąd spoczynkowy | < 0,5 mA | Odcinany przez LOADSW1 | Uzasadnia przełącznik |
 | Prąd kanału | 5 mA | LOADSW1 do 100 mA | Spełnia |
 | Szybkość danych | 800 kb/s | Pin nRF bez ograniczenia częstotliwości (dolna strona) | Spełnia |
@@ -306,8 +321,8 @@ Sprzęt nie wymaga przebudowy pod firmware; audyt dodał jedną linię (włączn
 
 | Temat | Ustalenie | Skutek dla projektu |
 | --- | --- | --- |
-| NTC | Sterownik ładowarki nPM1300 w Zephyr 4.1 przy `thermistor-ohms = 0` sam wyłącza funkcję NTC; przy 10000 używa termistora z `thermistor-beta` | Ogniwo z NTC na J2.2 (P11): ustawić 10000 i betę ogniwa; R13 tylko dla ogniwa bez NTC |
-| Limit prądu VBUS | Sterownik zapisuje limit startowy z `vbus-limit-microamp` przy inicjalizacji; nie czyta stanu CC i nie obsługuje przerwań | Stałe 500 mA działa bez własnego kodu; wyższy limit zależny od źródła wymaga własnego modułu |
+| NTC | Sterownik ładowarki nPM1300 w Zephyr 4.1 przy `thermistor-ohms = 0` sam wyłącza funkcję NTC; przy 10000 używa termistora z `thermistor-beta` | Ogniwo bez NTC (P12): `thermistor-ohms = 0`, R13 obsadzony (NTC → GND) |
+| Limit prądu VBUS | Sterownik zapisuje limit startowy z `vbus-limit-microamp` przy inicjalizacji; nie czyta stanu CC i nie obsługuje przerwań | Stałe 500 mA działa bez własnego kodu; wyższy limit zależny od źródła wymaga własnego modułu. Sterownik zapisuje `VBUSINILIMSTARTUP` (0x02), a po odłączeniu VBUS układ wraca właśnie do tego rejestru (nPM1300 PS v1.3, rozdz. 6.1.8.1, s. 24), więc 500 mA obowiązuje też po ponownym wpięciu kabla; potwierdzenie w Ł3 |
 | Procent baterii | ZMK czyta kanał `SENSOR_CHAN_GAUGE_STATE_OF_CHARGE` albo `SENSOR_CHAN_VOLTAGE`; sterownik nPM1300 udostępnia `SENSOR_CHAN_GAUGE_VOLTAGE` | Potrzebny moduł ZMK pośredniczący między sterownikiem a ZMK |
 | Zasilanie diody | `zmk,ext-power-generic` steruje wyłącznie pinem GPIO | Pin nRF52840 do GPIO1 nPM1300, skonfigurowanego jako włącznik LOADSW1 |
 | Przerwanie PMIC | Binding `nordic,npm1300` ma `host-int-gpios` i `pmic-int-pin` | GPIO0 nPM1300 do nRF52840; używane przez własny kod |
@@ -315,7 +330,7 @@ Sprzęt nie wymaga przebudowy pod firmware; audyt dodał jedną linię (włączn
 
 ### Ustawienia startowe
 
-Wartości dla ogniwa LP803040 i portu USB 2.0; zmienia się je w konfiguracji płytki, bez ingerencji w sprzęt.
+Wartości dla ogniwa innCraft 603443 (950 mAh, bez NTC) i portu USB 2.0; zmienia się je w konfiguracji płytki, bez ingerencji w sprzęt.
 
 | Ustawienie | Wartość | Uzasadnienie |
 | --- | --- | --- |
@@ -324,7 +339,7 @@ Wartości dla ogniwa LP803040 i portu USB 2.0; zmienia się je w konfiguracji p�
 | `term-current-percent` | 10 | 40 mA, blisko 0,05 C z karty ogniwa |
 | `vbus-limit-microamp` | 500 000 | Bezpieczne dla portu USB 2.0; poniżej prądu podtrzymania bezpiecznika |
 | `dischg-limit-microamp` | 1 000 000 | Wymagane przy haptyce; dozwolone wartości to 200 mA i 1 A |
-| `thermistor-ohms` | 10 000 (`thermistor-beta` według ogniwa, do pomiaru) | NTC w ogniwie na J2.2 (P11); przy ogniwie bez NTC: 0 i R13 wlutowany |
+| `thermistor-ohms` | 0 (`zmk-config` 87fd7ec) | Ogniwo bez NTC, R13 obsadzony (P12); przy ogniwie z NTC: 10 000 i `thermistor-beta` ogniwa, R13 DNP |
 | BUCK2 | `regulator-always-on` | Błąd w tym miejscu odcina zasilanie nRF52840 |
 | REG1 nRF52840 | Tryb DC/DC | Na płytce są L2 i L3 |
 | Matryca | `zmk,kscan-gpio-matrix`, `col2row`, 17 kolumn, 6 wierszy | Katody diod na liniach ROW |
@@ -333,7 +348,7 @@ Wartości dla ogniwa LP803040 i portu USB 2.0; zmienia się je w konfiguracji p�
 
 ### Ograniczenia
 
-- Ogniwo wolno ładować w zakresie 0–45 °C; kontroluje to NTC ogniwa na J2.2 (P11). Przy ogniwie bez NTC (R13 wlutowany) działa tylko ograniczenie temperatury struktury nPM1300 (110 °C).
+- Ogniwo wolno ładować w zakresie 0–45 °C, ale ogniwo nie ma NTC (P12), więc ładowarka tego nie kontroluje: działa tylko PCM ogniwa i ograniczenie temperatury struktury nPM1300 (110 °C). nPM1300 PS v1.3, rozdz. 3.4 wymaga przy braku NTC bezpiecznika termicznego w pakiecie; karta ogniwa go nie potwierdza.
 - Domyślny próg odcięcia VSYSPOF to 2,7 V (nPM1300 PS v1.3, tab. 29, s. 114), a karta ogniwa podaje 3,0 V; podniesienie progu wymaga zapisu rejestru we własnym kodzie.
 - Wyjście z trybu Ship jest możliwe tylko przez podłączenie USB.
 - Bootloader UF2 trzeba raz wgrać przez SWD; kolejne aktualizacje idą przez USB.
@@ -358,13 +373,13 @@ Zasada: części JLC basic, gdzie nie tracą względem referencji Nordica (exten
 | R11, R12 (4,7 kΩ) | C25900, 0402 | Basic | |
 | R1, R2, R3 (0 Ω) | C21189, 0603 | Basic | R1/R2 w SCL/SDA do J3, miejsce na 33–100 Ω; R3 rozcięcie szyny 3,3 V do pomiarów (A15). 0603 zamiast 0402 (2026-10-31): wygodniejsze ręczne przelutowanie |
 | C9 (DEC5) | DNP | – | Niepotrzebny od rewizji Fxx |
-| Q1 | AO3401A C15127 | Basic | |
+| Q2 | AO3401A C15127 | Basic | |
 | SW1 | XKB TS-1187A-B-A-B C318884, 5,1 × 5,1 × 1,5 mm | – | Pady A–B i C–D zwarte parami; w footprincie numeracja 1, 1, 2, 2 |
 | D2 | WS2812B-2020-V6 C52917434 | Extended | WS2812C-2020 niedostępna |
 | J6 | XUNPU U.FL-IPEX-1 C53433123 | Extended | Montaż JLC; sygnał na dolnym małym padzie (1), pozostałe 3 pady GND (2) |
 | J5, J8, J9 | – | – | Lutowane ręcznie; na PCB „Exclude from BOM” i „Exclude from position files” (A20; J2 montuje JLC) |
 | J2 | C293630 Molex 53261-0371 | Extended | 3 piny z NTC (A26) |
-| R13 (0 Ω, NTC → GND) | C21189, 0603 | Basic | DNP w rev A (P11) |
+| R13 (0 Ω, NTC → GND) | C21189, 0603 | Basic | DNP w zamówieniu rev A, wlutowany ręcznie (P12); w BOM do zmiany na obsadzony |
 | U2 (nPM1300-QEAA) | C7466043 | Extended | W `bom.csv` rev A, ale w zamówieniu 2026-11-16 nie montowany (brak na stanie JLC); lutowany ręcznie (A31) |
 | J3 (2×3, 1,27 mm, SMD) | – (do kupienia w LCSC, np. DEALON DZ127S-22-06-55, C5160759) | – | Lutowany ręcznie (A23); w schemacie i na PCB „Exclude from BOM” i „Exclude from position files” |
 
@@ -382,7 +397,7 @@ Zatwierdzone i naniesione w schemacie 2026-10-31; lista TP skorygowana po routin
 | TP1 | SHPHLD | Tryb Ship | nPM1300 PS v1.3, rozdz. 7.4, s. 121 |
 | TP2 | `+3V3_BUCK` (A28; wcześniej VDD_NRF) | Napięcie przetwornicy BUCK2 przed R3; strona `+3V3_NRF` przy wylutowanym R3 na padzie R3 od strony U1 | – |
 | TP3 | GND (A28; wcześniej PVSS2) | Masa odniesienia; tętnienia na C29 mierzyć względem PVSS2 na padzie C29.2 / C30.2 | nPM1300 PS v1.3, s. 52 |
-| TP4 | VBAT | Spadek na Q1 (z padem J2.1), porównanie z ADC PMIC | s. 104 |
+| TP4 | VBAT | Spadek na Q2 (z padem J2.1), porównanie z ADC PMIC | s. 104 |
 | TP5 | VSYS | Rozładowanie, VSYSPOF | s. 51 |
 | TP6 | VLED | LOADSW1 | – |
 | (TP7–TP9, usunięte) | LED_EN, PMIC_INT, RGB_DIN | Analizator logiczny na padach elementów: LED_EN na U2.8, PMIC_INT na U2.7, RGB_DIN na D2.3 | A28 |
@@ -403,7 +418,7 @@ Kolejność grup = kolejność uruchamiania prototypu. Warunki pomiarów prądu:
 | Z1 | Start BUCK2 bez nRF (R3 niewlutowany, 3,7 V z limitem 50 mA na J2) | Napięcie przetwornicy 3,3 V ±5% | nPM1300 PS v1.3, s. 51; tab. 18, s. 50 |
 | Z2 | Tętnienia na C29 (sonda na C29.1, sprężynka masy na C29.2/PVSS2), tryb histerezowy i PWM | ≤ 50 mVpp / ≤ 5 mVpp; progi trybów 90 / 40 mA | s. 52 |
 | Z3 | Sprawność BUCK2 w funkcji prądu (PPK2 na J2, obciążenie na padach R3) | Porównanie z rys. 34 (s. 62) i rys. 3 (s. 14); 93% przy 200 mA PWM | s. 52 |
-| Z4 | Odwrotna polaryzacja ogniwa; spadek na Q1 przy 400 mA (J2.1 − TP4) | Prąd ≈ 0; ≤ 34 mV | „Spadek napięcia na Q1” |
+| Z4 | Odwrotna polaryzacja ogniwa; spadek na Q2 przy 400 mA (J2.1 − TP4) | Prąd ≈ 0; ≤ 34 mV | „Spadek napięcia na Q2” |
 | Z5 | LOADSW1 sterowany LED_EN (TP6, LED_EN na U2.8) | VLED ≈ VSYS / ≈ 0 V | – |
 | Z6 | Tryb Ship, wyjście przez VBUS | ≈ 370 nA | nPM1300 PS v1.3, s. 16 |
 | Z7 | Rampa VBAT 4,2 → 2,8 V | Napięcie 3,3 V do VSYS ok. 3,4 V; odcięcie na VSYSPOF; zachowanie diody | s. 51 |
@@ -487,25 +502,25 @@ Zamówienie JLC 2026-11-16 (A31): 4 warstwy, 1,2 mm, ENIG, JLC04121H-3313 z kont
 
 ## Otwarte kwestie
 
-- [x] Typ nowego Q1: AO3401A (C15127, basic), pinout sprawdzony z kartą (2026-10-25; wcześniej PMPB15XP)
+- [x] Typ nowego Q2: AO3401A (C15127, basic), pinout sprawdzony z kartą (2026-10-25; wcześniej PMPB15XP)
 - [x] Typ nowego kwarcu Y1: NDK NX2016SA-32MHZ-EXS00A-CS06654 (2026-10-25); tolerancja i stabilność do potwierdzenia w karcie
 - [x] Typ nowego F1 (PTC ≥ 24 V, prąd podtrzymania ≥ 1 A) i nowego D1 (TVS z VRWM ≥ 20 V): SMD1210-110-24V i SMF20A (2026-10-25)
 - [ ] Limit prądu wejściowego VBUS w firmware nie wyższy niż prąd podtrzymania F1 (1,1 A), czyli 1 A
 - [ ] Typ listwy goldpin 1×10, obciążalność styku, numeracja pinów między płytkami na modelu 3D
-- [ ] Membrana: geometria ogonów (0,3 mm, raster 1,0 mm, strona styków), miejsce na diody w stosie, typ diod, 24. styk na GND
+- [x] Membrana: ogonki z padami pod lutowane taśmy FFC 1,0 mm, diody RB520S30 SOD-523 na folii ROW, 24. styk NC na folii (A33); miejsce na diody w stosie do sprawdzenia po dostawie
 - [ ] Złącza matrycy: wersja bez zatrzasku czy z zatrzaskiem
 - [x] Dopasowanie RF: czteroelementowe z konfiguracji 7 (2026-10-25, M5)
-- [ ] Karta WS2812B-2020-V6: próg VIH, prąd spoczynkowy, minimalne VDD
+- [x] Karta WS2812B-2020-V6: próg VIH (0,55·VDD) i VDD (3,3–5,3 V) sprawdzone (tabela „Dioda statusu”); prąd spoczynkowy do pomiaru (testy E)
 - [x] Footprint NT1 (net-tie PVSS2 → GND): `ibm_bs:NetTie-2_SMD_Via0.45mm`, naruszenia DRC przy NT1 wyłączone z komentarzem (A22, 2026-11-12)
 - [x] Linia 50 Ω od dopasowania do złącza U.FL: CPWG 0,135 / 0,15 mm na JLC04121H-3313 (A30); pomiar toru analizatorem zostaje w planie testów (R2–R4)
 - [x] Numery pinów nRF52840 dla COL/ROW: ustalone 2026-11-12 (M6, M7); wcześniej (SDA, SCL, PMIC_INT, LED_EN, RGB_DIN przypisane 2026-10-21: P5, F1, F2, I2)
 - [ ] Pinout kabla Tag-Connect: potwierdzenie, że pin 3 to nRESET
 - [ ] Czy wewnętrzne Rd na CC działa przy całkowicie rozładowanej baterii (pytanie do Nordica)
-- [ ] Obsługa detekcji CC i NTC ogniwa (`thermistor-ohms`, `thermistor-beta`) w sterowniku Zephyra używanym przez ZMK (blok Firmware)
-- [ ] Prąd ładowania, napięcie końcowe i próg VSYSPOF dla ogniwa LP803040 (blok Firmware)
+- [ ] Obsługa detekcji CC w sterowniku Zephyra używanym przez ZMK (blok Firmware); NTC wyłączony (`thermistor-ohms = 0`, P12)
+- [ ] Prąd ładowania, napięcie końcowe i próg VSYSPOF dla ogniwa innCraft 603443 (blok Firmware; 400 mA ≈ 0,42 C)
 - [ ] Sterowanie LOADSW1 i linią DIN diody w ZMK (blok Firmware)
 - [ ] Rzeczywista pojemność C29 przy 3,3 V z krzywej DC-bias Yageo
-- [ ] Kolejność przewodów ogniwa (+, NTC, −) względem J2 (1 +, 2 NTC, 3 GND): sprawdzić miernikiem przed wpięciem (A26)
+- [ ] Biegunowość pigtaila ogniwa względem J2 (1 +, 2 pusty, 3 −): sprawdzić miernikiem przed wpięciem (A26, P12)
 - [ ] Typ złącza rozszerzeń J3 i sposób połączenia z płytką modułu (mechanika)
 - [ ] Układy na płytkach modułów (sterownik haptyki, akcelerometr): adresy I2C, napięcia, pobór prądu
 - [ ] Limit prądu rozładowania nPM1300: 1 A, jeśli haptyka będzie używana (blok Firmware)
@@ -516,7 +531,7 @@ Zamówienie JLC 2026-11-16 (A31): 4 warstwy, 1,2 mm, ENIG, JLC04121H-3313 z kont
 
 ### Dopisane 2026-10-17 (porządki, do rozstrzygnięcia)
 
-- [x] Ładowanie bez NTC: nPM1300_PS_v1.3 rozdz. 3.4 wymaga wtedy bezpiecznika termicznego w pakiecie; rozstrzygnięte 2026-11-15: ogniwo z NTC na J2.2, R13 DNP jako opcja (P11)
+- [x] Ładowanie bez NTC: nPM1300_PS_v1.3 rozdz. 3.4 wymaga wtedy bezpiecznika termicznego w pakiecie; rozstrzygnięte 2026-11-15: ogniwo z NTC na J2.2, R13 DNP jako opcja (P11); od 2026-11-23 znów otwarte, ogniwo bez NTC (P12, pozycja w „Dopisane 2026-11-23”)
 - [x] WS2812C-2020 z LSOUT1/VSYS: VSYS nie jest regulowane i przy VBUS ma ok. 5 V (nPM1300_PS_v1.3 rozdz. 6.1.1); przy VIH = 0,7·VDD próg ok. 3,5 V > 3,3 V z nRF. Sprawdzić VIH w karcie WS2812C-2020; ewentualnie translator lub inne zasilanie diody (dotyczy I2). Rozstrzygnięte: karta podaje VIH min. 2,7 V niezależnie od VDD, translator niepotrzebny (tabela „Dioda statusu”). Dotyczy karty WS2812C; dla zamontowanej WS2812B-2020-V6 sprawdzenie w pozycji „Karta WS2812B-2020-V6” wyżej
 - [ ] Tętnienia BUCK2: obliczenie ΔI_L dotyczy trybu PWM, a przy obciążeniu ok. 16 mA przetwornica pracuje w trybie histerezowym (PWM od ok. 90 mA wg raportu wykonalności z 11.10, do potwierdzenia w datasheecie); przeliczyć lub zmierzyć do rozdziału pracy
 - [ ] VSET2: zostaje 3,3 V czy 3,0 V (sugestia z raportu wykonalności z 11.10)
@@ -527,12 +542,19 @@ Zamówienie JLC 2026-11-16 (A31): 4 warstwy, 1,2 mm, ENIG, JLC04121H-3313 z kont
 
 ### Dopisane 2026-11-16 (po zamówieniu rev A)
 
-- [ ] Wybór ogniwa (kandydat innCraft 603443 z NTC) oraz wartość i beta jego NTC (pomiar)
+- [x] Wybór ogniwa: innCraft 603443 bez NTC (P12, 2026-11-23); wersja z NTC niedostępna
 - [ ] Numer zamówienia JLC i akceptacja zdjęcia rozmieszczenia (pin 1 U1)
 - [ ] TP2 na `+3V3_BUCK` zamiast VDD_NRF (A28): potwierdzić, że zamierzone
 - [ ] Średnica przelotki NT1: 0,6/0,3 mm na PCB wobec 0,45/0,2 mm w nazwie footprintu i A22
 - [ ] Osie otworów S3 (koszyk) i S1 (uchwyt DB) zgodne z modelami w Onshape
 - [ ] Na rev B (z audytu 2026-11-15): fiduciale, SW2 bokiem C30 zamiast pod nim, RGB_DIN/VLED spod łba śruby S1, czytelny silk TP4/TP5 i TP11/TP12, J2 obrócony otworem w stronę koszyka, silk „1” przy J8/J9
+
+### Dopisane 2026-11-23 (membrana, ogniwo)
+
+- [ ] Złącza J4/J7 (AFB10) mają styki jednostronne („单面接”, karta Jushuo), a nie dwustronne: typ taśmy FFC (A albo B) i jej prowadzenie od folii do controllera ustalić na sucho po dostawie; jeśli typ A nie pasuje, taśmy typu B albo inne rozwiązanie (właściciel)
+- [ ] Test styku folii ROW/COL na oryginalnym spacerze miernikiem (88 klawiszy) i wysokość diod SOD-523 w stosie (A33)
+- [ ] Ładowanie bez NTC (P12): brak kontroli temperatury ogniwa; nPM1300 PS v1.3 rozdz. 3.4 wymaga bezpiecznika termicznego w pakiecie, karta ogniwa go nie potwierdza
+- [ ] Rev B: zabezpieczenie pinu NTC przed odwróconym przewodem (A32), jeśli wróci ogniwo z NTC
 
 ### Dopisane 2026-10-31 (weryfikacja prototypu)
 
@@ -579,7 +601,7 @@ Karty elementów bloku interfejsów:
 - [MDD SMF20A, LCSC C123788](https://www.lcsc.com/product-detail/C123788.html)
 - [TECHFUSE SMD1210-110-24V, LCSC C22436715](https://www.lcsc.com/product-detail/C22436715.html)
 - [Korean Hroparts TYPE-C-31-D-06, LCSC C2689964](https://www.lcsc.com/product-detail/C2689964.html)
-- [Jushuo AFB10-S18LCA-00, LCSC C7499267](https://www.lcsc.com/product-detail/C7499267.html)
+- [Jushuo AFB10-S18LCA-00, LCSC C7499267](https://www.lcsc.com/product-detail/C7499267.html); karta: `docs/datasheets/Jushuo_AFB10.pdf`
 
 Źródła bloku firmware:
 
